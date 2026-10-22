@@ -29,7 +29,21 @@ Próximo, verificar como este erro varia de acordo com a quantidade de neutrinos
 De forma subsequente, construir e validar um circuito quântico trotterizado, um sistema em que o tempo ocorre em passos pequenos para para poder-se primeiro aplicar a rotação inicial que representa o ritmo próprio do neutrino e em seguida o a interação, para 4 a 8 neutrinos e medir as mesmas correlações, em simulador ideal (confirmação que circuito replica os resultados exatos) e com ruído simulado.
 Por último, estimar o nível de ruído a partir do qual o computador quântico não distingue mais o resultado exato do resultado da aproximação.
 
-## Hipótese
+## Hipóteses
+
+Como a pergunta de pesquisa é estruturada em duas frentes, a da precisão dos métodos atuais e a das capacidades dos equipamentos quânticos existentes, são estruturadas duas principais hipóteses:
+
+### H1
+
+A aproximação de espaço de fase reproduz bem o sabor de cada neutrino e as correlações entre pares, mas falha nas correlações entre trios, e essa falha cresce com a intensidade da interação.
+
+_Refutação: o erro relativo nos trios fica comparável ao erro nos pares em todas as intensidades testadas._
+
+### H2
+
+As correlações entre trios são pequenas, da ordem de 0,001 a 0,01, então só são mensuráveis em hardware com mitigação de erro e para poucos neutrinos.
+
+_Refutação: o hardware distingue o resultado exato do resultado da aproximação nos trios sem mitigação._
 
 ## Resumo
 
