@@ -10,6 +10,8 @@ No processo de simulações de supernovas, é necessário prever como os neutrin
 
 ## Pergunta de pesquisa
 
+A aproximação de espaço de fase reproduz precisamente as correlações entre três ou mais neutrinos, e se não reproduz, um computador quântico tem as capacidades para medir esta falha?
+
 ## Objetivos
 
 ### Objetivo Geral
