@@ -23,10 +23,15 @@ O objetivo geral da pesquisa se demonstra como avaliar se a aproximação do esp
 ### Específicos
 
 Frente a construção do objetivo geral de pesquisa, o processo é dividido em 5 objetivos específicos principais que buscam estruturar e guiar os métodos de pesquisa.
+
 Primeiramente, posiciona-se implementar os três diferentes modelos clássicos de oscilações coletivas, a exata (viável em uma quantidade baixa de neutrinos), a de campo médio e a de fase de espaço.
+
 Em seguida, quantificar o erro de cada solução em cada sabor de neutrino e nas correlações para dois e para três neutrinos emaranhados, variando a intensidade das interações, de uma interação fraca com razão μ/ω̄ (razão do ritmo de oscilação do neutrino causado pelos neutrinos próximos, μ, sob o ritmo de oscilção entre diferentes sabores do próprio neutrino, ω̄) de 0,1, até uma interação forte com razão 10.
+
 Próximo, verificar como este erro varia de acordo com a quantidade de neutrinos no sistema (mantendo a análise de correlações em corpos de dois e três neutrinos), a partir do crescimento do sistema de dois e três neutrinos para ambientes com até dezesseis neutrinos.
+
 De forma subsequente, construir e validar um circuito quântico trotterizado, um sistema em que o tempo ocorre em passos pequenos para para poder-se primeiro aplicar a rotação inicial que representa o ritmo próprio do neutrino e em seguida o a interação, para 4 a 8 neutrinos e medir as mesmas correlações, em simulador ideal (confirmação que circuito replica os resultados exatos) e com ruído simulado.
+
 Por último, estimar o nível de ruído a partir do qual o computador quântico não distingue mais o resultado exato do resultado da aproximação.
 
 ## Hipóteses
