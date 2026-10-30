@@ -1,0 +1,17 @@
+numpy<3,>=1.26
+scipy<2,>=1.12
+fastapi<1,>=0.115
+uvicorn<1,>=0.30
+python-dotenv<2,>=1
+
+[legacy]
+matplotlib<4,>=3.8
+streamlit<2,>=1.58
+
+[qiskit]
+qiskit<3,>=2.5
+qiskit-aer<1,>=0.17
+qiskit-ibm-runtime<0.52,>=0.50
+
+[test]
+httpx<1,>=0.27
