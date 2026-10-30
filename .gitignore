@@ -1,5 +1,14 @@
 .DS_Store
 .venv/
+.env
+.env.*
+!.env.example
 __pycache__/
 *.py[cod]
 tmp/
+results/
+app/frontend/node_modules/
+app/frontend/.next/
+app/frontend/out/
+app/frontend/.env.local
+*.tsbuildinfo
