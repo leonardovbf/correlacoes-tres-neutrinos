@@ -6,7 +6,11 @@ inclui a chave em respostas, logs ou arquivos de experimento.
 
 from __future__ import annotations
 
+import base64
+import hashlib
 import importlib.util
+import io
+import json
 import os
 
 import numpy as np
@@ -67,6 +71,7 @@ def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
     if request.interval_index * request.steps > 16:
         raise ValueError("Hardware limitado a 16 subpassos Trotter por execução")
     from qiskit.transpiler import generate_preset_pass_manager
+    from qiskit import qpy
     from qiskit_ibm_runtime.executor_sampler import Sampler
 
     try:
@@ -82,8 +87,19 @@ def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
         manager = generate_preset_pass_manager(backend=backend, optimization_level=1,
                                                seed_transpiler=config.seed)
         isa_circuit = manager.run(circuit)
+        serialized = io.BytesIO()
+        qpy.dump(isa_circuit, serialized)
+        circuit_bytes = serialized.getvalue()
+        properties = backend.properties() if hasattr(backend, "properties") else None
+        calibration = json.loads(json.dumps(properties.to_dict(), default=str)) if properties else None
         job = Sampler(mode=backend).run([isa_circuit], shots=request.shots)
         return {"job_id": job.job_id(), "backend": backend.name,
+                "circuit_qpy_base64": base64.b64encode(circuit_bytes).decode("ascii"),
+                "circuit_sha256": hashlib.sha256(circuit_bytes).hexdigest(),
+                "transpilation": {"optimization_level": 1, "seed_transpiler": config.seed,
+                                  "physical_qubits": isa_circuit.layout.final_index_layout()},
+                "runtime_options": {"primitive": "Sampler", "shots": request.shots},
+                "backend_properties": calibration,
                 "transpiled_depth": isa_circuit.depth(),
                 "two_qubit_gates": sum(count for gate, count in isa_circuit.count_ops().items()
                                        if gate in {"cx", "cz", "ecr", "rzz", "rxx", "ryy"})}

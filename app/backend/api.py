@@ -8,7 +8,7 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from . import ibm_runtime, jobs, service
+from . import audit, ibm_runtime, jobs, service
 from .schemas import (AerRequest, CircuitRequest, ClassicalRequest, ConvergenceRequest,
                       HardwareRequest, IntervalRequest, QuantumRequest)
 from .storage import RunNotFound
@@ -26,22 +26,26 @@ app.add_middleware(
 
 @app.exception_handler(RunNotFound)
 async def missing_run(_request, _exc):
-    return JSONResponse(status_code=404, content={"detail": "Experimento não encontrado"})
+    return JSONResponse(status_code=404, content={"detail": "Experimento não encontrado",
+                                                "execution_id": getattr(_exc, "execution_id", None)})
 
 
 @app.exception_handler(ValueError)
 async def invalid_input(_request, exc: ValueError):
-    return JSONResponse(status_code=422, content={"detail": str(exc)})
+    return JSONResponse(status_code=422, content={"detail": audit.safe_error(exc)["message"],
+                                                "execution_id": getattr(exc, "execution_id", None)})
 
 
 @app.exception_handler(subprocess.TimeoutExpired)
 async def worker_timeout(_request, _exc):
-    return JSONResponse(status_code=504, content={"detail": "O cálculo Qiskit excedeu 120 segundos"})
+    return JSONResponse(status_code=504, content={"detail": "O cálculo Qiskit excedeu 120 segundos",
+                                                "execution_id": getattr(_exc, "execution_id", None)})
 
 
 @app.exception_handler(RuntimeError)
 async def worker_failure(_request, exc: RuntimeError):
-    return JSONResponse(status_code=503, content={"detail": str(exc)})
+    return JSONResponse(status_code=503, content={"detail": audit.safe_error(exc)["message"],
+                                                "execution_id": getattr(exc, "execution_id", None)})
 
 
 @app.get("/api/health")
@@ -101,6 +105,20 @@ def get(run_id: str):
 def manifest(run_id: str):
     metadata, _ = service.store.load_metadata(run_id)
     return metadata
+
+
+@app.get("/api/executions/{execution_id}")
+def execution_record(execution_id: str):
+    try:
+        return audit.load_execution(service.store.root, execution_id)
+    except KeyError:
+        return JSONResponse(status_code=404, content={"detail": "Registro de execução não encontrado"})
+
+
+@app.get("/api/experiments/{run_id}/executions")
+def experiment_executions(run_id: str):
+    service.store.load_metadata(run_id)
+    return audit.execution_history(service.store.root, run_id)
 
 
 @app.get("/api/experiments/{run_id}/hardware/{job_id}")

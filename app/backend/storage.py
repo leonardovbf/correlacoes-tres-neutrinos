@@ -13,6 +13,7 @@ from uuid import uuid4
 
 import numpy as np
 
+from .audit import atomic_json, file_hash
 
 ROOT = Path(__file__).resolve().parents[2]
 RESULTS = ROOT / "results"
@@ -46,6 +47,13 @@ class RunStore:
             json.dumps(summary, ensure_ascii=False, separators=(",", ":"), allow_nan=False), encoding="utf-8"
         )
         np.savez_compressed(path / "moments.npz", **arrays)
+        atomic_json(path / "artifacts.json", {
+            "schema_version": 1,
+            "files": {name: {"sha256": file_hash(path / name), "bytes": (path / name).stat().st_size}
+                      for name in ("manifest.json", "summary.json", "moments.npz")},
+            "arrays": {name: {"shape": list(value.shape), "dtype": str(value.dtype)}
+                       for name, value in arrays.items()},
+        })
 
     def create(self, manifest: dict, summary: dict, arrays: dict[str, np.ndarray]) -> str:
         from datetime import datetime, timezone

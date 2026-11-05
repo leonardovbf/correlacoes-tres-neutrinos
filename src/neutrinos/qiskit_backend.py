@@ -90,7 +90,8 @@ def simulate_gate_noise(config: ExperimentConfig, interval_index: int, steps_per
     circuit = build_trotter_circuit(config, float(config.times[interval_index]),
                                     interval_index * steps_per_interval)
     basis = ["rz", "sx", "x", "cx"]
-    compiled = transpile(circuit, basis_gates=basis, optimization_level=1)
+    compiled = transpile(circuit, basis_gates=basis, optimization_level=1,
+                         seed_transpiler=config.seed)
     compiled.measure_all()
     noise = NoiseModel()
     if single_qubit_error:
@@ -110,5 +111,6 @@ def simulate_gate_noise(config: ExperimentConfig, interval_index: int, steps_per
                     "two_qubit_depolarizing": two_qubit_error,
                     "readout_bit_flip": readout_error,
                     "transpiled_depth": compiled.depth(), "cx_count": int(compiled.count_ops().get("cx", 0)),
+                    "seed_transpiler": config.seed, "optimization_level": 1,
                     "seed_simulator": config.seed + 200_000,
                     "noise_scope": "Aer: despolarização em sx/x/cx e erro de leitura independente"}

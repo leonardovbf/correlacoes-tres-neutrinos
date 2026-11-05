@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import base64
+import hashlib
+import io
 import json
 import os
 import tempfile
@@ -57,6 +60,12 @@ class IbmRuntimeTests(unittest.TestCase):
         self.assertEqual(circuit.num_clbits, 2)
         self.assertEqual(sampler.run.call_args.kwargs["shots"], 32)
         self.assertGreater(submitted["transpiled_depth"], 0)
+        from qiskit import qpy
+        circuit_bytes = base64.b64decode(submitted["circuit_qpy_base64"])
+        archived = qpy.load(io.BytesIO(circuit_bytes))[0]
+        self.assertEqual(archived.num_clbits, 2)
+        self.assertEqual(submitted["circuit_sha256"], hashlib.sha256(circuit_bytes).hexdigest())
+        self.assertIn("backend_properties", submitted)
 
     def test_qiskit_counts_keep_qubit_bit_order(self):
         cloud = MagicMock()
@@ -69,6 +78,32 @@ class IbmRuntimeTests(unittest.TestCase):
             state, counts = ibm_runtime.fetch("offline-job", 2)
         self.assertEqual(state, "DONE")
         self.assertEqual(counts.tolist(), [10, 22, 0, 0])
+
+    def test_hardware_circuit_and_calibration_are_saved_without_remote_submission(self):
+        from qiskit import qpy
+        from qiskit_ibm_runtime.fake_provider import FakeBelemV2
+
+        created = service.create_experiment(ClassicalRequest(config={
+            "n": 2, "flavors": [0, 1], "t_max": .2, "points": 3, "seed": 7,
+        }, trajectories=16, substeps=1))
+        service.run_quantum(created["run_id"], QuantumRequest(steps=1, shots=32))
+        cloud = Mock()
+        cloud.backend.return_value = FakeBelemV2()
+        sampler = Mock()
+        sampler.run.return_value.job_id.return_value = "archived-test-job"
+        with patch.object(ibm_runtime, "_service", return_value=cloud), patch(
+                "qiskit_ibm_runtime.executor_sampler.Sampler", return_value=sampler):
+            submitted = service.submit_hardware(created["run_id"], HardwareRequest(
+                backend="fake_belem", interval_index=1, steps=1, shots=32))
+        entry = submitted["hardware_runs"][0]
+        arrays = service.store.load(created["run_id"])[2]
+        encoded = arrays[entry["circuit_artifact"]["array_key"]].tobytes()
+        self.assertEqual(hashlib.sha256(encoded).hexdigest(), entry["circuit_artifact"]["sha256"])
+        self.assertEqual(qpy.load(io.BytesIO(encoded))[0].num_clbits, 2)
+        self.assertEqual(entry["transpilation"]["seed_transpiler"], 7)
+        self.assertIsNotNone(entry["backend_properties"])
+        manifest = service.store.load_metadata(created["run_id"])[0]
+        self.assertEqual(manifest["hardware_runs"][0]["circuit_artifact"], entry["circuit_artifact"])
 
     def test_submitted_job_is_persisted_and_results_can_be_resumed(self):
         created = service.create_experiment(ClassicalRequest(config={

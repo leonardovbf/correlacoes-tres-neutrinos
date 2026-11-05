@@ -51,6 +51,8 @@ class IntervalRequest(StrictModel):
     method: Literal["psa", "measured"]
     kind: Literal["pe", "c2", "c3"]
     index: int = Field(ge=0)
+    repetitions: int = Field(default=200, ge=20, le=2000)
+    seed: int = Field(default=1234, ge=0)
 
 
 class ConvergenceRequest(StrictModel):
