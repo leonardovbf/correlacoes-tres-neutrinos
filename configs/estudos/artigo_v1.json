@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "study_id": "correlacoes-tres-neutrinos-v1",
+  "status": "desenho-definido-para-revisao",
+  "collection_status": "aguarda-reproducao-publicada-e-controles",
+  "primary_observable": {
+    "kind": "c3",
+    "definition": "cumulante conectado Kzzz de índices distintos",
+    "reference": "evolucao-exata",
+    "methods": [
+      "psa",
+      "circuito"
+    ]
+  },
+  "secondary_observables": [
+    "pe",
+    "c2"
+  ],
+  "common_model": {
+    "sizes": [
+      4,
+      6,
+      8
+    ],
+    "mu": [
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "theta": 0.2,
+    "omega_rule": "linspace(0.7, 1.3, N)",
+    "g_rule": "1 fora da diagonal; 0 na diagonal",
+    "initial_state": "primeira metade nu_e; segunda metade nu_x",
+    "main_time_grid": {
+      "start": 0.0,
+      "end": 10.0,
+      "points": 201
+    }
+  },
+  "analysis": {
+    "primary_outputs": [
+      "Kzzz por trio e tempo",
+      "RMSE contra exato",
+      "maior erro absoluto",
+      "amplitude RMS exata",
+      "erro normalizado quando sinal resolvido"
+    ],
+    "confidence": 0.95,
+    "bootstrap_repetitions": 2000,
+    "bootstrap_unit": "trajetoria ou bitstring completo; incluir calibração na mitigação",
+    "normalized_signal_floor": 0.0001,
+    "integration_max_absolute_difference": {
+      "pe": 1e-06,
+      "c2": 1e-05,
+      "c3": 1e-05
+    },
+    "exact_crosscheck_max_absolute_difference": 1e-10,
+    "trotter_c3_max_absolute_error": 0.001,
+    "h2_equivalence_margin_c3": 0.01,
+    "threshold_rationale": "Metas operacionais v1 em unidades de Pauli; erro Trotter no máximo 10% da margem H2. Não são limiares universais da literatura.",
+    "h1_analysis": "Comparar R3-R2 por configuração e tendência com mu para cada N; apresentar incertezas e casos sem normalização. Não agregar cumulantes com sinais opostos antes do erro.",
+    "h2_primary_endpoint": {
+      "n": 4,
+      "mu": 3.0,
+      "trio": [
+        0,
+        1,
+        2
+      ],
+      "tau": 2.0,
+      "noise_profile": "moderado",
+      "shots_per_repetition_total": 16384,
+      "repetitions": 20,
+      "total_shots_per_method": 327680
+    },
+    "h2_primary_selection": "Caso intermediário fixado no desenho; não escolhido por maximização do sinal observado.",
+    "h2_success": "IC95 de circuito-PSA exclui zero E IC95 de circuito-exato inteiramente em [-0.01,0.01], com incerteza PSA e erro residual controlados.",
+    "h2_interpretation": {
+      "sem_mitigacao_resolve": "H2 refutada nessa condição",
+      "apenas_mitigado_resolve": "apoio a H2 nessa condição",
+      "nenhum_resolve": "inconclusivo quanto à necessidade de mitigação"
+    },
+    "secondary_endpoints": "Demais condições e trios são análises de sensibilidade; sem promovê-los a teste principal após observar dados. Usar Holm se fizer declarações de detecção múltipla.",
+    "pooling": "Agregar momentos/contagens antes de calcular cumulantes; declarar orçamento total das 20 repetições; preservar blocos para estimar incerteza e viés.",
+    "implementation_status": "analise-conjunta-e-decisao-estatistica-a-implementar",
+    "qiskit_validation": {
+      "status": "primeiro-intervalo-disponivel-demais-instantes-a-implementar",
+      "required_cases": {
+        "n": [
+          4,
+          6,
+          8
+        ],
+        "mu": [
+          0.1,
+          0.3,
+          1.0,
+          3.0,
+          10.0
+        ],
+        "tau": [
+          1.0,
+          2.0,
+          4.0
+        ]
+      },
+      "requirement": "Comparar o circuito Qiskit com o emulador nos mesmos passos totais e estados; conferir também a referência exata. Não substituir o erro Trotter por uma diferença entre duas implementações do mesmo Trotter."
+    }
+  },
+  "protocols": [
+    {
+      "id": "T01-controles",
+      "question": "Conferir caso sem interação e consistência Qiskit.",
+      "file": "configs/protocols/artigo_v1/01_controles.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "testes-de-software"
+      ],
+      "steps": 9,
+      "actions": {
+        "circuit": 3,
+        "classical": 3,
+        "quantum": 3
+      },
+      "note": "Checar exato/MF e Kzzz exato nulo; avaliar PSA com sua incerteza."
+    },
+    {
+      "id": "T02-integracao",
+      "question": "Quantificar convergência de integracao da PSA nos trios.",
+      "file": "configs/protocols/artigo_v1/02_integracao.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T01-controles",
+        "reproducao-publicada"
+      ],
+      "steps": 120,
+      "actions": {
+        "classical": 120
+      },
+      "note": ""
+    },
+    {
+      "id": "T02-amostragem",
+      "question": "Quantificar convergência de amostragem da PSA nos trios.",
+      "file": "configs/protocols/artigo_v1/02_amostragem.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T01-controles",
+        "reproducao-publicada"
+      ],
+      "steps": 120,
+      "actions": {
+        "classical": 120
+      },
+      "note": ""
+    },
+    {
+      "id": "T03-classica-principal",
+      "question": "Medir a precisão de Kzzz da PSA contra o exato, por N e interação.",
+      "file": "configs/protocols/artigo_v1/03_classica_principal.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T02-integracao",
+        "T02-amostragem"
+      ],
+      "steps": 300,
+      "actions": {
+        "classical": 300
+      },
+      "note": "O runner atual recalcula a referência em cada semente; otimizar o reaproveitamento antes da coleta extensa."
+    },
+    {
+      "id": "T03-classica-extensao",
+      "question": "Medir a precisão de Kzzz da PSA contra o exato, por N e interação.",
+      "file": "configs/protocols/artigo_v1/03_classica_extensao.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T02-integracao",
+        "T02-amostragem",
+        "medicao-de-memoria-tempo-e-disco"
+      ],
+      "steps": 200,
+      "actions": {
+        "classical": 200
+      },
+      "note": "O runner atual recalcula a referência em cada semente; otimizar o reaproveitamento antes da coleta extensa."
+    },
+    {
+      "id": "T04-trotter",
+      "question": "Quantificar erro ideal de Trotter em Kzzz.",
+      "file": "configs/protocols/artigo_v1/04_trotter.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T01-controles",
+        "reproducao-publicada"
+      ],
+      "steps": 90,
+      "actions": {
+        "classical": 15,
+        "quantum": 75
+      },
+      "note": "Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores ainda precisa ser implementada conforme o catálogo."
+    },
+    {
+      "id": "T05-medicoes",
+      "question": "Medir o efeito de shots na reconstrução dos cumulantes de três corpos.",
+      "file": "configs/protocols/artigo_v1/05_medicoes.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T02-integracao",
+        "T02-amostragem",
+        "T04-trotter"
+      ],
+      "steps": 1200,
+      "actions": {
+        "classical": 300,
+        "quantum": 900
+      },
+      "note": "20 repetições por orçamento; o total agregado é 20 vezes shots. Sem ruído de portas ou leitura."
+    },
+    {
+      "id": "T06-ruido",
+      "question": "Quantificar viés e incerteza de K012 em circuitos com ruído de portas e leitura.",
+      "file": "configs/protocols/artigo_v1/06_ruido.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "prerequisites": [
+        "T02-integracao",
+        "T02-amostragem",
+        "T04-trotter",
+        "validacao-ideal-da-grade-de-ruido"
+      ],
+      "steps": 3300,
+      "actions": {
+        "aer": 2700,
+        "classical": 300,
+        "quantum": 300
+      },
+      "note": "N=4, tau=1/2/4, trio012. Grade própria de 8 pontos até cada tau; 112 subpassos totais no ponto final. Validar essa discretização contra exato antes de interpretar o ruído."
+    },
+    {
+      "id": "T00-reproducao-publicada",
+      "file": "configs/protocols/artigo_v1/especificacoes/reproducao_publicada.json",
+      "definition_status": "alvo-definido",
+      "execution_status": "aguarda-conversao-e-validacao-do-Hamiltoniano",
+      "format": "especificacao-cientifica-nao-executavel-pelo-runner"
+    },
+    {
+      "id": "T07-mitigacao",
+      "file": "configs/protocols/artigo_v1/especificacoes/mitigacao.json",
+      "definition_status": "definido",
+      "execution_status": "aguarda-implementacao",
+      "format": "especificacao-cientifica-nao-executavel-pelo-runner"
+    },
+    {
+      "id": "T08-hardware",
+      "file": "configs/protocols/artigo_v1/especificacoes/hardware_ibm.json",
+      "definition_status": "procedimento-definido",
+      "execution_status": "condicionado-a-T07-profundidade-calibracao-e-orcamento",
+      "format": "especificacao-cientifica-nao-executavel-pelo-runner"
+    }
+  ],
+  "noise_profiles": {
+    "ideal": {
+      "single_qubit_error": 0.0,
+      "two_qubit_error": 0.0,
+      "readout_error": 0.0
+    },
+    "leve": {
+      "single_qubit_error": 0.0001,
+      "two_qubit_error": 0.001,
+      "readout_error": 0.01
+    },
+    "moderado": {
+      "single_qubit_error": 0.001,
+      "two_qubit_error": 0.01,
+      "readout_error": 0.03
+    }
+  },
+  "amendments": "Se um controle falhar, preservar o resultado e registrar uma versão nova com motivo e alterações antes de nova coleta; não alterar silenciosamente a grade ou os critérios."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "T00-reproducao-publicada",
+  "definition_status": "alvo-definido",
+  "execution_status": "aguarda-conversao-e-validacao-do-Hamiltoniano",
+  "source": "https://arxiv.org/html/2409.20215v2",
+  "target": "Figura 2(c), secao III.1.1, N=8, PSA bi-valuada",
+  "required_before_execution": [
+    "conversao documentada de unidades, bases, spins/Pauli e soma de pares",
+    "parametros e janela extraidos da figura",
+    "dados da fonte ou digitalizacao com incerteza",
+    "suporte a 10000 trajetorias em blocos"
+  ],
+  "acceptance": "Comparar separadamente exato e PSA com suas curvas publicadas; tolerância baseada na precisão da fonte e de amostragem."
+}
