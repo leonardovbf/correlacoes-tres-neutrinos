@@ -2,7 +2,7 @@
 
 Projeto sobre a precisão da aproximação de espaço de fase em oscilações coletivas de neutrinos e sobre a capacidade de circuitos quânticos de distinguir suas previsões da evolução exata. O estudo adota dois sabores, energias distintas e interações entre todos os pares.
 
-A Entrega 1 reúne o problema, a pergunta, os objetivos, as hipóteses, os resumos e a introdução. A estratégia de avaliação apresenta o planejamento dos cálculos e das comparações que serão desenvolvidos nas próximas etapas.
+A versão revisada da Entrega 1 integra o problema, a pergunta, o objetivo e as hipóteses à introdução, após os resumos. O estudo delimita regimes de validade da PSA e avalia o limiar de ruído em que circuitos distinguem suas previsões da solução exata, com e sem mitigação e sob o mesmo orçamento total de medições. A estratégia de avaliação apresenta o planejamento dos cálculos e das comparações que serão desenvolvidos nas próximas etapas.
 
 ## Plataforma local de simulação
 
@@ -114,7 +114,7 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 
 ## Contribuições da entrega
 
-O núcleo da pesquisa define a pergunta, os objetivos e as hipóteses. O contexto da introdução apresenta supernovas, neutrinos, sabor, nucleossíntese e detecção; essa frente também reúne e padroniza as referências. O estado da arte discute campo médio, espaço de fase, BBGKY e simulações quânticas, delimitando a lacuna do estudo. O parágrafo final da introdução conecta essas contribuições ao plano de pesquisa.
+O contexto da introdução apresenta supernovas, neutrinos, sabor, nucleossíntese e detecção. O estado da arte discute campo médio, espaço de fase, BBGKY e simulações quânticas, delimitando a lacuna do estudo. A pergunta, o objetivo e as hipóteses decorrem dessa fundamentação. A etapa quântica é apresentada como avaliação de precisão e recursos em sistemas com referência clássica acessível. A dependência do erro com a intensidade da interação será examinada como análise secundária, sem pressupor crescimento monotônico.
 
 ## Figuras
 
@@ -146,7 +146,7 @@ Na conferência de 23 de outubro de 2026, a introdução foi compilada e inspeci
 | Português | 1,45 página equivalente | 1,29 página equivalente |
 | Inglês | 1,43 página equivalente | 1,27 página equivalente |
 
-As duas partes atenderam à extensão de 1 a 1,5 página no modelo usado. O parágrafo final de objetivo e contribuição foi contado separadamente. Alterações no texto, na figura, na legenda ou no modelo exigem nova composição e medição; a paginação do artigo completo será determinada quando todas as seções forem compostas juntas.
+Na versão conferida naquela data, as duas partes atenderam à extensão de 1 a 1,5 página no modelo usado, com o parágrafo final de objetivo e contribuição contado separadamente. Essas medidas são um registro da versão anterior à revisão estrutural e não validam a extensão da versão atual. Os textos revisados ainda precisam de nova composição no modelo SBC e de conferência da paginação.
 
 ## Referências e edição
 
