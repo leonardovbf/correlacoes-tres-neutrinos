@@ -1,5 +1,5 @@
 export type Observable = "pe" | "c2" | "c3";
-export type Area = "board" | "classical" | "quantum" | "system" | "quality";
+export type Area = "board" | "classical" | "quantum" | "system";
 export type Method = "exact" | "mean" | "psa" | "ideal" | "measured";
 
 export interface Series {

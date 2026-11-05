@@ -40,6 +40,5 @@ export const api = {
   interval: <T>(id: string, body: unknown) => request<T>(`/experiments/${id}/interval`, body),
   circuit: <T>(id: string, body: unknown) => request<T>(`/experiments/${id}/circuit`, body),
   aer: <T>(id: string, body: unknown) => request<T>(`/experiments/${id}/aer`, body),
-  convergence: <T>(id: string) => request<T>(`/experiments/${id}/convergence`, {}),
   manifest: <T>(id: string) => request<T>(`/experiments/${id}/manifest`),
 };
