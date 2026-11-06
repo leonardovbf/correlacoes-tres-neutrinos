@@ -11,6 +11,11 @@ from scipy.linalg import expm
 from .sim import ExperimentConfig
 
 
+def aer_step_limit(n: int) -> int:
+    """Grade refinada de quatro qubits; mantém o limite dos sistemas maiores."""
+    return 512 if n <= 4 else 120
+
+
 def build_trotter_circuit(config: ExperimentConfig, interval: float, steps: int):
     """Prepara o estado e aplica Suzuki–Trotter simétrico de 2ª ordem.
 
@@ -21,8 +26,8 @@ def build_trotter_circuit(config: ExperimentConfig, interval: float, steps: int)
     from qiskit import QuantumCircuit
     from qiskit.circuit.library import UnitaryGate
 
-    if config.n > 8 or not 1 <= steps <= 120:
-        raise ValueError("Circuito Qiskit: 2–8 qubits e 1–120 passos")
+    if config.n > 8 or not 1 <= steps <= 4096:
+        raise ValueError("Circuito Qiskit: 2–8 qubits e 1–4096 passos")
     circuit = QuantumCircuit(config.n)
     for i, (x0, y0, z0) in enumerate(config.initial_bloch):
         if np.isclose(z0, -1.0):
@@ -59,17 +64,20 @@ def build_trotter_circuit(config: ExperimentConfig, interval: float, steps: int)
     return circuit
 
 
-def first_interval_probabilities(config: ExperimentConfig, steps: int):
+def first_interval_probabilities(config: ExperimentConfig, steps: int, interval_index: int = 1):
     from qiskit.quantum_info import Statevector
 
-    interval = float(config.times[1] - config.times[0])
-    circuit = build_trotter_circuit(config, interval, steps)
+    if not 1 <= interval_index < config.points:
+        raise ValueError("Instante fora da grade")
+    interval = float(config.times[interval_index])
+    circuit = build_trotter_circuit(config, interval, steps * interval_index)
     return circuit, np.asarray(Statevector.from_instruction(circuit).probabilities())
 
 
 def simulate_gate_noise(config: ExperimentConfig, interval_index: int, steps_per_interval: int,
                         shots: int, single_qubit_error: float, two_qubit_error: float,
-                        readout_error: float) -> tuple[np.ndarray, dict]:
+                        readout_error: float, *, calibration_state: int | None = None,
+                        seed_offset: int = 0) -> tuple[np.ndarray, dict]:
     """Executa um instante em Aer com ruído despolarizante e de leitura.
 
     O modelo é exploratório e não representa uma calibração de hardware IBM.
@@ -78,8 +86,9 @@ def simulate_gate_noise(config: ExperimentConfig, interval_index: int, steps_per
     from qiskit_aer import AerSimulator
     from qiskit_aer.noise import NoiseModel, ReadoutError, depolarizing_error
 
-    if not 1 <= interval_index < config.points or interval_index * steps_per_interval > 120:
-        raise ValueError("Instante ou profundidade fora do limite interativo (120 passos)")
+    limit = aer_step_limit(config.n)
+    if not 1 <= interval_index < config.points or interval_index * steps_per_interval > limit:
+        raise ValueError(f"Instante ou profundidade fora do limite Aer ({limit} passos)")
     if not 32 <= shots <= 20000:
         raise ValueError("shots fora do intervalo permitido")
     for name, probability in (("single_qubit_error", single_qubit_error),
@@ -87,8 +96,16 @@ def simulate_gate_noise(config: ExperimentConfig, interval_index: int, steps_per
         if not 0 <= probability <= .25:
             raise ValueError(f"{name} deve estar entre 0 e 0,25")
 
-    circuit = build_trotter_circuit(config, float(config.times[interval_index]),
-                                    interval_index * steps_per_interval)
+    if calibration_state is None:
+        circuit = build_trotter_circuit(config, float(config.times[interval_index]),
+                                        interval_index * steps_per_interval)
+    else:
+        from qiskit import QuantumCircuit
+        if calibration_state not in (0, 1):
+            raise ValueError("Calibração aceita somente todos 0 ou todos 1")
+        circuit = QuantumCircuit(config.n)
+        if calibration_state:
+            circuit.x(range(config.n))
     basis = ["rz", "sx", "x", "cx"]
     compiled = transpile(circuit, basis_gates=basis, optimization_level=1,
                          seed_transpiler=config.seed)
@@ -101,16 +118,19 @@ def simulate_gate_noise(config: ExperimentConfig, interval_index: int, steps_per
     if readout_error:
         noise.add_all_qubit_readout_error(ReadoutError([[1-readout_error, readout_error],
                                                        [readout_error, 1-readout_error]]))
-    simulator = AerSimulator(noise_model=noise, basis_gates=basis)
-    result = simulator.run(compiled, shots=shots, seed_simulator=config.seed + 200_000).result()
+    simulator = AerSimulator(noise_model=noise, basis_gates=basis, method="density_matrix")
+    seed = config.seed + 200_000 + seed_offset
+    result = simulator.run(compiled, shots=shots, seed_simulator=seed).result()
     counts = np.zeros(1 << config.n, dtype=np.int64)
     for bitstring, count in result.get_counts().items():
         counts[int(bitstring.replace(" ", ""), 2)] = count
     return counts, {"time_index": interval_index, "tau": float(config.times[interval_index]),
+                    "steps_per_interval": steps_per_interval,
+                    "total_trotter_steps": interval_index * steps_per_interval,
                     "shots": shots, "single_qubit_depolarizing": single_qubit_error,
                     "two_qubit_depolarizing": two_qubit_error,
                     "readout_bit_flip": readout_error,
                     "transpiled_depth": compiled.depth(), "cx_count": int(compiled.count_ops().get("cx", 0)),
                     "seed_transpiler": config.seed, "optimization_level": 1,
-                    "seed_simulator": config.seed + 200_000,
+                    "seed_simulator": seed, "calibration_state": calibration_state,
                     "noise_scope": "Aer: despolarização em sx/x/cx e erro de leitura independente"}

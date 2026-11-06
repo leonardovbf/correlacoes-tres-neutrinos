@@ -17,6 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 qiskit = ["qiskit>=2.5,<3", "qiskit-aer>=0.17,<1", "qiskit-ibm-runtime>=0.50,<0.52"]
+research = ["matplotlib>=3.10,<4", "qiskit>=2.5,<3", "qiskit-aer>=0.17,<1", "qiskit-ibm-runtime>=0.50,<0.52", "psutil>=7,<8"]
 legacy = ["matplotlib>=3.8,<4", "streamlit>=1.58,<2"]
 test = ["httpx>=0.27,<1"]
 

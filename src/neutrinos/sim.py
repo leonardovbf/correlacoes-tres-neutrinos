@@ -248,15 +248,27 @@ def _rhs(config: ExperimentConfig, spins: FloatArray) -> FloatArray:
 def _evolve_spins(config: ExperimentConfig, spins: FloatArray, substeps: int) -> FloatArray:
     if not 1 <= substeps <= 30:
         raise ValueError("substeps deve estar entre 1 e 30")
+    # Parâmetros constantes não precisam ser reconstruídos em cada chamada RK4.
+    # Para g_ij=1 (i!=j), sum_j g_ij P_j = sum_j P_j - P_i.
+    # A igualdade é exata: perturbações na matriz mantêm a avaliação geral.
+    g = config.g_matrix
+    uniform = np.array_equal(g, np.ones((config.n, config.n)) - np.eye(config.n))
+    vacuum = config.omega[None, :, None] * config.b_field[None, None, :]
+    coupling = config.mu / (2 * config.n)
+
+    def rhs(values):
+        others = values.sum(axis=1, keepdims=True) - values if uniform else g @ values
+        return np.cross(vacuum + coupling * others, values)
+
     result = np.empty((config.points, len(spins), config.n, 3), dtype=np.float64)
     result[0] = spins
     dt = (config.times[1] - config.times[0]) / substeps
     for t in range(1, config.points):
         for _ in range(substeps):
-            k1 = _rhs(config, spins)
-            k2 = _rhs(config, spins + dt * k1 / 2)
-            k3 = _rhs(config, spins + dt * k2 / 2)
-            k4 = _rhs(config, spins + dt * k3)
+            k1 = rhs(spins)
+            k2 = rhs(spins + dt * k1 / 2)
+            k3 = rhs(spins + dt * k2 / 2)
+            k4 = rhs(spins + dt * k3)
             spins = spins + dt * (k1 + 2 * k2 + 2 * k3 + k4) / 6
         result[t] = spins
     return result
@@ -268,10 +280,17 @@ def _from_trajectories(config: ExperimentConfig, z_values: FloatArray,
                        retain_samples: bool = False) -> MomentSeries:
     pairs, trios = config.pair_index, config.trio_index
     m1 = z_values.mean(axis=1)
-    m2 = (z_values[:, :, pairs[:, 0]] * z_values[:, :, pairs[:, 1]]).mean(axis=1)
-    m3 = ((z_values[:, :, trios[:, 0]] * z_values[:, :, trios[:, 1]]
-           * z_values[:, :, trios[:, 2]]).mean(axis=1) if len(trios)
-          else np.empty((config.points, 0)))
+    # Limita os temporários: N=16 contém 560 trios por trajetória.
+    def products(groups):
+        out = np.empty((config.points, len(groups)))
+        for start in range(0, len(groups), 16):
+            group = groups[start:start + 16]
+            product = z_values[:, :, group[:, 0]].copy()
+            for column in range(1, group.shape[1]):
+                product *= z_values[:, :, group[:, column]]
+            out[:, start:start + len(group)] = product.mean(axis=1)
+        return out
+    m2, m3 = products(pairs), products(trios)
     return MomentSeries(config.times, m1, m2, m3, pairs, trios, method, diagnostics,
                         bloch, z_values.copy() if retain_samples else None)
 
@@ -286,14 +305,14 @@ def mean_field(config: ExperimentConfig, substeps: int = 4) -> MomentSeries:
 
 
 def phase_space(config: ExperimentConfig, trajectories: int = 256,
-                substeps: int = 4) -> MomentSeries:
+                substeps: int = 4, *, batch_size: int = 256) -> MomentSeries:
     """Amostragem bi-valuada para estados produto de sabor, um neutrino/feixe.
 
     Lacroix et al., Phys. Rev. D 110, 103027 (2024), Sec. II.1.3: cada
     componente transversal inicial toma valores +/-1 independentemente.
     """
-    if not 16 <= trajectories <= 4096:
-        raise ValueError("trajectories deve estar entre 16 e 4096")
+    if not 16 <= trajectories <= 10000 or batch_size < 1:
+        raise ValueError("trajectories deve estar entre 16 e 10000; batch_size positivo")
     rng = np.random.default_rng(config.seed)
     spins = np.empty((trajectories, config.n, 3), dtype=np.float64)
     transverse = rng.choice(np.array([-1.0, 1.0]), size=(trajectories, config.n, 2))
@@ -303,12 +322,17 @@ def phase_space(config: ExperimentConfig, trajectories: int = 256,
         u /= np.linalg.norm(u)
         v = np.cross(direction, u)
         spins[:, i, :] = direction + transverse[:, i, 0, None] * u + transverse[:, i, 1, None] * v
-    evolved = _evolve_spins(config, spins, substeps)
-    return _from_trajectories(config, evolved[:, :, :, 2], "PSA bi-valuada",
+    z_values = np.empty((config.points, trajectories, config.n))
+    bloch = np.zeros((config.points, config.n, 3))
+    for start in range(0, trajectories, batch_size):
+        evolved = _evolve_spins(config, spins[start:start + batch_size].copy(), substeps)
+        z_values[:, start:start + len(evolved[0])] = evolved[:, :, :, 2]
+        bloch += evolved.sum(axis=1) / trajectories
+    return _from_trajectories(config, z_values, "PSA bi-valuada",
                               {"trajectories": trajectories, "seed": config.seed,
                                "substeps_per_interval": substeps,
                                "initial_spin_mean_error_max": float(np.max(np.abs(spins.mean(axis=0) - config.initial_bloch)))},
-                              evolved.mean(axis=1), retain_samples=True)
+                              bloch, retain_samples=True)
 
 
 def _single_qubit_gate(state: ComplexArray, n: int, i: int, omega: float,
@@ -354,8 +378,22 @@ def _symmetric_trotter_step(state: ComplexArray, config: ExperimentConfig, dt: f
         _single_qubit_gate(state, config.n, i, config.omega[i], config.b_field, dt / 2)
 
 
+def trotter_probabilities(config: ExperimentConfig, steps_per_interval: int):
+    state = initial_state(config)
+    probabilities = np.empty((config.points, 1 << config.n))
+    probabilities[0] = np.abs(state) ** 2
+    dt = (config.times[1] - config.times[0]) / steps_per_interval
+    max_norm_error = 0.0
+    for t in range(1, config.points):
+        for _ in range(steps_per_interval):
+            _symmetric_trotter_step(state, config, dt)
+        probabilities[t] = np.abs(state) ** 2
+        max_norm_error = max(max_norm_error, abs(float(probabilities[t].sum()) - 1.0))
+    return probabilities, max_norm_error
+
+
 def quantum_trotter(config: ExperimentConfig, steps_per_interval: int = 2,
-                    shots: int = 1024, readout_error: float = 0.0
+                    shots: int = 1024, readout_error: float = 0.0, *, probability_data=None
                     ) -> tuple[MomentSeries, MomentSeries]:
     """Simulador de estado do circuito e medições com ruído de leitura independente.
 
@@ -367,16 +405,9 @@ def quantum_trotter(config: ExperimentConfig, steps_per_interval: int = 2,
         raise ValueError("Passos ou número de medições fora dos limites")
     if not 0 <= readout_error <= 0.25:
         raise ValueError("readout_error deve estar em [0, 0.25]")
-    state = initial_state(config)
-    probabilities = np.empty((config.points, 1 << config.n))
-    probabilities[0] = np.abs(state) ** 2
-    dt = (config.times[1] - config.times[0]) / steps_per_interval
-    max_norm_error = 0.0
-    for t in range(1, config.points):
-        for _ in range(steps_per_interval):
-            _symmetric_trotter_step(state, config, dt)
-        probabilities[t] = np.abs(state) ** 2
-        max_norm_error = max(max_norm_error, abs(float(probabilities[t].sum()) - 1.0))
+    if probability_data is None:
+        probability_data = trotter_probabilities(config, steps_per_interval)
+    probabilities, max_norm_error = probability_data
     ideal = _moments_from_probabilities(config, probabilities, "Circuito ideal",
                                         {"trotter_order": 2, "steps_per_interval": steps_per_interval,
                                          "total_steps": (config.points - 1) * steps_per_interval,
