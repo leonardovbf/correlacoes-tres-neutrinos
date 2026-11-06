@@ -2,7 +2,7 @@
 
 Estudo sobre os regimes de validade da aproximação de espaço de fase (PSA) em um modelo de oscilações coletivas de dois sabores, com energias distintas e interações entre todos os pares. A comparação usa evolução exata, campo médio, PSA e circuitos quânticos, com atenção aos cumulantes conectados de três corpos.
 
-Esta branch contém a revisão do desenho da pesquisa da Sprint 1. O texto apresenta o protocolo proposto e a organização futura dos resultados; não relata experimentos já executados. A revisão considera o parecer completo dos professores e os comentários do [PR #5](https://github.com/leonardovbf/correlacoes-tres-neutrinos/pull/5).
+Esta branch contém a revisão do desenho da pesquisa da Sprint 1. O texto apresenta o protocolo proposto e a organização futura dos resultados; não relata experimentos já executados. Os resumos foram condensados a partir da redação da entrega, mantendo sua sequência de argumentação. Os dois PDFs revisados têm dez páginas, com resumo e abstract de dez linhas cada. A revisão considera o parecer completo dos professores e os comentários do [PR #5](https://github.com/leonardovbf/correlacoes-tres-neutrinos/pull/5).
 
 ## Artigo e pareceres
 

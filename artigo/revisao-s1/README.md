@@ -1,6 +1,6 @@
 # Revisão da Sprint 1
 
-Esta revisão foi reconstruída a partir do texto entregue, preservado no commit `39279cf`, e reavaliou as mudanças iniciais do PR #5 (`e4cf765`). As fontes de revisão foram o parecer completo de oito páginas fornecido pelos autores e os comentários de Giovanna no PR. A linguagem e os argumentos da entrega foram preservados sempre que a correção não exigia mudança. As figuras originais foram mantidas.
+Esta revisão usa como referência o texto entregue, preservado no commit `39279cf`. A versão atual também revê a condensação excessivamente livre do resumo e do abstract no commit `10ce404`, em atendimento aos comentários do PR #5 e à solicitação dos autores de manter dez páginas. As fontes de revisão foram o parecer completo de oito páginas fornecido pelos autores e os comentários de Giovanna no PR. Foram mantidos os argumentos da revisão bibliográfica, as definições dos cumulantes, as três figuras e suas legendas. Os ajustes estruturais e metodológicos estão relacionados aos apontamentos abaixo; os resumos foram condensados a partir da redação original, conforme detalhado na seção seguinte.
 
 ## Correspondência com os pareceres
 
@@ -14,7 +14,7 @@ Esta revisão foi reconstruída a partir do texto entregue, preservado no commit
 | Pergunta binária | Pergunta formulada em regimes de interação, tamanho e tempo, incluindo condições de ruído e medições. |
 | H1 sem justificativa da tendência | Mantida a tendência com a interação, motivada pelo acoplamento da hierarquia; explicitado seu caráter de conjectura e a dependência do estado e da janela temporal. |
 | H2 dependente de escolhas arbitrárias de ruído e shots | Comparação do limiar de ruído com e sem mitigação sob o mesmo orçamento total; reporte também do menor orçamento avaliado e dos limites da varredura. |
-| Resumo e abstract reestruturados excessivamente no primeiro PR | Retomada a sequência contexto, problema, objetivo, métodos e contribuição; condensação para o limite de dez linhas. “Este trabalho”/“This work”; detalhe operacional de hardware fora dos resumos. |
+| Resumo e abstract reestruturados excessivamente | Retomada a abertura sobre sabor, supernovas e elementos pesados, seguida do custo, da lacuna, do objetivo, dos métodos e da contribuição. Condensação de frases da entrega para dez linhas; “Este trabalho”/“This work” e retirada do detalhe operacional da IBM. |
 | Qubits no contexto astrofísico | Mapeamento dos sabores transferido para o modelo na Seção 2.1. |
 | Citação do press release do Nobel | Removida; a revisão de Duan, Fuller e Qian fundamenta a explicação das oscilações. |
 | Citações separadas e palavras coladas no PDF | Citações agrupadas; bibliografia composta via BibTeX; idiomas de hifenização definidos separadamente para resumo e abstract. |
@@ -28,6 +28,21 @@ Esta revisão foi reconstruída a partir do texto entregue, preservado no commit
 | E-mails no cabeçalho | Configuração preparada em `emails.json`; campos vazios por decisão do autor, que os preencherá depois. |
 
 Comentários específicos do PR: [resumo](https://github.com/leonardovbf/correlacoes-tres-neutrinos/pull/5#discussion_r4492943385), [abstract](https://github.com/leonardovbf/correlacoes-tres-neutrinos/pull/5#discussion_r4492960999) e [pedido de reavaliação integral](https://github.com/leonardovbf/correlacoes-tres-neutrinos/pull/5#pullrequestreview-5800763982).
+
+## Preservação do resumo e do abstract
+
+A condensação mantém a ordem dos blocos da entrega, com o abstract correspondente ao resumo:
+
+| Bloco da entrega | Edição realizada |
+| --- | --- |
+| Sabor dos neutrinos, explosão e produção de elementos pesados | Preservada a abertura e sua ressalva “pode influenciar”; encurtados os complementos da frase. |
+| Custo da evolução quântica em sistemas grandes | Mantida a necessidade de aproximações; a explicação do crescimento exponencial permanece na Introdução. |
+| Precisão da PSA para correlações de três corpos | Mantida a lacuna; condensada a frase sobre a alternativa de menor custo. |
+| Objetivo, modelo e métodos | Mantidos o modelo de dois sabores e as referências exata e de campo médio. Tamanhos, energias, acoplamentos e ferramentas estão no corpo do artigo. |
+| Circuitos e erros | Mantidas condições ideais e com ruído, probabilidades de sabor e cumulantes de dois e três corpos. Retirado o detalhe de disponibilidade da IBM; controles numéricos e de amostragem ficam na Seção 2. |
+| Contribuição esperada | Recuperada a formulação da entrega sobre delimitar o domínio de validade da aproximação e a precisão necessária para que circuitos distingam suas previsões dos resultados exatos. |
+
+Os cortes vão além da frase sobre a IBM porque sua retirada isolada não atende ao limite de dez linhas. Não foram introduzidas hipóteses ou promessas novas nos resumos. No corpo, foi recuperada a formulação original de H1 e foram explicitadas novamente as ferramentas Python e Qiskit, mantendo a justificativa e os critérios exigidos no parecer.
 
 ## Decisões para a próxima etapa
 
@@ -45,4 +60,4 @@ O limite de dez linhas segue a orientação do parecer e as [instruções do tem
 
 Referências consultadas para a revisão: [Riccio e Balantekin](https://arxiv.org/abs/2607.28619), [Sarmah et al.](https://arxiv.org/abs/2606.06580) e [Lacroix et al.](https://arxiv.org/html/2409.20215v2).
 
-Verificação em 6/11/2026: ambos os PDFs têm dez páginas. Resumo e abstract ocupam dez linhas cada na primeira página, em ambas as versões. As vinte páginas foram renderizadas e inspecionadas; os logs finais não contêm citações indefinidas, glifos ausentes ou avisos de caixas excedendo as margens. Os PDFs contêm as três figuras e as 17 referências citadas. Os e-mails vazios não aparecem no cabeçalho.
+Verificação da versão atual em 6/11/2026: ambos os PDFs têm exatamente dez páginas, conforme solicitado. Foram mantidos fonte, margens e tamanhos das figuras; o ajuste foi feito na redação e nas repetições. Resumo e abstract ocupam dez linhas cada na primeira página, em ambas as versões. As vinte páginas foram renderizadas e inspecionadas; os logs finais não contêm citações indefinidas, glifos ausentes ou avisos de caixas excedendo as margens. Os PDFs contêm as três figuras e as 17 referências citadas. Os e-mails vazios não aparecem no cabeçalho.
