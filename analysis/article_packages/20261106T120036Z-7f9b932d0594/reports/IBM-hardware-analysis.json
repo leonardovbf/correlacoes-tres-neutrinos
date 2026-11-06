@@ -1,0 +1,50 @@
+{
+  "status": "analyzed",
+  "pending_jobs": [],
+  "complete_blocks": 20,
+  "expected_blocks": 20,
+  "source_protocol": "/Users/giovanna-britto/Documents/INTELI/correlacoes-tres-neutrinos/results/protocols/20261106T025918Z-40ae97137b5c/run.json",
+  "utc": "2026-11-06T11:48:21.451950+00:00",
+  "scientific_status": "provisional_pending_T07_and_local_validation",
+  "analysis": {
+    "status": "analyzed",
+    "exact": -0.3157835311728624,
+    "psa": -0.15194715136784814,
+    "bounded_numerical_residual": 0.0007255120771527579,
+    "margin": 0.01,
+    "bootstrap_repetitions": 2000,
+    "bootstrap_seed": 72001,
+    "bootstrap_unit": "blocos PSA e contagens completas agregadas; calibração reestimada em cada réplica",
+    "methods": {
+      "raw": {
+        "estimate": 0.005847316142544517,
+        "difference_psa_ci95": [
+          0.15099441498823957,
+          0.16467374528153658
+        ],
+        "difference_exact_ci95_with_residual": [
+          0.31770179454309816,
+          0.3257333317998912
+        ],
+        "bootstrap_bias_estimate": 7.088052801301759e-05,
+        "bias_correction_applied": false,
+        "resolves": false
+      },
+      "mitigated": {
+        "estimate": 0.0063757096290188746,
+        "difference_psa_ci95": [
+          0.15118167295596555,
+          0.16533570519192448
+        ],
+        "difference_exact_ci95_with_residual": [
+          0.31748561771137845,
+          0.32700652210045267
+        ],
+        "bootstrap_bias_estimate": 1.6516639710861813e-05,
+        "bias_correction_applied": false,
+        "resolves": false
+      }
+    },
+    "h2_decision": "inconclusivo"
+  }
+}

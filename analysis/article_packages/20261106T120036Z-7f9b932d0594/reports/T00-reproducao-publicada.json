@@ -1,0 +1,75 @@
+{
+  "phase": "T00-reproducao-publicada",
+  "profile": "official-v1-r2",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "lacroix_n8: Norma da referência exata",
+      "value": 2.4424906541753444e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "lacroix_n8: Comprimento dos spins · campo médio",
+      "value": 1.5314083334772022e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "lacroix_n8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.04,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): exact ν0",
+      "value": 0.001407545811450861,
+      "limit": 0.02,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): exact ν1",
+      "value": 0.00015505352384230509,
+      "limit": 0.02,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): exact ν2",
+      "value": 0.0001585042027511252,
+      "limit": 0.02,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): exact ν3",
+      "value": 0.00010613425681493815,
+      "limit": 0.02,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): psa ν0",
+      "value": 0.02991996033835179,
+      "limit": 0.06,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): psa ν1",
+      "value": 0.028636864610729396,
+      "limit": 0.06,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): psa ν2",
+      "value": 0.022637018591300753,
+      "limit": 0.06,
+      "pass": true
+    },
+    {
+      "name": "Figura 2(c): psa ν3",
+      "value": 0.02037521572799922,
+      "limit": 0.06,
+      "pass": true
+    }
+  ],
+  "cases": [],
+  "hypothesis_results_are_not_acceptance_gates": true
+}

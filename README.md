@@ -166,3 +166,17 @@ extensão IBM está em [EXECUTAR_EXPERIMENTOS.md](EXECUTAR_EXPERIMENTOS.md).
 ```
 
 O smoke valida o software e mantém seus resultados separados da coleta oficial.
+
+## Resultados do artigo
+
+O [pacote de resultados para escrita e avaliação](analysis/article_packages/20261106T120036Z-7f9b932d0594/README.md)
+reúne tabelas, figuras selecionadas, relatórios completos e hashes das fontes
+da coleta local final e dos 80 jobs IBM. O pacote está versionado no repositório;
+o arquivo integral `results/` permanece separado por conter todas as tentativas,
+contagens e matrizes necessárias para reproduzir cada execução.
+
+Para gerar outro pacote a partir de registros concluídos:
+
+```sh
+.venv/bin/python analysis/prepare_article_package.py results/studies/ID/study.json results/protocols/ID/hardware_analysis.json --output analysis/article_packages/NOVO-ID
+```

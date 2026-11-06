@@ -1,0 +1,9 @@
+name,max_abs,limit,passed
+Figura 2(c): exact ν0,0.001407545811450861,0.02,True
+Figura 2(c): exact ν1,0.00015505352384230509,0.02,True
+Figura 2(c): exact ν2,0.0001585042027511252,0.02,True
+Figura 2(c): exact ν3,0.00010613425681493815,0.02,True
+Figura 2(c): psa ν0,0.02991996033835179,0.06,True
+Figura 2(c): psa ν1,0.028636864610729396,0.06,True
+Figura 2(c): psa ν2,0.022637018591300753,0.06,True
+Figura 2(c): psa ν3,0.02037521572799922,0.06,True

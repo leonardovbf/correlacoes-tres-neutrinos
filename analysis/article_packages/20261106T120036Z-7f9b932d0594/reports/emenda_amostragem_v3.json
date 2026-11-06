@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "id": "amostragem-precisao-v3",
+  "timing": "Definida após falhas iniciais de precisão e antes da coleta suplementar; não é pré-registro original.",
+  "reason": "A análise específica da T02 foi omitida por erro de encaminhamento. A revalidação identificou precisão insuficiente em três das seis células.",
+  "superseded_condition": {
+    "phase": "T02-amostragem",
+    "trajectories_per_block": 4096,
+    "seed_blocks": 5,
+    "preservation": "Resultados e reprovações ficam arquivados; a condição original não será rotulada como aprovada."
+  },
+  "new_condition": {
+    "phase": "T02-amostragem-suplementar",
+    "protocol": "configs/protocols/artigo_v1/02_suplemento_amostragem_v3.json",
+    "cells": [
+      {
+        "n": 4,
+        "mu": 0.1
+      },
+      {
+        "n": 4,
+        "mu": 1.0
+      },
+      {
+        "n": 4,
+        "mu": 10.0
+      },
+      {
+        "n": 8,
+        "mu": 0.1
+      },
+      {
+        "n": 8,
+        "mu": 1.0
+      },
+      {
+        "n": 8,
+        "mu": 10.0
+      }
+    ],
+    "seed_blocks": 20,
+    "seeds": [
+      70001,
+      70002,
+      70003,
+      70004,
+      70005,
+      70006,
+      70007,
+      70008,
+      70009,
+      70010,
+      70011,
+      70012,
+      70013,
+      70014,
+      70015,
+      70016,
+      70017,
+      70018,
+      70019,
+      70020
+    ],
+    "trajectories_per_block": 4096,
+    "trajectories_per_cell": 81920,
+    "total_classical_executions": 120,
+    "substeps": 12
+  },
+  "precision_metric": "Maior erro-padrão entre sementes de Kzzz em todos os tempos e trios: std(K3_blocos, ddof=1)/sqrt(20).",
+  "precision_limit": 0.01,
+  "acceptance": "Todas as seis células devem cumprir 0.01. Nenhuma exclusão de semente/célula e nenhum aumento automático após observar o novo resultado.",
+  "unchanged": [
+    "Hamiltoniano e estados iniciais",
+    "malha temporal 201 pontos em tau 0..10",
+    "4096 trajetórias por bloco",
+    "12 subpassos RK4",
+    "hipóteses H1/H2 e ponto principal H2",
+    "limites de integração, Trotter, equivalência e normalização"
+  ],
+  "reuse": "Dados já coletados em T03 são preservados e reanalisados após o novo controle. Registra-se que foram coletados antes da detecção da falha.",
+  "stop_policy": "Não continuar T05/T06/T07 nem IBM se a validação suplementar falhar."
+}

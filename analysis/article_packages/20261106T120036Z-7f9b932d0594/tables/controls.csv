@@ -1,0 +1,12 @@
+phase,execution_status,analysis_status,checks,failed_checks,scientific_hypothesis_not_an_acceptance_gate
+T00-reproducao-publicada,completed,passed,11,0,True
+T01-controles,completed,passed,18,0,True
+T02-integracao,completed,passed,540,0,True
+T02-amostragem-suplementar,completed,passed,366,0,True
+T04-trotter,completed,passed,60,0,True
+T04-qiskit,completed,passed,90,0,True
+T03-classica-principal,completed,passed,900,0,True
+T03-classica-extensao,completed,passed,600,0,True
+T05-medicoes,completed,passed,900,0,True
+T06-ruido,completed,passed,961,0,True
+T07-mitigacao,completed,passed,900,0,True
