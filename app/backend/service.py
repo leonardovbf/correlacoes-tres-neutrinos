@@ -22,10 +22,11 @@ from neutrinos import (ExperimentConfig, bootstrap_counts_interval,
                        observable_from_counts, phase_space, quantum_trotter,
                        summarize_errors)
 from neutrinos.sim import MomentSeries, _symmetric_trotter_step, initial_state
+from neutrinos.qiskit_backend import aer_step_limit
 
-from . import ibm_runtime
+from . import ibm_runtime, cache
 from .audit import recorded
-from .schemas import AerRequest, ClassicalRequest, CircuitRequest, HardwareRequest, IntervalRequest, QuantumRequest
+from .schemas import MitigationRequest, AerRequest, ClassicalRequest, CircuitRequest, HardwareRequest, IntervalRequest, QuantumRequest
 from .storage import ROOT, RunStore
 
 
@@ -133,10 +134,13 @@ def create_experiment(request: ClassicalRequest, progress: Progress | None = Non
     emit("config", "done", f"Modelo preparado: {config.n} neutrinos, dimensão {1 << config.n}", "ExperimentConfig",
          model=config.record(), trajectories=request.trajectories, substeps=request.substeps)
     emit("exact", "running", "Construindo H e evoluindo o estado completo", "classical_exact")
-    exact = classical_exact(config)
+    exact, hit = cache.series(store.root, "exact", config, {}, lambda: classical_exact(config))
+    emit("cache", "done", "Referência exata: " + ("reutilizada" if hit else "calculada"), "cache")
     emit("exact", "done", f"Referência exata calculada em {config.points} tempos", "classical_exact")
     emit("mean", "running", "Integrando vetores de Bloch com RK4", "mean_field")
-    mean = mean_field(config, request.substeps)
+    mean, hit = cache.series(store.root, "mean", config, {"substeps": request.substeps},
+                             lambda: mean_field(config, request.substeps))
+    emit("cache", "done", "Campo médio: " + ("reutilizado" if hit else "calculado"), "cache")
     emit("mean", "done", "Trajetória de campo médio calculada", "mean_field")
     emit("psa", "running", f"Amostrando {request.trajectories} condições iniciais e trajetórias", "phase_space")
     psa = phase_space(config, request.trajectories, request.substeps)
@@ -178,7 +182,14 @@ def run_quantum(run_id: str, request: QuantumRequest, progress: Progress | None 
         config = _config(manifest)
         trace, emit = _trace(progress, summary.get("trace"))
         emit("quantum", "running", f"Aplicando Trotter simétrico: {request.steps} passos por intervalo", "quantum_trotter")
-        ideal, measured = quantum_trotter(config, request.steps, request.shots, request.readout_error)
+        from neutrinos.sim import trotter_probabilities
+        def compute_probabilities():
+            probabilities, norm_error = trotter_probabilities(config, request.steps)
+            return {"probabilities": probabilities, "max_norm_error": np.array(norm_error)}
+        data, hit = cache.arrays(store.root, "trotter", config, {"steps": request.steps}, compute_probabilities)
+        emit("cache", "done", "Probabilidades ideais: " + ("reutilizadas" if hit else "calculadas"), "cache")
+        ideal, measured = quantum_trotter(config, request.steps, request.shots, request.readout_error,
+            probability_data=(data["probabilities"], float(data["max_norm_error"])))
         emit("quantum", "done", f"Circuito ideal e {request.shots} medições por tempo calculados", "quantum_trotter")
         emit("compare", "running", "Comparando circuito com a referência exata", "summarize_errors")
         exact = _series_from_arrays(config, arrays, "exact")
@@ -204,10 +215,16 @@ def submit_hardware(run_id: str, request: HardwareRequest, progress: Progress | 
     config = _config(manifest)
     if config.n > 8 or request.interval_index >= config.points:
         raise ValueError("Instante ou número de qubits fora do cenário")
-    if request.interval_index * request.steps > 16:
-        raise ValueError("Hardware limitado a 16 subpassos Trotter por execução")
+    if request.interval_index * request.steps > 120:
+        raise ValueError("Hardware limitado a 120 subpassos Trotter por execução")
     if summary.get("quantum") is None or summary["quantum"]["options"]["steps"] != request.steps:
         raise ValueError("Execute primeiro o circuito local com o mesmo número de passos")
+    if request.calibration_reference:
+        signal = next((item for item in reversed(summary.get("hardware_runs", []))
+                       if item.get("role") == "signal" and item["backend"] == request.backend), None)
+        if signal is None or not request.role.startswith("calibration"):
+            raise ValueError("Calibração requer sinal anterior no mesmo backend")
+        request = request.model_copy(update={"initial_layout": signal["transpilation"]["physical_qubits"]})
     groups = {"pe": [(i,) for i in range(config.n)],
               "c2": [tuple(map(int, pair)) for pair in config.pair_index],
               "c3": [tuple(map(int, trio)) for trio in config.trio_index]}
@@ -345,11 +362,15 @@ def verify_circuit(run_id: str, request: CircuitRequest, progress: Progress | No
     config = _config(manifest)
     if config.n > 8:
         raise ValueError("Circuito interativo limitado a 8 neutrinos")
-    result = _qiskit_worker(config, "first_interval", request.steps)
+    if request.interval_index >= config.points:
+        raise ValueError("Instante fora da grade")
+    result = _qiskit_worker(config, "first_interval", request.steps, interval_index=request.interval_index)
     state = initial_state(config)
     dt = float(config.times[1] - config.times[0]) / request.steps
-    for _ in range(request.steps):
+    for _ in range(request.steps * request.interval_index):
         _symmetric_trotter_step(state, config, dt)
+    result["interval_index"] = request.interval_index
+    result["total_steps"] = request.steps * request.interval_index
     result["max_probability_difference"] = float(np.max(
         np.abs(np.asarray(result.pop("probabilities")) - np.abs(state) ** 2)))
     emit("qiskit", "done", "Probabilidades Qiskit comparadas ao emulador", "first_interval_probabilities")
@@ -364,8 +385,9 @@ def run_aer(run_id: str, request: AerRequest, progress: Progress | None = None) 
         config = _config(manifest)
         if config.n > 8:
             raise ValueError("Aer interativo limitado a 8 neutrinos")
-        if request.interval_index >= config.points or request.interval_index * request.steps > 120:
-            raise ValueError("Instante ou profundidade fora do limite de 120 passos")
+        limit = aer_step_limit(config.n)
+        if request.interval_index >= config.points or request.interval_index * request.steps > limit:
+            raise ValueError(f"Instante ou profundidade fora do limite Aer de {limit} passos")
         group = {"pe": config.n, "c2": len(config.pair_index), "c3": len(config.trio_index)}
         if request.index >= group[request.kind]:
             raise ValueError("Índice de observável fora do cenário")
@@ -444,3 +466,39 @@ def run_convergence(run_id: str, progress: Progress | None = None) -> dict:
 
 def example_scenario() -> dict:
     return json.loads((ROOT / "configs" / "cenario_exemplo.json").read_text(encoding="utf-8"))
+
+
+@recorded("mitigation", lambda: store)
+def run_mitigation(run_id: str, request: MitigationRequest, progress: Progress | None = None) -> dict:
+    from neutrinos.mitigation import correct, observable
+    _, emit = _trace(progress)
+    manifest, summary, arrays = store.load(run_id)
+    config = _config(manifest)
+    groups = {"pe": [(i,) for i in range(config.n)], "c2": config.pair_index, "c3": config.trio_index}
+    if request.index >= len(groups[request.kind]):
+        raise ValueError("Índice de observável fora do cenário")
+    indices = tuple(map(int, groups[request.kind][request.index]))
+    emit("calibration", "running", "Executando sinal e calibração com orçamento igual por método", "simulate_gate_noise")
+    worker = _qiskit_worker(config, "mitigation", request.steps,
+        **{k: v for k,v in request.model_dump().items() if k in (
+            "interval_index", "shots", "single_qubit_error", "two_qubit_error", "readout_error")})
+    counts = {k: np.asarray(v, dtype=np.int64) for k,v in worker["counts"].items()}
+    corrected, condition = correct(counts["signal"], counts["zero"], counts["one"], request.condition_max)
+    result = {"kind": request.kind, "indices": indices, "interval_index": request.interval_index,
+        "raw": observable(counts["raw"]/counts["raw"].sum(), request.kind, indices),
+        "mitigated": None if corrected is None else observable(corrected, request.kind, indices),
+        "condition_number": condition if np.isfinite(condition) else None,
+        "status": "unresolved_calibration" if corrected is None else "estimated",
+        "metadata": worker["metadata"], "budget_per_method": request.shots,
+        "uncertainty": "Intervalos conjuntos calculados pela análise do estudo; estimativa isolada não é decisão H2."}
+    emit("calibration", "done", result["status"], "response_matrix")
+    with store.lock:
+        manifest, summary, arrays = store.load(run_id)
+        key = f"mitigation_{len(manifest.get('mitigation_runs', []))+1:04d}"
+        result["counts_keys"] = {label: f"{key}_{label}" for label in counts}
+        for label, value in counts.items():
+            arrays[result["counts_keys"][label]] = value
+        manifest.setdefault("mitigation_runs", []).append({**request.model_dump(), **result})
+        summary["mitigation"] = result
+        store.update(run_id, manifest, summary, arrays)
+    return result

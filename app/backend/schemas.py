@@ -13,8 +13,8 @@ class StrictModel(BaseModel):
 
 class ClassicalRequest(StrictModel):
     config: dict[str, Any]
-    trajectories: int = Field(default=256, ge=16, le=4096)
-    substeps: int = Field(default=4, ge=1, le=12)
+    trajectories: int = Field(default=256, ge=16, le=10000)
+    substeps: int = Field(default=4, ge=1, le=30)
 
 
 class QuantumRequest(StrictModel):
@@ -30,6 +30,11 @@ class HardwareRequest(StrictModel):
     shots: int = Field(default=1024, ge=32, le=20000)
     kind: Literal["pe", "c2", "c3"] = "pe"
     index: int = Field(default=0, ge=0)
+    role: Literal["signal", "raw", "calibration_zero", "calibration_one"] = "signal"
+    initial_layout: list[int] | None = None
+    calibration_reference: bool = False
+    max_depth: int = Field(default=20000, ge=1, le=100000)
+    transpiler_seed: int | None = Field(default=None, ge=0, le=4294967295)
 
 
 class AerRequest(StrictModel):
@@ -45,6 +50,12 @@ class AerRequest(StrictModel):
 
 class CircuitRequest(StrictModel):
     steps: int = Field(default=2, ge=1, le=16)
+    interval_index: int = Field(default=1, ge=1)
+
+
+class MitigationRequest(AerRequest):
+    shots: int = Field(default=16384, ge=256, le=20000, multiple_of=8)
+    condition_max: float = Field(default=10., ge=1., le=100.)
 
 
 class IntervalRequest(StrictModel):

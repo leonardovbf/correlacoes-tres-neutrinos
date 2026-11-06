@@ -111,7 +111,12 @@ def protocol_step(protocol_run_id: str, step_id: str, on_started):
 def environment() -> dict:
     sources = [ROOT / "pyproject.toml", ROOT / "requirements-research.lock",
                ROOT / "configs" / "estudos" / "artigo_v1.json", ROOT / "PROTOCOLO_EXPERIMENTOS.md",
-               *sorted((ROOT / "scripts").glob("*.py")), ROOT / "app" / "__init__.py",
+               *sorted((ROOT / "scripts").glob("*.py")),
+               *sorted((ROOT / "data" / "benchmarks").rglob("*.csv")),
+               *sorted((ROOT / "data" / "benchmarks").rglob("*.md")),
+               *sorted((ROOT / "data" / "benchmarks").rglob("*.json")),
+               *sorted((ROOT / "configs" / "protocols" / "artigo_v1").rglob("*.json")),
+               ROOT / "app" / "__init__.py",
                *sorted((ROOT / "app" / "backend").glob("*.py")),
                *sorted((ROOT / "src" / "neutrinos").glob("*.py"))]
     hashes = {str(path.relative_to(ROOT)): file_hash(path) for path in sources if path.is_file()}
@@ -265,6 +270,7 @@ def recorded(action: str, store_provider):
             snapshot = environment()
             snapshot_path = archive_environment(store.root, snapshot)
             started = time.perf_counter()
+            cpu_started = time.process_time()
             run_id = inputs.get("run_id")
             before = _revision(store, run_id)
             manifest = store.load_metadata(run_id)[0] if before else None
@@ -333,6 +339,16 @@ def recorded(action: str, store_provider):
             finally:
                 record["finished_utc"] = utc_now()
                 record["duration_ms"] = round((time.perf_counter() - started) * 1000)
+                record["resources"] = {"process_cpu_ms": round((time.process_time() - cpu_started) * 1000)}
+                try:
+                    import resource
+                    scale = 1 if platform.system() == "Darwin" else 1024
+                    record["resources"].update(
+                        process_lifetime_peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * scale),
+                        child_lifetime_peak_rss_bytes=int(resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss * scale),
+                        scope="Picos cumulativos do processo/filhos; não são picos isolados desta etapa")
+                except ImportError:
+                    pass
                 atomic_json(directory / "execution.json", record)
                 _last_execution.set(execution_id)
                 if run_id and (store.root / run_id).is_dir():

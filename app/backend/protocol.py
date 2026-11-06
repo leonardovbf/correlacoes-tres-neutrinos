@@ -14,18 +14,18 @@ import numpy as np
 from pydantic import Field, model_validator
 
 from . import audit, service
-from .schemas import (AerRequest, CircuitRequest, ClassicalRequest, IntervalRequest,
+from .schemas import (MitigationRequest, AerRequest, CircuitRequest, ClassicalRequest, IntervalRequest,
                       HardwareRequest, QuantumRequest, StrictModel)
 
 
-REQUESTS = {"classical": ClassicalRequest, "quantum": QuantumRequest,
+REQUESTS = {"mitigation": MitigationRequest, "classical": ClassicalRequest, "quantum": QuantumRequest,
             "circuit": CircuitRequest, "aer": AerRequest,
             "interval": IntervalRequest, "hardware": HardwareRequest}
 
 
 class ProtocolStep(StrictModel):
     id: str = Field(pattern=r"^[a-zA-Z0-9_-]{1,80}$")
-    action: Literal["classical", "quantum", "circuit", "aer", "interval",
+    action: Literal["classical", "quantum", "circuit", "aer", "mitigation", "interval",
                     "convergence", "hardware", "hardware_refresh"]
     run_from: str | None = None
     run_id: str | None = None
@@ -96,7 +96,7 @@ def _perform(step: ProtocolStep, run_id: str | None) -> dict:
         return service.run_convergence(run_id)
     if step.action == "hardware_refresh":
         return service.refresh_hardware(run_id, step.job_id)
-    function = {"quantum": service.run_quantum, "circuit": service.verify_circuit,
+    function = {"mitigation": service.run_mitigation, "quantum": service.run_quantum, "circuit": service.verify_circuit,
                 "aer": service.run_aer, "interval": service.get_interval,
                 "hardware": service.submit_hardware}[step.action]
     return function(run_id, REQUESTS[step.action](**step.request))
@@ -104,7 +104,7 @@ def _perform(step: ProtocolStep, run_id: str | None) -> dict:
 
 def run_protocol(spec: ProtocolSpec, *, resume: Path | None = None,
                  allow_hardware: bool = False, allow_environment_drift: bool = False,
-                 progress=None) -> dict:
+                 progress=None, on_record=None, step_validator=None) -> dict:
     root = service.store.root
     normalized = spec.model_dump(mode="json")
     digest = hashlib.sha256(json.dumps(normalized, sort_keys=True).encode()).hexdigest()
@@ -137,6 +137,8 @@ def run_protocol(spec: ProtocolSpec, *, resume: Path | None = None,
         audit.atomic_json(path.parent / "protocol.json", normalized)
     record.update(status="running", process_id=os.getpid(), error=None, finished_utc=None)
     audit.atomic_json(path, record)
+    if on_record:
+        on_record(path)
     runs = {}
     current = None
     previous_execution = None
@@ -175,6 +177,8 @@ def run_protocol(spec: ProtocolSpec, *, resume: Path | None = None,
 
             with audit.protocol_step(record["protocol_run_id"], step.id, on_started):
                 result = _perform(step, run_id)
+            if step_validator:
+                step_validator(root, step, result)
             execution_id = audit.last_execution_id()
             run_id = result.get("run_id", run_id)
             state.update(status="completed", execution_id=execution_id, run_id=run_id,
@@ -221,14 +225,26 @@ def _compare_execution(old_root: Path, old: dict, new_root: Path, new: dict,
         return {"checked": False, "reason": "Medição remota ou tentativa original sem resultado completo"}
     prefixes = {"classical": ("exact_", "mean_", "psa_"), "quantum": ("ideal_", "measured_")}
     checks = []
-    if old["action"] in {*prefixes, "aer"}:
+    if old["action"] in {*prefixes, "aer", "mitigation"}:
         def arrays_path(root, record):
             artifact = next(item for item in record["artifacts"] if item["path"].endswith("/moments.npz"))
             return _artifact_path(root, artifact["path"])
         with np.load(arrays_path(old_root, old), allow_pickle=False) as a, np.load(arrays_path(new_root, new), allow_pickle=False) as b:
-            keys = [key for key in a.files if key.startswith(prefixes[old["action"]])] if old["action"] in prefixes else ["aer_counts"]
-            for key in keys:
-                left, right = a[key], b[key]
+            if old["action"] == "mitigation":
+                previous = json.loads(_artifact_path(old_root, old["result"]["path"]).read_text())
+                repeated = json.loads(_artifact_path(new_root, new["result"]["path"]).read_text())
+                keys = [(previous["counts_keys"][label], repeated["counts_keys"][label])
+                        for label in ("raw", "signal", "zero", "one")]
+                previous.pop("counts_keys")
+                repeated.pop("counts_keys")
+                checks.append({"artifact": "mitigation_estimate_and_metadata",
+                               "pass": _compare_json(previous, repeated, atol, rtol)})
+            else:
+                names = ([key for key in a.files if key.startswith(prefixes[old["action"]])]
+                         if old["action"] in prefixes else ["aer_counts"])
+                keys = [(key, key) for key in names]
+            for key, repeated_key in keys:
+                left, right = a[key], b[repeated_key]
                 equal = left.shape == right.shape and (
                     np.array_equal(left, right) if left.dtype.kind in "biu" else np.allclose(left, right, atol=atol, rtol=rtol))
                 checks.append({"artifact": key, "pass": bool(equal),
