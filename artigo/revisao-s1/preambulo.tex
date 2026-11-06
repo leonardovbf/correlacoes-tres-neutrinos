@@ -1,0 +1,33 @@
+% Composição da revisão da Sprint 1; o conteúdo vem dos manuscritos Markdown.
+\documentclass[12pt]{article}
+\usepackage{sbc-template}
+\usepackage[T1]{fontenc}
+\usepackage{iftex}
+\ifPDFTeX\usepackage[utf8]{inputenc}\fi
+\usepackage[LANGUAGE]{babel}
+\usepackage{amsmath,amssymb,graphicx,placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+% Mantém as referências sem rótulos, como definido pelo estilo SBC.
+\makeatletter
+\renewcommand{\@biblabel}[1]{}
+\makeatother
+\urlstyle{same}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\DeclareRobustCommand{\citeNarrative}[3]{\nocite{#1}\hyperlink{cite.#1}{#2 (#3)}}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\bottomfraction}{.9}
+\renewcommand{\textfraction}{.08}
+\renewcommand{\floatpagefraction}{.85}
+\setcounter{totalnumber}{4}
+\raggedbottom
+\setcounter{secnumdepth}{2}
+\title{TITLE}
+\author{Giovanna Fátima de Britto Vieira\inst{1}, Marco Ruas Sales Peixoto\inst{1}\\
+Leonardo Villas Boas Fischel\inst{1}}
+\address{Instituto de Tecnologia e Liderança -- Inteli\\
+São Paulo -- SP -- Brasil\\
+Orientadores: Jose Erinaldo da Fonseca e Bryan Kano Ferreira
+AUTHOR_EMAILS}
