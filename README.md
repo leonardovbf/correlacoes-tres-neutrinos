@@ -175,6 +175,9 @@ da coleta local final e dos 80 jobs IBM. O pacote está versionado no repositór
 o arquivo integral `results/` permanece separado por conter todas as tentativas,
 contagens e matrizes necessárias para reproduzir cada execução.
 
+A possível extensão para [6 e 8 qubits na IBM](analysis/PLANO_EXTENSAO_QUANTICA.md)
+está registrada como trabalho futuro, separada dos resultados concluídos.
+
 Para gerar outro pacote a partir de registros concluídos:
 
 ```sh
