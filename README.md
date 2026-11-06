@@ -1,58 +1,30 @@
 # Correlações de dois e três corpos em sistemas de neutrinos
 
-Projeto sobre a precisão da aproximação de espaço de fase em oscilações coletivas de neutrinos e sobre a capacidade de circuitos quânticos de distinguir suas previsões da evolução exata. O estudo adota dois sabores, energias distintas e interações entre todos os pares.
+Estudo sobre os regimes de validade da aproximação de espaço de fase (PSA) em um modelo de oscilações coletivas de dois sabores, com energias distintas e interações entre todos os pares. A comparação usa evolução exata, campo médio, PSA e circuitos quânticos, com atenção aos cumulantes conectados de três corpos.
 
-A Entrega 1 reúne o problema, a pergunta, os objetivos, as hipóteses, os resumos e a introdução. A estratégia de avaliação apresenta o planejamento dos cálculos e das comparações que serão desenvolvidos nas próximas etapas.
+Esta branch contém a revisão do desenho da pesquisa da Sprint 1. O texto apresenta o protocolo proposto e a organização futura dos resultados; não relata experimentos já executados. Os resumos foram condensados a partir da redação da entrega, mantendo sua sequência de argumentação. Na composição conferida durante a revisão, as duas versões tiveram dez páginas, com resumo e abstract de dez linhas cada. A revisão considera o parecer completo dos professores e os comentários do [PR #5](https://github.com/leonardovbf/correlacoes-tres-neutrinos/pull/5).
 
-## Arquivos
+## Artigo e pareceres
 
-| Arquivo ou diretório | Conteúdo |
+| Arquivo | Conteúdo |
 | --- | --- |
-| [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, estado da arte e referências unificadas. |
-| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com resumo em português e abstract em inglês. |
-| [referencias.bib](referencias.bib) | Base BibTeX com as 18 fontes citadas e quatro leituras complementares identificadas por comentários. |
-| [figuras/](figuras/) | Diagramas em português, em SVG editável e PNG. |
-| [figuras/en/](figuras/en/) | Os mesmos diagramas com os rótulos em inglês. |
-| [figuras/gerar_diagramas.py](figuras/gerar_diagramas.py) | Código que gera as duas versões das figuras. |
+| [ARTIGO.md](ARTIGO.md) | Manuscrito em português. |
+| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês. |
+| [referencias.bib](referencias.bib) | 17 fontes citadas e quatro leituras complementares identificadas por comentários. |
+| [Entrega original](artigo-neutrinos-entrega-1-sbc.pdf) | Registro histórico da versão avaliada; não corresponde ao texto revisado. |
 
-## Contribuições da entrega
+A Introdução reúne contexto, estado da arte, lacuna, pergunta, objetivo e hipóteses. A Seção 2 apresenta o desenho da pesquisa e os critérios de avaliação; a Seção 3 descreve a apresentação prevista dos resultados. H1 mantém a expectativa de maior erro nos trios e sua tendência com a interação, com justificativa e critérios de refutação. H2 compara limiares de ruído com e sem mitigação sob o mesmo orçamento total de medições. A etapa quântica avalia precisão e recursos em sistemas que permitem referência clássica conhecida.
 
-O núcleo da pesquisa define a pergunta, os objetivos e as hipóteses. O contexto da introdução apresenta supernovas, neutrinos, sabor, nucleossíntese e detecção; essa frente também reúne e padroniza as referências. O estado da arte discute campo médio, espaço de fase, BBGKY e simulações quânticas, delimitando a lacuna do estudo. O parágrafo final da introdução conecta essas contribuições ao plano de pesquisa.
+## Figuras e edição
 
-## Figuras
+As três figuras conceituais da entrega foram preservadas: colapso estelar, decomposição das correlações conectadas e protocolo de comparação. As versões em português estão em [figuras/](figuras/), e as traduções em [figuras/en/](figuras/en/), em SVG e PNG.
 
-1. **Colapso estelar:** cortes esquemáticos do núcleo, do choque e da região de aquecimento por neutrinos.
-2. **Correlações conectadas:** decomposição de um momento de três partículas em médias, contribuições dos pares e cumulante do trio.
-3. **Protocolo de comparação:** modelo comum, quatro métodos de evolução, observáveis e controles das fontes de erro.
-
-Para regenerar todas as figuras, executar na raiz do repositório, com Python 3.11 ou superior e `uv` instalado:
+Para regenerá-las, com Python 3.11 ou superior e `uv` instalado:
 
 ```sh
 uv run figuras/gerar_diagramas.py
 ```
 
-Para gerar somente uma língua:
+O gerador aceita `--idioma pt` e `--idioma en`. Os desenhos têm largura de 170 mm e PNG a 450 dpi. São diagramas conceituais; curvas de evolução e circuitos de portas dependem da execução do protocolo.
 
-```sh
-uv run figuras/gerar_diagramas.py --idioma pt
-uv run figuras/gerar_diagramas.py --idioma en
-```
-
-O script declara a dependência de Matplotlib e exporta os desenhos com largura de 170 mm e PNG a 450 dpi. Os diagramas são conceituais; as curvas de evolução, os mapas de erro e os circuitos de portas serão produzidos com os cálculos e a implementação.
-
-## Conferência no modelo SBC
-
-Na conferência de 23 de outubro de 2026, a introdução foi compilada e inspecionada no modelo SBC, com fonte Times de 12 pontos, coluna de 150 mm e altura útil de 237 mm. A extensão foi medida entre o início de cada subseção e o início da seguinte, somando as alturas ocupadas nas páginas sucessivas.
-
-| Versão | Contexto, Figura 1 e legenda | Estado da arte até a lacuna |
-| --- | --- | --- |
-| Português | 1,45 página equivalente | 1,29 página equivalente |
-| Inglês | 1,43 página equivalente | 1,27 página equivalente |
-
-As duas partes atenderam à extensão de 1 a 1,5 página no modelo usado. O parágrafo final de objetivo e contribuição foi contado separadamente. Alterações no texto, na figura, na legenda ou no modelo exigem nova composição e medição; a paginação do artigo completo será determinada quando todas as seções forem compostas juntas.
-
-## Referências e edição
-
-As listas de referências dos artigos contêm somente as fontes citadas, em ordem alfabética e com apresentação uniforme. A base BibTeX mantém também quatro leituras complementares para o desenvolvimento da pesquisa. Ao acrescentar uma citação, atualizar a lista do artigo e o registro correspondente em `referencias.bib`.
-
-Manter as versões em português e inglês alinhadas quanto ao escopo, às hipóteses, às condições de comparação e às legendas. Para alterar os desenhos, editar o gerador e regenerar as imagens antes de revisar sua leitura no artigo.
+Manter os dois manuscritos alinhados quanto a hipóteses, parâmetros, observáveis, critérios e referências. Alterações no texto exigem nova composição e inspeção dos PDFs; a contagem de linhas dos resumos depende da composição, não apenas do número de palavras.

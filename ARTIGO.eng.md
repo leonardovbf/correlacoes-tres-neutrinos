@@ -1,54 +1,16 @@
-# Beyond mean field: can low-cost approximations capture neutrino correlations in supernovae?
+# Beyond mean field: does the phase-space approximation capture three-body neutrino correlations?
 
-_Além do campo médio: aproximações de baixo custo capturam as correlações entre neutrinos em supernovas?_
-
-## Research problem
-
-Neutrino flavor evolution influences matter heating in core-collapse supernovae, nucleosynthesis conditions, and the interpretation of signals in terrestrial detectors (JANKA, 2012; COWAN et al., 2021; BAUM; CAPOZZI; HORIUCHI, 2022). In simplified models of dense environments, neutrino interactions can generate correlations and entanglement, associated with the nonseparability of the joint quantum state, whereas the general representation of the full quantum state has an exponential cost in the number of particles (CERVIA et al., 2019). The mean-field approximation replaces interactions with an average influence and can exhibit deviations that depend on the initial conditions; the phase-space approximation (PSA) seeks to incorporate some effects beyond this description (LACROIX et al., 2022). Existing PSA validations include flavor probabilities, reduced entropies calculated from the density matrices of one- or two-neutrino subsystems, and collective two-body correlations. The remaining question therefore concerns connected third-order cumulants, namely the part of a three-particle correlation that remains after subtracting individual and pair contributions (LACROIX et al., 2022, 2024). In the Bogoliubov–Born–Green–Kirkwood–Yvon (BBGKY) hierarchy, a second-order closure considered in the literature neglects these cumulants to close the equations; the full hierarchy does not impose this condition (RICCIO; BALANTEKIN, 2026). It is therefore necessary to assess the regimes in which PSA reproduces connected two- and three-body correlations and the precision with which quantum circuits can distinguish its deviations from exact calculations.
-
-## Research question
-
-Does the phase-space approximation reproduce connected two- and three-body correlations in collective neutrino oscillations and, when deviations occur, can quantum circuits distinguish PSA predictions from exact results under the noise conditions assessed?
-
-## Objectives
-
-### General objective
-
-Assess the accuracy of the phase-space approximation for connected two- and three-body correlations in collective neutrino oscillations, using exact calculations as benchmarks, and determine whether quantum circuits can distinguish its predictions from exact solutions under the noise conditions assessed.
-
-### Specific objectives
-
-1. Implement in Python a two-flavor model with distinct energies and interactions between all neutrino pairs, and calculate its exact, mean-field, and phase-space evolution using the same Hamiltonian and physical initial states.
-2. Quantify absolute and normalized errors in individual flavor probabilities and connected two- and three-body cumulants, varying $\mu/\bar{\omega}$ from 0.1 to 10. Here, $\mu$ is the neutrino–neutrino coupling scale, expressed in the same units as $\bar{\omega}$, the mean vacuum oscillation frequency adopted as the reference.
-3. Determine how these errors depend on system size, from four to approximately sixteen neutrinos, and assess convergence of numerical integration and PSA sampling.
-4. Construct Trotterized Qiskit circuits for four to eight neutrinos, validate their ideal simulated evolution against the exact solution, and estimate the error caused by time discretization. Trotterization approximates the full evolution through a sequence of operations associated with the Hamiltonian terms over small time steps.
-5. Investigate how noise and the number of measurements affect the resolution of differences between PSA and exact evolution, compare estimates with and without error mitigation, and execute the circuits on IBM hardware if access is available. Mitigation uses techniques to reduce the effects of noise on observable estimates.
-
-## Hypotheses
-
-### H1
-
-PSA reproduces individual flavor probabilities and two-body cumulants more accurately than three-body cumulants. When the reference permits normalization, the normalized error for triples tends to increase with interaction strength.
-
-_Falsification criterion: the normalized error for triples does not systematically exceed that for pairs within the assessed uncertainties, or the proposed increase with interaction strength is not observed._
-
-### H2
-
-For the configurations investigated, distinguishing PSA from exact evolution in three-body cumulants requires error mitigation at the noise levels and measurement budgets considered.
-
-_Falsification criterion: unmitigated circuits distinguish PSA predictions from exact results under the established criterion, at the same noise levels and number of measurements._
-
-Noise levels, measurement budgets, and the statistical criterion will be fixed before comparing methods. Cumulant amplitudes will be determined by the calculations.
+_Além do campo médio: a aproximação de espaço de fase captura as correlações de três corpos entre neutrinos?_
 
 ## Resumo
 
-As oscilações coletivas de neutrinos em supernovas de colapso de núcleo motivam o desenvolvimento de métodos computacionais capazes de descrever efeitos quânticos de muitos corpos. A evolução exata apresenta custo exponencial na representação geral, enquanto a aproximação de campo médio despreza correlações conectadas entre partículas. A aproximação de espaço de fase oferece uma alternativa de menor custo computacional, mas sua precisão para correlações de três corpos requer avaliação específica. Este projeto tem como objetivo avaliar se essa aproximação reproduz com precisão as correlações de dois e três corpos em oscilações coletivas de neutrinos, usando cálculos exatos como referência, e verificar se simulações quânticas conseguem medir as diferenças entre os métodos. Será estudado um modelo de dois sabores, com interações entre todos os pares e energias distintas para os neutrinos. Serão comparadas a evolução exata, a de campo médio e a aproximação de espaço de fase para sistemas de até dezesseis neutrinos, variando a razão entre intensidade de interação e frequência média de oscilação no vácuo de 0,1 a 10. Circuitos trotterizados implementados em Qiskit serão avaliados para quatro a oito neutrinos, em condições ideais e com ruído simulado, com execução em hardware IBM condicionada à disponibilidade. Serão quantificados erros absolutos e normalizados nas probabilidades de sabor e nos cumulantes conectados de dois e três corpos, controlando incertezas de amostragem, integração numérica e trotterização. Espera-se delimitar, no modelo estudado, o domínio de validade da aproximação e a precisão necessária para que circuitos quânticos distingam suas previsões dos resultados exatos.
+O sabor dos neutrinos em supernovas pode influenciar a explosão e a produção de elementos pesados. Simular sua evolução quântica exige aproximações para sistemas grandes. A precisão da aproximação de espaço de fase para correlações de três corpos requer avaliação. Este trabalho busca avaliar essa precisão em um modelo de dois sabores, com cálculos exatos e campo médio como referências. Circuitos trotterizados serão avaliados em condições ideais e com ruído. Serão quantificados erros nas probabilidades de sabor e nos cumulantes conectados de dois e três corpos. Espera-se delimitar o domínio de validade da aproximação e a precisão necessária para que circuitos quânticos distingam suas previsões dos resultados exatos.
 
 **Palavras-chave:** Neutrinos. Oscilações coletivas. Correlações de três corpos. Computação quântica. Aproximação de espaço de fase.
 
 ## Abstract
 
-Collective neutrino oscillations in core-collapse supernovae motivate the development of computational methods capable of describing quantum many-body effects. Exact evolution has an exponential cost in the general representation, whereas the mean-field approximation neglects connected correlations between particles. The phase-space approximation offers a computationally cheaper alternative, but its accuracy for three-body correlations requires specific assessment. This project aims to evaluate whether this approximation accurately reproduces two- and three-body correlations in collective neutrino oscillations, using exact calculations as benchmarks, and to determine whether quantum simulations can measure discrepancies between the methods. A two-flavor model with all-to-all interactions and distinct neutrino energies will be studied. Exact evolution, mean-field evolution, and the phase-space approximation will be compared for systems of up to sixteen neutrinos, varying the ratio of interaction strength to mean vacuum oscillation frequency from 0.1 to 10. Trotterized circuits implemented in Qiskit will be assessed for four to eight neutrinos under ideal conditions and simulated noise, with execution on IBM hardware subject to availability. Absolute and normalized errors in flavor probabilities and connected two- and three-body cumulants will be quantified, controlling for sampling uncertainty, numerical integration, and Trotterization. The expected contribution is to establish the approximation's range of validity for the model studied and the precision required for quantum circuits to distinguish its predictions from exact results.
+The flavor of neutrinos in supernovae can influence the explosion and heavy-element production. Simulating their quantum evolution requires approximations for large systems. The accuracy of the phase-space approximation for three-body correlations requires assessment. This work aims to assess this accuracy in a two-flavor model, using exact calculations and mean field as references. Trotterized circuits will be assessed under ideal and noisy conditions. Errors in flavor probabilities and connected two- and three-body cumulants will be quantified. The expected contribution is to establish the approximation's range of validity and the precision required for quantum circuits to distinguish its predictions from exact results.
 
 **Keywords:** Neutrinos. Collective oscillations. Three-body correlations. Quantum computing. Phase-space approximation.
 
@@ -56,29 +18,19 @@ Collective neutrino oscillations in core-collapse supernovae motivate the develo
 
 ### Astrophysical context and motivation
 
-Stars with initial masses above approximately eight solar masses can undergo gravitational core collapse. In a typical scenario, an iron-rich core surrounded by nuclear-burning shells loses support, contracts to near-nuclear densities, and undergoes a bounce, generating a shock (JANKA, 2012; ABI et al., 2020).
-
-The shock can stall through energy losses from nuclear dissociation and neutrino emission. Neutrino absorption and fluid motion can revive it during accretion, meaning matter falling onto the remnant. Stellar structure and accretion influence explosion or black-hole formation if the remnant exceeds the mass it can support (JANKA, 2012; Figure 1).
+Stars with initial masses above approximately eight solar masses can undergo gravitational core collapse. In a typical scenario, an iron-rich core loses support, contracts, and undergoes a bounce, generating a shock. This shock can stall through energy losses from nuclear dissociation and neutrino emission. Neutrino absorption and fluid motion can revive it during accretion, meaning matter falling onto the remnant (Figure 1) (JANKA, 2012; ABI et al., 2020).
 
 ![Three panels show a contracting stellar core, neutrino heating behind the shock, and the possible outcomes of explosion or black-hole formation.](figuras/en/figure-1-core-collapse.png)
 
 *Figure 1 - Stellar core collapse, not to scale. (a) Core contraction and bounce. (b) Stalled shock and neutrino heating around the proto-neutron star (PNS). (c) Explosion or black-hole formation, including after an explosion. Source: original illustration based on Janka (2012).*
 
-Neutrinos are electrically neutral elementary particles that interact weakly with matter and can become temporarily trapped in the dense core. A typical supernova emits about $10^{58}$ neutrinos, with characteristic energies of $10\,\mathrm{MeV}$, over approximately ten seconds, carrying more than 99% of the gravitational energy released by the collapsed core (ABI et al., 2020).
+Neutrinos are electrically neutral elementary particles that interact weakly with matter. A typical supernova emits about $10^{58}$ neutrinos, with characteristic energies of $10\,\mathrm{MeV}$, over approximately ten seconds, carrying more than 99% of the gravitational energy released by the collapsed core (ABI et al., 2020). Their flavor states are superpositions of mass states, whose propagation phases change detection probabilities, producing oscillations (DUAN; FULLER; QIAN, 2010).
 
-During supernova SN 1987A, in the Large Magellanic Cloud, Kamiokande-II, IMB, and Baksan recorded a few dozen events associated with the neutrino burst, allowing the interior of the collapsing star to be probed (VISSANI et al., 2010).
-
-The electron, muon, and tau flavors correspond to their respective charged leptons in weak interactions. Flavor states are superpositions of mass states, whose propagation phases change detection probabilities, producing oscillations. The discovery, recognized by the 2015 Nobel Prize in Physics, established nonzero masses. Here, the electron and effective nonelectron flavors are represented by the states of a qubit, the basic unit of quantum information (DUAN; FULLER; QIAN, 2010; NOBEL PRIZE, 2015).
-
-Absorption of electron neutrinos on neutrons or electron antineutrinos on protons heats matter behind the shock and interconverts neutrons and protons. Nagakura (2023) found an approximately 40% reduction in this heating with flavor conversion in the spherically symmetric configuration studied. In multidimensional models, Akaho et al. (2026) observed effects that favored or hindered explosion, depending on the progenitor and accretion.
-
-The neutron-to-proton composition also affects nucleosynthesis, or the formation of atomic nuclei. The r-process, rapid neutron capture, produces some elements heavier than iron in neutron-rich matter, as in neutron-star mergers and rare explosions (COWAN et al., 2021).
-
-DUNE is particularly sensitive to electron neutrinos; Hyper-Kamiokande and JUNO have important electron-antineutrino channels, providing complementary information about supernovae (BAUM; CAPOZZI; HORIUCHI, 2022; SARMAH et al., 2026). Interpreting these signals requires predicting their flavors. Near the core, coherent interactions between neutrinos couple flavor evolution, generating collective oscillations and the many-body problem discussed next (DUAN; FULLER; QIAN, 2010).
+Flavor evolution can alter heating behind the shock and the neutron-to-proton composition relevant to nucleosynthesis. Its effects depend on stellar configuration, as shown by Nagakura (2023) and Akaho et al. (2026); the relationship between neutron-rich matter and heavy-element formation is discussed by Cowan et al. (2021). Events from SN 1987A and detection prospects at DUNE, Hyper-Kamiokande, and JUNO reinforce the importance of predicting emitted flavors (VISSANI et al., 2010; BAUM; CAPOZZI; HORIUCHI, 2022; SARMAH et al., 2026). Near the core, coherent interactions between neutrinos couple their evolution, generating collective oscillations and the many-body problem discussed next (DUAN; FULLER; QIAN, 2010).
 
 ### State of the art and research gap
 
-The collective dynamics described above constitutes a quantum many-body problem in which correlations and entanglement can develop between neutrinos, with entanglement associated with the nonseparability of the joint quantum state. In the general two-flavor representation, a pure state of $N$ neutrinos has $2^N$ complex amplitudes. This growth limits exact evolution of large systems on classical computers when no specific symmetries or compression schemes are exploited ([DUAN; FULLER; QIAN, 2010](https://doi.org/10.1146/annurev.nucl.012809.104524); [CERVIA et al., 2019](https://doi.org/10.1103/PhysRevD.100.083001)).
+The collective dynamics described above constitutes a quantum many-body problem in which correlations and entanglement can develop between neutrinos, with entanglement associated with the nonseparability of the joint quantum state. In the general two-flavor representation, a pure state of $N$ neutrinos has $2^N$ complex amplitudes. This growth limits exact evolution of large systems on classical computers when no specific symmetries or compression schemes are exploited (DUAN; FULLER; QIAN, 2010; CERVIA et al., 2019).
 
 One strategy to reduce this cost is the mean-field approximation, which replaces the effects of other particles with an effective field determined by their averages. By factorizing expectation values of operators acting on distinct particles, this description neglects connected correlations and, for initially factorized states, does not track the generation of entanglement between neutrinos. [Cervia et al. (2019)](https://doi.org/10.1103/PhysRevD.100.083001) related differences between exact and mean-field evolution to the development of entanglement, with a dependence on initial conditions. In a three-flavor model, [Mangin-Brinet, Bauge, and Lacroix (2026)](https://doi.org/10.1103/yr2g-1g2g) also observed short-time deviations in the configurations examined. The validity of the approximation must therefore be assessed in terms of the model, initial conditions, and dynamical regime.
 
@@ -88,11 +40,27 @@ Another approach beyond mean field truncates the Bogoliubov–Born–Green–Kir
 
 Quantum simulations offer a complementary route to investigate these correlations. [Hall et al. (2021)](https://doi.org/10.1103/PhysRevD.104.063009) demonstrated simulations of small neutrino systems on noisy devices, using error mitigation, namely techniques to reduce the effects of noise on observable estimates, to extract entanglement measures. [Illa and Savage (2023)](https://doi.org/10.1103/PhysRevLett.130.221003) investigated systems of up to twelve neutrinos on the Quantinuum H1-1 trapped-ion processor, including two- and three-body correlations and multipartite entanglement indicators. At a larger scale, [Kiss et al. (2026)](https://doi.org/10.1038/s42005-026-02697-2) studied thermalization with random circuits on IBM processors using more than one hundred qubits. Their performance was assessed through thermalization observables; the fidelity of specific cumulants during evolution requires separate validation.
 
-Within the literature examined, no systematic comparison of PSA three-body cumulants with exact evolution was identified that controls system size, interaction strength, and computational and measurement uncertainties. It is also necessary to establish whether quantum circuits can distinguish these predictions. Agreement in flavor averages, collective pair correlations, or reduced entropies does not guarantee accurate third-order cumulants. Addressing this gap requires consistent observables and a separation of approximation error, finite sampling, time discretization, and circuit noise.
+Within the literature examined, no systematic comparison of PSA three-body cumulants with exact evolution was identified that controls system size, interaction strength, and computational and measurement uncertainties. Agreement in flavor averages, collective pair correlations, or reduced entropies does not guarantee accurate third-order cumulants. Addressing this gap requires consistent observables and a separation of approximation error, finite sampling, time discretization, and noise.
 
-This work proposes to assess PSA connected two- and three-body cumulants against exact calculations, with mean field as an additional reference. Python will be used for classical systems of up to sixteen neutrinos and Qiskit for circuits of four to eight neutrinos, controlling numerical, sampling, and noise uncertainties. The intended contribution is to establish PSA validity and the conditions under which circuits can test its predictions. The study will present the model, methods, results, limitations, and conclusions.
+The accuracy of third-order cumulants matters because, for a Hamiltonian with pair interactions, the evolution hierarchy couples one-particle observables to two-body correlations, whose equations depend on third-order moments. Deviations in the description of triples may therefore affect lower-order observables during evolution ([LACROIX et al., 2024](https://doi.org/10.1103/PhysRevD.110.103027); [RICCIO; BALANTEKIN, 2026](https://arxiv.org/abs/2607.28619)). The reported long-time limitations of PSA motivate examining this relationship, without attributing all flavor deviations to a single cumulant component in advance ([LACROIX et al., 2022](https://doi.org/10.1103/PhysRevD.106.123006)).
 
-## Proposed evaluation strategy
+For four to eight neutrinos, exact calculations are accessible on classical computers. The quantum stage seeks to determine how accurately circuits distinguish PSA deviations. In larger systems, without accessible exact solutions, these circuits could provide a reference for validating approximations. Small systems allow this possibility to be assessed by separating discretization, sampling, and noise errors, without presupposing a computational advantage or extrapolating the results to larger systems.
+
+This work therefore asks in which regimes of interaction strength, system size, and evolution time PSA reproduces connected two- and three-body correlations and, when deviations occur, under which noise conditions and measurement counts quantum circuits can distinguish them from exact results.
+
+To this end, the study proposes to assess connected two- and three-body cumulants from PSA against exact calculations, with mean field as an additional reference, establishing the approximation's validity regimes. Python will be used for systems of four to approximately sixteen neutrinos and Qiskit for circuits of four to eight, in a two-flavor model with factorized pure-flavor initial states. The ratio $\mu/\bar{\omega}$ will range from 0.1 to 10, where $\mu$ denotes the neutrino–neutrino interaction scale and $\bar{\omega}$ the mean vacuum oscillation frequency. The supernova context motivates the model; conclusions will remain restricted to the simplified configurations examined.
+
+Increasing interaction strength increases the coefficients of the terms coupling the hierarchy's orders, motivating the expectation that triples are more sensitive to effects beyond mean-field trajectories. This is a conjecture dependent on the initial state and time window, not a consequence of PSA setting higher cumulants to zero. Hypothesis **H1** is that PSA reproduces individual flavor probabilities and two-body cumulants more accurately than three-body cumulants. When the reference permits normalization, the normalized error for triples tends to grow with interaction strength. Hypothesis **H2** predicts that mitigation increases the noise threshold at which PSA can be distinguished from exact evolution at the same total measurement budget. Their falsification criteria will be specified in the research design.
+
+Section 2 presents the model, observables, comparison stages, and hypothesis assessment criteria. Section 3 describes the planned presentation of results. The present text sets out the research design; experimental results will be incorporated after the protocol has been executed and validated.
+
+## Research design
+
+### Model and initial states
+
+A two-flavor model with distinct energies and interactions between all neutrino pairs will be implemented in Python, using the same Hamiltonian and physical initial states for exact, mean-field, and PSA evolution. The electron and effective nonelectron flavors will be represented by the states $|0\rangle=|\nu_e\rangle$ and $|1\rangle=|\nu_x\rangle$ of a qubit, the basic unit of quantum information. Initial states will be products of pure flavor states. The main comparison will use even-sized systems with half the neutrinos in each flavor; frequencies, couplings, and flavor assignments will be recorded for each scenario. Other configurations will be treated separately, given the dependence of deviations on the initial state (CERVIA et al., 2019).
+
+A published configuration will be reproduced before parameter scans, checking flavor, frequency, and coupling conventions, including Hamiltonian normalization. Comparisons will use common windows of dimensionless time $\bar{\omega}t$, also reporting $\mu t$, which varies when interaction strength changes. The range from four to sixteen neutrinos defines the main study; an extension to twenty or twenty-two will depend on timing and memory measurements for exact calculations. Dependence on $N$ will be investigated without presupposing a scaling law that has not yet been justified.
 
 ### Observables and connected correlations
 
@@ -111,15 +79,11 @@ C^{(3)}_{ijk}(t)={}&\langle Z_i Z_j Z_k\rangle_t-m_i(t)m_j(t)m_k(t)\\
 \end{aligned}
 $$
 
-Figure 2 represents this decomposition: a three-particle moment combines products of means, pair contributions, and a connected three-body term. Neglecting $C^{(3)}_{ijk}$ in a closure is therefore not equivalent to neglecting $\langle Z_i Z_j Z_k\rangle$. This identity is a particular case of the cumulant expansion discussed by Riccio and Balantekin (2026). The particles and Pauli components to be assessed will be specified in the protocol; the $Z$ component illustrates the flavor convention here.
+Figure 2 represents this decomposition: a three-particle moment combines products of means, pair contributions, and a connected three-body term. Neglecting $C^{(3)}_{ijk}$ in a closure is therefore not equivalent to neglecting $\langle Z_i Z_j Z_k\rangle$. This identity is a particular case of the cumulant expansion discussed by Riccio and Balantekin (2026). The main analysis will use the $Z$, $ZZ$, and $ZZZ$ components, with particle sets specified in the protocol; other components will require separate assessment.
 
 ![Decomposition of a moment of three flavor operators into individual means, three pair-times-mean terms, and the connected third-order cumulant.](figuras/en/figure-2-connected-correlations.png)
 
 *Figure 2 - Decomposition of the moment $\langle Z_iZ_jZ_k\rangle$. (a) Product of individual means $m_i m_j m_k$. (b) Three contributions consisting of a pair cumulant times the mean of the remaining particle. (c) Connected cumulant $C^{(3)}_{ijk}$, highlighted as the part remaining after subtracting the preceding terms. Circles identify distinct particles $i$, $j$, and $k$; one link denotes a pair contribution, and the three-linked diamond denotes the triple cumulant without representing another particle. This statistical notation represents neither additional Hamiltonian interactions nor an entanglement certificate. All terms are evaluated at the same time. Source: original illustration based on the cumulant expansion of Riccio and Balantekin (2026).*
-
-### Comparison criteria
-
-The same observables, flavor basis, and normalization will be used in every method. Connected correlations will be described by cumulants of operators acting on distinct particles; a nonzero cumulant alone does not certify genuine entanglement. Absolute error will be reported over time and summarized by the root mean square of deviations. Normalized error will be the ratio of this measure to the root mean square of the exact reference, calculated over the same time grid and set of observables. When the reference is compatible with zero within numerical precision, absolute error will be reported, avoiding percentages with an unresolved denominator. In circuit assessments, a difference will be considered resolved when the estimate is compatible with exact evolution and incompatible with PSA within the uncertainties established by the protocol. Finite sampling, numerical integration, Trotterization, and noise will be assessed separately.
 
 ### Method comparison and error control
 
@@ -129,15 +93,45 @@ Figure 3 organizes the proposed protocol. For each system size, interaction stre
 
 *Figure 3 - Proposed comparison protocol. (a) A Hamiltonian $H$ and initial state $|\Psi_0\rangle$ shared by the methods, in the two-flavor model with distinct energies and $\mu/\bar{\omega}$ between 0.1 and 10. The four-node network illustrates interactions between all pairs; it represents neither processor connectivity nor a limit on system size. (b) Exact, mean-field, and PSA evolution for four to approximately sixteen neutrinos; circuits for the subset of four to eight, under ideal and noisy conditions. (c) Comparison of probabilities and cumulants against exact evolution, highlighting $C^{(3)}_{ijk}$. The bottom row groups integration, sampling, Trotter, measurement, and noise controls. Comparisons with and without mitigation will use the same total measurement budget; hardware execution will depend on availability. Source: original illustration informed by the comparisons of Lacroix et al. (2024), Hall et al. (2021), and Illa and Savage (2023).*
 
-Before interpreting physical differences, convergence will be checked by refining time integration, increasing the number of PSA trajectories, and reducing the Trotter step in ideal simulation. Noisy assessments will follow this validation. Cumulant uncertainties must account for the fact that means and products may be estimated from the same measurements or trajectories, preserving their covariances during error propagation or resampling. Each configuration will record model parameters, initial state, time grid and interval, numerical tolerances, random seeds and trajectory counts, Trotter steps, noise model, measurement counts, and mitigation procedure.
+Before interpreting physical differences, convergence will be checked by refining time integration, increasing the number of PSA trajectories, and reducing the Trotter step in ideal simulation. Noisy assessments will follow this validation. Cumulant uncertainties must account for the fact that means and products may be estimated from the same measurements or trajectories, preserving their covariances during error propagation or resampling.
 
-### Presentation of results
+### Errors, uncertainties, and assessment of H1
+
+The same observables, flavor basis, and normalization will be used in every method. Absolute error will be reported over time and summarized by the root mean square of deviations (RMSE). Normalized error will be the ratio between this measure and the root mean square of the exact reference, calculated over the same time grid and observable set. For each order $r$, this ratio will be denoted by $E_r=\mathrm{RMSE}_r/R_r$. The same definition will be applied to flavor probabilities.
+
+Normalization will be used only when $R_r>\varepsilon_r$, with $\varepsilon_r=\max(10\delta_r,10^{-6})$. Here, $\delta_r$ is the largest absolute change in the reference observed under numerical refinement. The dimensionless floor $10^{-6}$ is an operational choice to avoid near-zero denominators; sensitivity of classification to a factor-of-ten change in this floor will be reported. Cases below the threshold will retain absolute errors and will not enter normalized comparisons. This rule will not be changed after confirmatory results have been observed.
+
+To assess H1, differences between errors for triples, pairs, and probabilities will be compared within the same scenarios and windows. The trend with interaction strength will be estimated at fixed $N$, initial state, frequencies, and relative couplings; its direction will be assessed using a trend measure recorded in advance. The hypothesis will be contradicted if errors for triples are smaller than or equivalent to those of the other quantities within the specified margin, or if the increasing trend with interaction strength is absent within that margin or reversed. Uncertainties preventing the comparison from being resolved will be reported as inconclusive, rather than as evidence of equivalence.
+
+PSA trajectory counts will be refined by doubling from 1,024, using at least five independent seeds. The convergence criterion will require changes in estimates and interval widths to remain below the established observable tolerances. The trajectory limit will be fixed in advance; cases not meeting the required precision will be identified. Resampling will use complete trajectories or bitstring counts, preserving dependencies between the means and products composing each cumulant.
+
+### Circuits, mitigation, and assessment of H2
+
+Circuits for four to eight neutrinos will be constructed in Qiskit using a symmetric second-order Trotter formula. Trotterization approximates the full evolution through a sequence of operations associated with Hamiltonian terms over small time steps. The proposed initial step will be $\Delta\tau=0.05$, with $\tau=\bar{\omega}t$, followed by successive halvings. Ideal comparison with the exact reference must reduce this error to a predefined fraction of the PSA–exact discrepancy to be measured. This control will precede noise assessment.
+
+Measurements in the flavor basis will simultaneously provide the products $Z_i$, $Z_iZ_j$, and $Z_iZ_jZ_k$. Each cumulant will be reconstructed from the same counts, with intervals obtained by joint resampling. The initial budget scan will include 1,024, 2,048, 4,096, and 8,192 measurements, with possible expansion during the pilot study. The total budget will include measurements used in calibration and auxiliary circuits; mitigated and unmitigated results will be compared under the same limit.
+
+The main assessment of H2 will consider independent symmetric readout error, parametrized by the bit-flip probability $0\leq p<1/2$, and mitigation through a readout calibration matrix. Intervals will include calibration uncertainty. The effects of depolarizing gate noise and zero-noise extrapolation may be examined as extensions, with resources and results reported separately. Thresholds obtained under the readout model will not be presented as general hardware-noise limits.
+
+A difference will be considered resolved when the confidence interval for the circuit–exact deviation lies within a predefined equivalence margin and the interval for the circuit–PSA difference excludes zero. PSA uncertainties and reference tolerances will be considered. For a total budget $M$, the threshold $p_{\max}(M)$ will be the largest assessed noise level satisfying this criterion with a specified minimum success frequency across independent repetitions. The smallest assessed budget allowing distinction at each noise level will also be reported. If the transition is not reached, bounds will be reported without assigning a precise threshold; nonmonotonic behavior will be shown as resolution regions.
+
+H2 will be contradicted if the mitigated threshold is smaller than or equivalent to the unmitigated threshold within the specified comparison margin and uncertainties. An unresolved difference will be considered inconclusive. Execution on IBM hardware will depend on availability and will be reported with device conditions, without replacing the controlled noise-model scan.
+
+### Preregistration and assessment limits
+
+Noise levels, measurement budgets, and the statistical criterion will be fixed before comparing methods. The Hamiltonian, initial configurations, interaction and size grid, time windows, particle sets, tolerances, equivalence margins, confidence level, and treatment of multiple comparisons will be fixed. Trajectory limits, seeds, Trotter steps, and the allocation of the budget between calibration and execution will also be recorded. Initial values proposed in this section may be adjusted during the pilot, with justification recorded before confirmatory cases are analyzed.
+
+A rule fixed before noisy runs will select triples and times with a PSA–exact discrepancy resolved in the classical comparison. This will distinguish approximation error, insufficient sampling, and a circuit's inability to resolve a known difference.
+
+## Planned presentation of results
 
 Results will be presented in separate panels for probabilities, pair cumulants, and triple cumulants. Line and symbol meanings will remain consistent: exact evolution as a solid black line, mean field as a dotted gray line, PSA as a dashed blue line, and circuit estimates as symbols with uncertainty bars. Circles and squares will distinguish unmitigated and mitigated estimates without relying on color alone. Captions will specify the initial state, $N$, $\mu/\bar{\omega}$, dimensionless time $\bar{\omega}t$, sampling resources, and the statistical meaning of the bars. Deviation and normalized-error panels will complement the curves according to the established criteria; error tables or maps will summarize dependence on system size and interaction strength when sufficient data are available. Gate diagrams will show the implemented circuit and its Trotter order.
 
+Noise thresholds and the smallest assessed budgets will be reported by initial state and time window, with uncertainties and scan limits, including inconclusive cases.
+
 ## Use of generative artificial intelligence
 
-Generative artificial intelligence assistance was used to support writing revision, translation, and the production of code for the conceptual diagrams.
+Generative artificial intelligence assistance was used to support writing and consistency revision, translation, and the production of code for the conceptual diagrams.
 
 ## References
 
@@ -169,10 +163,8 @@ MANGIN-BRINET, M.; BAUGE, A.; LACROIX, D. Three-flavor neutrino oscillations usi
 
 NAGAKURA, H. Roles of fast neutrino-flavor conversion on the neutrino-heating mechanism of core-collapse supernova. **Physical Review Letters**, v. 130, art. 211401, 2023. DOI: [10.1103/PhysRevLett.130.211401](https://doi.org/10.1103/PhysRevLett.130.211401).
 
-NOBEL PRIZE. **The Nobel Prize in Physics 2015: press release**. 6 Oct. 2015. Available at: https://www.nobelprize.org/prizes/physics/2015/press-release/. Accessed: 23 Oct. 2026.
+RICCIO, M.; BALANTEKIN, A. B. Improved approximations for collective neutrino oscillations. **arXiv**, 2026. Preprint, arXiv:2607.28619, version 2. DOI: [10.48550/arXiv.2607.28619](https://doi.org/10.48550/arXiv.2607.28619). Available at: [arXiv](https://arxiv.org/abs/2607.28619). Accessed: 6 Nov. 2026.
 
-RICCIO, M.; BALANTEKIN, A. B. Improved approximations for collective neutrino oscillations. **arXiv**, 2026. Preprint, arXiv:2607.28619, version 2. DOI: [10.48550/arXiv.2607.28619](https://doi.org/10.48550/arXiv.2607.28619). Available at: [arXiv](https://arxiv.org/abs/2607.28619). Accessed: 23 Oct. 2026.
-
-SARMAH, P. et al. **Neutrino mass ordering from the next Galactic supernova at DUNE, HK, and JUNO**. Preprint, 2026. arXiv:2606.06580. Available at: https://arxiv.org/abs/2606.06580. Accessed: 23 Oct. 2026.
+SARMAH, P. et al. **Neutrino mass ordering from the next Galactic supernova at DUNE, HK, and JUNO**. Preprint, 2026. arXiv:2606.06580. Available at: https://arxiv.org/abs/2606.06580. Accessed: 6 Nov. 2026.
 
 VISSANI, F.; COSTANTINI, M. L.; FULGIONE, W.; IANNI, A.; PAGLIAROLI, G. **What is the issue with SN1987A neutrinos?** Preprint, 2010. arXiv:1008.4726. Available at: https://arxiv.org/abs/1008.4726. Accessed: 23 Oct. 2026.
