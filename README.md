@@ -2,7 +2,7 @@
 
 Projeto sobre a precisão da aproximação de espaço de fase em oscilações coletivas de neutrinos e sobre a capacidade de circuitos quânticos de distinguir suas previsões da evolução exata. O estudo adota dois sabores, energias distintas e interações entre todos os pares.
 
-A versão revisada da Entrega 1 integra o problema, a pergunta, o objetivo e as hipóteses à introdução, após os resumos. O estudo delimita regimes de validade da PSA e avalia o limiar de ruído em que circuitos distinguem suas previsões da solução exata, com e sem mitigação e sob o mesmo orçamento total de medições. A estratégia de avaliação apresenta o planejamento dos cálculos e das comparações que serão desenvolvidos nas próximas etapas.
+A versão revisada da Entrega 1 integra o problema, a pergunta, o objetivo e as hipóteses à introdução, após os resumos. O estudo delimita regimes de validade da PSA e avalia o limiar de ruído em que circuitos distinguem suas previsões da solução exata, com e sem mitigação e sob o mesmo orçamento total de medições. O artigo incorpora agora a metodologia detalhada e os resultados da coleta local e IBM. As conclusões confirmatórias sobre H1 e H2 permanecem condicionadas às limitações estatísticas e ao desenho de avaliação descritos no texto.
 
 ## Plataforma local de simulação
 
@@ -84,9 +84,7 @@ para estados iniciais produto, um neutrino por feixe. A tela quântica
 executa um simulador local de estado. A simulação de um instante com ruído de
 portas no Qiskit Aer continua disponível pela API. A execução IBM mede um
 único instante por job em hardware real; ela ainda não valida H2 sob ruído
-calibrado. A reprodução de um
-benchmark publicado e a análise de convergência estatística da PSA continuam
-como próximos controles antes de tratar os gráficos como resultados do artigo.
+calibrado. A reprodução publicada e os controles suplementares constam do pacote concluído. A interpretação dos intervalos bootstrap e os critérios confirmatórios de H1/H2 continuam sujeitos à revisão descrita no artigo.
 Para inserir os parâmetros de um benchmark, copie o cenário de exemplo e
 carregue o JSON no painel de parâmetros. A matriz `g_values` é simétrica, com diagonal zero; confira a
 normalização e a convenção de sabor do artigo antes de comparar curvas.
@@ -101,7 +99,7 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 | Arquivo ou diretório | Conteúdo |
 | --- | --- |
 | [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, estado da arte e referências unificadas. |
-| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com resumo em português e abstract em inglês. |
+| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com abstract e resultados da coleta. |
 | [PLANO_TECNICO.md](PLANO_TECNICO.md) | Proposta de arquitetura, etapas do experimento, validações e decisões metodológicas pendentes. |
 | [app/frontend/](app/frontend/) | Interface Next.js com gráficos e visualizações interativas. |
 | [app/backend/](app/backend/) | API Python, orquestração e armazenamento versionado. |
@@ -118,11 +116,17 @@ O contexto da introdução apresenta supernovas, neutrinos, sabor, nucleossínte
 
 ## Figuras
 
+O acervo abaixo conserva a numeração original dos arquivos. Na versão de 12 páginas, as figuras do artigo são 1 (colapso), 2 (PSA), 3 (medições) e 4 (comparação quântica); os demais diagramas ficam como material de apoio.
+
 1. **Colapso estelar:** cortes esquemáticos do núcleo, do choque e da região de aquecimento por neutrinos.
 2. **Correlações conectadas:** decomposição de um momento de três partículas em médias, contribuições dos pares e cumulante do trio.
 3. **Protocolo de comparação:** modelo comum, quatro métodos de evolução, observáveis e controles das fontes de erro.
+4. **Critério de resolução:** equivalência com o exato e distinção da PSA, em exemplos conceituais.
+5. **Resultados PSA:** diferença entre erros normalizados de trios e pares, com os intervalos registrados.
+6. **Orçamento de medições:** erro dos circuitos ideais nos três orçamentos avaliados.
+7. **Comparação quântica:** exato, PSA, Aer e IBM no caso principal, com e sem mitigação.
 
-Para regenerar todas as figuras, executar na raiz do repositório, com Python 3.11 ou superior e `uv` instalado:
+Para regenerar os diagramas conceituais (figuras 1–4), executar na raiz do repositório, com Python 3.11 ou superior e `uv` instalado:
 
 ```sh
 uv run figuras/gerar_diagramas.py
@@ -135,7 +139,7 @@ uv run figuras/gerar_diagramas.py --idioma pt
 uv run figuras/gerar_diagramas.py --idioma en
 ```
 
-O script declara a dependência de Matplotlib e exporta os desenhos com largura de 170 mm e PNG a 450 dpi. Os diagramas são conceituais; as curvas de evolução, os mapas de erro e os circuitos de portas serão produzidos com os cálculos e a implementação.
+O script exporta os diagramas conceituais com largura de 170 mm e PNG a 450 dpi; a composição SBC ajusta-os a 150 mm. As figuras de resultados (5–7) são geradas por `uv run figuras/gerar_resultados.py`, a partir dos CSVs do pacote auditado, já com 150 mm de largura.
 
 ## Conferência no modelo SBC
 
@@ -146,7 +150,7 @@ Na conferência de 23 de outubro de 2026, a introdução foi compilada e inspeci
 | Português | 1,45 página equivalente | 1,29 página equivalente |
 | Inglês | 1,43 página equivalente | 1,27 página equivalente |
 
-Na versão conferida naquela data, as duas partes atenderam à extensão de 1 a 1,5 página no modelo usado, com o parágrafo final de objetivo e contribuição contado separadamente. Essas medidas são um registro da versão anterior à revisão estrutural e não validam a extensão da versão atual. Os textos revisados ainda precisam de nova composição no modelo SBC e de conferência da paginação.
+Na versão conferida naquela data, as duas partes atenderam à extensão de 1 a 1,5 página no modelo usado, com o parágrafo final de objetivo e contribuição contado separadamente. Essas medidas são um registro da versão anterior à revisão estrutural e não validam a extensão da versão atual. A nova composição com resultados e sua paginação estão documentadas na seção "Artigo com resultados" abaixo.
 
 ## Referências e edição
 
@@ -180,3 +184,27 @@ Para gerar outro pacote a partir de registros concluídos:
 ```sh
 .venv/bin/python analysis/prepare_article_package.py results/studies/ID/study.json results/protocols/ID/hardware_analysis.json --output analysis/article_packages/NOVO-ID
 ```
+
+
+## Artigo com resultados — pontos 6, 7 e 8
+
+A metodologia de `docs/documentacao-metadologia` (`0f572a7`) foi integrada aos resultados de `feat/system`, preservando integralmente as introduções que estavam nesta branch antes da integração. Os pontos 6–8 aparecem juntos na seção **Resultados experimentais**, com a tabela de controles integrada às tolerâncias, uma tabela de comparação quântica, três gráficos e a descrição dos achados. A disponibilidade de código e dados está resumida em um parágrafo com o link do repositório.
+
+- [Artigo em português](ARTIGO.md) e [versão em inglês](ARTIGO.eng.md).
+- [PDF em português](output/pdf/artigo-neutrinos-sbc.pdf), com 12 páginas, e [PDF em inglês](output/pdf/artigo-neutrinos-sbc-en.pdf), com 12 páginas. A extensão permitida depende do evento de submissão.
+- [Conferência das fontes](artigo/verificacao-resultados.json): hashes, quantis, tabelas e valores usados na escrita.
+- [Composição e procedência](artigo/README.md): formato SBC e correspondência entre resultados e fontes.
+
+Para conferir os números, regenerar as figuras e compor os PDFs:
+
+```sh
+python3 analysis/verify_article_sources.py
+uv run figuras/gerar_resultados.py
+python3 scripts/gerar_artigo_sbc.py
+```
+
+O último comando requer Pandoc e Tectonic (`brew install pandoc tectonic` no macOS); `--idioma pt` ou `--idioma en` gera somente uma versão. Os fontes LaTeX e logs ficam em `tmp/pdfs/pt/` e `tmp/pdfs/en/`. O gerador não altera os manuscritos nem o pacote científico. Os resumos foram atualizados para refletir os resultados, mantendo até dez linhas na primeira página.
+
+A conferência encontrou uma atribuição incorreta no resumo do pacote: o máximo efetivo de Qiskit versus emulador é **2,8021 × 10⁻¹²**, calculado nos 45 controles identificados por `_tau`; **1,0897 × 10⁻¹¹** corresponde ao controle de comprimento dos spins. O artigo usa o valor correto. Os arquivos originais do pacote foram preservados para manter seus hashes.
+
+A revisão de concisão recompôs ambas as versões em 12 páginas, preservando integralmente a introdução, os resultados principais e as limitações estatísticas. O artigo mantém quatro figuras (colapso estelar e três gráficos de resultados) e quatro tabelas. Os três diagramas conceituais retirados continuam em `figuras/`; os arquivos conservam seus nomes originais. Parâmetros foram agrupados, tolerâncias e controles reunidos, e detalhes de reprodução remetidos ao protocolo. Fonte, margens e estilo SBC permanecem inalterados.

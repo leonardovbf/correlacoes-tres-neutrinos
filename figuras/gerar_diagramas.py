@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["matplotlib==3.11.2"]
 # ///
-"""Gera os três diagramas originais de ARTIGO.md.
+"""Gera os quatro diagramas conceituais de ARTIGO.md.
 
 Executar da raiz do repositório: uv run figuras/gerar_diagramas.py
 Saídas: SVG com texto editável e PNG a 450 dpi; largura física de 170 mm.
@@ -81,6 +81,14 @@ LABELS_EN = {
     "amostragem": "sampling", "passo temporal": "time step",
     "Medições": "Measurements", "incerteza": "uncertainty",
     "Ruído": "Noise", "mitigação": "mitigation",
+    "Concordância com o exato": "Agreement with exact",
+    "Distinção da PSA": "Distinction from PSA",
+    "Atende": "Passes", "Não atende": "Does not pass",
+    "Circuito − exato": "Circuit − exact",
+    "Circuito − PSA": "Circuit − PSA",
+    "Resolução exige (a) e (b) simultaneamente.": "Resolution requires both (a) and (b).",
+    "Exemplos esquemáticos; não representam resultados experimentais.":
+        "Schematic examples; not experimental results.",
 }
 FIGURES_EN = {
     "figura-1-colapso-estelar": (
@@ -100,6 +108,13 @@ FIGURES_EN = {
         "observables compared with exact evolution. The four-node network "
         "illustrates all-to-all model interactions. The bottom row lists "
         "integration, sampling, Trotter, measurement, and noise controls."),
+    "figura-4-criterio-resolucao": (
+        "figure-4-resolution-criterion", "Joint criterion for circuit resolution",
+        "Panel a compares intervals widened by the numerical residual with the "
+        "equivalence band from minus delta to plus delta. Panel b compares "
+        "confidence intervals for circuit minus PSA with zero. Each panel shows "
+        "one passing and one failing example. Both conditions must hold for "
+        "resolution. Intervals are schematic, not experimental results."),
 }
 plt.rcParams.update({
     "font.family": ["Arial", "DejaVu Sans"],
@@ -391,11 +406,63 @@ def protocol():
            "integração, amostragem, Trotter, medições e ruído. É um planejamento.")
 
 
+def resolution():
+    """Exemplos geométricos dos critérios, sem dados de simulação."""
+    fig, ax = canvas(88)
+    panel(ax, 5, 81, "a", "Concordância com o exato", 82)
+    panel(ax, 91, 81, "b", "Distinção da PSA", 165)
+    label(ax, 48, 69, r"$[L-r,U+r]\subseteq[-\delta,+\delta]$", size=9)
+    label(ax, 136, 69, r"$0\notin I_{\mathrm{PSA}}$", size=9)
+
+    # A: intervalos já ampliados pelo resíduo; B: intervalos circuito − PSA.
+    ax.add_patch(Rectangle((37, 37), 30, 25, facecolor=PALE_BLUE,
+                           edgecolor="none"))
+    for x in (37, 67):
+        line(ax, [x, x], [32, 62], color=BLUE, width=.7, linestyle="--")
+    for center in (52, 132):
+        line(ax, [center, center], [32, 62], color=MUTED,
+             width=.7, linestyle=":")
+
+    def interval(center, y, low, high, passes):
+        color = TEAL if passes else GOLD
+        left, right = center + 15 * low, center + 15 * high
+        line(ax, [left, right], [y, y], color=color, width=2)
+        for x in (left, right):
+            line(ax, [x, x], [y - 1.5, y + 1.5], color=color, width=1)
+
+    for origin in (5, 91):
+        label(ax, origin, 56, "Atende", size=7, ha="left", color=TEAL)
+        label(ax, origin, 44, "Não atende", size=7, ha="left", color=GOLD)
+    interval(52, 56, -.7, .4, True)
+    interval(52, 44, -.25, 1.65, False)
+    interval(132, 56, .4, 1.6, True)
+    interval(132, 44, -.8, 1.1, False)
+    for left, right in ((28, 78), (113, 162)):
+        line(ax, [left, right], [32, 32], color=INK)
+    for x, value in ((37, r"$-\delta$"), (52, "$0$"), (67, r"$+\delta$"), (132, "$0$")):
+        line(ax, [x, x], [31, 33], color=INK)
+        label(ax, x, 27.5, value, size=8)
+    label(ax, 52, 21, "Circuito − exato", size=8)
+    label(ax, 137, 21, "Circuito − PSA", size=8)
+    line(ax, [5, 165], [16, 16])
+    label(ax, 85, 11, "Resolução exige (a) e (b) simultaneamente.", size=9, weight="bold")
+    label(ax, 85, 5, "Exemplos esquemáticos; não representam resultados experimentais.",
+          size=7.5, color=MUTED)
+    export(fig, "figura-4-criterio-resolucao", "Critério conjunto de resolução dos circuitos",
+           "O painel a compara intervalos ampliados pelo resíduo numérico com a "
+           "faixa de equivalência de menos delta a mais delta. O painel b compara "
+           "intervalos de confiança de circuito menos PSA com zero. Cada painel "
+           "mostra um exemplo que atende e outro que não atende ao critério. As "
+           "duas condições são necessárias para a resolução. Os intervalos são "
+           "esquemáticos e não representam resultados experimentais.")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--idioma", choices=("pt", "en", "todos"), default="todos")
+    parser.add_argument("--figura", choices=("1", "2", "3", "4", "todas"), default="todas")
     args = parser.parse_args()
     for LANGUAGE in (("pt", "en") if args.idioma == "todos" else (args.idioma,)):
-        collapse()
-        cumulants()
-        protocol()
+        for number, generate in enumerate((collapse, cumulants, protocol, resolution), 1):
+            if args.figura in ("todas", str(number)):
+                generate()
