@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "name": "T03-classica-extensao",
-  "description": "Medir a precisão de Kzzz da PSA contra o exato, por N e interação. Desenho v1; executar somente após os controles especificados no catálogo. O runner atual recalcula a referência em cada semente; otimizar o reaproveitamento antes da coleta extensa.",
+  "description": "Medir a precisão de Kzzz da PSA contra o exato, por N e interação. Desenho v1; executar somente após os controles especificados no catálogo. Exato e campo médio reutilizados por chave física, fontes e dependências; PSA usa cada semente declarada.",
   "steps": [
     {
       "id": "n12_m0_s10001",

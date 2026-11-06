@@ -20,34 +20,25 @@ pares são controles secundários.
 | `05_medicoes.json` | 300 referências; 900 circuitos com 1024/4096/16384 shots, sem ruído. | 1200 |
 | `06_ruido.json` | N=4; cinco μ; τ=1/2/4; 20 sementes; três perfis de ruído e três orçamentos. | 3300 |
 
-Esses arquivos são compatíveis com o runner. Gerar os dados não implementa, por
-si só, a análise estatística conjunta: critérios, pré-requisitos científicos e
-pendências estão no catálogo `configs/estudos/artigo_v1.json`.
+Além dos oito protocolos acima, estão implementados:
 
-Exemplo de execução do primeiro protocolo:
+- `00_reproducao_publicada.json`: uma etapa, N=8 e 10000 trajetórias; dados da figura e conversão documentados em `data/benchmarks/lacroix2024/`.
+- `04_qiskit.json`: 60 etapas; 15 referências e 45 verificações em τ=1/2/4.
+- `07_mitigacao.json`: 2400 etapas; 300 referências, 300 ideais e 1800 casos com calibração incluída no orçamento.
+
+Execute o estudo completo com os gates científicos, análise, CSVs, gráficos e
+retomada conforme [EXECUTAR_EXPERIMENTOS.md](../../../EXECUTAR_EXPERIMENTOS.md):
 
 ```sh
-.venv/bin/python scripts/run_protocol.py run configs/protocols/artigo_v1/01_controles.json
+.venv/bin/python scripts/run_study.py plan
+.venv/bin/python scripts/run_study.py smoke --output results/validacao-software
+.venv/bin/python scripts/run_study.py run
 ```
 
-As coletas extensas devem começar após reprodução publicada, verificações de
-precisão e medição dos recursos necessários. Os pré-requisitos do catálogo são
-condições científicas; o runner ainda não aprova esses critérios automaticamente.
-O código atual recalcula exato/campo médio para cada semente e repete a evolução
-ideal ao mudar shots. Esse reaproveitamento deve ser melhorado antes das grades
-extensas, sem mudar seu desenho físico.
-
-## Especificações com implementação pendente
-
-`especificacoes/` contém definições científicas JSON, e não arquivos aceitos pelo
-runner:
-
-- `reproducao_publicada.json`: alvo, conversões e evidência necessária para o
-  benchmark de Lacroix et al. (2024).
-- `mitigacao.json`: método tensorial de leitura, estados de calibração, divisão
-  do orçamento, incertezas e decisão da H2.
-- `hardware_ibm.json`: caso candidato, pré-requisitos e informações a arquivar;
-  o dispositivo e orçamento físico dependem do acesso disponível.
+`especificacoes/` descreve conversões, mitigação e extensão IBM; não é um
+formato aceito diretamente pelo runner. O comando `hardware-plan` materializa o
+protocolo IBM quando os pré-requisitos locais forem satisfeitos. O cache
+reaproveita exato/campo médio e evolução ideal sem reutilizar medições aleatórias.
 
 O teste primário H2 fica fixado em N=4, μ=3, trio (0,1,2), τ=2, perfil moderado e
 16384 medições totais por repetição, com 20 repetições. O orçamento agregado é
@@ -70,4 +61,4 @@ Para regenerar os JSONs ou conferir se correspondem ao desenho versionado:
 
 Esses dois comandos apenas geram/conferem definições. Não executam cálculos nem
 enviam jobs IBM. A execução de qualquer protocolo continua produzindo os registros
-descritos em `REPRODUTIBILIDADE.md`.
+descritos em `EXECUTAR_EXPERIMENTOS.md`.

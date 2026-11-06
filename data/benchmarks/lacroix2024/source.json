@@ -1,0 +1,37 @@
+{
+  "source": "https://arxiv.org/pdf/2409.20215v2",
+  "pdf_sha256": "aa4f950144299c4b03370a9a3aa0fd543d2b9560fec3f05ca7dc8c1cbc3559c3",
+  "page": 7,
+  "figure": "2(c)",
+  "method": "símbolos: centro da caixa vetorial; PSA: vértices da linha",
+  "colors_neutrinos": {
+    "rgb(0%, 0%, 0%)": 0,
+    "rgb(100%, 0%, 0%)": 1,
+    "rgb(0%, 0%, 100%)": 2,
+    "rgb(0%, 50.195312%, 0%)": 3
+  },
+  "counts": {
+    "exact_0": 200,
+    "exact_1": 200,
+    "exact_2": 200,
+    "exact_3": 200,
+    "psa_0": 138,
+    "psa_1": 140,
+    "psa_2": 187,
+    "psa_3": 262
+  },
+  "axes_page_points": {
+    "x_t0": 353.7773436488,
+    "x_t200": 554.4335937268,
+    "y_z1": 290.23437497,
+    "y_z0": 361.833593858
+  },
+  "digitization_absolute_uncertainty_z": 0.02,
+  "acceptance_predeclared": {
+    "exact_max_abs": 0.02,
+    "psa_max_abs": 0.06
+  },
+  "acceptance_rationale": "Exato: resolução dos símbolos. PSA: 0.02 de extração mais 0.04 de variação Monte Carlo entre amostras independentes de 10000; critério operacional, não inferência de K3.",
+  "scope": "Referência extraída da figura; não são dados brutos disponibilizados pelos autores.",
+  "csv_sha256": "84f7ded042fee5919181a7518e1d065563fcaef2572e0fd94f5a798926682044"
+}

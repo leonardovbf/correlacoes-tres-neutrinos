@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 
 
@@ -43,7 +44,8 @@ def design_files():
     files = {}
     catalog = {
         "schema_version": 1, "study_id": "correlacoes-tres-neutrinos-v1",
-        "status": "desenho-definido-para-revisao",
+        "status": "implementacao-pronta-para-validacao-cientifica",
+        "operational_revision": 2,
         "collection_status": "aguarda-reproducao-publicada-e-controles",
         "primary_observable": {"kind": "c3", "definition": "cumulante conectado Kzzz de índices distintos",
                                "reference": "evolucao-exata", "methods": ["psa", "circuito"]},
@@ -56,7 +58,7 @@ def design_files():
             "primary_outputs": ["Kzzz por trio e tempo", "RMSE contra exato", "maior erro absoluto",
                                 "amplitude RMS exata", "erro normalizado quando sinal resolvido"],
             "confidence": .95, "bootstrap_repetitions": 2000,
-            "bootstrap_unit": "trajetoria ou bitstring completo; incluir calibração na mitigação",
+            "bootstrap_unit": "PSA: blocos independentes de sementes de igual tamanho, preservando trajetórias e tempos internos; circuito: contagens completas e calibração conjuntamente",
             "normalized_signal_floor": .0001,
             "integration_max_absolute_difference": {"pe": 1e-6, "c2": 1e-5, "c3": 1e-5},
             "exact_crosscheck_max_absolute_difference": 1e-10,
@@ -74,8 +76,9 @@ def design_files():
                 "nenhum_resolve": "inconclusivo quanto à necessidade de mitigação"},
             "secondary_endpoints": "Demais condições e trios são análises de sensibilidade; sem promovê-los a teste principal após observar dados. Usar Holm se fizer declarações de detecção múltipla.",
             "pooling": "Agregar momentos/contagens antes de calcular cumulantes; declarar orçamento total das 20 repetições; preservar blocos para estimar incerteza e viés.",
-            "implementation_status": "analise-conjunta-e-decisao-estatistica-a-implementar",
-            "qiskit_validation": {"status": "primeiro-intervalo-disponivel-demais-instantes-a-implementar",
+            "implementation_status": "implementada-em-run_study",
+            "sampling_standard_error_max_c3": .01,
+            "qiskit_validation": {"status": "instantes-selecionados-implementados",
                 "required_cases": {"n": list(SIZES), "mu": list(MUS), "tau": list(TIMES)},
                 "requirement": "Comparar o circuito Qiskit com o emulador nos mesmos passos totais e estados; conferir também a referência exata. Não substituir o erro Trotter por uma diferença entre duas implementações do mesmo Trotter."},
         },
@@ -92,8 +95,16 @@ def design_files():
                   for action in sorted({step["action"] for step in steps})}
         catalog["protocols"].append({"id": identifier, "question": question, "file": path,
             "definition_status": "definido", "execution_status": "compativel-com-runner-atual",
-            "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+            "analysis_status": "implementada-em-run_study",
             "prerequisites": prerequisites, "steps": len(steps), "actions": counts, "note": note})
+
+    benchmark = reference("lacroix_n8", 8, 16., 50001, trajectories=10000,
+                          substeps=20, end=50., points=201)
+    benchmark["request"]["config"].update(theta=.195, omega_values=[1.]*8,
+        g_values=[[1-math.cos(abs(i-j)/7*math.acos(.9)) for j in range(8)] for i in range(8)])
+    add("T00-reproducao-publicada", "00_reproducao_publicada",
+        "Reproduzir separadamente exato e PSA da Figura 2(c) de Lacroix 2024.", [benchmark],
+        ["testes-de-software"], "Dados vetoriais em data/benchmarks/lacroix2024. tau=t_paper/4; mu_codigo=16; nenhum ajuste aos resultados.")
 
     # Controles físicos: a PSA tem incerteza; seus cumulantes não são exigidos
     # exatamente nulos em todas as combinações de tempos e trios.
@@ -124,7 +135,7 @@ def design_files():
         add(f"T03-classica-{name}", f"03_classica_{name}",
             "Medir a precisão de Kzzz da PSA contra o exato, por N e interação.", steps,
             ["T02-integracao", "T02-amostragem"] + (["medicao-de-memoria-tempo-e-disco"] if name == "extensao" else []),
-            "O runner atual recalcula a referência em cada semente; otimizar o reaproveitamento antes da coleta extensa.")
+            "Exato e campo médio reutilizados por chave física, fontes e dependências; PSA usa cada semente declarada.")
 
     steps = []
     for n in SIZES:
@@ -133,7 +144,17 @@ def design_files():
             steps.append(reference(parent, n, mu, 2000 + n * 10 + m, trajectories=256))
             steps.extend(quantum(f"{parent}_t{value}", parent, steps=value) for value in (1, 2, 4, 8, 16))
     add("T04-trotter", "04_trotter", "Quantificar erro ideal de Trotter em Kzzz.", steps,
-        ["T01-controles", "reproducao-publicada"], "Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores ainda precisa ser implementada conforme o catálogo.")
+        ["T01-controles", "reproducao-publicada"], "Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores é executada pelo protocolo 04_qiskit.")
+
+    checks = []
+    for n in SIZES:
+        for m, mu in enumerate(MUS):
+            parent = f"qiskit_n{n}_m{m}"
+            checks.append(reference(parent, n, mu, 6000+n*10+m, trajectories=16))
+            checks.extend({"id": f"{parent}_tau{int(t)}", "action": "circuit", "run_from": parent,
+                           "request": {"steps": 16, "interval_index": int(t/.05)}} for t in TIMES)
+    add("T04-qiskit", "04_qiskit", "Conferir emulador e Qiskit em tau=1/2/4.",
+        checks, ["T04-trotter"], "O erro Trotter é verificado separadamente contra o exato.")
 
     steps = []
     for n in SIZES:
@@ -163,18 +184,32 @@ def design_files():
         steps, ["T02-integracao", "T02-amostragem", "T04-trotter", "validacao-ideal-da-grade-de-ruido"],
         "N=4, tau=1/2/4, trio012. Grade própria de 8 pontos até cada tau; 112 subpassos totais no ponto final. Validar essa discretização contra exato antes de interpretar o ruído.")
 
+    mitigation_steps = []
+    for m, mu in enumerate(MUS):
+        for t, end in enumerate(TIMES):
+            for seed in range(40001,40021):
+                parent = f"mit_m{m}_t{t}_s{seed}"
+                mitigation_steps.extend([reference(parent,4,mu,seed,end=end,points=8),
+                                         quantum(f"{parent}_ideal", parent)])
+                for profile in ("leve", "moderado"):
+                    for budget in SHOTS:
+                        mitigation_steps.append({"id": f"{parent}_{profile}_{budget}",
+                            "action": "mitigation", "run_from": parent, "request": {
+                                "interval_index":7,"steps":16,"shots":budget,"kind":"c3","index":0,
+                                "condition_max":10., **PROFILES[profile]}})
+    add("T07-mitigacao", "07_mitigacao", "Comparar leitura bruta e mitigada com orçamento igual.",
+        mitigation_steps, ["T06-ruido"], "Calibração incluída no orçamento; incerteza conjunta avaliada na análise.")
+
     specs = {
         "reproducao_publicada": {
-            "id": "T00-reproducao-publicada", "definition_status": "alvo-definido",
-            "execution_status": "aguarda-conversao-e-validacao-do-Hamiltoniano",
+            "id": "T00-detalhes-reproducao", "definition_status": "implementado",
+            "execution_status": "executavel-em-00_reproducao_publicada",
             "source": "https://arxiv.org/html/2409.20215v2", "target": "Figura 2(c), secao III.1.1, N=8, PSA bi-valuada",
-            "required_before_execution": ["conversao documentada de unidades, bases, spins/Pauli e soma de pares",
-                "parametros e janela extraidos da figura", "dados da fonte ou digitalizacao com incerteza",
-                "suporte a 10000 trajetorias em blocos"],
+            "implementation": {"units": "tau=t_paper/4; mu_codigo=16; g=1-cos(|i-j| acos(0.9)/7); theta=0.195", "source_data": "data/benchmarks/lacroix2024/figure2c.csv", "trajectories": 10000, "paper_time_window": [0,200]},
             "acceptance": "Comparar separadamente exato e PSA com suas curvas publicadas; tolerância baseada na precisão da fonte e de amostragem.",
         },
         "mitigacao": {
-            "id": "T07-mitigacao", "definition_status": "definido", "execution_status": "aguarda-implementacao",
+            "id": "T07-detalhes-mitigacao", "definition_status": "implementado", "execution_status": "executavel-em-07_mitigacao",
             "primary_endpoint": catalog["analysis"]["h2_primary_endpoint"],
             "sensitivity_grid": {"n": 4, "mu": list(MUS), "tau": list(TIMES), "trio": [0, 1, 2],
                 "profiles": ["leve", "moderado"], "shots_per_repetition_total": list(SHOTS)},
@@ -196,7 +231,7 @@ def design_files():
             "device": "Selecionar dispositivo disponível e registrar o nome antes da coleta; não fixar disponibilidade futura.",
             "prerequisites": ["T07-mitigacao", "residual ideal K3 <= 0.001 no circuito a enviar",
                 "profundidade e portas após transpilar registradas", "orçamento total autorizado e janela de calibração definida"],
-            "policy": "Nenhum envio automático durante definição. Se o teto interativo de 16 subpassos não alcançar a precisão, ajustar a implementação e versionar o protocolo antes de submeter.",
+            "policy": "Nenhum envio automático durante definição. Teto de 120 subpassos totais; max_depth após transpilar limita o envio. O plano usa o mesmo ponto primário e inclui calibração nos qubits físicos do sinal.",
             "archive": ["QPY", "layout", "calibracao", "Runtime options", "job ID", "contagens", "data e horario"],
         },
     }

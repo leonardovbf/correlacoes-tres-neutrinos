@@ -30,7 +30,7 @@ class StudyProtocolTests(unittest.TestCase):
             if "steps" in actual:
                 ProtocolSpec.model_validate(actual)
                 executable += 1
-        self.assertEqual(executable, 8)
+        self.assertEqual(executable, 11)
 
     def test_primary_grid_contains_all_cases_and_uses_independent_official_seeds(self):
         protocol = self.files["configs/protocols/artigo_v1/03_classica_principal.json"]
@@ -68,7 +68,7 @@ class StudyProtocolTests(unittest.TestCase):
         budget = mitigation["budget"]
         self.assertEqual(budget["mitigated_signal_fraction"] + 2 * budget["calibration_shots_fraction_each_state"],
                          budget["unmitigated_signal_fraction"])
-        self.assertEqual(mitigation["execution_status"], "aguarda-implementacao")
+        self.assertEqual(mitigation["execution_status"], "executavel-em-07_mitigacao")
 
 
 if __name__ == "__main__":

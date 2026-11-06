@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "study_id": "correlacoes-tres-neutrinos-v1",
-  "status": "desenho-definido-para-revisao",
+  "status": "implementacao-pronta-para-validacao-cientifica",
+  "operational_revision": 2,
   "collection_status": "aguarda-reproducao-publicada-e-controles",
   "primary_observable": {
     "kind": "c3",
@@ -49,7 +50,7 @@
     ],
     "confidence": 0.95,
     "bootstrap_repetitions": 2000,
-    "bootstrap_unit": "trajetoria ou bitstring completo; incluir calibração na mitigação",
+    "bootstrap_unit": "PSA: blocos independentes de sementes de igual tamanho, preservando trajetórias e tempos internos; circuito: contagens completas e calibração conjuntamente",
     "normalized_signal_floor": 0.0001,
     "integration_max_absolute_difference": {
       "pe": 1e-06,
@@ -84,9 +85,10 @@
     },
     "secondary_endpoints": "Demais condições e trios são análises de sensibilidade; sem promovê-los a teste principal após observar dados. Usar Holm se fizer declarações de detecção múltipla.",
     "pooling": "Agregar momentos/contagens antes de calcular cumulantes; declarar orçamento total das 20 repetições; preservar blocos para estimar incerteza e viés.",
-    "implementation_status": "analise-conjunta-e-decisao-estatistica-a-implementar",
+    "implementation_status": "implementada-em-run_study",
+    "sampling_standard_error_max_c3": 0.01,
     "qiskit_validation": {
-      "status": "primeiro-intervalo-disponivel-demais-instantes-a-implementar",
+      "status": "instantes-selecionados-implementados",
       "required_cases": {
         "n": [
           4,
@@ -111,12 +113,28 @@
   },
   "protocols": [
     {
+      "id": "T00-reproducao-publicada",
+      "question": "Reproduzir separadamente exato e PSA da Figura 2(c) de Lacroix 2024.",
+      "file": "configs/protocols/artigo_v1/00_reproducao_publicada.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "implementada-em-run_study",
+      "prerequisites": [
+        "testes-de-software"
+      ],
+      "steps": 1,
+      "actions": {
+        "classical": 1
+      },
+      "note": "Dados vetoriais em data/benchmarks/lacroix2024. tau=t_paper/4; mu_codigo=16; nenhum ajuste aos resultados."
+    },
+    {
       "id": "T01-controles",
       "question": "Conferir caso sem interação e consistência Qiskit.",
       "file": "configs/protocols/artigo_v1/01_controles.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "testes-de-software"
       ],
@@ -134,7 +152,7 @@
       "file": "configs/protocols/artigo_v1/02_integracao.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T01-controles",
         "reproducao-publicada"
@@ -151,7 +169,7 @@
       "file": "configs/protocols/artigo_v1/02_amostragem.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T01-controles",
         "reproducao-publicada"
@@ -168,7 +186,7 @@
       "file": "configs/protocols/artigo_v1/03_classica_principal.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T02-integracao",
         "T02-amostragem"
@@ -177,7 +195,7 @@
       "actions": {
         "classical": 300
       },
-      "note": "O runner atual recalcula a referência em cada semente; otimizar o reaproveitamento antes da coleta extensa."
+      "note": "Exato e campo médio reutilizados por chave física, fontes e dependências; PSA usa cada semente declarada."
     },
     {
       "id": "T03-classica-extensao",
@@ -185,7 +203,7 @@
       "file": "configs/protocols/artigo_v1/03_classica_extensao.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T02-integracao",
         "T02-amostragem",
@@ -195,7 +213,7 @@
       "actions": {
         "classical": 200
       },
-      "note": "O runner atual recalcula a referência em cada semente; otimizar o reaproveitamento antes da coleta extensa."
+      "note": "Exato e campo médio reutilizados por chave física, fontes e dependências; PSA usa cada semente declarada."
     },
     {
       "id": "T04-trotter",
@@ -203,7 +221,7 @@
       "file": "configs/protocols/artigo_v1/04_trotter.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T01-controles",
         "reproducao-publicada"
@@ -213,7 +231,24 @@
         "classical": 15,
         "quantum": 75
       },
-      "note": "Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores ainda precisa ser implementada conforme o catálogo."
+      "note": "Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores é executada pelo protocolo 04_qiskit."
+    },
+    {
+      "id": "T04-qiskit",
+      "question": "Conferir emulador e Qiskit em tau=1/2/4.",
+      "file": "configs/protocols/artigo_v1/04_qiskit.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "implementada-em-run_study",
+      "prerequisites": [
+        "T04-trotter"
+      ],
+      "steps": 60,
+      "actions": {
+        "circuit": 45,
+        "classical": 15
+      },
+      "note": "O erro Trotter é verificado separadamente contra o exato."
     },
     {
       "id": "T05-medicoes",
@@ -221,7 +256,7 @@
       "file": "configs/protocols/artigo_v1/05_medicoes.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T02-integracao",
         "T02-amostragem",
@@ -240,7 +275,7 @@
       "file": "configs/protocols/artigo_v1/06_ruido.json",
       "definition_status": "definido",
       "execution_status": "compativel-com-runner-atual",
-      "analysis_status": "usar-criterios-do-catalogo-analise-a-implementar",
+      "analysis_status": "implementada-em-run_study",
       "prerequisites": [
         "T02-integracao",
         "T02-amostragem",
@@ -256,17 +291,35 @@
       "note": "N=4, tau=1/2/4, trio012. Grade própria de 8 pontos até cada tau; 112 subpassos totais no ponto final. Validar essa discretização contra exato antes de interpretar o ruído."
     },
     {
-      "id": "T00-reproducao-publicada",
+      "id": "T07-mitigacao",
+      "question": "Comparar leitura bruta e mitigada com orçamento igual.",
+      "file": "configs/protocols/artigo_v1/07_mitigacao.json",
+      "definition_status": "definido",
+      "execution_status": "compativel-com-runner-atual",
+      "analysis_status": "implementada-em-run_study",
+      "prerequisites": [
+        "T06-ruido"
+      ],
+      "steps": 2400,
+      "actions": {
+        "classical": 300,
+        "mitigation": 1800,
+        "quantum": 300
+      },
+      "note": "Calibração incluída no orçamento; incerteza conjunta avaliada na análise."
+    },
+    {
+      "id": "T00-detalhes-reproducao",
       "file": "configs/protocols/artigo_v1/especificacoes/reproducao_publicada.json",
-      "definition_status": "alvo-definido",
-      "execution_status": "aguarda-conversao-e-validacao-do-Hamiltoniano",
+      "definition_status": "implementado",
+      "execution_status": "executavel-em-00_reproducao_publicada",
       "format": "especificacao-cientifica-nao-executavel-pelo-runner"
     },
     {
-      "id": "T07-mitigacao",
+      "id": "T07-detalhes-mitigacao",
       "file": "configs/protocols/artigo_v1/especificacoes/mitigacao.json",
-      "definition_status": "definido",
-      "execution_status": "aguarda-implementacao",
+      "definition_status": "implementado",
+      "execution_status": "executavel-em-07_mitigacao",
       "format": "especificacao-cientifica-nao-executavel-pelo-runner"
     },
     {

@@ -1,7 +1,7 @@
 {
-  "id": "T07-mitigacao",
-  "definition_status": "definido",
-  "execution_status": "aguarda-implementacao",
+  "id": "T07-detalhes-mitigacao",
+  "definition_status": "implementado",
+  "execution_status": "executavel-em-07_mitigacao",
   "primary_endpoint": {
     "n": 4,
     "mu": 3.0,

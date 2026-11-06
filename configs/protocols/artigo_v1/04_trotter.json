@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "name": "T04-trotter",
-  "description": "Quantificar erro ideal de Trotter em Kzzz. Desenho v1; executar somente após os controles especificados no catálogo. Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores ainda precisa ser implementada conforme o catálogo.",
+  "description": "Quantificar erro ideal de Trotter em Kzzz. Desenho v1; executar somente após os controles especificados no catálogo. Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores é executada pelo protocolo 04_qiskit.",
   "steps": [
     {
       "id": "n4_m0",
