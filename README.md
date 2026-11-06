@@ -188,7 +188,7 @@ Para gerar outro pacote a partir de registros concluídos:
 
 ## Artigo com resultados — pontos 6, 7 e 8
 
-[Artigo em português](ARTIGO.md) e [versão em inglês](ARTIGO.eng.md) combinam a introdução integral da `main` (`55b8e87`) com a metodologia, os parâmetros, as métricas e os resultados de `feat/system` (`1e870ed`). O título também segue a revisão da `main`; os resumos mantêm os resultados da coleta. As referências preservam a apresentação SBC e excluem a fonte Nobel 2015, retirada da nova introdução.
+[Artigo em português](ARTIGO.md) e [versão em inglês](ARTIGO.eng.md) combinam a introdução integral da `main` (`55b8e87`) com a metodologia, os parâmetros, as métricas e os resultados de `feat/system` (`1e870ed`). O título também segue a revisão da `main`; os resumos seguem a estrutura da `main`, com contexto, objetivo, método e resultados da coleta, acompanhados das limitações. As referências preservam a apresentação SBC e excluem a fonte Nobel 2015, retirada da nova introdução.
 
 A seção **Resultados experimentais** mantém os três gráficos, os valores observados, os intervalos e as limitações estatísticas. As quatro tabelas incluem parâmetros, ruído, controles e a comparação quântica. Códigos, workloads e dados continuam no repositório, com a disponibilidade descrita no artigo.
 

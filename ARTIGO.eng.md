@@ -1,8 +1,18 @@
 # Beyond mean field: does the phase-space approximation capture three-body neutrino correlations?
 
+_Além do campo médio: a aproximação de espaço de fase captura as correlações de três corpos entre neutrinos?_
+
+## Resumo
+
+O sabor dos neutrinos em supernovas pode influenciar a explosão e a produção de elementos pesados. Simular sua evolução quântica exige aproximações para sistemas grandes. Este trabalho avaliou a precisão da aproximação de espaço de fase para cumulantes de dois e três corpos em um modelo de dois sabores, com evolução exata e campo médio como referências. Circuitos trotterizados foram avaliados em condições ideais e com ruído. Os intervalos registrados indicaram maior erro normalizado dos trios em 14 de 15 configurações principais. Mais medições reduziram o erro dos circuitos ideais; no caso ruidoso principal, a mitigação de leitura não recuperou o cumulante exato no simulador e na IBM. A revisão estatística e a avaliação de limiares de ruído permanecem necessárias para conclusões confirmatórias.
+
+**Palavras-chave:** Neutrinos. Oscilações coletivas. Correlações de três corpos. Computação quântica. Aproximação de espaço de fase.
+
 ## Abstract
 
-The phase-space approximation was evaluated for two- and three-body cumulants in a two-flavor neutrino model. Comparison with exact evolution indicated larger normalized triple errors in 14 of 15 main configurations, according to the recorded intervals. More measurements reduced ideal-circuit error; in the primary noisy case, readout mitigation did not recover the exact cumulant in simulation or on IBM hardware. Parameters, controls, and reproducibility materials are presented. Statistical review and noise-threshold evaluation remain necessary for confirmatory conclusions.
+The flavor of neutrinos in supernovae can influence the explosion and heavy-element production. Simulating their quantum evolution requires approximations for large systems. This work assessed the accuracy of the phase-space approximation for two- and three-body cumulants in a two-flavor model, using exact evolution and mean field as references. Trotterized circuits were assessed under ideal and noisy conditions. The recorded intervals indicated larger normalized triple errors in 14 of 15 main configurations. More measurements reduced ideal-circuit error; in the primary noisy case, readout mitigation did not recover the exact cumulant in simulation or on IBM hardware. Statistical review and noise-threshold evaluation remain necessary for confirmatory conclusions.
+
+**Keywords:** Neutrinos. Collective oscillations. Three-body correlations. Quantum computing. Phase-space approximation.
 
 ## Introduction
 
