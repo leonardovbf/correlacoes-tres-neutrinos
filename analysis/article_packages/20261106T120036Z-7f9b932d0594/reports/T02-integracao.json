@@ -1,0 +1,3249 @@
+{
+  "phase": "T02-integracao",
+  "profile": "official-v1-r2",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "n4_m0_s1_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_2: Comprimento dos spins · campo médio",
+      "value": 6.040475897250985e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_4: Comprimento dos spins · campo médio",
+      "value": 3.133671100385982e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_8: Comprimento dos spins · campo médio",
+      "value": 1.7602586055431857e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_12: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s1_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_2: Comprimento dos spins · campo médio",
+      "value": 6.040475897250985e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_4: Comprimento dos spins · campo médio",
+      "value": 3.133671100385982e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_8: Comprimento dos spins · campo médio",
+      "value": 1.7602586055431857e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_12: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s2_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_2: Comprimento dos spins · campo médio",
+      "value": 6.040475897250985e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_4: Comprimento dos spins · campo médio",
+      "value": 3.133671100385982e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_8: Comprimento dos spins · campo médio",
+      "value": 1.7602586055431857e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_12: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s3_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_2: Comprimento dos spins · campo médio",
+      "value": 6.040475897250985e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_4: Comprimento dos spins · campo médio",
+      "value": 3.133671100385982e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_8: Comprimento dos spins · campo médio",
+      "value": 1.7602586055431857e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_12: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s4_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_2: Comprimento dos spins · campo médio",
+      "value": 6.040475897250985e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_4: Comprimento dos spins · campo médio",
+      "value": 3.133671100385982e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_8: Comprimento dos spins · campo médio",
+      "value": 1.7602586055431857e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_12: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_s5_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_2: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_2: Comprimento dos spins · campo médio",
+      "value": 4.235853112710686e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_4: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_4: Comprimento dos spins · campo médio",
+      "value": 2.520640363101734e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_8: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_8: Comprimento dos spins · campo médio",
+      "value": 1.5368928352188505e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_12: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_12: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s1_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_2: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_2: Comprimento dos spins · campo médio",
+      "value": 4.235853112710686e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_4: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_4: Comprimento dos spins · campo médio",
+      "value": 2.520640363101734e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_8: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_8: Comprimento dos spins · campo médio",
+      "value": 1.5368928352188505e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_12: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_12: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s2_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_2: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_2: Comprimento dos spins · campo médio",
+      "value": 4.235853112710686e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_4: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_4: Comprimento dos spins · campo médio",
+      "value": 2.520640363101734e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_8: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_8: Comprimento dos spins · campo médio",
+      "value": 1.5368928352188505e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_12: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_12: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s3_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_2: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_2: Comprimento dos spins · campo médio",
+      "value": 4.235853112710686e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_4: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_4: Comprimento dos spins · campo médio",
+      "value": 2.520640363101734e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_8: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_8: Comprimento dos spins · campo médio",
+      "value": 1.5368928352188505e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_12: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_12: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s4_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_2: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_2: Comprimento dos spins · campo médio",
+      "value": 4.235853112710686e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_4: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_4: Comprimento dos spins · campo médio",
+      "value": 2.520640363101734e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_8: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_8: Comprimento dos spins · campo médio",
+      "value": 1.5368928352188505e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_12: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_12: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_s5_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_2: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_2: Comprimento dos spins · campo médio",
+      "value": 3.965172790110216e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_4: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_4: Comprimento dos spins · campo médio",
+      "value": 1.521242132263012e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_8: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_8: Comprimento dos spins · campo médio",
+      "value": 6.514910833033127e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_12: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_12: Comprimento dos spins · campo médio",
+      "value": 1.0898837388140237e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s1_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_2: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_2: Comprimento dos spins · campo médio",
+      "value": 3.965172790110216e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_4: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_4: Comprimento dos spins · campo médio",
+      "value": 1.521242132263012e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_8: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_8: Comprimento dos spins · campo médio",
+      "value": 6.514910833033127e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_12: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_12: Comprimento dos spins · campo médio",
+      "value": 1.0898837388140237e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s2_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_2: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_2: Comprimento dos spins · campo médio",
+      "value": 3.965172790110216e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_4: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_4: Comprimento dos spins · campo médio",
+      "value": 1.521242132263012e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_8: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_8: Comprimento dos spins · campo médio",
+      "value": 6.514910833033127e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_12: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_12: Comprimento dos spins · campo médio",
+      "value": 1.0898837388140237e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s3_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_2: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_2: Comprimento dos spins · campo médio",
+      "value": 3.965172790110216e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_4: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_4: Comprimento dos spins · campo médio",
+      "value": 1.521242132263012e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_8: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_8: Comprimento dos spins · campo médio",
+      "value": 6.514910833033127e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_12: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_12: Comprimento dos spins · campo médio",
+      "value": 1.0898837388140237e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s4_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_2: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_2: Comprimento dos spins · campo médio",
+      "value": 3.965172790110216e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_4: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_4: Comprimento dos spins · campo médio",
+      "value": 1.521242132263012e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_8: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_8: Comprimento dos spins · campo médio",
+      "value": 6.514910833033127e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_12: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_12: Comprimento dos spins · campo médio",
+      "value": 1.0898837388140237e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_s5_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_2: Comprimento dos spins · campo médio",
+      "value": 5.435009109433508e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_4: Comprimento dos spins · campo médio",
+      "value": 2.9096502984771178e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_8: Comprimento dos spins · campo médio",
+      "value": 1.6688872506165353e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_12: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s1_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_2: Comprimento dos spins · campo médio",
+      "value": 5.435009109433508e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_4: Comprimento dos spins · campo médio",
+      "value": 2.9096502984771178e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_8: Comprimento dos spins · campo médio",
+      "value": 1.6688872506165353e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_12: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s2_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_2: Comprimento dos spins · campo médio",
+      "value": 5.435009109433508e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_4: Comprimento dos spins · campo médio",
+      "value": 2.9096502984771178e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_8: Comprimento dos spins · campo médio",
+      "value": 1.6688872506165353e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_12: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s3_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_2: Comprimento dos spins · campo médio",
+      "value": 5.435009109433508e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_4: Comprimento dos spins · campo médio",
+      "value": 2.9096502984771178e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_8: Comprimento dos spins · campo médio",
+      "value": 1.6688872506165353e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_12: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s4_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_2: Comprimento dos spins · campo médio",
+      "value": 5.435009109433508e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_4: Comprimento dos spins · campo médio",
+      "value": 2.9096502984771178e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_8: Comprimento dos spins · campo médio",
+      "value": 1.6688872506165353e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_12: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_s5_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_2: Comprimento dos spins · campo médio",
+      "value": 4.437582190597311e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_4: Comprimento dos spins · campo médio",
+      "value": 2.5445556772751843e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_8: Comprimento dos spins · campo médio",
+      "value": 1.5413226250871048e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_12: Comprimento dos spins · campo médio",
+      "value": 3.015365734881925e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s1_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_2: Comprimento dos spins · campo médio",
+      "value": 4.437582190597311e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_4: Comprimento dos spins · campo médio",
+      "value": 2.5445556772751843e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_8: Comprimento dos spins · campo médio",
+      "value": 1.5413226250871048e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_12: Comprimento dos spins · campo médio",
+      "value": 3.015365734881925e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s2_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_2: Comprimento dos spins · campo médio",
+      "value": 4.437582190597311e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_4: Comprimento dos spins · campo médio",
+      "value": 2.5445556772751843e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_8: Comprimento dos spins · campo médio",
+      "value": 1.5413226250871048e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_12: Comprimento dos spins · campo médio",
+      "value": 3.015365734881925e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s3_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_2: Comprimento dos spins · campo médio",
+      "value": 4.437582190597311e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_4: Comprimento dos spins · campo médio",
+      "value": 2.5445556772751843e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_8: Comprimento dos spins · campo médio",
+      "value": 1.5413226250871048e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_12: Comprimento dos spins · campo médio",
+      "value": 3.015365734881925e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s4_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_2: Comprimento dos spins · campo médio",
+      "value": 4.437582190597311e-09,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_4: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_4: Comprimento dos spins · campo médio",
+      "value": 2.5445556772751843e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_8: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_8: Comprimento dos spins · campo médio",
+      "value": 1.5413226250871048e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_12: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_12: Comprimento dos spins · campo médio",
+      "value": 3.015365734881925e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_s5_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_2: Comprimento dos spins · campo médio",
+      "value": 2.2551793987801716e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_4: Comprimento dos spins · campo médio",
+      "value": 9.393169575488969e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_8: Comprimento dos spins · campo médio",
+      "value": 4.5831005657248625e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_12: Comprimento dos spins · campo médio",
+      "value": 8.203326906652819e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s1_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_2: Comprimento dos spins · campo médio",
+      "value": 2.2551793987801716e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_4: Comprimento dos spins · campo médio",
+      "value": 9.393169575488969e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_8: Comprimento dos spins · campo médio",
+      "value": 4.5831005657248625e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_12: Comprimento dos spins · campo médio",
+      "value": 8.203326906652819e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s2_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_2: Comprimento dos spins · campo médio",
+      "value": 2.2551793987801716e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_4: Comprimento dos spins · campo médio",
+      "value": 9.393169575488969e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_8: Comprimento dos spins · campo médio",
+      "value": 4.5831005657248625e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_12: Comprimento dos spins · campo médio",
+      "value": 8.203326906652819e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s3_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_2: Comprimento dos spins · campo médio",
+      "value": 2.2551793987801716e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_4: Comprimento dos spins · campo médio",
+      "value": 9.393169575488969e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_8: Comprimento dos spins · campo médio",
+      "value": 4.5831005657248625e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_12: Comprimento dos spins · campo médio",
+      "value": 8.203326906652819e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s4_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_2: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_2: Comprimento dos spins · campo médio",
+      "value": 2.2551793987801716e-08,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_4: Comprimento dos spins · campo médio",
+      "value": 9.393169575488969e-10,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_8: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_8: Comprimento dos spins · campo médio",
+      "value": 4.5831005657248625e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_12: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_12: Comprimento dos spins · campo médio",
+      "value": 8.203326906652819e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_s5_12: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa pe",
+      "value": 2.6153634813397275e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa c2",
+      "value": 3.699818229563334e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa c3",
+      "value": 1.461275545011631e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean pe",
+      "value": 2.4726276581787943e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa pe",
+      "value": 2.513389496527907e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa c2",
+      "value": 3.841149620598117e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa c3",
+      "value": 1.5042411760646246e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean pe",
+      "value": 2.4726276581787943e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa pe",
+      "value": 2.652056352303589e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa c2",
+      "value": 4.9927839640417915e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa c3",
+      "value": 1.5156764732182637e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean pe",
+      "value": 2.4726276581787943e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa pe",
+      "value": 2.4610813387226926e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa c2",
+      "value": 2.9132252166164108e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa c3",
+      "value": 1.1799450305716164e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean pe",
+      "value": 2.4726276581787943e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa pe",
+      "value": 2.5895119382113307e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa c2",
+      "value": 2.404298982128239e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa c3",
+      "value": 1.6689982729189978e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean pe",
+      "value": 2.4726276581787943e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa pe",
+      "value": 5.600520047721602e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa c2",
+      "value": 5.495305599456657e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa c3",
+      "value": 4.185544272283792e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean pe",
+      "value": 6.558653620203359e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa pe",
+      "value": 6.009132080819768e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa c2",
+      "value": 4.8002823938020356e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa c3",
+      "value": 5.0241838467357525e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean pe",
+      "value": 6.558653620203359e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa pe",
+      "value": 6.217809600528312e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa c2",
+      "value": 5.368834543606482e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa c3",
+      "value": 4.464733444065061e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean pe",
+      "value": 6.558653620203359e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa pe",
+      "value": 5.785061318874796e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa c2",
+      "value": 4.842656831094416e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa c3",
+      "value": 4.535030684316155e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean pe",
+      "value": 6.558653620203359e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa pe",
+      "value": 6.091127602303459e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa c2",
+      "value": 4.880948423213738e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa c3",
+      "value": 4.877910575462607e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean pe",
+      "value": 6.558653620203359e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa pe",
+      "value": 5.1625845653990865e-08,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa c2",
+      "value": 1.0132714609034643e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 psa c3",
+      "value": 1.1810062122696863e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean pe",
+      "value": 7.531363310775419e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s1 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa pe",
+      "value": 4.759294647271872e-08,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa c2",
+      "value": 9.579241166957075e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 psa c3",
+      "value": 1.2366066557897848e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean pe",
+      "value": 7.531363310775419e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s2 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa pe",
+      "value": 5.079204545843652e-08,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa c2",
+      "value": 9.622079624738156e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 psa c3",
+      "value": 1.2616420019123664e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean pe",
+      "value": 7.531363310775419e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s3 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa pe",
+      "value": 5.009981046688594e-08,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa c2",
+      "value": 1.0294656968556914e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 psa c3",
+      "value": 1.1114320447314086e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean pe",
+      "value": 7.531363310775419e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s4 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa pe",
+      "value": 4.914852136383985e-08,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa c2",
+      "value": 9.332394215744166e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 psa c3",
+      "value": 1.1373515836771153e-07,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean pe",
+      "value": 7.531363310775419e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} s5 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa pe",
+      "value": 2.4112878360682544e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa c2",
+      "value": 2.9142799284898047e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa c3",
+      "value": 3.2569502650403592e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean pe",
+      "value": 2.4708179946486553e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa pe",
+      "value": 2.466216120211584e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa c2",
+      "value": 2.8343993818680246e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa c3",
+      "value": 2.7290392168310973e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean pe",
+      "value": 2.4708179946486553e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa pe",
+      "value": 2.6447621870318017e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa c2",
+      "value": 3.5853542357244805e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa c3",
+      "value": 2.2390977960640157e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean pe",
+      "value": 2.4708179946486553e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa pe",
+      "value": 2.4676038989923654e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa c2",
+      "value": 2.7682300896003653e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa c3",
+      "value": 3.0315749910414524e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean pe",
+      "value": 2.4708179946486553e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa pe",
+      "value": 2.6183555323910923e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa c2",
+      "value": 3.051947583543324e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa c3",
+      "value": 3.59945406813722e-12,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean pe",
+      "value": 2.4708179946486553e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa pe",
+      "value": 5.0240811511059746e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa c2",
+      "value": 3.1201541350611706e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa c3",
+      "value": 2.9777472154712825e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean pe",
+      "value": 6.331124513536679e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa pe",
+      "value": 4.695133171139787e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa c2",
+      "value": 3.388597735742849e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa c3",
+      "value": 2.8521615624832464e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean pe",
+      "value": 6.331124513536679e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa pe",
+      "value": 5.14447928701145e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa c2",
+      "value": 3.407391035992191e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa c3",
+      "value": 3.0624440483517645e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean pe",
+      "value": 6.331124513536679e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa pe",
+      "value": 5.1968485070830184e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa c2",
+      "value": 4.093800298754502e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa c3",
+      "value": 2.5959089045013428e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean pe",
+      "value": 6.331124513536679e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa pe",
+      "value": 4.698985645035236e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa c2",
+      "value": 3.359476585806931e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa c3",
+      "value": 2.2666313270747196e-11,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean pe",
+      "value": 6.331124513536679e-11,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa pe",
+      "value": 6.036158128885916e-09,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa c2",
+      "value": 1.2245383596010129e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 psa c3",
+      "value": 1.2972803329833194e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean pe",
+      "value": 5.286654447544947e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s1 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa pe",
+      "value": 5.623572163493407e-09,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa c2",
+      "value": 1.4481682242273308e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 psa c3",
+      "value": 1.2742045626956688e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean pe",
+      "value": 5.286654447544947e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s2 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa pe",
+      "value": 6.116852246940141e-09,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa c2",
+      "value": 1.1649997716522975e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 psa c3",
+      "value": 1.2552333186754971e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean pe",
+      "value": 5.286654447544947e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s3 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa pe",
+      "value": 4.605621994890896e-09,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa c2",
+      "value": 1.3219180639012507e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 psa c3",
+      "value": 1.1403128552522901e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean pe",
+      "value": 5.286654447544947e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s4 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa pe",
+      "value": 6.108085259803886e-09,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa c2",
+      "value": 1.6200213837080923e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 psa c3",
+      "value": 1.313658046231403e-08,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean pe",
+      "value": 5.286654447544947e-10,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean c2",
+      "value": 0.0,
+      "limit": 1e-05,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} s5 mean c3",
+      "value": 4.440892098500626e-16,
+      "limit": 1e-05,
+      "pass": true
+    }
+  ],
+  "cases": [],
+  "hypothesis_results_are_not_acceptance_gates": true
+}

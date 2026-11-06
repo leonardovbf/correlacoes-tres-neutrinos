@@ -1,0 +1,572 @@
+{
+  "utc": "2026-11-06T11:42:50.734243+00:00",
+  "operation": "status_query_no_submissions",
+  "backend": "ibm_kingston",
+  "expected_jobs": 80,
+  "counts": {
+    "DONE": 80
+  },
+  "missing_job_ids": [],
+  "jobs": [
+    {
+      "job_id": "dbmk911kbkrc73cplkog",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030726Z-b4a24166"
+    },
+    {
+      "job_id": "dbmk8vpkbkrc73cplkm0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030726Z-b4a24166"
+    },
+    {
+      "job_id": "dbmk8ud8mdtc73d84ejg",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030726Z-b4a24166"
+    },
+    {
+      "job_id": "dbmk8spkbkrc73cplkgg",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030726Z-b4a24166"
+    },
+    {
+      "job_id": "dbmk8rd8ft8s738v0v2g",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030700Z-af307e65"
+    },
+    {
+      "job_id": "dbmk8pu74qds73dseteg",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030700Z-af307e65"
+    },
+    {
+      "job_id": "dbmk8om74qds73dsetb0",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030700Z-af307e65"
+    },
+    {
+      "job_id": "dbmk8n58mdtc73d84e1g",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030700Z-af307e65"
+    },
+    {
+      "job_id": "dbmk8l674qds73dset50",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030636Z-9d2e1e98"
+    },
+    {
+      "job_id": "dbmk8jd8mdtc73d84dqg",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030636Z-9d2e1e98"
+    },
+    {
+      "job_id": "dbmk8he74qds73dsesrg",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030636Z-9d2e1e98"
+    },
+    {
+      "job_id": "dbmk8g674qds73dsesn0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030636Z-9d2e1e98"
+    },
+    {
+      "job_id": "dbmk8eu74qds73dseskg",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030610Z-d56a1440"
+    },
+    {
+      "job_id": "dbmk8dd8ft8s738v0u40",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030610Z-d56a1440"
+    },
+    {
+      "job_id": "dbmk8bl8ft8s738v0u0g",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030610Z-d56a1440"
+    },
+    {
+      "job_id": "dbmk8a58mdtc73d84d7g",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030610Z-d56a1440"
+    },
+    {
+      "job_id": "dbmk889kbkrc73cpliug",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030547Z-35c6fda1"
+    },
+    {
+      "job_id": "dbmk871kbkrc73cplisg",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030547Z-35c6fda1"
+    },
+    {
+      "job_id": "dbmk85m74qds73dses10",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030547Z-35c6fda1"
+    },
+    {
+      "job_id": "dbmk8458ft8s738v0te0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030547Z-35c6fda1"
+    },
+    {
+      "job_id": "dbmk82l8mdtc73d84cj0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030523Z-82fd5307"
+    },
+    {
+      "job_id": "dbmk811kbkrc73cplie0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030523Z-82fd5307"
+    },
+    {
+      "job_id": "dbmk7vl8mdtc73d84c9g",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030523Z-82fd5307"
+    },
+    {
+      "job_id": "dbmk7u674qds73dserig",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030523Z-82fd5307"
+    },
+    {
+      "job_id": "dbmk7sm74qds73dserdg",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030459Z-37379089"
+    },
+    {
+      "job_id": "dbmk7r1kbkrc73cpli3g",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030459Z-37379089"
+    },
+    {
+      "job_id": "dbmk7pt8mdtc73d84bt0",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030459Z-37379089"
+    },
+    {
+      "job_id": "dbmk7od8mdtc73d84bq0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030459Z-37379089"
+    },
+    {
+      "job_id": "dbmk7ml8ft8s738v0shg",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030433Z-68c55c38"
+    },
+    {
+      "job_id": "dbmk7le74qds73dser00",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030433Z-68c55c38"
+    },
+    {
+      "job_id": "dbmk7jm74qds73dseqtg",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030433Z-68c55c38"
+    },
+    {
+      "job_id": "dbmk7hu74qds73dseqo0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030433Z-68c55c38"
+    },
+    {
+      "job_id": "dbmk7ge74qds73dseqk0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030409Z-3a03dafe"
+    },
+    {
+      "job_id": "dbmk7et8ft8s738v0rtg",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030409Z-3a03dafe"
+    },
+    {
+      "job_id": "dbmk7dd8mdtc73d84b40",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030409Z-3a03dafe"
+    },
+    {
+      "job_id": "dbmk7bu74qds73dseq8g",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030409Z-3a03dafe"
+    },
+    {
+      "job_id": "dbmk7a58mdtc73d84asg",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030344Z-3fb34b33"
+    },
+    {
+      "job_id": "dbmk78l8mdtc73d84aq0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030344Z-3fb34b33"
+    },
+    {
+      "job_id": "dbmk7758ft8s738v0rg0",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030344Z-3fb34b33"
+    },
+    {
+      "job_id": "dbmk75m74qds73dsepqg",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030344Z-3fb34b33"
+    },
+    {
+      "job_id": "dbmk73t8mdtc73d84adg",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030319Z-cf36e601"
+    },
+    {
+      "job_id": "dbmk729kbkrc73cplgh0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030319Z-cf36e601"
+    },
+    {
+      "job_id": "dbmk70l8mdtc73d84a30",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030319Z-cf36e601"
+    },
+    {
+      "job_id": "dbmk6v58mdtc73d849vg",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030319Z-cf36e601"
+    },
+    {
+      "job_id": "dbmk6tl8ft8s738v0qs0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030254Z-398f8202"
+    },
+    {
+      "job_id": "dbmk6s9kbkrc73cplg1g",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030254Z-398f8202"
+    },
+    {
+      "job_id": "dbmk6qm74qds73dsep30",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030254Z-398f8202"
+    },
+    {
+      "job_id": "dbmk6ot8ft8s738v0qf0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030254Z-398f8202"
+    },
+    {
+      "job_id": "dbmk6nd8mdtc73d849f0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030229Z-efdad1d1"
+    },
+    {
+      "job_id": "dbmk6m58ft8s738v0q80",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030229Z-efdad1d1"
+    },
+    {
+      "job_id": "dbmk6kd8mdtc73d84980",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030229Z-efdad1d1"
+    },
+    {
+      "job_id": "dbmk6ipkbkrc73cplfdg",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030229Z-efdad1d1"
+    },
+    {
+      "job_id": "dbmk6h9kbkrc73cplfa0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030204Z-7a44a2ce"
+    },
+    {
+      "job_id": "dbmk6fhkbkrc73cplf6g",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030204Z-7a44a2ce"
+    },
+    {
+      "job_id": "dbmk6e1kbkrc73cplf30",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030204Z-7a44a2ce"
+    },
+    {
+      "job_id": "dbmk6cm74qds73dseo80",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030204Z-7a44a2ce"
+    },
+    {
+      "job_id": "dbmk6at8mdtc73d848i0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030135Z-10a0f6c7"
+    },
+    {
+      "job_id": "dbmk69674qds73dseo2g",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030135Z-10a0f6c7"
+    },
+    {
+      "job_id": "dbmk679kbkrc73cplek0",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030135Z-10a0f6c7"
+    },
+    {
+      "job_id": "dbmk65d8mdtc73d8483g",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030135Z-10a0f6c7"
+    },
+    {
+      "job_id": "dbmk63l8mdtc73d8480g",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030108Z-864ab879"
+    },
+    {
+      "job_id": "dbmk6258ft8s738v0ot0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030108Z-864ab879"
+    },
+    {
+      "job_id": "dbmk601kbkrc73cple50",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030108Z-864ab879"
+    },
+    {
+      "job_id": "dbmk5uhkbkrc73cple10",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030108Z-864ab879"
+    },
+    {
+      "job_id": "dbmk5su74qds73dsen70",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030041Z-c6148748"
+    },
+    {
+      "job_id": "dbmk5r58mdtc73d847c0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030041Z-c6148748"
+    },
+    {
+      "job_id": "dbmk5pd8mdtc73d8476g",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030041Z-c6148748"
+    },
+    {
+      "job_id": "dbmk5o674qds73dsems0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030041Z-c6148748"
+    },
+    {
+      "job_id": "dbmk5me74qds73dsemn0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T030013Z-900ba3a2"
+    },
+    {
+      "job_id": "dbmk5khkbkrc73cpldeg",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T030013Z-900ba3a2"
+    },
+    {
+      "job_id": "dbmk5il8ft8s738v0nt0",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T030013Z-900ba3a2"
+    },
+    {
+      "job_id": "dbmk5h9kbkrc73cpld60",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T030013Z-900ba3a2"
+    },
+    {
+      "job_id": "dbmk5f58mdtc73d846g0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T025946Z-32ec3187"
+    },
+    {
+      "job_id": "dbmk5dl8mdtc73d846bg",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T025946Z-32ec3187"
+    },
+    {
+      "job_id": "dbmk5bl8ft8s738v0nb0",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T025946Z-32ec3187"
+    },
+    {
+      "job_id": "dbmk5a1kbkrc73cplco0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T025946Z-32ec3187"
+    },
+    {
+      "job_id": "dbmk589kbkrc73cplck0",
+      "status": "DONE",
+      "role": "calibration_one",
+      "shots": 2048,
+      "run_id": "20261106T025918Z-3412550b"
+    },
+    {
+      "job_id": "dbmk56t8mdtc73d845s0",
+      "status": "DONE",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "run_id": "20261106T025918Z-3412550b"
+    },
+    {
+      "job_id": "dbmk551kbkrc73cplccg",
+      "status": "DONE",
+      "role": "signal",
+      "shots": 12288,
+      "run_id": "20261106T025918Z-3412550b"
+    },
+    {
+      "job_id": "dbmk53e74qds73dselg0",
+      "status": "DONE",
+      "role": "raw",
+      "shots": 16384,
+      "run_id": "20261106T025918Z-3412550b"
+    }
+  ]
+}

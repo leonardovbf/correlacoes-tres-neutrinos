@@ -1,0 +1,102 @@
+{
+  "id": "T07-detalhes-mitigacao",
+  "definition_status": "implementado",
+  "execution_status": "executavel-em-07_mitigacao",
+  "primary_endpoint": {
+    "n": 4,
+    "mu": 3.0,
+    "trio": [
+      0,
+      1,
+      2
+    ],
+    "tau": 2.0,
+    "noise_profile": "moderado",
+    "shots_per_repetition_total": 16384,
+    "repetitions": 20,
+    "total_shots_per_method": 327680
+  },
+  "sensitivity_grid": {
+    "n": 4,
+    "mu": [
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "tau": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "trio": [
+      0,
+      1,
+      2
+    ],
+    "profiles": [
+      "leve",
+      "moderado"
+    ],
+    "shots_per_repetition_total": [
+      1024,
+      4096,
+      16384
+    ]
+  },
+  "seeds": [
+    40001,
+    40002,
+    40003,
+    40004,
+    40005,
+    40006,
+    40007,
+    40008,
+    40009,
+    40010,
+    40011,
+    40012,
+    40013,
+    40014,
+    40015,
+    40016,
+    40017,
+    40018,
+    40019,
+    40020
+  ],
+  "profiles": {
+    "ideal": {
+      "single_qubit_error": 0.0,
+      "two_qubit_error": 0.0,
+      "readout_error": 0.0
+    },
+    "leve": {
+      "single_qubit_error": 0.0001,
+      "two_qubit_error": 0.001,
+      "readout_error": 0.01
+    },
+    "moderado": {
+      "single_qubit_error": 0.001,
+      "two_qubit_error": 0.01,
+      "readout_error": 0.03
+    }
+  },
+  "method": "Mitigação tensorial de leitura com matrizes 2x2 por qubit; hipótese de erros independentes.",
+  "calibration_states": [
+    "0000",
+    "1111"
+  ],
+  "budget": {
+    "unmitigated_signal_fraction": 1.0,
+    "mitigated_signal_fraction": 0.75,
+    "calibration_shots_fraction_each_state": 0.125,
+    "rule": "Orçamento total idêntico por método, incluindo calibração; declarar também total das 20 repetições."
+  },
+  "matrix_condition_number_max": 10.0,
+  "unstable_calibration_policy": "Registrar como não resolvido; não inverter matriz instável nem excluir o caso silenciosamente.",
+  "uncertainty": "Bootstrap conjunto de contagens de sinal, calibração e trajetórias PSA; registrar viés de amostragem.",
+  "decision": "IC95 de circuito-PSA exclui zero E IC95 de circuito-exato inteiramente em [-0.01,0.01], com incerteza PSA e erro residual controlados."
+}

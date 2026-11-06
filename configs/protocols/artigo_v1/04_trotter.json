@@ -1,0 +1,2027 @@
+{
+  "schema_version": 1,
+  "name": "T04-trotter",
+  "description": "Quantificar erro ideal de Trotter em Kzzz. Desenho v1; executar somente após os controles especificados no catálogo. Analisar ideal_c3; shots=128 são saída auxiliar do emulador local. A referência é o exato. A checagem Qiskit em instantes posteriores é executada pelo protocolo 04_qiskit.",
+  "steps": [
+    {
+      "id": "n4_m0",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 0.1,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2040,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.8999999999999999,
+            1.0999999999999999,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n4_m0_t1",
+      "action": "quantum",
+      "run_from": "n4_m0",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m0_t2",
+      "action": "quantum",
+      "run_from": "n4_m0",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m0_t4",
+      "action": "quantum",
+      "run_from": "n4_m0",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m0_t8",
+      "action": "quantum",
+      "run_from": "n4_m0",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m0_t16",
+      "action": "quantum",
+      "run_from": "n4_m0",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m1",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 0.3,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2041,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.8999999999999999,
+            1.0999999999999999,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n4_m1_t1",
+      "action": "quantum",
+      "run_from": "n4_m1",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m1_t2",
+      "action": "quantum",
+      "run_from": "n4_m1",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m1_t4",
+      "action": "quantum",
+      "run_from": "n4_m1",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m1_t8",
+      "action": "quantum",
+      "run_from": "n4_m1",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m1_t16",
+      "action": "quantum",
+      "run_from": "n4_m1",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m2",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 1.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2042,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.8999999999999999,
+            1.0999999999999999,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n4_m2_t1",
+      "action": "quantum",
+      "run_from": "n4_m2",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m2_t2",
+      "action": "quantum",
+      "run_from": "n4_m2",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m2_t4",
+      "action": "quantum",
+      "run_from": "n4_m2",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m2_t8",
+      "action": "quantum",
+      "run_from": "n4_m2",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m2_t16",
+      "action": "quantum",
+      "run_from": "n4_m2",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m3",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2043,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.8999999999999999,
+            1.0999999999999999,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n4_m3_t1",
+      "action": "quantum",
+      "run_from": "n4_m3",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m3_t2",
+      "action": "quantum",
+      "run_from": "n4_m3",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m3_t4",
+      "action": "quantum",
+      "run_from": "n4_m3",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m3_t8",
+      "action": "quantum",
+      "run_from": "n4_m3",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m3_t16",
+      "action": "quantum",
+      "run_from": "n4_m3",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m4",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 10.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2044,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.8999999999999999,
+            1.0999999999999999,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n4_m4_t1",
+      "action": "quantum",
+      "run_from": "n4_m4",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m4_t2",
+      "action": "quantum",
+      "run_from": "n4_m4",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m4_t4",
+      "action": "quantum",
+      "run_from": "n4_m4",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m4_t8",
+      "action": "quantum",
+      "run_from": "n4_m4",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n4_m4_t16",
+      "action": "quantum",
+      "run_from": "n4_m4",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m0",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 6,
+          "mu": 0.1,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2060,
+          "flavors": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.82,
+            0.94,
+            1.06,
+            1.18,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n6_m0_t1",
+      "action": "quantum",
+      "run_from": "n6_m0",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m0_t2",
+      "action": "quantum",
+      "run_from": "n6_m0",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m0_t4",
+      "action": "quantum",
+      "run_from": "n6_m0",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m0_t8",
+      "action": "quantum",
+      "run_from": "n6_m0",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m0_t16",
+      "action": "quantum",
+      "run_from": "n6_m0",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m1",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 6,
+          "mu": 0.3,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2061,
+          "flavors": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.82,
+            0.94,
+            1.06,
+            1.18,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n6_m1_t1",
+      "action": "quantum",
+      "run_from": "n6_m1",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m1_t2",
+      "action": "quantum",
+      "run_from": "n6_m1",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m1_t4",
+      "action": "quantum",
+      "run_from": "n6_m1",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m1_t8",
+      "action": "quantum",
+      "run_from": "n6_m1",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m1_t16",
+      "action": "quantum",
+      "run_from": "n6_m1",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m2",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 6,
+          "mu": 1.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2062,
+          "flavors": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.82,
+            0.94,
+            1.06,
+            1.18,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n6_m2_t1",
+      "action": "quantum",
+      "run_from": "n6_m2",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m2_t2",
+      "action": "quantum",
+      "run_from": "n6_m2",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m2_t4",
+      "action": "quantum",
+      "run_from": "n6_m2",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m2_t8",
+      "action": "quantum",
+      "run_from": "n6_m2",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m2_t16",
+      "action": "quantum",
+      "run_from": "n6_m2",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m3",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 6,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2063,
+          "flavors": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.82,
+            0.94,
+            1.06,
+            1.18,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n6_m3_t1",
+      "action": "quantum",
+      "run_from": "n6_m3",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m3_t2",
+      "action": "quantum",
+      "run_from": "n6_m3",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m3_t4",
+      "action": "quantum",
+      "run_from": "n6_m3",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m3_t8",
+      "action": "quantum",
+      "run_from": "n6_m3",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m3_t16",
+      "action": "quantum",
+      "run_from": "n6_m3",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m4",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 6,
+          "mu": 10.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2064,
+          "flavors": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.82,
+            0.94,
+            1.06,
+            1.18,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n6_m4_t1",
+      "action": "quantum",
+      "run_from": "n6_m4",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m4_t2",
+      "action": "quantum",
+      "run_from": "n6_m4",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m4_t4",
+      "action": "quantum",
+      "run_from": "n6_m4",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m4_t8",
+      "action": "quantum",
+      "run_from": "n6_m4",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n6_m4_t16",
+      "action": "quantum",
+      "run_from": "n6_m4",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m0",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 8,
+          "mu": 0.1,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2080,
+          "flavors": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.7857142857142857,
+            0.8714285714285714,
+            0.9571428571428571,
+            1.0428571428571427,
+            1.1285714285714286,
+            1.2142857142857142,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n8_m0_t1",
+      "action": "quantum",
+      "run_from": "n8_m0",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m0_t2",
+      "action": "quantum",
+      "run_from": "n8_m0",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m0_t4",
+      "action": "quantum",
+      "run_from": "n8_m0",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m0_t8",
+      "action": "quantum",
+      "run_from": "n8_m0",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m0_t16",
+      "action": "quantum",
+      "run_from": "n8_m0",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m1",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 8,
+          "mu": 0.3,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2081,
+          "flavors": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.7857142857142857,
+            0.8714285714285714,
+            0.9571428571428571,
+            1.0428571428571427,
+            1.1285714285714286,
+            1.2142857142857142,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n8_m1_t1",
+      "action": "quantum",
+      "run_from": "n8_m1",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m1_t2",
+      "action": "quantum",
+      "run_from": "n8_m1",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m1_t4",
+      "action": "quantum",
+      "run_from": "n8_m1",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m1_t8",
+      "action": "quantum",
+      "run_from": "n8_m1",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m1_t16",
+      "action": "quantum",
+      "run_from": "n8_m1",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m2",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 8,
+          "mu": 1.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2082,
+          "flavors": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.7857142857142857,
+            0.8714285714285714,
+            0.9571428571428571,
+            1.0428571428571427,
+            1.1285714285714286,
+            1.2142857142857142,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n8_m2_t1",
+      "action": "quantum",
+      "run_from": "n8_m2",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m2_t2",
+      "action": "quantum",
+      "run_from": "n8_m2",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m2_t4",
+      "action": "quantum",
+      "run_from": "n8_m2",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m2_t8",
+      "action": "quantum",
+      "run_from": "n8_m2",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m2_t16",
+      "action": "quantum",
+      "run_from": "n8_m2",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m3",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 8,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2083,
+          "flavors": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.7857142857142857,
+            0.8714285714285714,
+            0.9571428571428571,
+            1.0428571428571427,
+            1.1285714285714286,
+            1.2142857142857142,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n8_m3_t1",
+      "action": "quantum",
+      "run_from": "n8_m3",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m3_t2",
+      "action": "quantum",
+      "run_from": "n8_m3",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m3_t4",
+      "action": "quantum",
+      "run_from": "n8_m3",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m3_t8",
+      "action": "quantum",
+      "run_from": "n8_m3",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m3_t16",
+      "action": "quantum",
+      "run_from": "n8_m3",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m4",
+      "action": "classical",
+      "request": {
+        "config": {
+          "n": 8,
+          "mu": 10.0,
+          "theta": 0.2,
+          "t_max": 10.0,
+          "points": 201,
+          "seed": 2084,
+          "flavors": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.7857142857142857,
+            0.8714285714285714,
+            0.9571428571428571,
+            1.0428571428571427,
+            1.1285714285714286,
+            1.2142857142857142,
+            1.2999999999999998
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 256,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "n8_m4_t1",
+      "action": "quantum",
+      "run_from": "n8_m4",
+      "request": {
+        "steps": 1,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m4_t2",
+      "action": "quantum",
+      "run_from": "n8_m4",
+      "request": {
+        "steps": 2,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m4_t4",
+      "action": "quantum",
+      "run_from": "n8_m4",
+      "request": {
+        "steps": 4,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m4_t8",
+      "action": "quantum",
+      "run_from": "n8_m4",
+      "request": {
+        "steps": 8,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "n8_m4_t16",
+      "action": "quantum",
+      "run_from": "n8_m4",
+      "request": {
+        "steps": 16,
+        "shots": 128,
+        "readout_error": 0.0
+      }
+    }
+  ]
+}

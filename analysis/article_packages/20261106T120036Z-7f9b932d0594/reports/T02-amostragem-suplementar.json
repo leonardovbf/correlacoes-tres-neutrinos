@@ -1,0 +1,2276 @@
+{
+  "phase": "T02-amostragem-suplementar",
+  "profile": "official-v1-r2",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "n4_mu0p1_s70001: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70001: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70001: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70002: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70002: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70002: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70003: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70003: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70003: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70004: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70004: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70004: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70005: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70005: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70005: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70006: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70006: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70006: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70007: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70007: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70007: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70008: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70008: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70008: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70009: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70009: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70009: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70010: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70010: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70010: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70011: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70011: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70011: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70012: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70012: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70012: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70013: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70013: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70013: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70014: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70014: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70014: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70015: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70015: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70015: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70016: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70016: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70016: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70017: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70017: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70017: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70018: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70018: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70018: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70019: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70019: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70019: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70020: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70020: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu0p1_s70020: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70001: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70001: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70001: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70002: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70002: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70002: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70003: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70003: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70003: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70004: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70004: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70004: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70005: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70005: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70005: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70006: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70006: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70006: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70007: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70007: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70007: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70008: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70008: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70008: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70009: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70009: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70009: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70010: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70010: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70010: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70011: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70011: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70011: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70012: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70012: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70012: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70013: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70013: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70013: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70014: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70014: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70014: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70015: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70015: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70015: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70016: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70016: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70016: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70017: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70017: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70017: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70018: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70018: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70018: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70019: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70019: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70019: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70020: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70020: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu1p0_s70020: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70001: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70001: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70001: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70002: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70002: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70002: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70003: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70003: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70003: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70004: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70004: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70004: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70005: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70005: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70005: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70006: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70006: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70006: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70007: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70007: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70007: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70008: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70008: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70008: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70009: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70009: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70009: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70010: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70010: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70010: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70011: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70011: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70011: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70012: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70012: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70012: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70013: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70013: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70013: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70014: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70014: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70014: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70015: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70015: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70015: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70016: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70016: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70016: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70017: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70017: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70017: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70018: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70018: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70018: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70019: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70019: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70019: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70020: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70020: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_mu10p0_s70020: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70001: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70001: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70001: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70002: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70002: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70002: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70003: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70003: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70003: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70004: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70004: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70004: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70005: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70005: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70005: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70006: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70006: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70006: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70007: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70007: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70007: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70008: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70008: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70008: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70009: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70009: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70009: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70010: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70010: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70010: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70011: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70011: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70011: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70012: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70012: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70012: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70013: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70013: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70013: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70014: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70014: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70014: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70015: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70015: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70015: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70016: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70016: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70016: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70017: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70017: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70017: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70018: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70018: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70018: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70019: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70019: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70019: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70020: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70020: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu0p1_s70020: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70001: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70001: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70001: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70002: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70002: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70002: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70003: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70003: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70003: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70004: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70004: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70004: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70005: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70005: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70005: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70006: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70006: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70006: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70007: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70007: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70007: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70008: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70008: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70008: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70009: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70009: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70009: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70010: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70010: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70010: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70011: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70011: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70011: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70012: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70012: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70012: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70013: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70013: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70013: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70014: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70014: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70014: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70015: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70015: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70015: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70016: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70016: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70016: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70017: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70017: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70017: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70018: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70018: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70018: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70019: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70019: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70019: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70020: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70020: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu1p0_s70020: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70001: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70001: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70001: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70002: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70002: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70002: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70003: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70003: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70003: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70004: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70004: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70004: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70005: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70005: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70005: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70006: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70006: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70006: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70007: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70007: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70007: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70008: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70008: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70008: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70009: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70009: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70009: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70010: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70010: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70010: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70011: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70011: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70011: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70012: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70012: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70012: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70013: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70013: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70013: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70014: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70014: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70014: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70015: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70015: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70015: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70016: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70016: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70016: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70017: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70017: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70017: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70018: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70018: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70018: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70019: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70019: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70019: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70020: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70020: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_mu10p0_s70020: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 4, \"points\": 201, \"t_max\": 10.0} erro padrão PSA",
+      "value": 0.0014095122853704457,
+      "limit": 0.01,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} erro padrão PSA",
+      "value": 0.0027972935104721946,
+      "limit": 0.01,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 4, \"points\": 201, \"t_max\": 10.0} erro padrão PSA",
+      "value": 0.004780756865686921,
+      "limit": 0.01,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 0.1, \"n\": 8, \"points\": 201, \"t_max\": 10.0} erro padrão PSA",
+      "value": 0.002003548549266418,
+      "limit": 0.01,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 1.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} erro padrão PSA",
+      "value": 0.004034979928887879,
+      "limit": 0.01,
+      "pass": true
+    },
+    {
+      "name": "{\"mu\": 10.0, \"n\": 8, \"points\": 201, \"t_max\": 10.0} erro padrão PSA",
+      "value": 0.005112730809630293,
+      "limit": 0.01,
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "cell": {
+        "mu": 0.1,
+        "n": 4,
+        "points": 201,
+        "t_max": 10.0
+      },
+      "trajectories": 4096,
+      "max_seed_standard_error_c3": 0.0014095122853704457,
+      "seeds": 20
+    },
+    {
+      "cell": {
+        "mu": 1.0,
+        "n": 4,
+        "points": 201,
+        "t_max": 10.0
+      },
+      "trajectories": 4096,
+      "max_seed_standard_error_c3": 0.0027972935104721946,
+      "seeds": 20
+    },
+    {
+      "cell": {
+        "mu": 10.0,
+        "n": 4,
+        "points": 201,
+        "t_max": 10.0
+      },
+      "trajectories": 4096,
+      "max_seed_standard_error_c3": 0.004780756865686921,
+      "seeds": 20
+    },
+    {
+      "cell": {
+        "mu": 0.1,
+        "n": 8,
+        "points": 201,
+        "t_max": 10.0
+      },
+      "trajectories": 4096,
+      "max_seed_standard_error_c3": 0.002003548549266418,
+      "seeds": 20
+    },
+    {
+      "cell": {
+        "mu": 1.0,
+        "n": 8,
+        "points": 201,
+        "t_max": 10.0
+      },
+      "trajectories": 4096,
+      "max_seed_standard_error_c3": 0.004034979928887879,
+      "seeds": 20
+    },
+    {
+      "cell": {
+        "mu": 10.0,
+        "n": 8,
+        "points": 201,
+        "t_max": 10.0
+      },
+      "trajectories": 4096,
+      "max_seed_standard_error_c3": 0.005112730809630293,
+      "seeds": 20
+    }
+  ],
+  "hypothesis_results_are_not_acceptance_gates": true,
+  "sampling_amendment": {
+    "id": "amostragem-precisao-v3",
+    "protocol": "configs/protocols/artigo_v1/02_suplemento_amostragem_v3.json"
+  }
+}

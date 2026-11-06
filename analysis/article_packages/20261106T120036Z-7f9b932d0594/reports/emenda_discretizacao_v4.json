@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "id": "discretizacao-ruido-v4",
+  "reason": "Falha do circuito ideal em N4, mu10, tau4: erro K3 0.00400071 acima de 0.001. Verificação adicional encontrou precisão insuficiente na referência PSA RK12 em mu10/tau2.",
+  "timing": "Definida após o controle ideal reprovar, antes de novas contagens em mu10/tau4; referências mu10/tau2 são refinadas após as contagens, que ficam preservadas.",
+  "changes": [
+    {
+      "n": 4,
+      "mu": 10.0,
+      "tau": 4.0,
+      "old_points": 8,
+      "new_points": 29,
+      "substeps": 12,
+      "steps_per_interval": 16,
+      "total_trotter_steps": 448,
+      "phases": [
+        "T06-ruido",
+        "T07-mitigacao"
+      ]
+    },
+    {
+      "n": 4,
+      "mu": 10.0,
+      "tau": 2.0,
+      "points": 8,
+      "old_substeps": 12,
+      "new_substeps": 24,
+      "total_trotter_steps": 112,
+      "counts_policy": "Reusar contagens T06; trocar só referência PSA na análise. T07 usa RK24 desde o início."
+    }
+  ],
+  "unchanged": [
+    "Hamiltoniano",
+    "estados e frequências",
+    "sementes",
+    "4096 trajetórias por bloco",
+    "shots e perfis de ruído",
+    "trio e tempo de observação",
+    "ponto principal H2 mu3/tau2",
+    "meta ideal K3 0.001 e metas RK Pe1e-6/C2,C3 1e-5"
+  ],
+  "scope": "A profundidade do circuito mu10/tau4 aumenta. Comparações entre células devem declarar os recursos; não atribuir diferenças apenas à intensidade física da interação.",
+  "preservation": "Diários e falhas originais preservados. Repetir somente referências invalidadas e etapas pendentes; nenhuma nova submissão IBM."
+}

@@ -1,0 +1,3198 @@
+{
+  "schema_version": 1,
+  "name": "T08-aquisicao-antecipada",
+  "description": "Aquisição solicitada durante recuperação local. Ponto principal fixo N4/mu3/trio012/tau2. 80 jobs, 655360 shots totais, incluindo calibração. Contagens provisórias: nenhuma conclusão H2 ou resultado oficial antes da validação amostral e T07. Passos escolhidos antes do hardware: menor valor em 1/2/4/8/16 que satisfaz erro ideal máximo K3 <=0.001. Calibração usa os mesmos qubits físicos finais do sinal.",
+  "steps": [
+    {
+      "id": "ibm_s60001",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60001,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60001_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60001",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "qiskit_primary",
+      "action": "circuit",
+      "run_from": "ibm_s60001",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "interval_index": 7
+      }
+    },
+    {
+      "id": "ibm_s60001_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60001",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60001_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60001",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60001_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60001",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60001_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60001",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60002",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60002,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60002_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60002",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60002_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60002",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60002_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60002",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60002_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60002",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60002_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60002",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60003",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60003,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60003_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60003",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60003_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60003",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60003_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60003",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60003_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60003",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60003_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60003",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60004",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60004,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60004_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60004",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60004_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60004",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60004_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60004",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60004_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60004",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60004_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60004",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60005",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60005,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60005_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60005",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60005_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60005",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60005_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60005",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60005_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60005",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60005_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60005",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60006",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60006,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60006_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60006",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60006_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60006",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60006_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60006",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60006_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60006",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60006_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60006",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60007",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60007,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60007_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60007",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60007_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60007",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60007_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60007",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60007_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60007",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60007_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60007",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60008",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60008,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60008_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60008",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60008_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60008",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60008_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60008",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60008_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60008",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60008_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60008",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60009",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60009,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60009_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60009",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60009_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60009",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60009_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60009",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60009_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60009",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60009_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60009",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60010",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60010,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60010_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60010",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60010_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60010",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60010_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60010",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60010_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60010",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60010_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60010",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60011",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60011,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60011_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60011",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60011_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60011",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60011_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60011",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60011_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60011",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60011_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60011",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60012",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60012,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60012_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60012",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60012_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60012",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60012_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60012",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60012_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60012",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60012_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60012",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60013",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60013,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60013_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60013",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60013_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60013",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60013_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60013",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60013_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60013",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60013_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60013",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60014",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60014,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60014_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60014",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60014_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60014",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60014_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60014",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60014_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60014",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60014_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60014",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60015",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60015,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60015_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60015",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60015_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60015",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60015_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60015",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60015_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60015",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60015_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60015",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60016",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60016,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60016_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60016",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60016_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60016",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60016_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60016",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60016_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60016",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60016_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60016",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60017",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60017,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60017_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60017",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60017_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60017",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60017_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60017",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60017_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60017",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60017_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60017",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60018",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60018,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60018_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60018",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60018_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60018",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60018_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60018",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60018_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60018",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60018_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60018",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60019",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60019,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60019_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60019",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60019_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60019",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60019_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60019",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60019_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60019",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60019_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60019",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60020",
+      "action": "classical",
+      "run_from": null,
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "config": {
+          "n": 4,
+          "mu": 3.0,
+          "theta": 0.2,
+          "t_max": 2.0,
+          "points": 8,
+          "seed": 60020,
+          "flavors": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "omega_values": [
+            0.7,
+            0.9,
+            1.1,
+            1.3
+          ],
+          "g_values": [
+            [
+              0.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              0.0
+            ]
+          ]
+        },
+        "trajectories": 4096,
+        "substeps": 12
+      }
+    },
+    {
+      "id": "ibm_s60020_ideal",
+      "action": "quantum",
+      "run_from": "ibm_s60020",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "steps": 2,
+        "shots": 32,
+        "readout_error": 0.0
+      }
+    },
+    {
+      "id": "ibm_s60020_raw",
+      "action": "hardware",
+      "run_from": "ibm_s60020",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 16384,
+        "kind": "c3",
+        "index": 0,
+        "role": "raw",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60020_signal",
+      "action": "hardware",
+      "run_from": "ibm_s60020",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 12288,
+        "kind": "c3",
+        "index": 0,
+        "role": "signal",
+        "initial_layout": [
+          109,
+          108,
+          110,
+          118
+        ],
+        "calibration_reference": false,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60020_calibration_zero",
+      "action": "hardware",
+      "run_from": "ibm_s60020",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_zero",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    },
+    {
+      "id": "ibm_s60020_calibration_one",
+      "action": "hardware",
+      "run_from": "ibm_s60020",
+      "run_id": null,
+      "job_id": null,
+      "request": {
+        "backend": "ibm_kingston",
+        "interval_index": 7,
+        "steps": 2,
+        "shots": 2048,
+        "kind": "c3",
+        "index": 0,
+        "role": "calibration_one",
+        "initial_layout": null,
+        "calibration_reference": true,
+        "max_depth": 20000,
+        "transpiler_seed": 60001
+      }
+    }
+  ]
+}

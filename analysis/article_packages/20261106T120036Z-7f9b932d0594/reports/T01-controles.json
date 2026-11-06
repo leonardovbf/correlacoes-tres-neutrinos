@@ -1,0 +1,117 @@
+{
+  "phase": "T01-controles",
+  "profile": "official-v1-r2",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "controle_n4: Norma da referência exata",
+      "value": 9.992007221626409e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "controle_n4: Comprimento dos spins · campo médio",
+      "value": 6.261657858885883e-14,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "controle_n4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "controle_n4: P exato/MF",
+      "value": 6.006140029768403e-12,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "controle_n4: K3 sem interação",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-10,
+      "pass": true
+    },
+    {
+      "name": "qiskit_n4",
+      "value": 2.220446049250313e-16,
+      "limit": 1e-10,
+      "pass": true
+    },
+    {
+      "name": "controle_n6: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "controle_n6: Comprimento dos spins · campo médio",
+      "value": 6.261657858885883e-14,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "controle_n6: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "controle_n6: P exato/MF",
+      "value": 6.005473895953628e-12,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "controle_n6: K3 sem interação",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-10,
+      "pass": true
+    },
+    {
+      "name": "qiskit_n6",
+      "value": 1.9984014443252818e-15,
+      "limit": 1e-10,
+      "pass": true
+    },
+    {
+      "name": "controle_n8: Norma da referência exata",
+      "value": 1.3322676295501878e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "controle_n8: Comprimento dos spins · campo médio",
+      "value": 6.261657858885883e-14,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "controle_n8: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.0625,
+      "pass": true
+    },
+    {
+      "name": "controle_n8: P exato/MF",
+      "value": 6.005695940558553e-12,
+      "limit": 1e-06,
+      "pass": true
+    },
+    {
+      "name": "controle_n8: K3 sem interação",
+      "value": 1.3322676295501878e-15,
+      "limit": 1e-10,
+      "pass": true
+    },
+    {
+      "name": "qiskit_n8",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-10,
+      "pass": true
+    }
+  ],
+  "cases": [],
+  "hypothesis_results_are_not_acceptance_gates": true
+}

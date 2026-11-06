@@ -1,0 +1,17 @@
+{
+  "id": "T00-detalhes-reproducao",
+  "definition_status": "implementado",
+  "execution_status": "executavel-em-00_reproducao_publicada",
+  "source": "https://arxiv.org/html/2409.20215v2",
+  "target": "Figura 2(c), secao III.1.1, N=8, PSA bi-valuada",
+  "implementation": {
+    "units": "tau=t_paper/4; mu_codigo=16; g=1-cos(|i-j| acos(0.9)/7); theta=0.195",
+    "source_data": "data/benchmarks/lacroix2024/figure2c.csv",
+    "trajectories": 10000,
+    "paper_time_window": [
+      0,
+      200
+    ]
+  },
+  "acceptance": "Comparar separadamente exato e PSA com suas curvas publicadas; tolerância baseada na precisão da fonte e de amostragem."
+}

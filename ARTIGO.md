@@ -4,13 +4,13 @@ _Beyond mean field: does the phase-space approximation capture three-body neutri
 
 ## Resumo
 
-O sabor dos neutrinos em supernovas pode influenciar a explosão e a produção de elementos pesados. Simular sua evolução quântica exige aproximações para sistemas grandes. A precisão da aproximação de espaço de fase para correlações de três corpos requer avaliação. Este trabalho busca avaliar essa precisão em um modelo de dois sabores, com cálculos exatos e campo médio como referências. Circuitos trotterizados serão avaliados em condições ideais e com ruído. Serão quantificados erros nas probabilidades de sabor e nos cumulantes conectados de dois e três corpos. Espera-se delimitar o domínio de validade da aproximação e a precisão necessária para que circuitos quânticos distingam suas previsões dos resultados exatos.
+O sabor dos neutrinos em supernovas pode influenciar a explosão e a produção de elementos pesados. Simular sua evolução quântica exige aproximações para sistemas grandes. Este trabalho avaliou a precisão da aproximação de espaço de fase para cumulantes de dois e três corpos em um modelo de dois sabores, com evolução exata e campo médio como referências. Circuitos trotterizados foram avaliados em condições ideais e com ruído. Os intervalos registrados indicaram maior erro normalizado dos trios em 14 de 15 configurações principais. Mais medições reduziram o erro dos circuitos ideais; no caso ruidoso principal, a mitigação de leitura não recuperou o cumulante exato no simulador e na IBM. A revisão estatística e a avaliação de limiares de ruído permanecem necessárias para conclusões confirmatórias.
 
 **Palavras-chave:** Neutrinos. Oscilações coletivas. Correlações de três corpos. Computação quântica. Aproximação de espaço de fase.
 
 ## Abstract
 
-The flavor of neutrinos in supernovae can influence the explosion and heavy-element production. Simulating their quantum evolution requires approximations for large systems. The accuracy of the phase-space approximation for three-body correlations requires assessment. This work aims to assess this accuracy in a two-flavor model, using exact calculations and mean field as references. Trotterized circuits will be assessed under ideal and noisy conditions. Errors in flavor probabilities and connected two- and three-body cumulants will be quantified. The expected contribution is to establish the approximation's range of validity and the precision required for quantum circuits to distinguish its predictions from exact results.
+The flavor of neutrinos in supernovae can influence the explosion and heavy-element production. Simulating their quantum evolution requires approximations for large systems. This work assessed the accuracy of the phase-space approximation for two- and three-body cumulants in a two-flavor model, using exact evolution and mean field as references. Trotterized circuits were assessed under ideal and noisy conditions. The recorded intervals indicated larger normalized triple errors in 14 of 15 main configurations. More measurements reduced ideal-circuit error; in the primary noisy case, readout mitigation did not recover the exact cumulant in simulation or on IBM hardware. Statistical review and noise-threshold evaluation remain necessary for confirmatory conclusions.
 
 **Keywords:** Neutrinos. Collective oscillations. Three-body correlations. Quantum computing. Phase-space approximation.
 
@@ -54,117 +54,197 @@ O aumento da interação amplia os coeficientes dos termos que acoplam as ordens
 
 A Seção 2 apresenta o modelo, os observáveis, as etapas de comparação e os critérios de avaliação das hipóteses. A Seção 3 descreve a organização prevista dos resultados. O presente texto apresenta o desenho da pesquisa; os resultados experimentais serão incorporados após a execução e a validação do protocolo.
 
-## Desenho da pesquisa
+## Metodologia
 
-### Modelo e estados iniciais
+Comparam-se campo médio, PSA e circuitos com a evolução exata. O [protocolo](PROTOCOLO_EXPERIMENTOS.md) reúne configurações, sementes e controles.
 
-Será implementado em Python um modelo de dois sabores, com energias distintas e interações entre todos os pares de neutrinos, empregando o mesmo Hamiltoniano e os mesmos estados iniciais físicos nas evoluções exata, de campo médio e pela PSA. Os sabores eletrônico e efetivo não eletrônico serão representados pelos estados $|0\rangle=|\nu_e\rangle$ e $|1\rangle=|\nu_x\rangle$ de um qubit, unidade básica da informação quântica. Os estados iniciais serão produtos de estados de sabor puro. A comparação principal usará sistemas pares, com metade dos neutrinos em cada sabor; as frequências, os acoplamentos e a distribuição dos sabores serão registrados para cada cenário. Outras configurações serão tratadas separadamente, dada a dependência dos desvios com o estado inicial (CERVIA et al., 2019).
-
-Uma configuração publicada será reproduzida antes das varreduras, com conferência das convenções de sabor, frequência e acoplamento, incluindo a normalização do Hamiltoniano. As comparações usarão janelas comuns de tempo adimensional $\bar{\omega}t$, informando também $\mu t$, que varia quando se altera a interação. A faixa de quatro a dezesseis neutrinos delimita o estudo principal; uma extensão a vinte ou vinte e dois dependerá de medições de tempo e memória do cálculo exato. A dependência com $N$ será investigada sem pressupor uma lei de escala ainda não fundamentada.
-
-### Observáveis e correlações conectadas
-
-Para explicitar o significado das correlações, considere o operador de sabor $Z_i = |\nu_e\rangle_i\langle\nu_e| - |\nu_x\rangle_i\langle\nu_x|$, equivalente à matriz de Pauli $\sigma_z$ no qubit $i$, em que $\nu_x$ representa o sabor efetivo não eletrônico. Sua média é $m_i(t)=\langle Z_i\rangle_t$, e a probabilidade de sabor eletrônico é $P_{e,i}(t)=[1+m_i(t)]/2$. Para partículas distintas, os operadores comutam, e os cumulantes de segunda e terceira ordens são definidos por
+Cada neutrino corresponde a um qubit, com $|\nu_e\rangle=|0\rangle$ e $|\nu_x\rangle=|1\rangle$. Com $\hbar=1$, $\tau=\bar{\omega}t$, $\lambda=\mu/\bar{\omega}$ e $\widetilde{\omega}_i=\omega_i/\bar{\omega}$,
 
 $$
-C^{(2)}_{ij}(t)=\langle Z_i Z_j\rangle_t-m_i(t)m_j(t)
+\frac{H}{\bar{\omega}}=\frac{1}{2}\sum_{i=0}^{N-1}\widetilde{\omega}_i\,\mathbf{B}\cdot\boldsymbol{\sigma}_i
++\frac{\lambda}{4N}\sum_{i<j}g_{ij}\,\boldsymbol{\sigma}_i\cdot\boldsymbol{\sigma}_j.
 $$
 
-e
+em que $\mathbf{B}=(\sin2\theta,0,-\cos2\theta)$, $\boldsymbol{\sigma}_i$ reúne os operadores de Pauli e $g_{ij}$ define o acoplamento. Cada par aparece uma vez. O modelo exclui transporte, colisões e hidrodinâmica; a janela fixa em $\tau$ corresponde a $\mu t=\lambda\tau$.
+
+A referência usa `expm_multiply` (SciPy), verificado por exponenciação densa em um sistema pequeno. Campo médio e PSA usam RK4. Na PSA, amostram-se componentes transversais independentes em $\pm1$, com a longitudinal fixada pelo sabor (LACROIX et al., 2024).
+
+Os circuitos usam Trotter simétrico de segunda ordem. A comparação Qiskit–emulador verifica a implementação; a comparação com o exato isola a discretização da amostragem e do ruído.
+
+Para $m_i(t)=\langle Z_i\rangle_t$, a probabilidade de sabor eletrônico é $P_{e,i}(t)=[1+m_i(t)]/2$. Os cumulantes de partículas distintas são
 
 $$
 \begin{aligned}
-C^{(3)}_{ijk}(t)={}&\langle Z_i Z_j Z_k\rangle_t-m_i(t)m_j(t)m_k(t)\\
-&-C^{(2)}_{ij}(t)m_k(t)-C^{(2)}_{ik}(t)m_j(t)-C^{(2)}_{jk}(t)m_i(t).
+C^{(2)}_{ij}(t)&=\langle Z_i Z_j\rangle_t-m_i(t)m_j(t),\\
+C^{(3)}_{ijk}(t)&=\langle Z_i Z_j Z_k\rangle_t-m_i(t)m_j(t)m_k(t)\\
+&\quad-C^{(2)}_{ij}(t)m_k(t)-C^{(2)}_{ik}(t)m_j(t)-C^{(2)}_{jk}(t)m_i(t).
 \end{aligned}
 $$
 
-A Figura 2 representa essa decomposição: um momento de três partículas reúne produtos de médias, contribuições de pares e uma parcela conectada do trio. Assim, desprezar $C^{(3)}_{ijk}$ em um fechamento não equivale a desprezar $\langle Z_i Z_j Z_k\rangle$. Essa identidade particulariza a expansão em cumulantes discutida por Riccio e Balantekin (2026). A análise principal usará as componentes $Z$, $ZZ$ e $ZZZ$, com os conjuntos de partículas fixados no protocolo; outras componentes exigirão avaliação própria.
+A análise restringe-se a $Z$, $ZZ$ e $ZZZ$; cumulantes não nulos não certificam, isoladamente, emaranhamento.
 
-![Decomposição do momento de três operadores de sabor em produtos de médias individuais, três termos de par vezes média e cumulante conectado de terceira ordem.](figuras/figura-2-correlacoes-conectadas.png)
+Os controles cobrem reprodução publicada, ausência de interação, integração, amostragem e Trotter. Falhas exigem emendas documentadas, sem exclusão de resultados desfavoráveis.
 
-*Figura 2 - Decomposição do momento $\langle Z_iZ_jZ_k\rangle$. (a) Produto das médias individuais $m_i m_j m_k$. (b) Três contribuições de cumulante de par vezes média da partícula restante. (c) Cumulante conectado $C^{(3)}_{ijk}$, destacado como a parcela que resta após subtrair os termos anteriores. Os círculos identificam as partículas distintas $i$, $j$ e $k$; uma ligação representa a contribuição de um par, e o losango com três conexões representa o cumulante do trio, sem indicar outra partícula. Essa notação estatística não representa interações adicionais no Hamiltoniano nem certifica emaranhamento. Todos os termos são avaliados no mesmo instante. Fonte: elaboração própria com base na expansão em cumulantes de Riccio e Balantekin (2026).*
+## Experimentos e parâmetros
 
-### Comparação dos métodos e controle de erros
+A grade reúne quinze configurações principais e dez na extensão (Tabela 1), com associação fixa entre frequência e sabor inicial.
 
-A Figura 3 organiza o protocolo proposto. Para cada tamanho, intensidade de interação e estado inicial, serão mantidas as mesmas definições do Hamiltoniano e dos observáveis nas evoluções exata, de campo médio, PSA e por circuitos. As condições iniciais amostradas pela PSA deverão reproduzir os momentos prescritos pelo método para o estado físico escolhido. Os sistemas de quatro a oito neutrinos formarão o conjunto comum aos quatro métodos; a comparação clássica será estendida até cerca de dezesseis neutrinos. A organização combina a comparação sistemática com referências exatas de Lacroix et al. (2024) com a distinção entre evolução exata, trotterização e medições utilizada por Hall et al. (2021) e Illa e Savage (2023).
+*Tabela 1 - Parâmetros da grade clássica original.*
 
-![Protocolo em três colunas: modelo comum com interações entre todos os pares, quatro métodos de evolução e observáveis comparados à solução exata, com destaque para o cumulante de três corpos.](figuras/figura-3-protocolo-comparacao.png)
+| Parâmetro | Definição |
+| --- | --- |
+| Tamanhos e interação | $N=4,6,8$; extensão: $12,16$. $\lambda=0,1;0,3;1;3;10$. |
+| Frequências e mistura | $\widetilde{\omega}_i=0,7+0,6i/(N-1)$, $i=0,\ldots,N-1$; $\theta=0,2$ rad. |
+| Acoplamentos | $g_{ij}=1$ para $i\ne j$; $g_{ii}=0$. |
+| Estado inicial | Primeira metade dos índices em $\nu_e$; segunda em $\nu_x$. |
+| Tempo e integração | $0\leq\tau\leq10$, 201 instantes; 12 subpassos RK4 por intervalo. |
+| Observáveis | Todos os indivíduos, pares e trios distintos. |
+| PSA e sementes | 20 blocos independentes de 4.096 trajetórias (81.920 no total); sementes 10.001–10.020. |
 
-*Figura 3 - Protocolo proposto de comparação. (a) Hamiltoniano $H$ e estado inicial $|\Psi_0\rangle$ comuns aos métodos, no modelo de dois sabores com energias distintas e $\mu/\bar{\omega}$ entre 0,1 e 10. A rede de quatro vértices apenas ilustra interações entre todos os pares; não representa a conectividade de um processador nem limita o tamanho do estudo. (b) Evolução exata, campo médio e PSA para quatro até cerca de dezesseis neutrinos; circuitos para o subconjunto de quatro a oito, em condições ideais e com ruído. (c) Comparação de probabilidades e cumulantes com a referência exata, com destaque para $C^{(3)}_{ijk}$. A faixa inferior reúne os controles de integração, amostragem, Trotter, medições e ruído. A comparação com e sem mitigação usará o mesmo orçamento total de medições; a execução em hardware dependerá da disponibilidade. Fonte: elaboração própria, orientada pelas comparações de Lacroix et al. (2024), Hall et al. (2021) e Illa e Savage (2023).*
+A reprodução de Lacroix et al. (2024) usa a Figura 2(c) daquele estudo, em configuração distinta da Tabela 1, com oito neutrinos e 10.000 trajetórias. As coordenadas foram extraídas da figura; parâmetros e conversões estão na [documentação da referência](data/benchmarks/lacroix2024/README.md).
 
-Antes de interpretar diferenças físicas, serão verificados o refinamento da integração temporal, o aumento do número de trajetórias da PSA e a redução do passo de Trotter em simulação ideal. A análise com ruído será feita após essa validação. As incertezas dos cumulantes deverão considerar que médias e produtos podem ser estimados a partir das mesmas medições ou trajetórias, preservando suas covariâncias na propagação de erros ou na reamostragem.
+A convergência em $N=4,8$ e $\lambda=0,1;1;10$ varia trajetórias, subpassos RK4 e passos de Trotter. A Tabela 3 limita os desvios absolutos máximos, o refinamento de 8 para 12 subpassos e o maior erro-padrão entre sementes, sobre tempos e trios.
 
-### Erros, incertezas e avaliação de H1
+Os circuitos ideais usam $N=4,6,8$ e vinte blocos de 1.024, 4.096 ou 16.384 medições por instante. A etapa ruidosa restringe-se a $N=4$, ao trio $(0,1,2)$ e a $\tau=1,2,4$, mantendo as cinco interações e os três orçamentos. A discretização original totaliza 112 passos de Trotter.
 
-Os mesmos observáveis, na mesma base de sabor e normalização, serão utilizados em todos os métodos. O erro absoluto será reportado ao longo do tempo e resumido pela raiz da média dos quadrados dos desvios (RMSE). O erro normalizado será a razão entre essa medida e a raiz da média dos quadrados da referência exata, calculadas sobre a mesma malha temporal e o mesmo conjunto de observáveis. Para cada ordem $r$, essa razão será indicada por $E_r=\mathrm{RMSE}_r/R_r$. A mesma definição será aplicada às probabilidades de sabor.
+*Tabela 2 - Perfis de ruído definidos para o simulador Aer.*
 
-A normalização será usada somente quando $R_r>\varepsilon_r$, com $\varepsilon_r=\max(10\delta_r,10^{-6})$. Aqui, $\delta_r$ é a maior variação absoluta da referência observada no refinamento numérico. O piso adimensional $10^{-6}$ é uma escolha operacional para evitar denominadores próximos de zero; a sensibilidade da classificação a sua variação por um fator dez será apresentada. Os casos abaixo do limiar manterão seus erros absolutos, sem integrar comparações normalizadas. Essa regra não será alterada após a observação dos resultados confirmatórios.
+| Perfil | Despolarização: um qubit | Despolarização: dois qubits | Erro de leitura |
+| --- | ---: | ---: | ---: |
+| Ideal | 0 | 0 | 0 |
+| Leve | 0,0001 | 0,001 | 0,01 |
+| Moderado | 0,001 | 0,01 | 0,03 |
 
-Para avaliar H1, as diferenças entre erros de trios, pares e probabilidades serão comparadas nos mesmos cenários e janelas. A tendência com a interação será estimada mantendo $N$, estado inicial, frequências e acoplamentos relativos fixos; sua direção será avaliada por uma medida de tendência registrada previamente. A hipótese será contrariada se os erros dos trios forem menores ou equivalentes aos das demais grandezas dentro da margem definida, ou se a tendência de crescimento com a interação for ausente dentro dessa margem ou tiver direção contrária. Incertezas que não permitam resolver a comparação serão reportadas como resultado inconclusivo, não como evidência de equivalência.
+O Aer usa matriz densidade, base `rz`, `sx`, `x`, `cx` e otimização de nível 1. Os perfis sintéticos da Tabela 2 aplicam despolarização em `sx`, `x`, `cx` e inversões de leitura simétricas independentes.
 
-O número de trajetórias da PSA será refinado a partir de 1.024, por duplicações, com pelo menos cinco sementes independentes. O critério de convergência exigirá que mudanças das estimativas e larguras dos intervalos permaneçam abaixo das tolerâncias estabelecidas para os observáveis. O limite de trajetórias será fixado previamente; casos sem a precisão exigida serão identificados. A reamostragem usará trajetórias completas ou contagens de bitstrings, preservando a dependência entre as médias e os produtos que compõem cada cumulante.
+A mitigação inverte o produto tensorial das matrizes de resposta calibradas com $|0000\rangle$ e $|1111\rangle$, preservando quasiprobabilidades negativas. Por bloco, usa $3m/4$ medições no sinal e $m/8$ em cada calibração; o método bruto usa $m$ no sinal. Ambos recebem $M=20m$. A correção não elimina erros de portas.
 
-### Circuitos, mitigação e avaliação de H2
+O caso principal usa $N=4$, $\lambda=3$, $\tau=2$, ruído moderado e $m=16.384$, com execução adicional no `ibm_kingston`.
 
-Os circuitos para quatro a oito neutrinos serão construídos em Qiskit, com uma fórmula simétrica de Trotter de segunda ordem. A trotterização aproxima a evolução completa por uma sequência de operações associadas aos termos do Hamiltoniano em pequenos passos de tempo. O passo inicial proposto será $\Delta\tau=0{,}05$, com $\tau=\bar{\omega}t$, seguido de reduções pela metade. A comparação ideal com a referência exata deverá reduzir esse erro a uma fração previamente fixada da discrepância PSA–exato que se pretende medir. Esse controle antecederá a análise de ruído.
+A emenda v3 respondeu à identificação de um controle amostral omitido e à sua reprovação em três de seis configurações. Acrescentou vinte blocos de 4.096 trajetórias por configuração, aprovados sob o mesmo limite. A reanálise preservou a reprovação original.
 
-As medições na base de sabor fornecerão simultaneamente os produtos $Z_i$, $Z_iZ_j$ e $Z_iZ_jZ_k$. Cada cumulante será reconstruído a partir das mesmas contagens, com intervalos obtidos por reamostragem conjunta. A varredura inicial do orçamento incluirá 1.024, 2.048, 4.096 e 8.192 medições, podendo ser ampliada no estudo piloto. O orçamento total incluirá as medições usadas em calibração e circuitos auxiliares; resultados com e sem mitigação serão comparados sob esse mesmo limite.
+Após a falha de Trotter, a v4 adotou 29 pontos e 448 passos em $N=4$, $\lambda=10$, $\tau=4$; em $\lambda=10$, $\tau=2$, elevou a PSA de 12 para 24 subpassos RK4. O caso principal não mudou. As profundidades distintas limitam comparações entre interações.
 
-A avaliação principal de H2 considerará erro de leitura independente e simétrico, parametrizado pela probabilidade $0\leq p<1/2$ de inversão do bit, e mitigação por matriz de calibração de leitura. Os intervalos incluirão a incerteza dessa calibração. O efeito de ruído despolarizante nas portas e de extrapolação a ruído zero poderá ser examinado como extensão, com recursos e resultados separados. Os limiares obtidos no modelo de leitura não serão apresentados como limites gerais de ruído de hardware.
+## Métricas de avaliação
 
-Uma diferença será considerada resolvida quando o intervalo de confiança do desvio circuito–exato estiver contido em uma margem de equivalência predefinida e o intervalo da diferença circuito–PSA excluir zero. As incertezas da PSA e as tolerâncias da referência serão consideradas. Para um orçamento total $M$, o limiar $p_{\max}(M)$ será o maior nível avaliado que atende a esse critério com a frequência mínima de sucesso estabelecida em repetições independentes. Também será reportado o menor orçamento avaliado que permite a distinção em cada nível de ruído. Se a transição não for alcançada, serão apresentados limites, sem atribuir um limiar preciso; comportamentos não monotônicos serão mostrados como regiões de resolução.
+Para $T$ instantes e $n_q$ conjuntos de partículas, sejam $O^{\mathrm{ex}}_{q,\alpha}$ a referência e $\widehat O_{q,\alpha}$ a estimativa de $P_e$, $C^{(2)}$ ou $C^{(3)}$. Definem-se
 
-A H2 será contrariada se o limiar com mitigação for menor ou equivalente ao obtido sem mitigação, dentro da margem de comparação e das incertezas fixadas. Uma diferença não resolvida será considerada inconclusiva. A execução em hardware IBM dependerá da disponibilidade e será acompanhada das condições do dispositivo, sem substituir a varredura controlada do modelo de ruído.
+$$
+\begin{aligned}
+E_q&=\sqrt{\frac{1}{Tn_q}\sum_{\ell=1}^{T}\sum_{\alpha=1}^{n_q}
+\left[\widehat{O}_{q,\alpha}(\tau_\ell)-O^{\mathrm{ex}}_{q,\alpha}(\tau_\ell)\right]^2},\\
+S_q&=\sqrt{\frac{1}{Tn_q}\sum_{\ell=1}^{T}\sum_{\alpha=1}^{n_q}
+\left[O^{\mathrm{ex}}_{q,\alpha}(\tau_\ell)\right]^2}.
+\end{aligned}
+$$
 
-### Pré-registro e limites da avaliação
+Usa-se $R_q=E_q/S_q$ para $S_q\geq10^{-4}$ e apenas erro absoluto abaixo desse piso. Para H1, $D=R_3-R_2$ recebe 2.000 réplicas bootstrap de blocos independentes. Agregam-se momentos antes dos cumulantes, preservando a dependência temporal; os percentis 2,5 e 97,5 definem o intervalo de 95%.
 
-Os níveis de ruído, o orçamento de medições e o critério estatístico serão fixados antes da comparação entre métodos. Serão definidos também o Hamiltoniano, as configurações iniciais, a malha de interação e tamanho, as janelas temporais, os conjuntos de partículas, as tolerâncias, as margens de equivalência, o nível de confiança e a regra de tratamento de comparações múltiplas. Serão registrados também o limite de trajetórias, as sementes, os passos de Trotter e a divisão do orçamento entre calibração e execução. Os valores iniciais propostos nesta seção poderão ser ajustados no piloto, com justificativa registrada antes de analisar os casos confirmatórios.
+Os circuitos usam 2.000 réplicas multinomiais das contagens agregadas, reestimando a calibração e reamostrando independentemente os blocos PSA, sem correção de viés. Para $C^{(3)}$, sejam $I_{\mathrm{PSA}}$ o intervalo de circuito menos PSA e $[L,U]$ o de circuito menos exato. Exige-se
 
-Uma regra fixada antes das execuções ruidosas selecionará trios e instantes com discrepância PSA–exato resolvida na comparação clássica. Isso permitirá distinguir erro da aproximação, insuficiência de amostragem e incapacidade do circuito de resolver uma diferença conhecida.
+$$
+0\notin I_{\mathrm{PSA}}
+\quad\text{e}\quad
+[L-r,U+r]\subseteq[-\delta,\delta],
+\qquad \delta=0,01,
+$$
 
-## Apresentação prevista dos resultados
+em que $r$ soma o desvio ideal–exato a $10^{-5}$. Calibrações com número de condição não finito ou superior a 10 tornam o caso não resolvido.
 
-Os resultados serão apresentados em painéis separados para probabilidades, cumulantes de pares e cumulantes de trios. Cada painel manterá o mesmo significado para as linhas e os símbolos: referência exata em linha preta contínua, campo médio em linha cinza pontilhada, PSA em linha azul tracejada e estimativas dos circuitos como símbolos acompanhados de barras de incerteza. Círculos e quadrados distinguirão estimativas sem e com mitigação, sem depender apenas da cor. As legendas informarão o estado inicial, $N$, $\mu/\bar{\omega}$, o tempo adimensional $\bar{\omega}t$, os recursos de amostragem e o significado estatístico das barras. Painéis de desvios e erros normalizados complementarão as curvas, seguindo os critérios já definidos; tabelas ou mapas de erro resumirão a dependência com o tamanho e a interação quando houver dados suficientes. Diagramas de portas serão apresentados com o circuito efetivamente implementado e sua ordem de Trotter.
+Para H2, $p_{\max}(M)$ é o maior ruído avaliado que satisfaz o critério sob orçamento $M$. Comparar os limiares com e sem mitigação exige fixar família de ruído, varredura e margem relevante; a grade atual não estima essa diferença.
 
-Os limiares de ruído e os orçamentos mínimos avaliados serão apresentados por estado inicial e janela temporal, com suas incertezas e os limites da varredura, incluindo os casos inconclusivos.
+*Tabela 3 - Tolerâncias e verificações selecionadas. Máximos nas configurações de cada controle; traços indicam valores não reproduzidos nesta síntese.*
 
-## Declaração de uso de inteligência artificial
+| Controle | Limite | Observado |
+| --- | ---: | ---: |
+| Reprodução publicada: exato | $2\times10^{-2}$ | $1,41\times10^{-3}$ |
+| Reprodução publicada: PSA | $6\times10^{-2}$ | $2,99\times10^{-2}$ |
+| Exato independente | $10^{-10}$ | — |
+| Qiskit versus emulador | $10^{-10}$ | $2,80\times10^{-12}$ |
+| Refinamento RK4: $P_e$ | $10^{-6}$ | — |
+| Refinamento RK4: cumulantes | $10^{-5}$ | — |
+| Erro-padrão PSA suplementar: $C^{(3)}$ | $10^{-2}$ | $5,11\times10^{-3}$ |
+| Trotter ideal: $C^{(3)}$ | $10^{-3}$ | — |
 
-Foi utilizada assistência de inteligência artificial generativa para apoiar a revisão da redação e da consistência, a tradução e a produção do código dos diagramas conceituais.
+## Resultados experimentais
+
+### Validação e precisão da PSA
+
+As onze fases locais, incluindo $N=12,16$, passaram nos controles após as emendas (Tabela 3). Os desvios da reprodução publicada incluem a incerteza de extração da figura.
+
+O intervalo de 95% de $D$ foi positivo em 14 de 15 configurações principais (Figura 2). Em $N=4$, $\lambda=0,1$, o sinal ficou indefinido: $D=-0,132$, intervalo $[-0,209;0,048]$. Em $N=4$, $\lambda=3$, obtiveram-se $R_2=0,419$, $R_3=0,948$ e $D=0,529$, intervalo $[0,524;0,535]$.
+
+![Três painéis apresentam a diferença entre erros normalizados de trios e pares, com as estimativas pontuais e os intervalos percentis da grade principal.](figuras/figura-5-resultados-psa.png)
+
+*Figura 2 - $D=R_3-R_2$ para $0\leq\tau\leq10$: estimativas com vinte blocos PSA e intervalos percentis de 95% com 2.000 réplicas. O círculo aberto marca a estimativa fora do próprio intervalo. Fonte: elaboração própria a partir do pacote de resultados.*
+
+Os dez intervalos da extensão foram positivos. Contudo, cinco estimativas ficaram fora dos próprios intervalos: $N=8$, $\lambda=0,1$, e $N=12,16$, $\lambda=0,1$ e $0,3$. Elas e as inclinações agregadas de $N=8,12,16$ exigem revisão do viés bootstrap. Uma conclusão global de H1 requer critérios de agregação, relevância e multiplicidade.
+
+O maior erro dos trios não cresce monotonicamente com a interação: em $N=8$, $D$ cai de $0,485$ para $0,363$ entre $\lambda=0,1$ e $1$, antes de aumentar.
+
+### Orçamento de medições
+
+Nos circuitos ideais, o RMSE de $C^{(3)}$ diminuiu com cada aumento de orçamento nas quinze configurações. De 1.024 para 16.384 medições por bloco, a redução de 3,75 a 4,19 vezes (Figura 3) aproxima-se do fator quatro esperado da dependência $1/\sqrt{m}$. Três orçamentos não estabelecem uma lei de escala nem avaliam erros de portas.
+
+![Três painéis mostram o RMSE dos cumulantes de trios em função do número de medições por bloco, para os três tamanhos principais e cinco intensidades de interação.](figuras/figura-6-orcamento-medicoes.png)
+
+*Figura 3 - RMSE dos trios em relação ao exato, agregado sobre tempos e trios. Cada ponto usa vinte blocos de $m$ medições por instante; linhas conectam os orçamentos, sem intervalos de confiança. Fonte: elaboração própria a partir do pacote de resultados.*
+
+### Ruído, mitigação e hardware
+
+No caso principal, o cumulante exato foi $-0,315784$; a PSA estimou $-0,155768$ nos blocos locais e $-0,151947$ nos associados à IBM, amostras distintas. Os circuitos ruidosos ficaram próximos de zero, com e sem mitigação (Tabela 4 e Figura 4).
+
+*Tabela 4 - Caso principal: estimativas de $C^{(3)}$ e intervalos de 95% para circuito menos exato, ampliados pelo resíduo numérico. Cada método recebe $M=327.680$ medições; a calibração integra o orçamento mitigado.*
+
+| Ambiente | Método | Estimativa | IC95 da diferença |
+| --- | --- | ---: | --- |
+| Aer | Bruto | $-0,000305$ | $[0,312040;0,318866]$ |
+| Aer | Mitigado | $0,001301$ | $[0,312190;0,322029]$ |
+| IBM | Bruto | $0,005847$ | $[0,317702;0,325733]$ |
+| IBM | Mitigado | $0,006376$ | $[0,317486;0,327007]$ |
+
+![Comparação do cumulante exato, das duas estimativas PSA e dos circuitos Aer e IBM, sem e com mitigação, no caso principal.](figuras/figura-7-comparacao-quantica.png)
+
+*Figura 4 - Caso principal: faixa de $\pm0,01$ ao redor do exato; intervalos dos circuitos ampliados pelo resíduo e transladados para $C^{(3)}$. PSA sem intervalo individual; círculos e quadrados representam métodos brutos e mitigados. Fonte: elaboração própria a partir do pacote de resultados.*
+
+Os quatro intervalos de circuito menos PSA excluem zero, mas nenhum de circuito menos exato cabe em $[-0,01;0,01]$. A mitigação não recuperou o cumulante nessa margem. A decisão pontual é inconclusiva e não testa o limiar de ruído de H2.
+
+A IBM completou vinte blocos, quatro qubits, oitenta trabalhos e 655.360 medições, incluindo calibrações, em 72,87 minutos. O relatório mantém o status científico provisório, embora todos os trabalhos tenham terminado; os tempos detalhados estão no pacote de resultados.
+
+As conclusões restringem-se ao modelo, estado inicial e componentes estudados. O [repositório](https://github.com/leonardovbf/correlacoes-tres-neutrinos) reúne códigos, protocolos, workloads, referência e resultados auditáveis. O arquivo integral de trajetórias e contagens em `results/`, necessário à reanálise completa, não integra o pacote.
 
 ## Referências
 
-ABI, B. et al. **Deep Underground Neutrino Experiment (DUNE), Far Detector Technical Design Report, Volume II: DUNE Physics**. Relatório técnico, 2020. arXiv:2002.03005. Disponível em: https://arxiv.org/abs/2002.03005. Acesso em: 23 out. 2026.
+Abi, B. et al. (2020). Deep Underground Neutrino Experiment (DUNE), Far Detector Technical Design Report, Volume II: DUNE Physics. Technical Report FERMILAB-PUB-20-025-ND, DUNE Collaboration. <https://arxiv.org/abs/2002.03005>.
 
-AKAHO, R. et al. Bifurcated impact of neutrino fast flavor conversion on core-collapse supernovae informed by multiangle neutrino radiation hydrodynamics. **Physical Review Letters**, v. 136, art. 191002, 2026. DOI: [10.1103/fksy-1jtw](https://doi.org/10.1103/fksy-1jtw).
+Akaho, R., Nagakura, H., Iwakami, W., Furusawa, S., Harada, A., Okawa, H., Matsufuru, H., Sumiyoshi, K., and Yamada, S. (2026). Bifurcated Impact of Neutrino Fast Flavor Conversion on Core-Collapse Supernovae Informed by Multiangle Neutrino Radiation Hydrodynamics. *Physical Review Letters*, 136(19):191002. <https://doi.org/10.1103/fksy-1jtw>.
 
-BAUM, S.; CAPOZZI, F.; HORIUCHI, S. Rocks, water, and noble liquids: unfolding the flavor contents of supernova neutrinos. **Physical Review D**, v. 106, art. 123008, 2022. DOI: [10.1103/PhysRevD.106.123008](https://doi.org/10.1103/PhysRevD.106.123008).
+Baum, S., Capozzi, F., and Horiuchi, S. (2022). Rocks, water, and noble liquids: Unfolding the flavor contents of supernova neutrinos. *Physical Review D*, 106(12):123008. <https://doi.org/10.1103/PhysRevD.106.123008>.
 
-CERVIA, M. J.; PATWARDHAN, A. V.; BALANTEKIN, A. B.; COPPERSMITH, S. N.; JOHNSON, C. W. Entanglement and collective flavor oscillations in a dense neutrino gas. **Physical Review D**, v. 100, art. 083001, 2019. DOI: [10.1103/PhysRevD.100.083001](https://doi.org/10.1103/PhysRevD.100.083001).
+Cervia, M. J., Patwardhan, A. V., Balantekin, A. B., Coppersmith, S. N., and Johnson, C. W. (2019). Entanglement and collective flavor oscillations in a dense neutrino gas. *Physical Review D*, 100(8):083001. <https://doi.org/10.1103/PhysRevD.100.083001>.
 
-COWAN, J. J. et al. Origin of the heaviest elements: the rapid neutron-capture process. **Reviews of Modern Physics**, v. 93, art. 015002, 2021. DOI: [10.1103/RevModPhys.93.015002](https://doi.org/10.1103/RevModPhys.93.015002).
+Cowan, J. J., Sneden, C., Lawler, J. E., Aprahamian, A., Wiescher, M., Langanke, K., Martínez-Pinedo, G., and Thielemann, F.-K. (2021). Origin of the heaviest elements: The rapid neutron-capture process. *Reviews of Modern Physics*, 93(1):015002. <https://doi.org/10.1103/RevModPhys.93.015002>.
 
-DUAN, H.; FULLER, G. M.; QIAN, Y.-Z. Collective neutrino oscillations. **Annual Review of Nuclear and Particle Science**, v. 60, p. 569-594, 2010. DOI: [10.1146/annurev.nucl.012809.104524](https://doi.org/10.1146/annurev.nucl.012809.104524).
+Duan, H., Fuller, G. M., and Qian, Y.-Z. (2010). Collective Neutrino Oscillations. *Annual Review of Nuclear and Particle Science*, 60(1):569--594. <https://doi.org/10.1146/annurev.nucl.012809.104524>.
 
-HALL, B.; ROGGERO, A.; BARONI, A.; CARLSON, J. Simulation of collective neutrino oscillations on a quantum computer. **Physical Review D**, v. 104, art. 063009, 2021. DOI: [10.1103/PhysRevD.104.063009](https://doi.org/10.1103/PhysRevD.104.063009).
+Hall, B., Roggero, A., Baroni, A., and Carlson, J. (2021). Simulation of collective neutrino oscillations on a quantum computer. *Physical Review D*, 104(6):063009. <https://doi.org/10.1103/PhysRevD.104.063009>.
 
-ILLA, M.; SAVAGE, M. J. Multi-neutrino entanglement and correlations in dense neutrino systems. **Physical Review Letters**, v. 130, art. 221003, 2023. DOI: [10.1103/PhysRevLett.130.221003](https://doi.org/10.1103/PhysRevLett.130.221003).
+Illa, M. and Savage, M. J. (2023). Multi-Neutrino Entanglement and Correlations in Dense Neutrino Systems. *Physical Review Letters*, 130:221003. <https://doi.org/10.1103/PhysRevLett.130.221003>.
 
-JANKA, H.-T. Explosion mechanisms of core-collapse supernovae. **Annual Review of Nuclear and Particle Science**, v. 62, p. 407-451, 2012. DOI: [10.1146/annurev-nucl-102711-094901](https://doi.org/10.1146/annurev-nucl-102711-094901).
+Janka, H.-T. (2012). Explosion Mechanisms of Core-Collapse Supernovae. *Annual Review of Nuclear and Particle Science*, 62:407--451. <https://doi.org/10.1146/annurev-nucl-102711-094901>.
 
-KISS, O.; TAVERNELLI, I.; TACCHINO, F.; LACROIX, D.; ROGGERO, A. Neutrino thermalization via randomization on a quantum processor. **Communications Physics**, v. 9, art. 282, 2026. DOI: [10.1038/s42005-026-02697-2](https://doi.org/10.1038/s42005-026-02697-2).
+Kiss, O., Tavernelli, I., Tacchino, F., Lacroix, D., and Roggero, A. (2026). Neutrino thermalization via randomization on a quantum processor. *Communications Physics*, 9(1):282. <https://doi.org/10.1038/s42005-026-02697-2>.
 
-LACROIX, D.; BALANTEKIN, A. B.; CERVIA, M. J.; PATWARDHAN, A. V.; SIWACH, P. Role of non-gaussian quantum fluctuations in neutrino entanglement. **Physical Review D**, v. 106, art. 123006, 2022. DOI: [10.1103/PhysRevD.106.123006](https://doi.org/10.1103/PhysRevD.106.123006).
+Lacroix, D., Balantekin, A. B., Cervia, M. J., Patwardhan, A. V., and Siwach, P. (2022). Role of non-Gaussian quantum fluctuations in neutrino entanglement. *Physical Review D*, 106(12):123006. <https://doi.org/10.1103/PhysRevD.106.123006>.
 
-LACROIX, D.; BAUGE, A.; YILMAZ, B.; MANGIN-BRINET, M.; ROGGERO, A.; BALANTEKIN, A. B. Phase-space methods for neutrino oscillations: extension to multibeams. **Physical Review D**, v. 110, art. 103027, 2024. DOI: [10.1103/PhysRevD.110.103027](https://doi.org/10.1103/PhysRevD.110.103027).
+Lacroix, D., Bauge, A., Yilmaz, B., Mangin-Brinet, M., Roggero, A., and Balantekin, A. B. (2024). Phase-space methods for neutrino oscillations: Extension to multibeams. *Physical Review D*, 110:103027. <https://doi.org/10.1103/PhysRevD.110.103027>.
 
-MANGIN-BRINET, M.; BAUGE, A.; LACROIX, D. Three-flavor neutrino oscillations using the phase space approach. **Physical Review D**, v. 113, art. 036026, 2026. DOI: [10.1103/yr2g-1g2g](https://doi.org/10.1103/yr2g-1g2g).
+Mangin-Brinet, M., Bauge, A., and Lacroix, D. (2026). Three-flavor neutrino oscillations using the phase space approach. *Physical Review D*, 113:036026. <https://doi.org/10.1103/yr2g-1g2g>.
 
-NAGAKURA, H. Roles of fast neutrino-flavor conversion on the neutrino-heating mechanism of core-collapse supernova. **Physical Review Letters**, v. 130, art. 211401, 2023. DOI: [10.1103/PhysRevLett.130.211401](https://doi.org/10.1103/PhysRevLett.130.211401).
+Nagakura, H. (2023). Roles of Fast Neutrino-Flavor Conversion on the Neutrino-Heating Mechanism of Core-Collapse Supernova. *Physical Review Letters*, 130(21):211401. <https://doi.org/10.1103/PhysRevLett.130.211401>.
 
-RICCIO, M.; BALANTEKIN, A. B. Improved approximations for collective neutrino oscillations. **arXiv**, 2026. Preprint, arXiv:2607.28619, versão 2. DOI: [10.48550/arXiv.2607.28619](https://doi.org/10.48550/arXiv.2607.28619). Disponível em: [arXiv](https://arxiv.org/abs/2607.28619). Acesso em: 6 nov. 2026.
+Riccio, M. and Balantekin, A. B. (2026). Improved Approximations for Collective Neutrino Oscillations. Preprint, version 2. <https://doi.org/10.48550/arXiv.2607.28619>.
 
-SARMAH, P. et al. **Neutrino mass ordering from the next Galactic supernova at DUNE, HK, and JUNO**. Preprint, 2026. arXiv:2606.06580. Disponível em: https://arxiv.org/abs/2606.06580. Acesso em: 6 nov. 2026.
+Sarmah, P., Chakraborty, S., Medhi, A., Bose, D., and Devi, M. M. (2026). Neutrino mass ordering from the next Galactic supernova at DUNE, HK, and JUNO. Preprint. <https://arxiv.org/abs/2606.06580>.
 
-VISSANI, F.; COSTANTINI, M. L.; FULGIONE, W.; IANNI, A.; PAGLIAROLI, G. **What is the issue with SN1987A neutrinos?** Preprint, 2010. arXiv:1008.4726. Disponível em: https://arxiv.org/abs/1008.4726. Acesso em: 23 out. 2026.
+Vissani, F., Costantini, M. L., Fulgione, W., Ianni, A., and Pagliaroli, G. (2010). What is the issue with SN1987A neutrinos? Preprint. <https://arxiv.org/abs/1008.4726>.

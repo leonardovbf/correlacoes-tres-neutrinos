@@ -1,0 +1,32 @@
+{
+  "id": "T08-hardware",
+  "definition_status": "procedimento-definido",
+  "execution_status": "condicionado-a-T07-profundidade-calibracao-e-orcamento",
+  "candidate_endpoint": {
+    "n": 4,
+    "mu": 3.0,
+    "trio": [
+      0,
+      1,
+      2
+    ],
+    "tau": 2.0
+  },
+  "device": "Selecionar dispositivo disponível e registrar o nome antes da coleta; não fixar disponibilidade futura.",
+  "prerequisites": [
+    "T07-mitigacao",
+    "residual ideal K3 <= 0.001 no circuito a enviar",
+    "profundidade e portas após transpilar registradas",
+    "orçamento total autorizado e janela de calibração definida"
+  ],
+  "policy": "Nenhum envio automático durante definição. Teto de 120 subpassos totais; max_depth após transpilar limita o envio. O plano usa o mesmo ponto primário e inclui calibração nos qubits físicos do sinal.",
+  "archive": [
+    "QPY",
+    "layout",
+    "calibracao",
+    "Runtime options",
+    "job ID",
+    "contagens",
+    "data e horario"
+  ]
+}

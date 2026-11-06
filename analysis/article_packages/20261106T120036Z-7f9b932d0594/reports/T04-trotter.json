@@ -1,0 +1,1045 @@
+{
+  "phase": "T04-trotter",
+  "profile": "official-v1-r2",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "n4_m0: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m0: Comprimento dos spins · campo médio",
+      "value": 3.339550858072471e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m0: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n4_m0_t16",
+      "value": 6.708915645248226e-10,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1: Norma da referência exata",
+      "value": 1.3322676295501878e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m1: Comprimento dos spins · campo médio",
+      "value": 1.258437798412615e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m1: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n4_m1_t16",
+      "value": 4.842115153280702e-09,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m2: Comprimento dos spins · campo médio",
+      "value": 3.010369731271112e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n4_m2_t16",
+      "value": 8.276507806881384e-08,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n4_m3: Norma da referência exata",
+      "value": 3.9968028886505635e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m3: Comprimento dos spins · campo médio",
+      "value": 3.790856517582597e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m3: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n4_m3_t16",
+      "value": 1.571414846579522e-06,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n4_m4: Norma da referência exata",
+      "value": 1.27675647831893e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n4_m4: Comprimento dos spins · campo médio",
+      "value": 1.0897061031300836e-11,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n4_m4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n4_m4_t16",
+      "value": 8.906813443711886e-05,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n6_m0: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n6_m0: Comprimento dos spins · campo médio",
+      "value": 3.26405569239796e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n6_m0: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n6_m0_t16",
+      "value": 3.8269709623506287e-10,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n6_m1: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n6_m1: Comprimento dos spins · campo médio",
+      "value": 1.22335475083446e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n6_m1: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n6_m1_t16",
+      "value": 3.0644972670579307e-09,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n6_m2: Norma da referência exata",
+      "value": 5.551115123125783e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n6_m2: Comprimento dos spins · campo médio",
+      "value": 3.0796476480077217e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n6_m2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n6_m2_t16",
+      "value": 1.1815475156606858e-07,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n6_m3: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n6_m3: Comprimento dos spins · campo médio",
+      "value": 3.627209643752849e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n6_m3: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n6_m3_t16",
+      "value": 1.2901148454674827e-06,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n6_m4: Norma da referência exata",
+      "value": 1.3322676295501878e-14,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n6_m4: Comprimento dos spins · campo médio",
+      "value": 8.557710096113169e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n6_m4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n6_m4_t16",
+      "value": 4.6735538309083946e-05,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m0: Comprimento dos spins · campo médio",
+      "value": 3.1963320878958257e-13,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m0: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n8_m0_t16",
+      "value": 2.3347679345420147e-10,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1: Norma da referência exata",
+      "value": 1.1102230246251565e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m1: Comprimento dos spins · campo médio",
+      "value": 1.1939338406818933e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m1: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n8_m1_t16",
+      "value": 1.948528338679978e-09,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m2: Comprimento dos spins · campo médio",
+      "value": 3.01558777948685e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m2: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n8_m2_t16",
+      "value": 5.9307090946592034e-08,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n8_m3: Norma da referência exata",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m3: Comprimento dos spins · campo médio",
+      "value": 3.566702488910778e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m3: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n8_m3_t16",
+      "value": 1.0700607847302646e-06,
+      "limit": 0.001,
+      "pass": true
+    },
+    {
+      "name": "n8_m4: Norma da referência exata",
+      "value": 1.5543122344752192e-15,
+      "limit": 1e-08,
+      "pass": true
+    },
+    {
+      "name": "n8_m4: Comprimento dos spins · campo médio",
+      "value": 8.205769397306995e-12,
+      "limit": 0.0001,
+      "pass": true
+    },
+    {
+      "name": "n8_m4: Momentos Z da PSA em τ=0",
+      "value": 0.0,
+      "limit": 0.25,
+      "pass": true
+    },
+    {
+      "name": "n8_m4_t16",
+      "value": 4.922298948895065e-05,
+      "limit": 0.001,
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "n4_m0_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 6.550089063653223e-08,
+        "max_abs": 1.7161669063625595e-07,
+        "signal_rms": 0.0022222592883777417
+      }
+    },
+    {
+      "id": "n4_m0_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 1.637501270390416e-08,
+        "max_abs": 4.290329802536519e-08,
+        "signal_rms": 0.0022222592883777417
+      }
+    },
+    {
+      "id": "n4_m0_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 4.09386648583966e-09,
+        "max_abs": 1.0725955901236262e-08,
+        "signal_rms": 0.0022222592883777417
+      }
+    },
+    {
+      "id": "n4_m0_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 1.0235418961376534e-09,
+        "max_abs": 2.6815996090334693e-09,
+        "signal_rms": 0.0022222592883777417
+      }
+    },
+    {
+      "id": "n4_m0_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 2.562196784417895e-10,
+        "max_abs": 6.708915645248226e-10,
+        "signal_rms": 0.0022222592883777417
+      }
+    },
+    {
+      "id": "n4_m1_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 4.6640516852641806e-07,
+        "max_abs": 1.2395650512697642e-06,
+        "signal_rms": 0.01391118586725676
+      }
+    },
+    {
+      "id": "n4_m1_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 1.1659886586801952e-07,
+        "max_abs": 3.098843968096787e-07,
+        "signal_rms": 0.01391118586725676
+      }
+    },
+    {
+      "id": "n4_m1_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 2.9149536717464852e-08,
+        "max_abs": 7.747060282170537e-08,
+        "signal_rms": 0.01391118586725676
+      }
+    },
+    {
+      "id": "n4_m1_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 7.2873197904257926e-09,
+        "max_abs": 1.9367491610466914e-08,
+        "signal_rms": 0.01391118586725676
+      }
+    },
+    {
+      "id": "n4_m1_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 1.8219310933028729e-09,
+        "max_abs": 4.842115153280702e-09,
+        "signal_rms": 0.01391118586725676
+      }
+    },
+    {
+      "id": "n4_m2_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 6.792377530306079e-06,
+        "max_abs": 2.1187687876789152e-05,
+        "signal_rms": 0.07484052645863172
+      }
+    },
+    {
+      "id": "n4_m2_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 1.698116250641253e-06,
+        "max_abs": 5.29695525786078e-06,
+        "signal_rms": 0.07484052645863172
+      }
+    },
+    {
+      "id": "n4_m2_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 4.245304276189517e-07,
+        "max_abs": 1.3242408972713449e-06,
+        "signal_rms": 0.07484052645863172
+      }
+    },
+    {
+      "id": "n4_m2_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 1.0613269334453486e-07,
+        "max_abs": 3.310603544359747e-07,
+        "signal_rms": 0.07484052645863172
+      }
+    },
+    {
+      "id": "n4_m2_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 2.6533185989844432e-08,
+        "max_abs": 8.276507806881384e-08,
+        "signal_rms": 0.07484052645863172
+      }
+    },
+    {
+      "id": "n4_m3_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 0.00017733100568677465,
+        "max_abs": 0.0004019244830578139,
+        "signal_rms": 0.26086313698003666
+      }
+    },
+    {
+      "id": "n4_m3_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 4.434344548709671e-05,
+        "max_abs": 0.00010054848693202834,
+        "signal_rms": 0.26086313698003666
+      }
+    },
+    {
+      "id": "n4_m3_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 1.1086530105297859e-05,
+        "max_abs": 2.5141331550293522e-05,
+        "signal_rms": 0.26086313698003666
+      }
+    },
+    {
+      "id": "n4_m3_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 2.771675142571765e-06,
+        "max_abs": 6.2855983369858315e-06,
+        "signal_rms": 0.26086313698003666
+      }
+    },
+    {
+      "id": "n4_m3_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 6.929209894601011e-07,
+        "max_abs": 1.571414846579522e-06,
+        "signal_rms": 0.26086313698003666
+      }
+    },
+    {
+      "id": "n4_m4_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 0.006003627809398083,
+        "max_abs": 0.02297889912561988,
+        "signal_rms": 0.23990874580704075
+      }
+    },
+    {
+      "id": "n4_m4_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 0.0014989690325762773,
+        "max_abs": 0.0057124612876839655,
+        "signal_rms": 0.23990874580704075
+      }
+    },
+    {
+      "id": "n4_m4_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 0.0003745975400053259,
+        "max_abs": 0.0014258273349619412,
+        "signal_rms": 0.23990874580704075
+      }
+    },
+    {
+      "id": "n4_m4_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 9.363997421619944e-05,
+        "max_abs": 0.00035630960786937893,
+        "signal_rms": 0.23990874580704075
+      }
+    },
+    {
+      "id": "n4_m4_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 2.3409399699481706e-05,
+        "max_abs": 8.906813443711886e-05,
+        "signal_rms": 0.23990874580704075
+      }
+    },
+    {
+      "id": "n6_m0_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 2.8708110677182774e-08,
+        "max_abs": 9.854350979665583e-08,
+        "signal_rms": 0.0013385310091604279
+      }
+    },
+    {
+      "id": "n6_m0_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 7.176905965939468e-09,
+        "max_abs": 2.4635477879897394e-08,
+        "signal_rms": 0.0013385310091604279
+      }
+    },
+    {
+      "id": "n6_m0_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 1.7943632383046118e-09,
+        "max_abs": 6.15912110202288e-09,
+        "signal_rms": 0.0013385310091604279
+      }
+    },
+    {
+      "id": "n6_m0_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 4.4914526198859293e-10,
+        "max_abs": 1.5408433418073741e-09,
+        "signal_rms": 0.0013385310091604279
+      }
+    },
+    {
+      "id": "n6_m0_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 1.1098950088473979e-10,
+        "max_abs": 3.8269709623506287e-10,
+        "signal_rms": 0.0013385310091604279
+      }
+    },
+    {
+      "id": "n6_m1_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 2.446405034134024e-07,
+        "max_abs": 7.844202850604276e-07,
+        "signal_rms": 0.00761562485345338
+      }
+    },
+    {
+      "id": "n6_m1_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 6.115929870936818e-08,
+        "max_abs": 1.9610258927826862e-07,
+        "signal_rms": 0.00761562485345338
+      }
+    },
+    {
+      "id": "n6_m1_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 1.5290073086426835e-08,
+        "max_abs": 4.9025764947696615e-08,
+        "signal_rms": 0.00761562485345338
+      }
+    },
+    {
+      "id": "n6_m1_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 3.8229300870879445e-09,
+        "max_abs": 1.2256808068489278e-08,
+        "signal_rms": 0.00761562485345338
+      }
+    },
+    {
+      "id": "n6_m1_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 9.560585350326156e-10,
+        "max_abs": 3.0644972670579307e-09,
+        "signal_rms": 0.00761562485345338
+      }
+    },
+    {
+      "id": "n6_m2_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 7.668856171053447e-06,
+        "max_abs": 3.0247582475578794e-05,
+        "signal_rms": 0.08015645150557485
+      }
+    },
+    {
+      "id": "n6_m2_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 1.9172419812295927e-06,
+        "max_abs": 7.561951935380895e-06,
+        "signal_rms": 0.08015645150557485
+      }
+    },
+    {
+      "id": "n6_m2_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 4.793121412628056e-07,
+        "max_abs": 1.8904912555406383e-06,
+        "signal_rms": 0.08015645150557485
+      }
+    },
+    {
+      "id": "n6_m2_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 1.1982824647718331e-07,
+        "max_abs": 4.726232850915668e-07,
+        "signal_rms": 0.08015645150557485
+      }
+    },
+    {
+      "id": "n6_m2_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 2.995662982659074e-08,
+        "max_abs": 1.1815475156606858e-07,
+        "signal_rms": 0.08015645150557485
+      }
+    },
+    {
+      "id": "n6_m3_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 9.619857897337615e-05,
+        "max_abs": 0.0003302053475200961,
+        "signal_rms": 0.10765128459651545
+      }
+    },
+    {
+      "id": "n6_m3_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 2.4054680944818917e-05,
+        "max_abs": 8.256338817633213e-05,
+        "signal_rms": 0.10765128459651545
+      }
+    },
+    {
+      "id": "n6_m3_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 6.013984545944235e-06,
+        "max_abs": 2.0641598254295124e-05,
+        "signal_rms": 0.10765128459651545
+      }
+    },
+    {
+      "id": "n6_m3_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 1.5035154779969887e-06,
+        "max_abs": 5.16044557179185e-06,
+        "signal_rms": 0.10765128459651545
+      }
+    },
+    {
+      "id": "n6_m3_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 3.758802691461903e-07,
+        "max_abs": 1.2901148454674827e-06,
+        "signal_rms": 0.10765128459651545
+      }
+    },
+    {
+      "id": "n6_m4_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 0.002610908330852371,
+        "max_abs": 0.011963559608035138,
+        "signal_rms": 0.17571840096354957
+      }
+    },
+    {
+      "id": "n6_m4_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 0.0006602663183050391,
+        "max_abs": 0.002987212238842213,
+        "signal_rms": 0.17571840096354957
+      }
+    },
+    {
+      "id": "n6_m4_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 0.00016555387986893472,
+        "max_abs": 0.0007469143635573106,
+        "signal_rms": 0.17571840096354957
+      }
+    },
+    {
+      "id": "n6_m4_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 4.1419169477869744e-05,
+        "max_abs": 0.0001868994877508856,
+        "signal_rms": 0.17571840096354957
+      }
+    },
+    {
+      "id": "n6_m4_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 1.0356715557588252e-05,
+        "max_abs": 4.6735538309083946e-05,
+        "signal_rms": 0.17571840096354957
+      }
+    },
+    {
+      "id": "n8_m0_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 1.5984586943265605e-08,
+        "max_abs": 6.007458852597125e-08,
+        "signal_rms": 0.0008417290240377303
+      }
+    },
+    {
+      "id": "n8_m0_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 3.996507118098869e-09,
+        "max_abs": 1.501924107305541e-08,
+        "signal_rms": 0.0008417290240377303
+      }
+    },
+    {
+      "id": "n8_m0_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 9.995272850869544e-10,
+        "max_abs": 3.7555544230016835e-09,
+        "signal_rms": 0.0008417290240377303
+      }
+    },
+    {
+      "id": "n8_m0_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 2.5087730370884567e-10,
+        "max_abs": 9.40744260269355e-10,
+        "signal_rms": 0.0008417290240377303
+      }
+    },
+    {
+      "id": "n8_m0_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 6.181581102330586e-11,
+        "max_abs": 2.3347679345420147e-10,
+        "signal_rms": 0.0008417290240377303
+      }
+    },
+    {
+      "id": "n8_m1_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 1.4528556097553e-07,
+        "max_abs": 4.984105622662938e-07,
+        "signal_rms": 0.005296592253981119
+      }
+    },
+    {
+      "id": "n8_m1_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 3.6320734230329414e-08,
+        "max_abs": 1.2460122256197081e-07,
+        "signal_rms": 0.005296592253981119
+      }
+    },
+    {
+      "id": "n8_m1_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 9.079988594945282e-09,
+        "max_abs": 3.115010993592904e-08,
+        "signal_rms": 0.005296592253981119
+      }
+    },
+    {
+      "id": "n8_m1_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 2.2706844455312705e-09,
+        "max_abs": 7.7879993565233e-09,
+        "signal_rms": 0.005296592253981119
+      }
+    },
+    {
+      "id": "n8_m1_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 5.69886202063944e-10,
+        "max_abs": 1.948528338679978e-09,
+        "signal_rms": 0.005296592253981119
+      }
+    },
+    {
+      "id": "n8_m2_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 3.1311097217383675e-06,
+        "max_abs": 1.518265136727509e-05,
+        "signal_rms": 0.06035120741615277
+      }
+    },
+    {
+      "id": "n8_m2_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 7.827726265088747e-07,
+        "max_abs": 3.7956377698725174e-06,
+        "signal_rms": 0.06035120741615277
+      }
+    },
+    {
+      "id": "n8_m2_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 1.956928696589218e-07,
+        "max_abs": 9.489078992702682e-07,
+        "signal_rms": 0.06035120741615277
+      }
+    },
+    {
+      "id": "n8_m2_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 4.8923290689815976e-08,
+        "max_abs": 2.372270476586058e-07,
+        "signal_rms": 0.06035120741615277
+      }
+    },
+    {
+      "id": "n8_m2_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 1.2231003762154613e-08,
+        "max_abs": 5.9307090946592034e-08,
+        "signal_rms": 0.06035120741615277
+      }
+    },
+    {
+      "id": "n8_m3_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 5.3499122533928076e-05,
+        "max_abs": 0.0002738207208409643,
+        "signal_rms": 0.07530189259541584
+      }
+    },
+    {
+      "id": "n8_m3_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 1.3377857410436654e-05,
+        "max_abs": 6.84768607268349e-05,
+        "signal_rms": 0.07530189259541584
+      }
+    },
+    {
+      "id": "n8_m3_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 3.3446572057463593e-06,
+        "max_abs": 1.7120569014858478e-05,
+        "signal_rms": 0.07530189259541584
+      }
+    },
+    {
+      "id": "n8_m3_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 8.361757042328525e-07,
+        "max_abs": 4.280225619435196e-06,
+        "signal_rms": 0.07530189259541584
+      }
+    },
+    {
+      "id": "n8_m3_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 2.090442069121891e-07,
+        "max_abs": 1.0700607847302646e-06,
+        "signal_rms": 0.07530189259541584
+      }
+    },
+    {
+      "id": "n8_m4_t1",
+      "steps": 1,
+      "ideal_c3": {
+        "rmse": 0.0017170356237910976,
+        "max_abs": 0.012577785448610018,
+        "signal_rms": 0.14093491582037337
+      }
+    },
+    {
+      "id": "n8_m4_t2",
+      "steps": 2,
+      "ideal_c3": {
+        "rmse": 0.0004337025372470449,
+        "max_abs": 0.003149417850135755,
+        "signal_rms": 0.14093491582037337
+      }
+    },
+    {
+      "id": "n8_m4_t4",
+      "steps": 4,
+      "ideal_c3": {
+        "rmse": 0.00010870982401628112,
+        "max_abs": 0.0007875258098824223,
+        "signal_rms": 0.14093491582037337
+      }
+    },
+    {
+      "id": "n8_m4_t8",
+      "steps": 8,
+      "ideal_c3": {
+        "rmse": 2.7195312792876903e-05,
+        "max_abs": 0.00019688997836631028,
+        "signal_rms": 0.14093491582037337
+      }
+    },
+    {
+      "id": "n8_m4_t16",
+      "steps": 16,
+      "ideal_c3": {
+        "rmse": 6.7999445808391854e-06,
+        "max_abs": 4.922298948895065e-05,
+        "signal_rms": 0.14093491582037337
+      }
+    }
+  ],
+  "hypothesis_results_are_not_acceptance_gates": true
+}
