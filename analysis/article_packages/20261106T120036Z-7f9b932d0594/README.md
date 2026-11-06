@@ -43,3 +43,14 @@ O maior desvio Qiskit versus emulador no controle T04 foi 1.09e-11 (limite 1e-10
 ## Como regenerar
 
 Na raiz do repositório, execute `python analysis/prepare_article_package.py CAMINHO/study.json CAMINHO/hardware_analysis.json --output NOVO_DIRETORIO`. O destino deve estar vazio. O pacote é um recorte de escrita, não substitui o arquivo científico integral de `results/`.
+
+## Recursos e tempo IBM
+
+Foram usados **4 qubits lógicos** em quatro qubits físicos do `ibm_kingston`, nos 80 jobs e 655.360 shots da coleta. A tabela `tables/ibm_job_timing.csv` contém os carimbos de criação, início e término de cada job, diretamente dos metadados IBM; `reports/IBM-timing-metrics.json` preserva a resposta resumida.
+
+- Tempo médio criação→término: **58.44 min/job**; desses, **57.64 min/job** em fila.
+- Tempo médio `running`→término: **48.11 s/job**. Este intervalo inclui etapas do Runtime além da execução do circuito.
+- Tempo médio de execução do circuito: **2.70 s/job**; tempo de QPU cobrado pela IBM: **5.00 s/job**.
+- Janela completa da coleta, do primeiro job criado ao último concluído: **72.87 min**. Os jobs se sobrepõem; não some seus tempos de fila para estimar a duração da campanha.
+
+Para regenerar também esta tabela, acrescente `--timing results/hardware-queues/ID/timing_metrics.json` ao comando do gerador.

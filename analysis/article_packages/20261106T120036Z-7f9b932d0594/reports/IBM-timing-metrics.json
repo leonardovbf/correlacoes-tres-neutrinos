@@ -1,0 +1,967 @@
+{
+  "source_status": "/Users/giovanna-britto/Documents/INTELI/correlacoes-tres-neutrinos/results/hardware-queues/20261106T025754Z-7d40007f331c/status_20261106T114250Z-21297ecfc259.json",
+  "queried_utc": "2026-11-06T14:20:01.802053+00:00",
+  "jobs": [
+    {
+      "job_id": "dbmk911kbkrc73cplkog",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:07:48.719989Z",
+        "finished": "2026-11-06T04:12:17.570988Z",
+        "running": "2026-11-06T04:12:07.601367Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk8vpkbkrc73cplkm0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:07:43.641616Z",
+        "finished": "2026-11-06T04:12:15.958216Z",
+        "running": "2026-11-06T04:12:06.546638Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk8ud8mdtc73d84ejg",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:07:37.737559Z",
+        "finished": "2026-11-06T04:12:14.528948Z",
+        "running": "2026-11-06T04:12:04.685967Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk8spkbkrc73cplkgg",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:07:32.04853Z",
+        "finished": "2026-11-06T04:12:09.392333Z",
+        "running": "2026-11-06T04:10:57.660379Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk8rd8ft8s738v0v2g",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:07:25.456371Z",
+        "finished": "2026-11-06T04:12:02.771881Z",
+        "running": "2026-11-06T04:10:51.67386Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk8pu74qds73dseteg",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:07:19.744289Z",
+        "finished": "2026-11-06T04:12:01.207827Z",
+        "running": "2026-11-06T04:10:49.744159Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594816
+    },
+    {
+      "job_id": "dbmk8om74qds73dsetb0",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:07:14.212954Z",
+        "finished": "2026-11-06T04:12:00.087184Z",
+        "running": "2026-11-06T04:10:48.500913Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk8n58mdtc73d84e1g",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:07:08.368649Z",
+        "finished": "2026-11-06T04:10:54.449207Z",
+        "running": "2026-11-06T04:10:43.949047Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk8l674qds73dset50",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:07:00.045223Z",
+        "finished": "2026-11-06T04:10:48.032082Z",
+        "running": "2026-11-06T04:09:36.723592Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk8jd8mdtc73d84dqg",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:06:53.881488Z",
+        "finished": "2026-11-06T04:10:46.254784Z",
+        "running": "2026-11-06T04:09:35.151681Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk8he74qds73dsesrg",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:06:46.06469Z",
+        "finished": "2026-11-06T04:10:44.969313Z",
+        "running": "2026-11-06T04:09:33.810063Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk8g674qds73dsesn0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:06:40.901243Z",
+        "finished": "2026-11-06T04:10:40.155524Z",
+        "running": "2026-11-06T04:09:28.03813Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk8eu74qds73dseskg",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:06:35.381229Z",
+        "finished": "2026-11-06T04:09:32.567954Z",
+        "running": "2026-11-06T04:09:22.178885Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk8dd8ft8s738v0u40",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:06:29.509667Z",
+        "finished": "2026-11-06T04:09:31.009812Z",
+        "running": "2026-11-06T04:09:20.429088Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk8bl8ft8s738v0u0g",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:06:22.974755Z",
+        "finished": "2026-11-06T04:09:30.075766Z",
+        "running": "2026-11-06T04:08:18.29062Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk8a58mdtc73d84d7g",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:06:16.263841Z",
+        "finished": "2026-11-06T04:09:24.878719Z",
+        "running": "2026-11-06T04:08:15.388445Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk889kbkrc73cpliug",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:06:10.24875Z",
+        "finished": "2026-11-06T04:09:18.118335Z",
+        "running": "2026-11-06T04:07:36.54731Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk871kbkrc73cplisg",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:06:04.376597Z",
+        "finished": "2026-11-06T04:08:12.228499Z",
+        "running": "2026-11-06T04:06:46.899652Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk85m74qds73dses10",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:05:58.481245Z",
+        "finished": "2026-11-06T04:06:43.14764Z",
+        "running": "2026-11-06T04:05:29.835129Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk8458ft8s738v0te0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:05:52.88755Z",
+        "finished": "2026-11-06T04:05:37.193317Z",
+        "running": "2026-11-06T04:05:28.051699Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk82l8mdtc73d84cj0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:05:46.820575Z",
+        "finished": "2026-11-06T04:05:26.252552Z",
+        "running": "2026-11-06T04:05:15.121944Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk811kbkrc73cplie0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:05:40.310138Z",
+        "finished": "2026-11-06T04:05:24.812199Z",
+        "running": "2026-11-06T04:05:13.576695Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk7vl8mdtc73d84c9g",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:05:34.349582Z",
+        "finished": "2026-11-06T04:05:23.827409Z",
+        "running": "2026-11-06T04:05:12.585167Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk7u674qds73dserig",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:05:28.8666Z",
+        "finished": "2026-11-06T04:05:18.832118Z",
+        "running": "2026-11-06T04:05:07.817087Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk7sm74qds73dserdg",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:05:22.588165Z",
+        "finished": "2026-11-06T04:05:12.039703Z",
+        "running": "2026-11-06T04:05:01.378501Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk7r1kbkrc73cpli3g",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:05:16.806102Z",
+        "finished": "2026-11-06T04:05:10.623835Z",
+        "running": "2026-11-06T04:05:00.499924Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk7pt8mdtc73d84bt0",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:05:11.63826Z",
+        "finished": "2026-11-06T04:05:09.387916Z",
+        "running": "2026-11-06T04:04:58.818983Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk7od8mdtc73d84bq0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:05:05.938346Z",
+        "finished": "2026-11-06T04:05:04.446503Z",
+        "running": "2026-11-06T04:04:53.775303Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk7ml8ft8s738v0shg",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:04:58.927577Z",
+        "finished": "2026-11-06T04:04:57.705405Z",
+        "running": "2026-11-06T04:04:49.606639Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk7le74qds73dser00",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:04:53.51638Z",
+        "finished": "2026-11-06T04:04:56.150398Z",
+        "running": "2026-11-06T04:04:46.957579Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk7jm74qds73dseqtg",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:04:46.936013Z",
+        "finished": "2026-11-06T04:04:55.202695Z",
+        "running": "2026-11-06T04:04:45.077459Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk7hu74qds73dseqo0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:04:40.102427Z",
+        "finished": "2026-11-06T04:04:50.588644Z",
+        "running": "2026-11-06T04:03:43.666826Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk7ge74qds73dseqk0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:04:33.268983Z",
+        "finished": "2026-11-06T04:04:43.876072Z",
+        "running": "2026-11-06T04:03:40.106563Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk7et8ft8s738v0rtg",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:04:27.206591Z",
+        "finished": "2026-11-06T04:04:41.953251Z",
+        "running": "2026-11-06T04:03:34.689505Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594816
+    },
+    {
+      "job_id": "dbmk7dd8mdtc73d84b40",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:04:21.230616Z",
+        "finished": "2026-11-06T04:03:36.858791Z",
+        "running": "2026-11-06T04:02:26.632664Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk7bu74qds73dseq8g",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:04:15.289053Z",
+        "finished": "2026-11-06T04:03:31.457801Z",
+        "running": "2026-11-06T04:02:25.457572Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk7a58mdtc73d84asg",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:04:08.576434Z",
+        "finished": "2026-11-06T04:03:24.651797Z",
+        "running": "2026-11-06T04:02:20.451995Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk78l8mdtc73d84aq0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:04:02.440618Z",
+        "finished": "2026-11-06T04:02:22.957844Z",
+        "running": "2026-11-06T04:01:13.34661Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk7758ft8s738v0rg0",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:03:56.174069Z",
+        "finished": "2026-11-06T04:02:21.610969Z",
+        "running": "2026-11-06T04:00:54.714421Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk75m74qds73dsepqg",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:03:50.431494Z",
+        "finished": "2026-11-06T04:02:16.797167Z",
+        "running": "2026-11-06T04:00:52.619326Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk73t8mdtc73d84adg",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:03:43.926513Z",
+        "finished": "2026-11-06T04:00:51.60175Z",
+        "running": "2026-11-06T03:59:44.613686Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk729kbkrc73cplgh0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:03:37.699365Z",
+        "finished": "2026-11-06T04:00:48.790587Z",
+        "running": "2026-11-06T03:59:37.898267Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk70l8mdtc73d84a30",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:03:30.804012Z",
+        "finished": "2026-11-06T04:00:47.922039Z",
+        "running": "2026-11-06T03:59:36.592801Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk6v58mdtc73d849vg",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:03:24.734374Z",
+        "finished": "2026-11-06T03:59:41.489002Z",
+        "running": "2026-11-06T03:59:23.789766Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk6tl8ft8s738v0qs0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:03:18.620808Z",
+        "finished": "2026-11-06T03:59:34.649989Z",
+        "running": "2026-11-06T03:59:22.178685Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk6s9kbkrc73cplg1g",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:03:13.134866Z",
+        "finished": "2026-11-06T03:59:33.34422Z",
+        "running": "2026-11-06T03:59:21.215706Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk6qm74qds73dsep30",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:03:06.176854Z",
+        "finished": "2026-11-06T03:59:32.135151Z",
+        "running": "2026-11-06T03:59:16.02501Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk6ot8ft8s738v0qf0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:02:59.828904Z",
+        "finished": "2026-11-06T03:59:27.241769Z",
+        "running": "2026-11-06T03:59:09.838585Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk6nd8mdtc73d849f0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:02:53.721942Z",
+        "finished": "2026-11-06T03:59:20.279079Z",
+        "running": "2026-11-06T03:59:03.875946Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk6m58ft8s738v0q80",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:02:48.340607Z",
+        "finished": "2026-11-06T03:59:18.87952Z",
+        "running": "2026-11-06T03:59:02.787291Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk6kd8mdtc73d84980",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:02:41.991848Z",
+        "finished": "2026-11-06T03:59:18.043108Z",
+        "running": "2026-11-06T03:59:01.64017Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk6ipkbkrc73cplfdg",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:02:35.804699Z",
+        "finished": "2026-11-06T03:59:12.78352Z",
+        "running": "2026-11-06T03:58:56.180461Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk6h9kbkrc73cplfa0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:02:29.167106Z",
+        "finished": "2026-11-06T03:59:00.784578Z",
+        "running": "2026-11-06T03:58:50.369058Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk6fhkbkrc73cplf6g",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:02:22.9254Z",
+        "finished": "2026-11-06T03:58:59.420826Z",
+        "running": "2026-11-06T03:57:47.837038Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk6e1kbkrc73cplf30",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:02:17.030648Z",
+        "finished": "2026-11-06T03:58:58.138883Z",
+        "running": "2026-11-06T03:57:46.743836Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk6cm74qds73dseo80",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:02:10.441016Z",
+        "finished": "2026-11-06T03:58:53.184445Z",
+        "running": "2026-11-06T03:57:41.626821Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk6at8mdtc73d848i0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:02:03.820402Z",
+        "finished": "2026-11-06T03:58:46.608674Z",
+        "running": "2026-11-06T03:57:34.853143Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk69674qds73dseo2g",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:01:56.910556Z",
+        "finished": "2026-11-06T03:57:44.436399Z",
+        "running": "2026-11-06T03:57:33.154281Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk679kbkrc73cplek0",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:01:49.455314Z",
+        "finished": "2026-11-06T03:57:43.23596Z",
+        "running": "2026-11-06T03:57:31.918351Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk65d8mdtc73d8483g",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:01:41.358498Z",
+        "finished": "2026-11-06T03:57:38.224861Z",
+        "running": "2026-11-06T03:56:26.423716Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk63l8mdtc73d8480g",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:01:34.853715Z",
+        "finished": "2026-11-06T03:57:31.615751Z",
+        "running": "2026-11-06T03:56:19.951235Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk6258ft8s738v0ot0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:01:28.313157Z",
+        "finished": "2026-11-06T03:57:29.891662Z",
+        "running": "2026-11-06T03:56:18.603055Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594816
+    },
+    {
+      "job_id": "dbmk601kbkrc73cple50",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:01:20.675615Z",
+        "finished": "2026-11-06T03:57:28.781029Z",
+        "running": "2026-11-06T03:56:12.967733Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk5uhkbkrc73cple10",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:01:14.903546Z",
+        "finished": "2026-11-06T03:56:22.854271Z",
+        "running": "2026-11-06T03:56:11.063576Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk5su74qds73dsen70",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:01:07.187239Z",
+        "finished": "2026-11-06T03:56:16.014903Z",
+        "running": "2026-11-06T03:56:05.25843Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk5r58mdtc73d847c0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:01:00.116867Z",
+        "finished": "2026-11-06T03:56:09.938851Z",
+        "running": "2026-11-06T03:56:03.702788Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk5pd8mdtc73d8476g",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:00:53.872765Z",
+        "finished": "2026-11-06T03:56:15.261486Z",
+        "running": "2026-11-06T03:56:02.01683Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk5o674qds73dsems0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:00:48.088906Z",
+        "finished": "2026-11-06T03:56:07.393732Z",
+        "running": "2026-11-06T03:55:05.98663Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk5me74qds73dsemn0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:00:41.133265Z",
+        "finished": "2026-11-06T03:55:59.954709Z",
+        "running": "2026-11-06T03:54:48.150996Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk5khkbkrc73cpldeg",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:00:34.368867Z",
+        "finished": "2026-11-06T03:55:58.170407Z",
+        "running": "2026-11-06T03:54:46.356699Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594816
+    },
+    {
+      "job_id": "dbmk5il8ft8s738v0nt0",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T03:00:26.95441Z",
+        "finished": "2026-11-06T03:55:02.598356Z",
+        "running": "2026-11-06T03:54:27.532089Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455744
+    },
+    {
+      "job_id": "dbmk5h9kbkrc73cpld60",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T03:00:21.157139Z",
+        "finished": "2026-11-06T03:54:51.316806Z",
+        "running": "2026-11-06T03:53:25.542Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    },
+    {
+      "job_id": "dbmk5f58mdtc73d846g0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:00:12.948924Z",
+        "finished": "2026-11-06T03:54:44.33627Z",
+        "running": "2026-11-06T03:52:48.224344Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk5dl8mdtc73d846bg",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T03:00:06.116706Z",
+        "finished": "2026-11-06T03:54:23.809183Z",
+        "running": "2026-11-06T03:52:11.618932Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk5bl8ft8s738v0nb0",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T02:59:58.341218Z",
+        "finished": "2026-11-06T03:52:44.888264Z",
+        "running": "2026-11-06T03:52:06.920709Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk5a1kbkrc73cplco0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T02:59:52.229618Z",
+        "finished": "2026-11-06T03:52:07.974345Z",
+        "running": "2026-11-06T03:50:55.336172Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720640
+    },
+    {
+      "job_id": "dbmk589kbkrc73cplck0",
+      "role": "calibration_one",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T02:59:45.575343Z",
+        "finished": "2026-11-06T03:52:01.494091Z",
+        "running": "2026-11-06T03:50:53.474128Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534660096
+    },
+    {
+      "job_id": "dbmk56t8mdtc73d845s0",
+      "role": "calibration_zero",
+      "shots": 2048,
+      "timestamps": {
+        "created": "2026-11-06T02:59:39.486225Z",
+        "finished": "2026-11-06T03:50:51.529091Z",
+        "running": "2026-11-06T03:49:36.825974Z"
+      },
+      "qpu_charge_time_seconds": 3,
+      "circuits_execution_time_ns": 534594560
+    },
+    {
+      "job_id": "dbmk551kbkrc73cplccg",
+      "role": "signal",
+      "shots": 12288,
+      "timestamps": {
+        "created": "2026-11-06T02:59:32.916705Z",
+        "finished": "2026-11-06T03:50:48.731242Z",
+        "running": "2026-11-06T03:49:04.94213Z"
+      },
+      "qpu_charge_time_seconds": 6,
+      "circuits_execution_time_ns": 4167455488
+    },
+    {
+      "job_id": "dbmk53e74qds73dselg0",
+      "role": "raw",
+      "shots": 16384,
+      "timestamps": {
+        "created": "2026-11-06T02:59:25.340278Z",
+        "finished": "2026-11-06T03:49:33.399678Z",
+        "running": "2026-11-06T03:47:34.15822Z"
+      },
+      "qpu_charge_time_seconds": 8,
+      "circuits_execution_time_ns": 5556720384
+    }
+  ],
+  "errors": []
+}

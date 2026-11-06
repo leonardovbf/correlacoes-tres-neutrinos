@@ -12,7 +12,9 @@ import hashlib
 import json
 import os
 import shutil
+import statistics
 import tempfile
+from datetime import datetime
 from pathlib import Path
 
 PHASES = (
@@ -115,6 +117,22 @@ def ibm_rows(hardware: dict, backend: str, jobs: int) -> list[dict]:
             for name, result in a["methods"].items()]
 
 
+def timing_rows(timing: dict) -> list[dict]:
+    rows = []
+    for item in timing["jobs"]:
+        stamp = {key: datetime.fromisoformat(value.replace("Z", "+00:00"))
+                 for key, value in item["timestamps"].items() if value}
+        rows.append({"job_id": item["job_id"], "role": item["role"], "shots": item["shots"],
+                     "created": stamp["created"].isoformat(), "running": stamp["running"].isoformat(),
+                     "finished": stamp["finished"].isoformat(),
+                     "queue_seconds": (stamp["running"]-stamp["created"]).total_seconds(),
+                     "running_seconds": (stamp["finished"]-stamp["running"]).total_seconds(),
+                     "total_seconds": (stamp["finished"]-stamp["created"]).total_seconds(),
+                     "qpu_charge_seconds": item["qpu_charge_time_seconds"],
+                     "circuit_execution_seconds": item["circuits_execution_time_ns"]/1e9})
+    return rows
+
+
 def h2_figure(path: Path, aer: dict, ibm: dict) -> None:
     cache = Path(__file__).resolve().parents[1] / "results" / "_cache"
     (cache / "matplotlib").mkdir(parents=True, exist_ok=True)
@@ -151,12 +169,12 @@ def h2_figure(path: Path, aer: dict, ibm: dict) -> None:
     ax.grid(axis="x", alpha=.2)
     fig.text(.12, .015, "Barras: IC 95% bootstrap para K₃ − exato, com limite numérico; PSA sem IC individual nesta figura.", fontsize=8)
     fig.subplots_adjust(left=.28, bottom=.17, right=.97, top=.88)
-    fig.savefig(path.with_suffix(".pdf"))
+    fig.savefig(path.with_suffix(".pdf"), metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(path.with_suffix(".png"), dpi=220)
     plt.close(fig)
 
 
-def prepare(study_path: Path, hardware_path: Path, output: Path) -> Path:
+def prepare(study_path: Path, hardware_path: Path, output: Path, timing_path: Path | None = None) -> Path:
     study_path, hardware_path, output = study_path.resolve(), hardware_path.resolve(), output.resolve()
     results_root = study_path.parents[2]
     if not hardware_path.is_relative_to(results_root):
@@ -178,6 +196,24 @@ def prepare(study_path: Path, hardware_path: Path, output: Path) -> Path:
     if hardware_run["status"] != "completed" or len(hardware_steps) != 80 or len(backends) != 1:
         raise ValueError("Protocolo IBM incompleto ou com backends diferentes")
     backend = backends.pop()
+    timing_path = timing_path.resolve() if timing_path is not None else None
+    times = None
+    status_path = None
+    if timing_path is not None:
+        if not timing_path.is_relative_to(results_root):
+            raise ValueError("Os metadados de tempo devem estar no mesmo results/")
+        timing = read(timing_path)
+        status_path = Path(timing["source_status"]).resolve()
+        if not status_path.is_relative_to(results_root) or timing["errors"]:
+            raise ValueError("Consulta IBM incompleta ou fora do estudo")
+        status = read(status_path)
+        statuses = {job["job_id"]: job for job in status["jobs"]}
+        run_ids = {step["run_id"] for step in hardware_run["steps"] if step["action"] == "hardware"}
+        if (len(timing["jobs"]) != 80 or len(statuses) != 80 or
+                {job["job_id"] for job in timing["jobs"]} != set(statuses) or
+                any(job["status"] != "DONE" or job["run_id"] not in run_ids for job in statuses.values())):
+            raise ValueError("Tempos IBM não correspondem aos 80 jobs concluídos do protocolo")
+        times = timing_rows(timing)
     if output.exists():
         raise FileExistsError(f"Pacote já existe: {output}")
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -192,6 +228,11 @@ def prepare(study_path: Path, hardware_path: Path, output: Path) -> Path:
         def record(path: Path):
             sources[str(path.resolve().relative_to(results_root))] = digest(path)
         record(study_path); record(hardware_path)
+        if times is not None:
+            for source, target in ((timing_path, "IBM-timing-metrics.json"),
+                                   (status_path, "IBM-job-status.json")):
+                record(source)
+                shutil.copyfile(source, reports_dir / target)
         for source, target in ((hardware_protocol_path, "IBM-protocol-run.json"),
                                (hardware_protocol_path.parent / "protocol.json", "IBM-protocol-spec.json")):
             record(source)
@@ -246,6 +287,8 @@ def prepare(study_path: Path, hardware_path: Path, output: Path) -> Path:
             write_csv(tables / filename, list(rows[0]), rows)
         ibm = ibm_rows(hardware, backend, len(hardware_steps))
         write_csv(tables / "ibm_primary.csv", list(ibm[0]), ibm)
+        if times is not None:
+            write_csv(tables / "ibm_job_timing.csv", list(times[0]), times)
 
         for name, n, mu in (("T03-classica-principal", 4, 3.0),
                             ("T03-classica-principal", 8, 3.0),
@@ -267,7 +310,7 @@ def prepare(study_path: Path, hardware_path: Path, output: Path) -> Path:
                 else:
                     shutil.copyfile(source, target)
         h2_figure(figures / "h2_primary_comparison", primary[0]["analysis"], hardware["analysis"])
-        write_notes(stage / "README.md", reports, primary[0], hardware, benchmark)
+        write_notes(stage / "README.md", reports, primary[0], hardware, benchmark, times)
         manifest = {"schema_version": 1, "study_status": study["status"],
                     "study_source_fingerprint": study["environment"]["fingerprint"],
                     "generator_sha256": digest(Path(__file__)),
@@ -282,7 +325,8 @@ def prepare(study_path: Path, hardware_path: Path, output: Path) -> Path:
     return output
 
 
-def write_notes(path: Path, reports: dict, primary: dict, hardware: dict, benchmark: list[dict]) -> None:
+def write_notes(path: Path, reports: dict, primary: dict, hardware: dict,
+                benchmark: list[dict], times: list[dict] | None = None) -> None:
     main = h1_rows(reports["T03-classica-principal"])
     extension = h1_rows(reports["T03-classica-extensao"])
     qiskit_max = max(c["value"] for c in reports["T04-qiskit"]["checks"])
@@ -336,6 +380,22 @@ O maior desvio Qiskit versus emulador no controle T04 foi {qiskit_max:.3g} (limi
 
 Na raiz do repositório, execute `python analysis/prepare_article_package.py CAMINHO/study.json CAMINHO/hardware_analysis.json --output NOVO_DIRETORIO`. O destino deve estar vazio. O pacote é um recorte de escrita, não substitui o arquivo científico integral de `results/`.
 """
+    if times is not None:
+        mean = lambda key: statistics.mean(row[key] for row in times)
+        created = min(datetime.fromisoformat(row["created"]) for row in times)
+        finished = max(datetime.fromisoformat(row["finished"]) for row in times)
+        content += f"""
+## Recursos e tempo IBM
+
+Foram usados **4 qubits lógicos** em quatro qubits físicos do `ibm_kingston`, nos 80 jobs e 655.360 shots da coleta. A tabela `tables/ibm_job_timing.csv` contém os carimbos de criação, início e término de cada job, diretamente dos metadados IBM; `reports/IBM-timing-metrics.json` preserva a resposta resumida.
+
+- Tempo médio criação→término: **{mean('total_seconds')/60:.2f} min/job**; desses, **{mean('queue_seconds')/60:.2f} min/job** em fila.
+- Tempo médio `running`→término: **{mean('running_seconds'):.2f} s/job**. Este intervalo inclui etapas do Runtime além da execução do circuito.
+- Tempo médio de execução do circuito: **{mean('circuit_execution_seconds'):.2f} s/job**; tempo de QPU cobrado pela IBM: **{mean('qpu_charge_seconds'):.2f} s/job**.
+- Janela completa da coleta, do primeiro job criado ao último concluído: **{(finished-created).total_seconds()/60:.2f} min**. Os jobs se sobrepõem; não some seus tempos de fila para estimar a duração da campanha.
+
+Para regenerar também esta tabela, acrescente `--timing results/hardware-queues/ID/timing_metrics.json` ao comando do gerador.
+"""
     path.write_text(content, encoding="utf-8")
 
 
@@ -344,9 +404,10 @@ def main() -> None:
     parser.add_argument("study", type=Path, help="study.json final")
     parser.add_argument("hardware", type=Path, help="hardware_analysis.json da coleta IBM")
     parser.add_argument("--output", type=Path, help="diretório novo para o pacote")
+    parser.add_argument("--timing", type=Path, help="timing_metrics.json dos jobs IBM concluídos")
     args = parser.parse_args()
     output = args.output or Path("results/article_packages") / args.study.parent.name
-    print(prepare(args.study, args.hardware, output))
+    print(prepare(args.study, args.hardware, output, args.timing))
 
 
 if __name__ == "__main__":
