@@ -101,7 +101,10 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 | Arquivo ou diretório | Conteúdo |
 | --- | --- |
 | [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, estado da arte e referências unificadas. |
-| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com resumo em português e abstract em inglês. |
+| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com abstract, conforme o modelo SBC. |
+| [output/pdf/](output/pdf/) | PDFs atualizados em português e inglês, compostos no modelo SBC. |
+| [scripts/gerar_artigo_sbc.py](scripts/gerar_artigo_sbc.py) | Geração reproduzível dos PDFs a partir dos manuscritos e da base BibTeX. |
+| [artigo/](artigo/) | Preâmbulo de composição e arquivos do modelo SBC. |
 | [PLANO_TECNICO.md](PLANO_TECNICO.md) | Proposta de arquitetura, etapas do experimento, validações e decisões metodológicas pendentes. |
 | [app/frontend/](app/frontend/) | Interface Next.js com gráficos e visualizações interativas. |
 | [app/backend/](app/backend/) | API Python, orquestração e armazenamento versionado. |
@@ -121,6 +124,7 @@ O contexto da introdução apresenta supernovas, neutrinos, sabor, nucleossínte
 1. **Colapso estelar:** cortes esquemáticos do núcleo, do choque e da região de aquecimento por neutrinos.
 2. **Correlações conectadas:** decomposição de um momento de três partículas em médias, contribuições dos pares e cumulante do trio.
 3. **Protocolo de comparação:** modelo comum, quatro métodos de evolução, observáveis e controles das fontes de erro.
+4. **Critério de resolução:** equivalência com o exato e distinção da PSA, ilustradas por intervalos esquemáticos, sem dados experimentais.
 
 Para regenerar todas as figuras, executar na raiz do repositório, com Python 3.11 ou superior e `uv` instalado:
 
@@ -135,7 +139,13 @@ uv run figuras/gerar_diagramas.py --idioma pt
 uv run figuras/gerar_diagramas.py --idioma en
 ```
 
-O script declara a dependência de Matplotlib e exporta os desenhos com largura de 170 mm e PNG a 450 dpi. Os diagramas são conceituais; as curvas de evolução, os mapas de erro e os circuitos de portas serão produzidos com os cálculos e a implementação.
+Para gerar somente a figura do critério de resolução nas duas línguas:
+
+```sh
+uv run figuras/gerar_diagramas.py --figura 4
+```
+
+O script declara a dependência de Matplotlib e exporta os desenhos com largura de 170 mm e PNG a 450 dpi. Na composição SBC, as figuras são ajustadas à largura de 150 mm do texto, sem alterar os originais. Os diagramas são conceituais; as curvas de evolução, os mapas de erro e os circuitos de portas serão produzidos com os cálculos e a implementação.
 
 ## Conferência no modelo SBC
 
@@ -146,7 +156,18 @@ Na conferência de 23 de outubro de 2026, a introdução foi compilada e inspeci
 | Português | 1,45 página equivalente | 1,29 página equivalente |
 | Inglês | 1,43 página equivalente | 1,27 página equivalente |
 
-Na versão conferida naquela data, as duas partes atenderam à extensão de 1 a 1,5 página no modelo usado, com o parágrafo final de objetivo e contribuição contado separadamente. Essas medidas são um registro da versão anterior à revisão estrutural e não validam a extensão da versão atual. Os textos revisados ainda precisam de nova composição no modelo SBC e de conferência da paginação.
+Na versão conferida naquela data, as duas partes atenderam à extensão de 1 a 1,5 página no modelo usado, com o parágrafo final de objetivo e contribuição contado separadamente. Essas medidas são um registro da versão anterior à revisão estrutural e não validam a extensão da versão atual.
+
+Em 6 de novembro de 2026, os manuscritos completos foram compostos novamente, preservando o texto das introduções. O PDF em português apresenta abstract de oito linhas e resumo de nove linhas, ambos na primeira página. A versão em inglês contém apenas abstract. Cada versão possui 14 páginas, quatro figuras conceituais e três tabelas. Essa contagem registra a versão atual; a extensão permitida depende do evento de submissão.
+
+Para gerar os PDFs, instalar Python 3.11+, Pandoc e Tectonic. No macOS:
+
+```sh
+brew install pandoc tectonic
+python3 scripts/gerar_artigo_sbc.py
+```
+
+Usar `--idioma pt` ou `--idioma en` para gerar apenas uma versão. As saídas ficam em `output/pdf/`; os fontes LaTeX, logs e arquivos auxiliares ficam em `tmp/pdfs/pt/` e `tmp/pdfs/en/`. A primeira execução do Tectonic requer acesso à internet para obter os pacotes TeX. A procedência dos arquivos de estilo e os detalhes da composição estão em [artigo/README.md](artigo/README.md).
 
 ## Referências e edição
 
