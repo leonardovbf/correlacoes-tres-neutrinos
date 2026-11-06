@@ -2,10 +2,11 @@
 
 Data: 5 de novembro de 2026.
 
-Estado: desenho v1 definido para revisão do grupo, antes da coleta principal.
+Estado: desenho físico v1, revisão operacional 2 implementada antes da coleta principal.
+Execução e retomada: [EXECUTAR_EXPERIMENTOS.md](EXECUTAR_EXPERIMENTOS.md).
 A grade, as sementes, os testes principais e as metas de precisão já estão
-especificados em `configs/estudos/artigo_v1.json`. Os oito arquivos executáveis e
-as três especificações com pendências estão em `configs/protocols/artigo_v1/`.
+especificados em `configs/estudos/artigo_v1.json`. Os onze arquivos executáveis e
+as três especificações detalhadas estão em `configs/protocols/artigo_v1/`.
 As verificações iniciais determinam se os controles passam; não adiam o desenho
 dos demais experimentos. Mudanças posteriores exigem nova versão e justificativa.
 Este documento complementa `PLANO_TECNICO.md` e preserva as hipóteses de `ARTIGO.md`.
@@ -68,10 +69,10 @@ Antes de executar:
 6. Fixar a tolerância da reprodução antes de avaliar sua concordância, com base
    na precisão da fonte, na integração e no erro de amostragem.
 
-O artigo usa 10 mil trajetórias por cálculo PSA. O limite atual é 4.096 por
-chamada; a reprodução precisa de execução em lotes ou de uma ampliação controlada
-desse limite. Verificar também se a janela temporal da figura cabe nos controles
-interativos; o runner científico deve aceitar as unidades e a janela publicadas.
+A reprodução está implementada em `00_reproducao_publicada.json`, com 10 mil
+trajetórias executadas em blocos. A conversão de unidades, os dados vetoriais
+extraídos da figura, a origem e as tolerâncias estão em
+`data/benchmarks/lacroix2024/`. O runner verifica separadamente exato e PSA.
 
 ## 3. Verificação das metas de precisão definidas
 
@@ -86,8 +87,8 @@ Usar inicialmente N = 4 e 8 e μ/ω̄ = 0,1; 1; 10 no modelo próprio. O caso μ
 - Aumentar a PSA com 512, 1.024, 2.048 e 4.096 trajetórias por bloco e sementes
   independentes. Medir o efeito da amostragem em P, C² e K³ separadamente.
 - Refinar Trotter com 1, 2, 4, 8 e 16 passos por intervalo. Comparar o emulador
-  próprio com o Qiskit também em tempos posteriores; o teste atual cobre apenas
-  o primeiro intervalo.
+  próprio com o Qiskit também em tempos posteriores; o protocolo `04_qiskit.json` cobre
+  τ=1/2/4 com os mesmos passos totais.
 - Medir duração, pico de memória e armazenamento antes de aprovar a extensão
   para N = 12 e 16.
 
@@ -117,8 +118,8 @@ de outra coleta; não ajustar os critérios para obter uma hipótese favorável.
 
 O conjunto principal contém 15 configurações físicas. Com 20 sementes, são 300
 blocos PSA. As referências exatas e de campo médio são iguais entre sementes e
-podem ser reutilizadas; essa otimização ainda deve ser implementada. Os JSONs
-atuais são executáveis, mas recalculam essas referências em cada etapa clássica.
+são reutilizadas por cache com hashes de fontes/dependências e parâmetros
+físicos. A PSA e as medições mantêm cada semente declarada.
 A extensão para N = 12 e 16 acrescenta dez configurações físicas.
 
 Se os blocos forem combinados, agregar primeiro os momentos m1, m2 e m3 com pesos
@@ -161,8 +162,8 @@ hipótese de erros independentes. Usar os estados de calibração 0000 e 1111,
 com 12,5% do orçamento para cada um e 75% para sinal. O método sem mitigação usa
 100% do mesmo orçamento para sinal. Reamostrar também a calibração e rejeitar a
 inversão de matrizes com número de condição acima de 10, registrando o caso como
-não resolvido. A implementação ainda está pendente e não corrige, por definição,
-todo viés de portas.
+não resolvido. A implementação em `07_mitigacao.json` preserva as contagens e não corrige,
+por definição, todo viés de portas.
 
 Critério proposto para dizer que a diferença foi resolvida:
 
@@ -195,27 +196,18 @@ Já estão disponíveis o runner sequencial `scripts/run_protocol.py`, o piloto
 `configs/protocols/piloto_tres_corpos.json`, registros JSON por tentativa,
 retomada, replay com comparação numérica, hashes de artefatos, snapshots de
 fontes/dependências e `requirements-research.lock`. Cada resultado Aer preserva
-contagens com chave própria. O uso está em `REPRODUTIBILIDADE.md`.
+contagens com chave própria. O uso está em `EXECUTAR_EXPERIMENTOS.md`.
 
 Os demais testes já estão definidos no catálogo `configs/estudos/artigo_v1.json`.
 Para regenerar ou validar as definições, usar `scripts/define_article_protocols.py`
 e sua opção `--check`. Isso não executa a coleta. A tabela de arquivos, contagens
 e pendências está em `configs/protocols/artigo_v1/README.md`.
 
-Antes da grade científica principal, ainda é necessário:
-
-- Preparar configuração e análise específicas do benchmark publicado.
-- Executar a evolução exata uma vez por cenário e reaproveitá-la entre sementes.
-- Suportar a PSA em blocos e registrar estatísticas combinadas corretamente.
-- Separar a evolução ideal da geração de shots para evitar trabalho repetido.
-- Estender a checagem Qiskit para os instantes 1, 2 e 4, conforme o catálogo;
-  a comparação disponível na interface ainda cobre apenas o primeiro intervalo.
-- Implementar análise de erro normalizado com limiar de sinal, incerteza conjunta
-  das diferenças e margem de equivalência.
-- Implementar a mitigação necessária para a comparação prevista em H2.
-- Exportar tabelas e figuras científicas a partir dos dados salvos.
-- Identificar o commit e o protocolo fechado da coleta; manter os registros com
-  falha e arquivar a pasta completa dos resultados junto ao material do artigo.
+A revisão operacional 2 implementa benchmark, PSA em blocos, cache verificável,
+Qiskit em tempos posteriores, análise conjunta, mitigação e exportação de curvas.
+O estudo completo é iniciado por `scripts/run_study.py run` e preserva cada
+controle com aprovação/falha no JSON. Antes da coleta, identificar a versão dos
+fontes; depois, arquivar a pasta completa dos resultados junto ao material do artigo.
 
 ## 7. Material esperado para o artigo
 
@@ -232,9 +224,33 @@ artigo deve vir dos dados numéricos exportados.
 
 ## 8. Próxima tarefa concreta
 
-Implementar e executar a reprodução da Figura 2(c) de Lacroix et al. (2024),
-começando pela tabela de equivalência dos Hamiltonianos e pela configuração do
-benchmark. Entregar o relatório de reprodução antes de iniciar a grade oficial.
-Em seguida, executar os controles de precisão/custo e registrar se o desenho v1
-passou. O restante do desenho já está especificado; eventuais alterações serão
-versões documentadas, e não escolhas silenciosas guiadas pelos resultados.
+Executar `plan`, conferir o ambiente e iniciar `run` conforme
+`EXECUTAR_EXPERIMENTOS.md`. O runner começa pela reprodução da Figura 2(c),
+verifica os controles e avança somente quando eles passam. O perfil `smoke`
+valida o software e não substitui a coleta científica. Eventuais alterações
+serão versões documentadas, sem escolhas guiadas pelos resultados.
+
+## Revisão operacional 2 — antes da coleta oficial
+
+A grade física e o ponto principal H2 foram preservados. `run_study` verifica
+controles entre fases; H1/H2 não precisam ser favoráveis para concluir a coleta.
+A meta adicional de precisão amostral é erro padrão máximo entre sementes de
+K3 de 0,01 no orçamento PSA de 4096 durante T02. É uma meta operacional de
+resolução e pode reprovar; não é uma afirmação de validade universal da PSA.
+
+A unidade de bootstrap PSA passa a ser o bloco independente de semente de
+mesmo tamanho, preservando dentro dele os momentos conjuntos e a trajetória
+temporal. São 2000 reamostragens, incluindo os 20 blocos na análise principal.
+Cumulantes são calculados depois de agregar momentos. Para H2, as contagens
+agregadas de sinal e dos dois estados de calibração são reamostradas como
+multinomiais, a resposta é reestimada e a inversão refeita a cada réplica.
+A PSA é reamostrada independentemente por blocos. A incerteza não conta duas
+vezes a mesma flutuação de shots por reamostrar também as sementes do circuito.
+A análise mantém quasiprobabilidades negativas e declara calibração não
+resolvida se houver inversão instável, sem descarte seletivo de réplicas.
+
+A margem H2 permanece ±0,01, acrescida do limite de erro Trotter observado
+contra exato e do limite numérico 1e-5. Comparações de sensibilidade são
+descritivas; não fazemos declarações confirmatórias múltiplas sem uma análise
+com correção apropriada. O hardware continua uma extensão separada; um comando
+explícito prepara o protocolo e outro autoriza os envios, após a coleta local.

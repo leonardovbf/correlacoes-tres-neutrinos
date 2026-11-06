@@ -19,7 +19,7 @@
     "profundidade e portas após transpilar registradas",
     "orçamento total autorizado e janela de calibração definida"
   ],
-  "policy": "Nenhum envio automático durante definição. Se o teto interativo de 16 subpassos não alcançar a precisão, ajustar a implementação e versionar o protocolo antes de submeter.",
+  "policy": "Nenhum envio automático durante definição. Teto de 120 subpassos totais; max_depth após transpilar limita o envio. O plano usa o mesmo ponto primário e inclui calibração nos qubits físicos do sinal.",
   "archive": [
     "QPY",
     "layout",

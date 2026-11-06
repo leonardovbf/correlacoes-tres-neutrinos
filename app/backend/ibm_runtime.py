@@ -12,6 +12,8 @@ import importlib.util
 import io
 import json
 import os
+from contextlib import contextmanager
+from contextvars import ContextVar
 
 import numpy as np
 from dotenv import load_dotenv
@@ -24,6 +26,18 @@ from .storage import ROOT
 
 
 load_dotenv(ROOT / ".env", override=False)
+_active_service = ContextVar("ibm_active_service", default=None)
+
+
+@contextmanager
+def shared_session():
+    """Reutiliza um cliente real numa consulta em lote; não persiste credenciais extras."""
+    client = _service()
+    token = _active_service.set(client)
+    try:
+        yield client
+    finally:
+        _active_service.reset(token)
 
 
 def status() -> dict:
@@ -36,6 +50,9 @@ def status() -> dict:
 
 
 def _service():
+    active = _active_service.get()
+    if active is not None:
+        return active
     if not status()["configured"]:
         raise ValueError("Preencha IBM_QUANTUM_API_KEY no arquivo .env da raiz e reinicie o backend")
     if not status()["sdk_installed"]:
@@ -68,8 +85,8 @@ def list_backends(min_qubits: int = 2) -> list[dict]:
 def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
     if config.n > 8 or request.interval_index >= config.points:
         raise ValueError("Instante ou número de qubits fora do cenário")
-    if request.interval_index * request.steps > 16:
-        raise ValueError("Hardware limitado a 16 subpassos Trotter por execução")
+    if request.interval_index * request.steps > 120:
+        raise ValueError("Hardware limitado a 120 subpassos Trotter por execução")
     from qiskit.transpiler import generate_preset_pass_manager
     from qiskit import qpy
     from qiskit_ibm_runtime.executor_sampler import Sampler
@@ -81,12 +98,24 @@ def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
             raise ValueError("Selecione um dispositivo quântico real com qubits suficientes")
         if not backend.status().operational:
             raise ValueError("O dispositivo selecionado não está operacional")
-        circuit = build_trotter_circuit(config, float(config.times[request.interval_index]),
-                                        request.interval_index * request.steps)
+        if request.role.startswith("calibration"):
+            from qiskit import QuantumCircuit
+            if request.initial_layout is None:
+                raise ValueError("A calibração exige os qubits físicos da medição de sinal")
+            circuit = QuantumCircuit(config.n)
+            if request.role == "calibration_one":
+                circuit.x(range(config.n))
+        else:
+            circuit = build_trotter_circuit(config, float(config.times[request.interval_index]),
+                                            request.interval_index * request.steps)
         circuit.measure_all()
+        transpiler_seed = request.transpiler_seed if request.transpiler_seed is not None else config.seed
         manager = generate_preset_pass_manager(backend=backend, optimization_level=1,
-                                               seed_transpiler=config.seed)
+                                               seed_transpiler=transpiler_seed,
+                                               initial_layout=request.initial_layout)
         isa_circuit = manager.run(circuit)
+        if isa_circuit.depth() > request.max_depth:
+            raise ValueError("Profundidade após transpilar ultrapassa max_depth; nenhum job foi enviado")
         serialized = io.BytesIO()
         qpy.dump(isa_circuit, serialized)
         circuit_bytes = serialized.getvalue()
@@ -96,9 +125,10 @@ def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
         return {"job_id": job.job_id(), "backend": backend.name,
                 "circuit_qpy_base64": base64.b64encode(circuit_bytes).decode("ascii"),
                 "circuit_sha256": hashlib.sha256(circuit_bytes).hexdigest(),
-                "transpilation": {"optimization_level": 1, "seed_transpiler": config.seed,
+                "transpilation": {"optimization_level": 1, "seed_transpiler": transpiler_seed,
                                   "physical_qubits": isa_circuit.layout.final_index_layout()},
                 "runtime_options": {"primitive": "Sampler", "shots": request.shots},
+                "role": request.role,
                 "backend_properties": calibration,
                 "transpiled_depth": isa_circuit.depth(),
                 "two_qubit_gates": sum(count for gate, count in isa_circuit.count_ops().items()

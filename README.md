@@ -153,3 +153,16 @@ As duas partes atenderam à extensão de 1 a 1,5 página no modelo usado. O par�
 As listas de referências dos artigos contêm somente as fontes citadas, em ordem alfabética e com apresentação uniforme. A base BibTeX mantém também quatro leituras complementares para o desenvolvimento da pesquisa. Ao acrescentar uma citação, atualizar a lista do artigo e o registro correspondente em `referencias.bib`.
 
 Manter as versões em português e inglês alinhadas quanto ao escopo, às hipóteses, às condições de comparação e às legendas. Para alterar os desenhos, editar o gerador e regenerar as imagens antes de revisar sua leitura no artigo.
+
+## Coleta dos experimentos
+
+O roteiro completo de ambiente, execução das 11 fases, retomada, análises e
+extensão IBM está em [EXECUTAR_EXPERIMENTOS.md](EXECUTAR_EXPERIMENTOS.md).
+
+```sh
+.venv/bin/python scripts/run_study.py plan
+.venv/bin/python scripts/run_study.py smoke --output results/validacao-software
+.venv/bin/python scripts/run_study.py run
+```
+
+O smoke valida o software e mantém seus resultados separados da coleta oficial.
