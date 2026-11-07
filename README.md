@@ -98,25 +98,25 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 
 | Arquivo ou diretório | Conteúdo |
 | --- | --- |
-| [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, estado da arte e referências unificadas. |
+| [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, fundamentação teórica, revisão bibliográfica e referências unificadas. |
 | [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com abstract e resultados da coleta. |
 | [PLANO_TECNICO.md](PLANO_TECNICO.md) | Proposta de arquitetura, etapas do experimento, validações e decisões metodológicas pendentes. |
 | [app/frontend/](app/frontend/) | Interface Next.js com gráficos e visualizações interativas. |
 | [app/backend/](app/backend/) | API Python, orquestração e armazenamento versionado. |
 | [src/neutrinos/](src/neutrinos/) | Motor compartilhado de evolução e observáveis. |
 | [app.py](app.py) | Interface Streamlit anterior, mantida temporariamente para consulta. |
-| [referencias.bib](referencias.bib) | Base BibTeX com as 17 fontes citadas e quatro leituras complementares identificadas por comentários. |
+| [referencias.bib](referencias.bib) | Base BibTeX com as 40 fontes citadas e quatro leituras complementares identificadas por comentários. |
 | [figuras/](figuras/) | Diagramas em português, em SVG editável e PNG. |
 | [figuras/en/](figuras/en/) | Os mesmos diagramas com os rótulos em inglês. |
 | [figuras/gerar_diagramas.py](figuras/gerar_diagramas.py) | Código que gera as duas versões das figuras. |
 
 ## Contribuições da entrega
 
-A introdução revisada da `main` reúne o contexto astrofísico, o estado da arte, a lacuna, a pergunta, o objetivo e as hipóteses. A metodologia e os resultados preservam a versão da coleta: comparação com o exato, controle das fontes de erro, avaliação dos cumulantes e limitações da inferência sobre H1 e H2.
+A introdução reúne o contexto astrofísico, a lacuna, a pergunta, o objetivo e as hipóteses. A fundamentação teórica apresenta o Hamiltoniano coletivo, os cumulantes conectados, o campo médio, a PSA, a trotterização, as medições, o ruído e a mitigação de leitura. A revisão bibliográfica compara os trabalhos relacionados e delimita a lacuna. A metodologia e os resultados preservam a versão da coleta: comparação com o exato, controle das fontes de erro, avaliação dos cumulantes e limitações da inferência sobre H1 e H2.
 
 ## Figuras
 
-O acervo abaixo conserva a numeração original dos arquivos. Na versão de 12 páginas, as figuras do artigo são 1 (colapso), 2 (PSA), 3 (medições) e 4 (comparação quântica); os demais diagramas ficam como material de apoio.
+O acervo abaixo conserva a numeração original dos arquivos. No artigo, as figuras são 1 (colapso), 2 (correlações conectadas), 3 (PSA), 4 (medições) e 5 (comparação quântica); o protocolo de comparação e o critério de resolução ficam como material de apoio.
 
 1. **Colapso estelar:** cortes esquemáticos do núcleo, do choque e da região de aquecimento por neutrinos.
 2. **Correlações conectadas:** decomposição de um momento de três partículas em médias, contribuições dos pares e cumulante do trio.
