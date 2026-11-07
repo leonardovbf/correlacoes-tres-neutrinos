@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/correlacoes_tres_neutrinos.egg-info/PKG-INFO
+src/correlacoes_tres_neutrinos.egg-info/SOURCES.txt
+src/correlacoes_tres_neutrinos.egg-info/dependency_links.txt
+src/correlacoes_tres_neutrinos.egg-info/requires.txt
+src/correlacoes_tres_neutrinos.egg-info/top_level.txt
+src/neutrinos/__init__.py
+src/neutrinos/aer_worker.py
+src/neutrinos/qiskit_backend.py
+src/neutrinos/sim.py
+tests/test_api.py
+tests/test_ibm_runtime.py
+tests/test_sim.py

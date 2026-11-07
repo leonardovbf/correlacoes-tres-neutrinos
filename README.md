@@ -2,7 +2,7 @@
 
 Projeto sobre a precisão da aproximação de espaço de fase em oscilações coletivas de neutrinos e sobre a capacidade de circuitos quânticos de distinguir suas previsões da evolução exata. O estudo adota dois sabores, energias distintas e interações entre todos os pares.
 
-A Entrega 1 reúne o problema, a pergunta, os objetivos, as hipóteses, os resumos e a introdução. A estratégia de avaliação apresenta o planejamento dos cálculos e das comparações que serão desenvolvidos nas próximas etapas.
+O artigo integra a introdução revisada da `main` (PR #5) à metodologia, aos parâmetros, às métricas e aos resultados da coleta local e IBM de `feat/system`. A introdução foi preservada integralmente; os resumos descrevem os resultados disponíveis. As conclusões confirmatórias sobre H1 e H2 permanecem condicionadas às limitações estatísticas e ao desenho de avaliação descritos no texto.
 
 ## Plataforma local de simulação
 
@@ -84,9 +84,7 @@ para estados iniciais produto, um neutrino por feixe. A tela quântica
 executa um simulador local de estado. A simulação de um instante com ruído de
 portas no Qiskit Aer continua disponível pela API. A execução IBM mede um
 único instante por job em hardware real; ela ainda não valida H2 sob ruído
-calibrado. A reprodução de um
-benchmark publicado e a análise de convergência estatística da PSA continuam
-como próximos controles antes de tratar os gráficos como resultados do artigo.
+calibrado. A reprodução publicada e os controles suplementares constam do pacote concluído. A interpretação dos intervalos bootstrap e os critérios confirmatórios de H1/H2 continuam sujeitos à revisão descrita no artigo.
 Para inserir os parâmetros de um benchmark, copie o cenário de exemplo e
 carregue o JSON no painel de parâmetros. A matriz `g_values` é simétrica, com diagonal zero; confira a
 normalização e a convenção de sabor do artigo antes de comparar curvas.
@@ -100,29 +98,35 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 
 | Arquivo ou diretório | Conteúdo |
 | --- | --- |
-| [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, estado da arte e referências unificadas. |
-| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com resumo em português e abstract em inglês. |
+| [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, fundamentação teórica, revisão bibliográfica e referências unificadas. |
+| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com abstract e resultados da coleta. |
 | [PLANO_TECNICO.md](PLANO_TECNICO.md) | Proposta de arquitetura, etapas do experimento, validações e decisões metodológicas pendentes. |
 | [app/frontend/](app/frontend/) | Interface Next.js com gráficos e visualizações interativas. |
 | [app/backend/](app/backend/) | API Python, orquestração e armazenamento versionado. |
 | [src/neutrinos/](src/neutrinos/) | Motor compartilhado de evolução e observáveis. |
 | [app.py](app.py) | Interface Streamlit anterior, mantida temporariamente para consulta. |
-| [referencias.bib](referencias.bib) | Base BibTeX com as 18 fontes citadas e quatro leituras complementares identificadas por comentários. |
+| [referencias.bib](referencias.bib) | Base BibTeX com as 40 fontes citadas e quatro leituras complementares identificadas por comentários. |
 | [figuras/](figuras/) | Diagramas em português, em SVG editável e PNG. |
 | [figuras/en/](figuras/en/) | Os mesmos diagramas com os rótulos em inglês. |
 | [figuras/gerar_diagramas.py](figuras/gerar_diagramas.py) | Código que gera as duas versões das figuras. |
 
 ## Contribuições da entrega
 
-O núcleo da pesquisa define a pergunta, os objetivos e as hipóteses. O contexto da introdução apresenta supernovas, neutrinos, sabor, nucleossíntese e detecção; essa frente também reúne e padroniza as referências. O estado da arte discute campo médio, espaço de fase, BBGKY e simulações quânticas, delimitando a lacuna do estudo. O parágrafo final da introdução conecta essas contribuições ao plano de pesquisa.
+A introdução reúne o contexto astrofísico, a lacuna, a pergunta, o objetivo e as hipóteses. A fundamentação teórica apresenta o Hamiltoniano coletivo, os cumulantes conectados, o campo médio, a PSA, a trotterização, as medições, o ruído e a mitigação de leitura. A revisão bibliográfica compara os trabalhos relacionados e delimita a lacuna. A metodologia e os resultados preservam a versão da coleta: comparação com o exato, controle das fontes de erro, avaliação dos cumulantes e limitações da inferência sobre H1 e H2.
 
 ## Figuras
+
+O acervo abaixo conserva a numeração original dos arquivos. No artigo, as figuras são 1 (colapso), 2 (correlações conectadas), 3 (PSA), 4 (medições) e 5 (comparação quântica); o protocolo de comparação e o critério de resolução ficam como material de apoio.
 
 1. **Colapso estelar:** cortes esquemáticos do núcleo, do choque e da região de aquecimento por neutrinos.
 2. **Correlações conectadas:** decomposição de um momento de três partículas em médias, contribuições dos pares e cumulante do trio.
 3. **Protocolo de comparação:** modelo comum, quatro métodos de evolução, observáveis e controles das fontes de erro.
+4. **Critério de resolução:** equivalência com o exato e distinção da PSA, em exemplos conceituais.
+5. **Resultados PSA:** diferença entre erros normalizados de trios e pares, com os intervalos registrados.
+6. **Orçamento de medições:** erro dos circuitos ideais nos três orçamentos avaliados.
+7. **Comparação quântica:** exato, PSA, Aer e IBM no caso principal, com e sem mitigação.
 
-Para regenerar todas as figuras, executar na raiz do repositório, com Python 3.11 ou superior e `uv` instalado:
+Para regenerar os diagramas conceituais (figuras 1–4), executar na raiz do repositório, com Python 3.11 ou superior e `uv` instalado:
 
 ```sh
 uv run figuras/gerar_diagramas.py
@@ -135,7 +139,7 @@ uv run figuras/gerar_diagramas.py --idioma pt
 uv run figuras/gerar_diagramas.py --idioma en
 ```
 
-O script declara a dependência de Matplotlib e exporta os desenhos com largura de 170 mm e PNG a 450 dpi. Os diagramas são conceituais; as curvas de evolução, os mapas de erro e os circuitos de portas serão produzidos com os cálculos e a implementação.
+O script exporta os diagramas conceituais com largura de 170 mm e PNG a 450 dpi; a composição SBC ajusta-os a 150 mm. As figuras de resultados (5–7) são geradas por `uv run figuras/gerar_resultados.py`, a partir dos CSVs do pacote auditado, já com 150 mm de largura.
 
 ## Conferência no modelo SBC
 
@@ -146,7 +150,7 @@ Na conferência de 23 de outubro de 2026, a introdução foi compilada e inspeci
 | Português | 1,45 página equivalente | 1,29 página equivalente |
 | Inglês | 1,43 página equivalente | 1,27 página equivalente |
 
-As duas partes atenderam à extensão de 1 a 1,5 página no modelo usado. O parágrafo final de objetivo e contribuição foi contado separadamente. Alterações no texto, na figura, na legenda ou no modelo exigem nova composição e medição; a paginação do artigo completo será determinada quando todas as seções forem compostas juntas.
+Na versão conferida naquela data, as duas partes atenderam à extensão de 1 a 1,5 página no modelo usado, com o parágrafo final de objetivo e contribuição contado separadamente. Essas medidas são um registro da versão anterior à revisão estrutural e não validam a extensão da versão atual. A nova composição com resultados e sua paginação estão documentadas na seção "Artigo com resultados" abaixo.
 
 ## Referências e edição
 
@@ -183,3 +187,14 @@ Para gerar outro pacote a partir de registros concluídos:
 ```sh
 .venv/bin/python analysis/prepare_article_package.py results/studies/ID/study.json results/protocols/ID/hardware_analysis.json --output analysis/article_packages/NOVO-ID
 ```
+
+
+## Artigo com resultados — pontos 6, 7 e 8
+
+[Artigo em português](ARTIGO.md) e [versão em inglês](ARTIGO.eng.md) combinam a introdução integral da `main` (`55b8e87`) com a metodologia, os parâmetros, as métricas e os resultados de `feat/system` (`1e870ed`). O título também segue a revisão da `main`; os resumos seguem a estrutura da `main`, com contexto, objetivo, método e resultados da coleta, acompanhados das limitações. As referências preservam a apresentação SBC e excluem a fonte Nobel 2015, retirada da nova introdução.
+
+A seção **Resultados experimentais** mantém os três gráficos, os valores observados, os intervalos e as limitações estatísticas. As quatro tabelas incluem parâmetros, ruído, controles e a comparação quântica. Códigos, workloads e dados continuam no repositório, com a disponibilidade descrita no artigo.
+
+O pacote original atribui incorretamente **1,0897 × 10⁻¹¹** à comparação Qiskit–emulador: esse valor pertence ao controle de comprimento dos spins. O artigo conserva o máximo correto de **2,8021 × 10⁻¹²**, calculado nos 45 controles identificados por `_tau`; os arquivos originais do pacote permanecem intactos.
+
+A versão anterior à atualização da introdução foi conferida em 12 páginas. Essa contagem não foi revalidada para a composição atual. Os artefatos e scripts de composição PDF citados anteriormente não estão versionados nesta branch; o PDF da primeira entrega permanece como registro histórico.
