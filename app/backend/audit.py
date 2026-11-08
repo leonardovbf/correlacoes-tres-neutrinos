@@ -116,6 +116,7 @@ def environment() -> dict:
                *sorted((ROOT / "data" / "benchmarks").rglob("*.md")),
                *sorted((ROOT / "data" / "benchmarks").rglob("*.json")),
                *sorted((ROOT / "configs" / "protocols" / "artigo_v1").rglob("*.json")),
+               *sorted((ROOT / "configs" / "protocols" / "circuitos_curtos_v2").rglob("*.json")),
                ROOT / "app" / "__init__.py",
                *sorted((ROOT / "app" / "backend").glob("*.py")),
                *sorted((ROOT / "src" / "neutrinos").glob("*.py"))]

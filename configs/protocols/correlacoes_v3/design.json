@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "status": "exploratory_after_v1_v2",
+  "sizes": [
+    4,
+    6,
+    8
+  ],
+  "mu": [
+    1.0,
+    3.0,
+    10.0
+  ],
+  "initial_states": [
+    "domain",
+    "alternating"
+  ],
+  "geometries": [
+    "uniform",
+    "two_beam"
+  ],
+  "theta": 0.2,
+  "omega": "linspace(0.7,1.3,N)",
+  "two_beam": "indices below N/2 parallel; remaining antiparallel; g normalized to mean off-diagonal 1",
+  "psa": "equal-weight enumeration of all 4**N initial sign configurations; aggregate moments before cumulants",
+  "time_grid": {
+    "end": 3.0,
+    "points": 61,
+    "rk4_substeps": 4
+  },
+  "candidate_window": [
+    0.5,
+    2.5
+  ],
+  "minimum_exact_amplitude": 0.02,
+  "minimum_psa_absolute_error": 0.02,
+  "candidate_within_case": "maximize gap/(1+(mu*tau)**2); first flattened index breaks ties",
+  "trotter_steps": [
+    1,
+    2,
+    4,
+    6,
+    8,
+    12,
+    16
+  ],
+  "primary_trotter_limit": 0.001,
+  "candidate_between_cases": "maximize gap/(nonzero_pairs*minimum_steps); ties use case id",
+  "selected_psa_validation": "repeat complete time-grid enumeration with 8 RK4 substeps; max c3 difference <=1e-5",
+  "qiskit_probability_limit": 1e-10,
+  "interpretation": "All searches and local pointwise intervals are exploratory. Lower error than PSA is not computational quantum advantage.",
+  "noise_plan": {
+    "p2": [
+      0.0,
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01
+    ],
+    "p1": "p2/10",
+    "readout": [
+      0.0,
+      0.03
+    ],
+    "circuits": [
+      "minimum_steps",
+      "twice_minimum_steps"
+    ],
+    "total_shots_per_method": 81920,
+    "mitigated_signal": 61440,
+    "calibration_each": 10240,
+    "bootstrap_repetitions": 2000,
+    "bootstrap": "stationary multinomial for signal/calibration separately; deterministic PSA; preserve bit covariances",
+    "success": "upper CI95 of absolute-error difference D below zero; report numerical sensitivity and baseline C3=0"
+  },
+  "hardware_extension": {
+    "maximum_jobs": 10,
+    "shots_per_job": 4096,
+    "sizes": [
+      6,
+      8
+    ],
+    "gate_twirling": true,
+    "condition": "local convergence and Qiskit pass; predicted advantage at p2=.001 and readout=.03; <=500 two-qubit gates, depth<=3000",
+    "role": "exploratory pilot; full counts measure all trios; five blocks per size; no claim of global superiority"
+  },
+  "separate_existing_confirmation": "v2 selected N4 circuit, 20 jobs/327680 shots; original decision preserved"
+}

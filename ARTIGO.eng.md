@@ -266,7 +266,7 @@ Reproduction of Lacroix et al. (2024) uses Figure 2(c) of that study, in a confi
 
 Convergence at $N=4,8$ and $\lambda=0.1,1,10$ varies trajectories, RK4 substeps, and Trotter steps. Table 4 bounds maximum absolute deviations, refinement from 8 to 12 substeps, and the largest standard error across seeds, over times and triples.
 
-Ideal circuits use $N=4,6,8$ and twenty blocks of 1,024, 4,096, or 16,384 shots per time. The noisy stage is restricted to $N=4$, triple $(0,1,2)$, and $\tau=1,2,4$, retaining the five interactions and three budgets. The original discretization totals 112 Trotter steps.
+Ideal circuits use $N=4,6,8$ and twenty blocks of 1,024, 4,096, or 16,384 shots per time. The noisy Aer stage is restricted to $N=4$, triple $(0,1,2)$, and $\tau=1,2,4$, retaining the five interactions and three budgets. Its original grid uses 16 Trotter steps per interval, or 112 up to the measured time; amendment v4 increases one cell to 448 steps.
 
 _Table 3 - Noise profiles defined for the Aer simulator._
 
@@ -280,7 +280,7 @@ Aer uses density-matrix simulation, the `rz`, `sx`, `x`, `cx` basis, and optimiz
 
 Mitigation inverts the tensor product of response matrices calibrated with $|0000\rangle$ and $|1111\rangle$, retaining negative quasiprobabilities. Per block, it assigns $3m/4$ shots to signal and $m/8$ to each calibration; the raw method uses $m$ for signal. Both receive $M=20m$. This correction does not remove gate errors.
 
-The primary case uses $N=4$, $\lambda=3$, $\tau=2$, moderate noise, and $m=16,384$, with an additional execution on `ibm_kingston`.
+The primary case uses $N=4$, $\lambda=3$, $\tau=2$, moderate noise, and $m=16,384$ in Aer. The additional run on `ibm_kingston` uses a different circuit: 2 steps per interval, 14 in total, versus 16 and 112 in Aer. For hardware, we selected in advance the smallest value among 1, 2, 4, 8, and 16 steps per interval for which the maximum ideal $C^{(3)}$ error over times and triples was at most $10^{-3}$. The bounded ideal residuals in the primary case are $2.12\times10^{-5}$ for Aer and $7.26\times10^{-4}$ for IBM. The difference between their estimates does not isolate hardware noise.
 
 Amendment v3 followed detection of an omitted sampling check and its failure in three of six configurations. It added twenty blocks of 4,096 trajectories per configuration, passing under the same limit. Reanalysis preserved the original failure.
 
@@ -355,18 +355,20 @@ _Figure 4 - Triple RMSE relative to exact evolution, aggregated over times and t
 
 In the primary case, the exact cumulant was $-0.315784$; PSA estimated $-0.155768$ from local blocks and $-0.151947$ from IBM-associated blocks, distinct samples. Noisy circuits remained close to zero with and without mitigation (Table 5 and Figure 5).
 
-_Table 5 - Primary case: estimates of $C^{(3)}$ and 95% intervals for circuit minus exact, widened by the numerical residual. Each method receives $M=327,680$ shots; calibration is included in the mitigated budget._
+In the moderate-noise Aer grid, all fifteen cells at each shot budget produced exactly the same raw estimate and the same mitigated estimate. An [audit of the counts](analysis/audits/aer_saturation_20261106.json) confirmed that each of the twenty seeds produced the same raw and signal count vectors across the fifteen cells; vectors differ across seeds. At two representative points, the density matrix before readout was within $8\times10^{-11}$ of the maximally mixed state $I/16$ in Frobenius norm after 4,032 `cx` gates. This is consistent with saturation from gate noise, which readout mitigation cannot correct. Cells reusing the same vectors are not independent replicates; the twenty distinct-seed blocks within each cell remain independent. The mild/moderate grid does not resolve an intermediate noise threshold.
 
-| Environment | Method    |    Estimate | 95% CI of difference  |
-| ----------- | --------- | ----------: | --------------------- |
-| Aer         | Raw       | $-0.000305$ | $[0.312040,0.318866]$ |
-| Aer         | Mitigated |  $0.001301$ | $[0.312190,0.322029]$ |
-| IBM         | Raw       |  $0.005847$ | $[0.317702,0.325733]$ |
-| IBM         | Mitigated |  $0.006376$ | $[0.317486,0.327007]$ |
+_Table 5 - Primary case: estimates of $C^{(3)}$ and 95% intervals for circuit minus exact, widened by the numerical residual. Each method receives $M=327,680$ shots; calibration is included in the mitigated budget. Aer and IBM use different discretizations._
+
+| Environment | Total steps | Ideal residual | Method    |    Estimate | 95% CI of difference  |
+| ----------- | ----------: | -------------: | --------- | ----------: | --------------------- |
+| Aer         | 112 | $2.12\times10^{-5}$ | Raw       | $-0.000305$ | $[0.312040,0.318866]$ |
+| Aer         | 112 | $2.12\times10^{-5}$ | Mitigated |  $0.001301$ | $[0.312190,0.322029]$ |
+| IBM         | 14  | $7.26\times10^{-4}$ | Raw       |  $0.005847$ | $[0.317702,0.325733]$ |
+| IBM         | 14  | $7.26\times10^{-4}$ | Mitigated |  $0.006376$ | $[0.317486,0.327007]$ |
 
 ![Comparison of the exact cumulant, the two PSA estimates, and Aer and IBM circuits without and with mitigation in the primary case.](figuras/en/figure-7-quantum-comparison.png)
 
-_Figure 5 - Primary case: band of $\pm0.01$ around the exact value; circuit intervals widened by the residual and translated to $C^{(3)}$. PSA has no individual interval; circles and squares represent raw and mitigated methods. Source: original plot from the results package._
+_Figure 5 - Primary case: band of $\pm0.01$ around the exact value; circuit intervals widened by the residual and translated to $C^{(3)}$. PSA has no individual interval; circles and squares represent raw and mitigated methods. Aer and IBM used circuits with 112 and 14 steps, respectively; their difference does not isolate physical noise. Source: original plot from the results package._
 
 All four circuit-minus-PSA intervals exclude zero, but no circuit-minus-exact interval fits within $[-0.01,0.01]$. Mitigation did not recover the cumulant within this margin. The pointwise decision is inconclusive and does not test the H2 noise threshold.
 

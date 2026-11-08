@@ -67,6 +67,27 @@ class IbmRuntimeTests(unittest.TestCase):
         self.assertEqual(submitted["circuit_sha256"], hashlib.sha256(circuit_bytes).hexdigest())
         self.assertIn("backend_properties", submitted)
 
+    def test_short_circuit_options_are_applied_and_archived_without_network(self):
+        from qiskit_ibm_runtime.fake_provider import FakeBelemV2
+
+        cloud = Mock()
+        cloud.backend.return_value = FakeBelemV2()
+        sampler = MagicMock()
+        sampler.run.return_value.job_id.return_value = "short-offline-job"
+        request = HardwareRequest(backend="fake_belem", interval_index=1,
+                                  steps=2, shots=32, optimization_level=3,
+                                  gate_twirling=True, dynamical_decoupling=True)
+        with patch.object(ibm_runtime, "_service", return_value=cloud), patch(
+                "qiskit_ibm_runtime.executor_sampler.Sampler", return_value=sampler):
+            result = ibm_runtime.submit(ExperimentConfig(n=2, flavors=(0, 1),
+                                        t_max=1.5, points=2), request)
+        self.assertEqual(result["transpilation"]["optimization_level"], 3)
+        self.assertTrue(result["runtime_options"]["gate_twirling"])
+        self.assertTrue(result["runtime_options"]["dynamical_decoupling"])
+        self.assertTrue(sampler.options.twirling.enable_gates)
+        self.assertTrue(sampler.options.dynamical_decoupling.enable)
+        self.assertEqual(sampler.run.call_args.kwargs["shots"], 32)
+
     def test_qiskit_counts_keep_qubit_bit_order(self):
         cloud = MagicMock()
         job = cloud.job.return_value

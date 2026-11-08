@@ -35,6 +35,9 @@ class HardwareRequest(StrictModel):
     calibration_reference: bool = False
     max_depth: int = Field(default=20000, ge=1, le=100000)
     transpiler_seed: int | None = Field(default=None, ge=0, le=4294967295)
+    optimization_level: Literal[0, 1, 2, 3] = 1
+    gate_twirling: bool = False
+    dynamical_decoupling: bool = False
 
 
 class AerRequest(StrictModel):

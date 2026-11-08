@@ -267,7 +267,7 @@ A reprodução de Lacroix et al. (2024) usa a Figura 2(c) daquele estudo, em con
 
 A convergência em $N=4,8$ e $\lambda=0,1;1;10$ varia trajetórias, subpassos RK4 e passos de Trotter. A Tabela 4 limita os desvios absolutos máximos, o refinamento de 8 para 12 subpassos e o maior erro-padrão entre sementes, sobre tempos e trios.
 
-Os circuitos ideais usam $N=4,6,8$ e vinte blocos de 1.024, 4.096 ou 16.384 medições por instante. A etapa ruidosa restringe-se a $N=4$, ao trio $(0,1,2)$ e a $\tau=1,2,4$, mantendo as cinco interações e os três orçamentos. A discretização original totaliza 112 passos de Trotter.
+Os circuitos ideais usam $N=4,6,8$ e vinte blocos de 1.024, 4.096 ou 16.384 medições por instante. A etapa ruidosa Aer restringe-se a $N=4$, ao trio $(0,1,2)$ e a $\tau=1,2,4$, mantendo as cinco interações e os três orçamentos. Sua grade original usa 16 passos de Trotter por intervalo, 112 até o instante medido; a emenda v4 eleva uma célula a 448 passos.
 
 _Tabela 3 - Perfis de ruído definidos para o simulador Aer._
 
@@ -281,7 +281,7 @@ O Aer usa matriz densidade, base `rz`, `sx`, `x`, `cx` e otimização de nível 
 
 A mitigação inverte o produto tensorial das matrizes de resposta calibradas com $|0000\rangle$ e $|1111\rangle$, preservando quasiprobabilidades negativas. Por bloco, usa $3m/4$ medições no sinal e $m/8$ em cada calibração; o método bruto usa $m$ no sinal. Ambos recebem $M=20m$. A correção não elimina erros de portas.
 
-O caso principal usa $N=4$, $\lambda=3$, $\tau=2$, ruído moderado e $m=16.384$, com execução adicional no `ibm_kingston`.
+O caso principal usa $N=4$, $\lambda=3$, $\tau=2$, ruído moderado e $m=16.384$ no Aer. A execução adicional no `ibm_kingston` usa outro circuito: 2 passos por intervalo, 14 no total, contra 16 e 112 no Aer. Para o hardware, selecionou-se antecipadamente o menor valor entre 1, 2, 4, 8 e 16 passos por intervalo cujo erro ideal máximo de $C^{(3)}$ sobre tempos e trios fosse até $10^{-3}$. Os resíduos ideais limitados do caso principal são $2,12\times10^{-5}$ no Aer e $7,26\times10^{-4}$ na IBM. A diferença entre suas estimativas não isola o ruído do hardware.
 
 A emenda v3 respondeu à identificação de um controle amostral omitido e à sua reprovação em três de seis configurações. Acrescentou vinte blocos de 4.096 trajetórias por configuração, aprovados sob o mesmo limite. A reanálise preservou a reprovação original.
 
@@ -356,18 +356,20 @@ _Figura 4 - RMSE dos trios em relação ao exato, agregado sobre tempos e trios.
 
 No caso principal, o cumulante exato foi $-0,315784$; a PSA estimou $-0,155768$ nos blocos locais e $-0,151947$ nos associados à IBM, amostras distintas. Os circuitos ruidosos ficaram próximos de zero, com e sem mitigação (Tabela 5 e Figura 5).
 
-_Tabela 5 - Caso principal: estimativas de $C^{(3)}$ e intervalos de 95% para circuito menos exato, ampliados pelo resíduo numérico. Cada método recebe $M=327.680$ medições; a calibração integra o orçamento mitigado._
+Na grade Aer de ruído moderado, as quinze células de cada orçamento produziram exatamente a mesma estimativa bruta e a mesma estimativa mitigada. A [auditoria das contagens](analysis/audits/aer_saturation_20261106.json) confirmou que, para cada uma das vinte sementes, os vetores de contagens brutas e de sinal se repetiram nas quinze células; os vetores diferem entre sementes. Em dois pontos representativos, a matriz densidade antes da leitura ficou a menos de $8\times10^{-11}$ do estado maximamente misto $I/16$ na norma de Frobenius, após 4.032 portas `cx`. Isso é compatível com saturação pelo ruído de portas, que a mitigação de leitura não corrige. As células que reutilizam os mesmos vetores não são replicações independentes; os vinte blocos de sementes distintas em cada célula continuam independentes. A grade leve/moderada não resolve um limiar intermediário de ruído.
 
-| Ambiente | Método   |  Estimativa | IC95 da diferença     |
-| -------- | -------- | ----------: | --------------------- |
-| Aer      | Bruto    | $-0,000305$ | $[0,312040;0,318866]$ |
-| Aer      | Mitigado |  $0,001301$ | $[0,312190;0,322029]$ |
-| IBM      | Bruto    |  $0,005847$ | $[0,317702;0,325733]$ |
-| IBM      | Mitigado |  $0,006376$ | $[0,317486;0,327007]$ |
+_Tabela 5 - Caso principal: estimativas de $C^{(3)}$ e intervalos de 95% para circuito menos exato, ampliados pelo resíduo numérico. Cada método recebe $M=327.680$ medições; a calibração integra o orçamento mitigado. Aer e IBM usam discretizações diferentes._
+
+| Ambiente | Passos totais | Resíduo ideal | Método   |  Estimativa | IC95 da diferença     |
+| -------- | ------------: | ------------: | -------- | ----------: | --------------------- |
+| Aer      | 112 | $2,12\times10^{-5}$ | Bruto    | $-0,000305$ | $[0,312040;0,318866]$ |
+| Aer      | 112 | $2,12\times10^{-5}$ | Mitigado |  $0,001301$ | $[0,312190;0,322029]$ |
+| IBM      | 14  | $7,26\times10^{-4}$ | Bruto    |  $0,005847$ | $[0,317702;0,325733]$ |
+| IBM      | 14  | $7,26\times10^{-4}$ | Mitigado |  $0,006376$ | $[0,317486;0,327007]$ |
 
 ![Comparação do cumulante exato, das duas estimativas PSA e dos circuitos Aer e IBM, sem e com mitigação, no caso principal.](figuras/figura-7-comparacao-quantica.png)
 
-_Figura 5 - Caso principal: faixa de $\pm0,01$ ao redor do exato; intervalos dos circuitos ampliados pelo resíduo e transladados para $C^{(3)}$. PSA sem intervalo individual; círculos e quadrados representam métodos brutos e mitigados. Fonte: elaboração própria a partir do pacote de resultados._
+_Figura 5 - Caso principal: faixa de $\pm0,01$ ao redor do exato; intervalos dos circuitos ampliados pelo resíduo e transladados para $C^{(3)}$. PSA sem intervalo individual; círculos e quadrados representam métodos brutos e mitigados. Aer e IBM usaram circuitos com 112 e 14 passos, respectivamente; sua diferença não isola o ruído físico. Fonte: elaboração própria a partir do pacote de resultados._
 
 Os quatro intervalos de circuito menos PSA excluem zero, mas nenhum de circuito menos exato cabe em $[-0,01;0,01]$. A mitigação não recuperou o cumulante nessa margem. A decisão pontual é inconclusiva e não testa o limiar de ruído de H2.
 
