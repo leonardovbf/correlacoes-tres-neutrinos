@@ -31,24 +31,83 @@ def pooled(blocks, n):
     return connected(*values, n)
 
 
+def noise_corrected_error(reference, estimate, block_values, floor=1e-4):
+    """Erro normalizado sem a parcela de ruído amostral do próprio estimador.
+
+    Com estimador agregado c de B blocos, E[(c-ref)²] = viés² + Var(c). O RMSE bruto
+    mede viés e ruído juntos; quando o sinal é pequeno, o ruído domina. Estima-se
+    Var(c) pela variância entre os cumulantes de cada bloco dividida por B e
+    subtrai-se do erro quadrático médio. Valores negativos são truncados em zero.
+
+    Quando o ruído supera ~1,5 vez o viés, a raiz do MSE corrigido passa a ser
+    enviesada para baixo; `noise_dominated` sinaliza que a célula precisa de mais
+    trajetórias, e não de outro estimador.
+    """
+    reference=np.asarray(reference)
+    blocks=len(block_values)
+    variance=np.var(np.asarray(block_values),axis=0,ddof=1)/blocks
+    raw=float(np.mean((reference-estimate)**2))
+    noise=float(np.mean(variance))
+    signal=float(np.sqrt(np.mean(reference**2)))
+    error=float(np.sqrt(max(raw-noise,0.)))
+    return {'rmse_corrected':error,'noise_rms':float(np.sqrt(noise)),'truncated':raw<noise,
+            # ruído > 1,5×viés ⇔ ruído² > (2,25/3,25)·MSE bruto; o MSE bruto é estável.
+            'noise_dominated':bool(noise>(2.25/3.25)*raw),
+            'signal_rms':signal,'normalized_rmse':error/signal if signal>=floor else None,
+            'normalization_resolved':signal>=floor}
+
+
+def _corrected_delta(c2_blocks, c3_blocks, index, reference2, reference3, n, moments):
+    b2,b3=connected(*(m[index].mean(axis=0) for m in moments),n)
+    a=noise_corrected_error(reference2,b2,c2_blocks[index])
+    b=noise_corrected_error(reference3,b3,c3_blocks[index])
+    if a['normalization_resolved'] and b['normalization_resolved']:
+        return b['normalized_rmse']-a['normalized_rmse']
+    return None
+
+
 def h1(blocks, reference2, reference3, n, repetitions=2000, seed=71001):
-    """Bootstrap de blocos independentes de igual tamanho; preserva trajetórias/tempos internos."""
+    """Bootstrap de blocos independentes de igual tamanho; preserva trajetórias/tempos internos.
+
+    Os campos originais (`c2`, `c3`, `r3_minus_r2_*`) medem o RMSE bruto, que inclui o
+    ruído amostral da PSA. `noise_corrected` remove essa parcela. Como o estimador
+    corrigido mira o viés da PSA, e no mundo bootstrap a "verdade" é a média agregada
+    (sem ruído), o intervalo é o básico/pivotal: D̂ - quantis(D* - D_ref), em que D_ref
+    é o erro da média agregada sem correção.
+    """
     c2,c3=pooled(blocks,n)
     r2,r3=metrics(reference2,c2),metrics(reference3,c3)
     rng=np.random.default_rng(seed)
     # Comprime apenas somas de momentos; cada bloco contém todas as suas trajetórias.
     moments=[np.stack([b[k] for b in blocks]) for k in ('m1','m2','m3')]
-    delta=[]
+    per_block=[connected(b['m1'],b['m2'],b['m3'],n) for b in blocks]
+    c2_blocks=np.stack([c for c,_ in per_block]); c3_blocks=np.stack([c for _,c in per_block])
+    k2=noise_corrected_error(reference2,c2,c2_blocks); k3=noise_corrected_error(reference3,c3,c3_blocks)
+    resolved=k2['normalization_resolved'] and k3['normalization_resolved']
+    corrected=k3['normalized_rmse']-k2['normalized_rmse'] if resolved else None
+    pivot=r3['normalized_rmse']-r2['normalized_rmse'] if resolved else None
+    delta,delta_corrected=[],[]
     for _ in range(repetitions):
         index=rng.integers(0,len(blocks),len(blocks))
         b2,b3=connected(*(m[index].mean(axis=0) for m in moments),n)
         a,b=metrics(reference2,b2),metrics(reference3,b3)
         if a['normalization_resolved'] and b['normalization_resolved']:
             delta.append(b['normalized_rmse']-a['normalized_rmse'])
+        if resolved:
+            value=_corrected_delta(c2_blocks,c3_blocks,index,reference2,reference3,n,moments)
+            if value is not None:
+                delta_corrected.append(value)
+    ci_corrected=None
+    if delta_corrected:
+        low,high=np.quantile(np.asarray(delta_corrected)-pivot,[.025,.975])
+        ci_corrected=[float(corrected-high),float(corrected-low)]
     return {'c2':r2,'c3':r3,'r3_minus_r2_ci95':list(map(float,np.quantile(delta,[.025,.975]))) if delta else None,
             'repetitions':len(blocks),'bootstrap_repetitions':repetitions,'seed':seed,
             'bootstrap_unit':'bloco independente de semente; momentos agregados antes do cumulante',
             'r3_minus_r2_bootstrap':delta,
+            'noise_corrected':{'c2':k2,'c3':k3,'r3_minus_r2':corrected,'r3_minus_r2_ci95':ci_corrected,
+                               'bootstrap_reference':pivot,'r3_minus_r2_bootstrap':delta_corrected,
+                               'interval':'básico (pivotal) sobre a estatística corrigida'},
             'c3_per_trio':[metrics(reference3[:,i],c3[:,i]) for i in range(c3.shape[-1])]}
 
 
