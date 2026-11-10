@@ -214,15 +214,43 @@ def ordens(processos: int) -> None:
     print("Gravado: figuras/dados/h1_ordens.csv e h1_tendencia_r3.csv")
 
 
+def coletivo() -> None:
+    """Erro da PSA na correlação coletiva C_ZZ (soma das covariâncias de todos os pares),
+    a grandeza usada por Lacroix et al. (2024), comparado ao erro par a par (R2)."""
+    from neutrinos.study_analysis import connected, noise_corrected_error, pooled
+    linhas = []
+    for n in TAMANHOS:
+        for mu in LAMBDAS:
+            exato = np.load(arquivo(n, mu, None))
+            blocos = [dict(np.load(arquivo(n, mu, s))) for s in SEMENTES]
+            c2, _ = pooled(blocos, n)
+            pares = np.stack([connected(b["m1"], b["m2"], b["m3"], n)[0] for b in blocos])
+            soma = noise_corrected_error(exato["c2"].sum(axis=-1)[:, None], c2.sum(axis=-1)[:, None],
+                                         pares.sum(axis=-1)[..., None])
+            par = noise_corrected_error(exato["c2"], c2, pares)
+            linhas.append({"n": n, "mu": mu, "r_coletivo": soma["normalized_rmse"],
+                           "r2_pares": par["normalized_rmse"],
+                           "ruido_dominante": soma["noise_dominated"] or par["noise_dominated"]})
+            print(f"N={n} λ={mu:g}: R(C_ZZ)={soma['normalized_rmse']:.3f} R2={par['normalized_rmse']:.3f}",
+                  flush=True)
+    with (SAIDA / "h1_coletivo.csv").open("w", newline="", encoding="utf-8") as fluxo:
+        escritor = csv.DictWriter(fluxo, fieldnames=list(linhas[0]), lineterminator="\n")
+        escritor.writeheader()
+        escritor.writerows(linhas)
+    print("Gravado: figuras/dados/h1_coletivo.csv")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("acao", choices=("gerar", "analisar", "ordens"))
+    parser.add_argument("acao", choices=("gerar", "analisar", "ordens", "coletivo"))
     parser.add_argument("--processos", type=int, default=8)
     args = parser.parse_args()
     if args.acao == "gerar":
         gerar(args.processos)
     elif args.acao == "analisar":
         analisar()
+    elif args.acao == "coletivo":
+        coletivo()
     else:
         ordens(args.processos)
     sys.exit(0)
