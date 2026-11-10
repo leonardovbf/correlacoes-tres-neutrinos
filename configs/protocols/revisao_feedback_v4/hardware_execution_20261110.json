@@ -1,0 +1,56 @@
+{
+  "snapshot_utc": "2026-11-10T12:35:36.401092+00:00",
+  "backend": "ibm_kingston",
+  "campaign_tag": "feedback-v4-confirmation-20261110",
+  "maximum_jobs": 20,
+  "shots_per_job": 8192,
+  "total_shots_cap": 163840,
+  "submitted_jobs_at_snapshot": 4,
+  "reserved_shots_at_snapshot": 32768,
+  "window_policy": "4 jobs per window; next window only after all prior jobs DONE and used-qubit/gate calibration fingerprint changes; never silently collapse to one calibration",
+  "jobs": [
+    {
+      "block": 0,
+      "calibration_window": 0,
+      "job_id": "dbpgs2lt7fqc7389dpl0",
+      "pub_order": [
+        6,
+        8
+      ],
+      "status_at_snapshot": "DONE"
+    },
+    {
+      "block": 1,
+      "calibration_window": 0,
+      "job_id": "dbpgs30ou4as73ctlcf0",
+      "pub_order": [
+        8,
+        6
+      ],
+      "status_at_snapshot": "DONE"
+    },
+    {
+      "block": 2,
+      "calibration_window": 0,
+      "job_id": "dbpgs3gou4as73ctlcg0",
+      "pub_order": [
+        6,
+        8
+      ],
+      "status_at_snapshot": "DONE"
+    },
+    {
+      "block": 3,
+      "calibration_window": 0,
+      "job_id": "dbpgs4c4148s739ujlng",
+      "pub_order": [
+        8,
+        6
+      ],
+      "status_at_snapshot": "RUNNING"
+    }
+  ],
+  "live_state": "results/hardware-confirmation-20261110/state.json",
+  "runner": "scripts/run_feedback_hardware.py",
+  "runner_sha256": "defa67f2a15a628cd4f34c65def6fbbd066385543c595df21b3b47d5b1139093"
+}
