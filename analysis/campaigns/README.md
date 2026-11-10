@@ -2,6 +2,14 @@
 
 Os três pacotes completos são versionados em ZIP, mantendo contagens, probabilidades, circuitos, calibrações, fontes e manifestos originais. As pastas extraídas permanecem locais e são ignoradas pelo Git. O arquivo [archives.json](archives.json) registra hashes SHA-256 dos ZIPs e dos manifestos internos.
 
+## 20261109-feedback-v4
+
+A [revisão experimental do feedback da Entrega 2](20261109-feedback-v4/README.md) contém a auditoria das 25 células H1, 400 campanhas de cobertura, 15 casos controlados de PSA completa, 44 condições H2 e as contagens dos 130 jobs históricos arquivados. Inclui tabelas completas e o plano de confirmação IBM com teto de 20 jobs/163.840 shots, preservado antes do envio. Os dados da revisão local são fornecidos em partes ZIP com hashes.
+
+## 20261110-hardware-confirmation
+
+A [confirmação em hardware](20261110-hardware-confirmation/README.md) executou o plano acima em `ibm_kingston`: 20 jobs, 163.840 shots e cinco janelas de calibração, com as quatro comparações contra PSA e C₃=0 aprovadas. O pacote inclui contagens, programas, calibrações e um verificador offline. O [registro da execução](../HARDWARE_CONFIRMACAO_20261110.md) lista os IDs dos jobs.
+
 ## 20261107-correlacoes-v3
 
 [Baixar o pacote completo](20261107-correlacoes-v3.zip).
