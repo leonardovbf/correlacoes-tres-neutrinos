@@ -1,0 +1,9 @@
+{
+  "status": "exploratory_after_ideal_search_before_new_hardware",
+  "reason": "The strict 0.001 ideal tolerance selects 6/8-qubit circuits with many gates. Compare a shorter approximation with explicit ideal error.",
+  "selection": "smallest tested step count with primary ideal error <= min(0.02,0.1*PSA-exact gap)",
+  "comparison": "same selected physical point, exact reference, complete PSA and noise grid; original strict candidates preserved",
+  "hardware_rule": "choose among strict, double and short candidates minimizing deterministic noisy absolute error at p2=.001, readout=.03; require raw D upper CI95<0, distinguish nonzero C3, beat C3=0; at most500 2q gates and depth3000",
+  "hardware_budget": "same maximum ten jobs, five blocks of4096 shots for each of N6 and N8; no extra jobs added",
+  "interpretation": "tests superiority in precision over PSA and zero baseline; does not assert equivalence at0.01 or computational advantage"
+}

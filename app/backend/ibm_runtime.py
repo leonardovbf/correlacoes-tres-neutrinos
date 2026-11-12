@@ -110,7 +110,7 @@ def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
                                             request.interval_index * request.steps)
         circuit.measure_all()
         transpiler_seed = request.transpiler_seed if request.transpiler_seed is not None else config.seed
-        manager = generate_preset_pass_manager(backend=backend, optimization_level=1,
+        manager = generate_preset_pass_manager(backend=backend, optimization_level=request.optimization_level,
                                                seed_transpiler=transpiler_seed,
                                                initial_layout=request.initial_layout)
         isa_circuit = manager.run(circuit)
@@ -121,13 +121,20 @@ def submit(config: ExperimentConfig, request: HardwareRequest) -> dict:
         circuit_bytes = serialized.getvalue()
         properties = backend.properties() if hasattr(backend, "properties") else None
         calibration = json.loads(json.dumps(properties.to_dict(), default=str)) if properties else None
-        job = Sampler(mode=backend).run([isa_circuit], shots=request.shots)
+        sampler = Sampler(mode=backend)
+        if request.gate_twirling:
+            sampler.options.twirling.enable_gates = True
+        if request.dynamical_decoupling:
+            sampler.options.dynamical_decoupling.enable = True
+        job = sampler.run([isa_circuit], shots=request.shots)
         return {"job_id": job.job_id(), "backend": backend.name,
                 "circuit_qpy_base64": base64.b64encode(circuit_bytes).decode("ascii"),
                 "circuit_sha256": hashlib.sha256(circuit_bytes).hexdigest(),
-                "transpilation": {"optimization_level": 1, "seed_transpiler": transpiler_seed,
+                "transpilation": {"optimization_level": request.optimization_level, "seed_transpiler": transpiler_seed,
                                   "physical_qubits": isa_circuit.layout.final_index_layout()},
-                "runtime_options": {"primitive": "Sampler", "shots": request.shots},
+                "runtime_options": {"primitive": "Sampler", "shots": request.shots,
+                                    "gate_twirling": request.gate_twirling,
+                                    "dynamical_decoupling": request.dynamical_decoupling},
                 "role": request.role,
                 "backend_properties": calibration,
                 "transpiled_depth": isa_circuit.depth(),

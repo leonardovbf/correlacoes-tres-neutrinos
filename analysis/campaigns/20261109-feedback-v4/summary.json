@@ -1,0 +1,13 @@
+{
+  "status": "local_feedback_experiments_complete",
+  "original_H1_cells": 25,
+  "bootstrap_anomalies_reproduced": 5,
+  "coverage_campaigns": 400,
+  "controlled_H1_cells": 15,
+  "h2_conditions": 44,
+  "h2_finite_shot_campaigns": 4400,
+  "historical_IBM_jobs_preserved": 130,
+  "new_IBM_jobs": 0,
+  "confirmation": "prepared with explicit caps; not submitted",
+  "statistical_scope": "Weak-signal percentile/basic/BCa intervals under-cover in N4 validation; do not make global H1 claims from original 14/15 or 10/10 counts. Deterministic controlled grid supports only its stated regimes."
+}

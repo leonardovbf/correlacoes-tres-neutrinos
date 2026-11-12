@@ -225,6 +225,13 @@ def analyze_phase(root, spec, record, *, smoke=False, repetitions=2000, referenc
                 slopes=x@np.asarray(draws)/(x@x)
                 central=np.array([c['psa_analysis']['c3']['normalized_rmse']-c['psa_analysis']['c2']['normalized_rmse'] for c in cases])
                 trend.update(slope=float(x@central/(x@x)),ci95=list(map(float,np.quantile(slopes,[.025,.975]))))
+                corrected=[c['psa_analysis']['noise_corrected'] for c in cases]
+                if all(k['r3_minus_r2'] is not None and len(k['r3_minus_r2_bootstrap'])==repetitions for k in corrected):
+                    point=float(x@np.array([k['r3_minus_r2'] for k in corrected])/(x@x))
+                    reference=float(x@np.array([k['bootstrap_reference'] for k in corrected])/(x@x))
+                    low,high=np.quantile(x@np.asarray([k['r3_minus_r2_bootstrap'] for k in corrected])/(x@x)-reference,[.025,.975])
+                    trend['noise_corrected']={'slope':point,'ci95':[float(point-high),float(point-low)],
+                                              'interval':'básico (pivotal); ruído amostral removido de R2 e R3'}
             else:
                 trend.update(slope=None,ci95=None,reason='Grade insuficiente ou normalização sem sinal resolvido')
             trends.append(trend)

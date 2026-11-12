@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "cases": [
+    {
+      "n": 6,
+      "shots": 81920,
+      "estimate": 0.18371944587677713,
+      "exact": 0.4145477753976797,
+      "psa": 0.13674854345488782,
+      "comparisons": {
+        "PSA": {
+          "difference": -0.04697090242188934,
+          "simultaneous_CI": [
+            -0.05640180257742524,
+            -0.03654623220379241
+          ],
+          "passes": true
+        },
+        "zero": {
+          "difference": -0.18371944587677713,
+          "simultaneous_CI": [
+            -0.19315034603231304,
+            -0.1732947756586802
+          ],
+          "passes": true
+        }
+      },
+      "estimate_CI98_75": [
+        0.17330477565868022,
+        0.19314034603231303
+      ],
+      "calibration_windows": 5,
+      "scope": "two fixed points, independent confirmation data only; not computational quantum advantage"
+    },
+    {
+      "n": 8,
+      "shots": 81920,
+      "estimate": -0.028053487137076463,
+      "exact": -0.1307881746079965,
+      "psa": 0.05020156737841353,
+      "comparisons": {
+        "PSA": {
+          "difference": -0.07825505451548999,
+          "simultaneous_CI": [
+            -0.08792244852896033,
+            -0.06819520838748706
+          ],
+          "passes": true
+        },
+        "zero": {
+          "difference": -0.028053487137076463,
+          "simultaneous_CI": [
+            -0.037720881150546816,
+            -0.017993641009073538
+          ],
+          "passes": true
+        }
+      },
+      "estimate_CI98_75": [
+        -0.03771088115054681,
+        -0.01800364100907354
+      ],
+      "calibration_windows": 5,
+      "scope": "two fixed points, independent confirmation data only; not computational quantum advantage"
+    }
+  ],
+  "all_four_comparisons_pass": true,
+  "multiplicity": "four two-sided 98.75% intervals; familywise Bonferroni alpha .05",
+  "bootstrap": "joint resampling of the 20 two-PUB jobs; no within-job multinomial resampling",
+  "confirmation_jobs": 20,
+  "new_shots": 163840
+}

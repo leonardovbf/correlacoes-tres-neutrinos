@@ -1,0 +1,7 @@
+{
+  "status": "after_failed_ideal_control_before_new_N6_N8_hardware",
+  "change": "generic noisy circuits and IBM pilot use optimization_level=1 and approximation_degree=1.0",
+  "reason": "level3 failed probability tolerance1e-10 with observed3.43e-6; level1 matched at6e-15",
+  "preserve": "compiler_level3_attempt contains earlier results and failure",
+  "unchanged": "physical points, shot budgets, noise grid, decision metrics and hardware maximum10jobs"
+}

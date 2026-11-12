@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "clean_checkout": "/private/tmp/neutrinos-feedback-clean-_9a0pw93",
+  "source_import_verified_inside_clean_checkout": true,
+  "network_connections_blocked": true,
+  "original_RunStore_not_present": true,
+  "old_paired_replay_not_present": true,
+  "restored_files": 405,
+  "cases_jobs_reanalyzed": 214,
+  "scientific_environment": "existing pinned venv; isolated code/data checkout, not a new dependency installation",
+  "stdout": "Scientific source: /private/tmp/neutrinos-feedback-clean-_9a0pw93/src/neutrinos/__init__.py\nPortable reanalysis verified: 214 cases/jobs\n",
+  "stderr": "",
+  "manifest_sha256": "6cf43d4c244b2173cf7db094527778b2d00e9920fe7ab505cd804bd34951c8f7"
+}

@@ -1,0 +1,27 @@
+{
+  "format": "zip",
+  "original_snapshots_unchanged": true,
+  "archives": [
+    {
+      "file": "20261107-correlacoes-v3.zip",
+      "sha256": "1b3efc13044d57f6b7bc2fe42da30dfe22b11903d8cba744d7d29f62d277c7d4",
+      "files": 192,
+      "bytes": 4183629,
+      "manifest_sha256": "ab39f8ce409fc4d3ecfff0a750f7718bb3502752c6e023e860ffe6320bb6193a"
+    },
+    {
+      "file": "20261108-resultados-ibm.zip",
+      "sha256": "a18538f0ec806852483f67bc76730e49e524411a2e817dec1a1568f41c46be26",
+      "files": 38,
+      "bytes": 227363,
+      "manifest_sha256": "ab48cb4f55b1dead34148dbe2d2202231cca3f5037cece55cd0d487e6c325ec5"
+    },
+    {
+      "file": "20261108-aer-ibm-pareado.zip",
+      "sha256": "ab34f1de807a96b7795d5ae5ff4d132de4dc995da1a0837956e5f7a1420ee623",
+      "files": 18,
+      "bytes": 10704383,
+      "manifest_sha256": "4a6a0c7f0590362547d06c70db0c4f984185a96fafd233028cf67b14cdffbd55"
+    }
+  ]
+}

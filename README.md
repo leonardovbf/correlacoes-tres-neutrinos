@@ -2,7 +2,7 @@
 
 Projeto sobre a precisão da aproximação de espaço de fase em oscilações coletivas de neutrinos e sobre a capacidade de circuitos quânticos de distinguir suas previsões da evolução exata. O estudo adota dois sabores, energias distintas e interações entre todos os pares.
 
-O artigo integra a introdução revisada da `main` (PR #5) à metodologia, aos parâmetros, às métricas e aos resultados da coleta local e IBM de `feat/system`. A introdução foi preservada integralmente; os resumos descrevem os resultados disponíveis. As conclusões confirmatórias sobre H1 e H2 permanecem condicionadas às limitações estatísticas e ao desenho de avaliação descritos no texto.
+O [artigo em português](ARTIGO.md) foi revisado para a entrega final, com Resultados, Discussão, análise das hipóteses, limitações, Conclusão e trabalhos futuros. A [revisão de 11 de novembro](analysis/REVISAO_FINAL_20261111.md) confronta o texto com o feedback dos professores, distingue as propostas de edição e registra as limitações da inferência. A composição SBC é gerada por `python3 scripts/compilar_artigo.py`; instruções e fontes estão em [artigo/](artigo/README.md).
 
 ## Plataforma local de simulação
 
@@ -99,13 +99,13 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 | Arquivo ou diretório | Conteúdo |
 | --- | --- |
 | [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, fundamentação teórica, revisão bibliográfica e referências unificadas. |
-| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão correspondente em inglês, com abstract e resultados da coleta. |
+| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão histórica em inglês, anterior à revisão final em português; não é uma tradução sincronizada. |
 | [PLANO_TECNICO.md](PLANO_TECNICO.md) | Proposta de arquitetura, etapas do experimento, validações e decisões metodológicas pendentes. |
 | [app/frontend/](app/frontend/) | Interface Next.js com gráficos e visualizações interativas. |
 | [app/backend/](app/backend/) | API Python, orquestração e armazenamento versionado. |
 | [src/neutrinos/](src/neutrinos/) | Motor compartilhado de evolução e observáveis. |
 | [app.py](app.py) | Interface Streamlit anterior, mantida temporariamente para consulta. |
-| [referencias.bib](referencias.bib) | Base BibTeX com as 40 fontes citadas e quatro leituras complementares identificadas por comentários. |
+| [referencias.bib](referencias.bib) | Base BibTeX preservada, com 33 fontes citadas na revisão final e registros adicionais de apoio. |
 | [figuras/](figuras/) | Diagramas em português, em SVG editável e PNG. |
 | [figuras/en/](figuras/en/) | Os mesmos diagramas com os rótulos em inglês. |
 | [figuras/gerar_diagramas.py](figuras/gerar_diagramas.py) | Código que gera as duas versões das figuras. |
@@ -179,6 +179,8 @@ da coleta local final e dos 80 jobs IBM. O pacote está versionado no repositór
 o arquivo integral `results/` permanece separado por conter todas as tentativas,
 contagens e matrizes necessárias para reproduzir cada execução.
 
+A [confirmação com seis e oito qubits](analysis/campaigns/20261110-hardware-confirmation/README.md) foi concluída em 10 de novembro. O plano anterior permanece como registro histórico, e o artigo distingue a confirmação dos pilotos.
+
 Para gerar outro pacote a partir de registros concluídos:
 
 ```sh
@@ -186,12 +188,12 @@ Para gerar outro pacote a partir de registros concluídos:
 ```
 
 
-## Artigo com resultados — pontos 6, 7 e 8
+## Artigo para a entrega final
 
-[Artigo em português](ARTIGO.md) e [versão em inglês](ARTIGO.eng.md) combinam a introdução integral da `main` (`55b8e87`) com a metodologia, os parâmetros, as métricas e os resultados de `feat/system` (`1e870ed`). O título também segue a revisão da `main`; os resumos seguem a estrutura da `main`, com contexto, objetivo, método e resultados da coleta, acompanhados das limitações. As referências preservam a apresentação SBC e excluem a fonte Nobel 2015, retirada da nova introdução.
+O texto atual em português recebeu uma revisão pontual, preservando a introdução, os gráficos e a organização das tabelas. A Discussão e as partes do encerramento foram identificadas a partir dos parágrafos existentes. A versão integral em inglês permanece histórica; o resumo e o abstract do artigo português estão alinhados.
 
-A seção **Resultados experimentais** mantém os três gráficos, os valores observados, os intervalos e as limitações estatísticas. As quatro tabelas incluem parâmetros, ruído, controles e a comparação quântica. Códigos, workloads e dados continuam no repositório, com a disponibilidade descrita no artigo.
+Os dois gráficos existentes foram mantidos na composição, com seus arquivos vetoriais. A revisão não substitui a validação de autoria e conteúdo pelos autores.
 
-O pacote original atribui incorretamente **1,0897 × 10⁻¹¹** à comparação Qiskit–emulador: esse valor pertence ao controle de comprimento dos spins. O artigo conserva o máximo correto de **2,8021 × 10⁻¹²**, calculado nos 45 controles identificados por `_tau`; os arquivos originais do pacote permanecem intactos.
+O [registro da revisão pontual](analysis/REVISAO_FINAL_20261111.md) identifica os trechos ajustados e a razão de cada mudança. Os seis ZIPs da campanha `20261109-feedback-v4` foram restaurados dos arquivos locais e coincidem com o manifesto original. Devem acompanhar a entrega do repositório.
 
-A versão anterior à atualização da introdução foi conferida em 12 páginas. Essa contagem não foi revalidada para a composição atual. Os artefatos e scripts de composição PDF citados anteriormente não estão versionados nesta branch; o PDF da primeira entrega permanece como registro histórico.
+O PDF é gerado em `output/pdf/artigo-revisado-sbc.pdf`, diretório ignorado pelo Git. O fonte editorial é `ARTIGO.md`, e `scripts/compilar_artigo.py` gera o LaTeX em `artigo/`. As fontes de composição e a adaptação de compatibilidade do modelo estão documentadas em [artigo/README.md](artigo/README.md).

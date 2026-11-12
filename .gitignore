@@ -13,3 +13,9 @@ app/frontend/.next/
 app/frontend/out/
 app/frontend/.env.local
 *.tsbuildinfo
+
+# Pacotes científicos completos são versionados como ZIP; extrações ficam locais.
+/analysis/campaigns/20261107-correlacoes-v3/
+/analysis/campaigns/20261108-resultados-ibm/
+/analysis/campaigns/20261108-aer-ibm-pareado/
+/output/
