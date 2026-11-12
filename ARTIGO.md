@@ -1,6 +1,6 @@
-# Além do campo médio: a aproximação de espaço de fase captura as correlações de três corpos entre neutrinos?
+# Investigando correlações de três corpos entre neutrinos além da aproximação de espaço de fase com hardware quântico
 
-_Beyond mean field: does the phase-space approximation capture three-body neutrino correlations?_
+_Probing Three-Body Neutrino Correlations Beyond the Phase-Space Approximation with Quantum Hardware_
 
 **Giovanna Fátima de Britto Vieira¹, Marco Ruas Sales Peixoto¹, Leonardo Villas Boas Fischel¹**
 
