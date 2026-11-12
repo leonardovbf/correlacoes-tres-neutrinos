@@ -99,7 +99,7 @@ estados além desse recorte e exigirão ampliar o motor antes de reprodução fi
 | Arquivo ou diretório | Conteúdo |
 | --- | --- |
 | [ARTIGO.md](ARTIGO.md) | Texto principal em português, com contexto astrofísico, fundamentação teórica, revisão bibliográfica e referências unificadas. |
-| [ARTIGO.eng.md](ARTIGO.eng.md) | Versão histórica em inglês, anterior à revisão final em português; não é uma tradução sincronizada. |
+| [ARTIGO.eng.md](ARTIGO.eng.md) | Tradução para o inglês do texto principal, sincronizada com o ARTIGO.md em 12 de novembro de 2026. |
 | [PLANO_TECNICO.md](PLANO_TECNICO.md) | Proposta de arquitetura, etapas do experimento, validações e decisões metodológicas pendentes. |
 | [app/frontend/](app/frontend/) | Interface Next.js com gráficos e visualizações interativas. |
 | [app/backend/](app/backend/) | API Python, orquestração e armazenamento versionado. |
