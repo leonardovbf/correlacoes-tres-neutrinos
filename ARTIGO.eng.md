@@ -24,7 +24,7 @@ Neutrino flavor in supernovae can influence the explosion and heavy-element prod
 
 ### Astrophysical context and motivation
 
-Stars with an initial mass above about eight solar masses can undergo gravitational core collapse, whose bounce launches a shock that tends to stall and that neutrino absorption and matter motions can revive [Janka 2012, Abi et al. 2020]. A typical supernova emits about $10^{58}$ neutrinos, electrically neutral particles that interact weakly with matter, with characteristic energies of $10\,\mathrm{MeV}$, which carry more than 99% of the gravitational energy released [Abi et al. 2020]. The flavor evolution of these neutrinos changes the heating behind the shock and the neutron-to-proton ratio, which is relevant to nucleosynthesis, with effects that depend on the stellar configuration [Nagakura 2023, Akaho et al. 2026, Cowan et al. 2021]. The detection of SN 1987A and the prospects of DUNE, Hyper-Kamiokande, and JUNO reinforce the importance of predicting the emitted flavors [Vissani et al. 2010, Baum et al. 2022, Sarmah et al. 2026]. Near the core, the coherent interaction among neutrinos couples their evolutions and produces collective flavor oscillations, a quantum many-body problem [Duan et al. 2010].
+Stars with an initial mass above about eight solar masses can undergo gravitational core collapse, whose bounce launches a shock that tends to stall and that neutrino absorption and matter motions can revive [Janka 2012, Abi et al. 2020]. A typical supernova emits about $10^{58}$ neutrinos, electrically neutral particles that interact weakly with matter, with characteristic energies of $10\,\mathrm{MeV}$, which carry more than 99% of the gravitational energy released [Abi et al. 2020]. The flavor evolution of these neutrinos changes the heating behind the shock and the neutron-to-proton ratio, which is relevant to nucleosynthesis, with effects that depend on the stellar configuration [Nagakura 2023, Akaho et al. 2026, Cowan et al. 2021]. The detection of SN 1987A and the prospects of DUNE, Hyper-Kamiokande, and JUNO reinforce the importance of predicting the emitted flavors [Vissani et al. 2011, Baum et al. 2022, Sarmah et al. 2026]. Near the core, the coherent interaction among neutrinos couples their evolutions and produces collective flavor oscillations, a quantum many-body problem [Duan et al. 2010].
 
 ### Problem, gap, and objective
 
@@ -460,7 +460,7 @@ Pehlivan, Y., Balantekin, A. B., Kajino, T., and Yoshida, T. (2011). Invariants 
 
 Preskill, J. (2018). Quantum Computing in the NISQ era and beyond. _Quantum_, 2:79. <https://doi.org/10.22331/q-2018-08-06-79>.
 
-Riccio, M. and Balantekin, A. B. (2026). Improved Approximations for Collective Neutrino Oscillations. Preprint arXiv:2607.28619, version 2. <https://doi.org/10.48550/arXiv.2607.28619>.
+Riccio, M. and Balantekin, A. B. (2026). Improved approximations for collective neutrino oscillations. _Physical Review D_, 114(10):103054. <https://doi.org/10.1103/8zfj-q2qh>.
 
 Rrapaj, E. (2020). Exact solution of multiangle quantum many-body collective neutrino-flavor oscillations. _Physical Review C_, 101(6):065805. <https://doi.org/10.1103/PhysRevC.101.065805>.
 
@@ -470,6 +470,6 @@ Shalgar, S. and Tamborra, I. (2023). Do we have enough evidence to invalidate th
 
 Vatan, F. and Williams, C. (2004). Optimal quantum circuits for general two-qubit gates. _Physical Review A_, 69(3):032315. <https://doi.org/10.1103/PhysRevA.69.032315>.
 
-Vissani, F., Costantini, M. L., Fulgione, W., Ianni, A., and Pagliaroli, G. (2010). What is the issue with SN1987A neutrinos? Preprint arXiv:1008.4726. <https://arxiv.org/abs/1008.4726>.
+Vissani, F., Costantini, M. L., Fulgione, W., Ianni, A., and Pagliaroli, G. (2011). What is the issue with SN1987A neutrinos? In Giovannelli, F. and Mannocchi, G., editors, _Frontier Objects in Astrophysics and Particle Physics: Vulcano Workshop 2010_, volume 103 of _Italian Physical Society Conference Proceedings_, pages 611--619. Italian Physical Society, Bologna. <https://arxiv.org/abs/1008.4726>.
 
 Volpe, C., Väänänen, D., and Espinoza, C. (2013). Extended evolution equations for neutrino propagation in astrophysical and cosmological environments. _Physical Review D_, 87(11):113010. <https://doi.org/10.1103/PhysRevD.87.113010>.
