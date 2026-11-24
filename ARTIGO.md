@@ -24,7 +24,7 @@ Neutrino flavor in supernovae can influence the explosion and heavy-element prod
 
 ### Contexto astrofísico e motivação
 
-Estrelas com massa inicial acima de cerca de oito massas solares podem sofrer colapso gravitacional do núcleo, cujo rebote origina um choque que tende a estagnar e que a absorção de neutrinos e os movimentos da matéria podem reativar [Janka 2012, Abi et al. 2020]. Uma supernova típica emite cerca de $10^{58}$ neutrinos, partículas eletricamente neutras que interagem fracamente com a matéria, com energias características de $10\,\mathrm{MeV}$, que transportam mais de 99% da energia gravitacional liberada [Abi et al. 2020]. A evolução de sabor desses neutrinos altera o aquecimento atrás do choque e a razão entre nêutrons e prótons, relevante para a nucleossíntese, com efeitos que dependem da configuração estelar [Nagakura 2023, Akaho et al. 2026, Cowan et al. 2021]. A detecção da SN 1987A e as perspectivas de DUNE, Hyper-Kamiokande e JUNO reforçam a importância de prever os sabores emitidos [Vissani et al. 2010, Baum et al. 2022, Sarmah et al. 2026]. Perto do núcleo, a interação coerente entre neutrinos acopla suas evoluções e gera oscilações coletivas de sabor, um problema quântico de muitos corpos [Duan et al. 2010].
+Estrelas com massa inicial acima de cerca de oito massas solares podem sofrer colapso gravitacional do núcleo, cujo rebote origina um choque que tende a estagnar e que a absorção de neutrinos e os movimentos da matéria podem reativar [Janka 2012, Abi et al. 2020]. Uma supernova típica emite cerca de $10^{58}$ neutrinos, partículas eletricamente neutras que interagem fracamente com a matéria, com energias características de $10\,\mathrm{MeV}$, que transportam mais de 99% da energia gravitacional liberada [Abi et al. 2020]. A evolução de sabor desses neutrinos altera o aquecimento atrás do choque e a razão entre nêutrons e prótons, relevante para a nucleossíntese, com efeitos que dependem da configuração estelar [Nagakura 2023, Akaho et al. 2026, Cowan et al. 2021]. A detecção da SN 1987A e as perspectivas de DUNE, Hyper-Kamiokande e JUNO reforçam a importância de prever os sabores emitidos [Vissani et al. 2011, Baum et al. 2022, Sarmah et al. 2026]. Perto do núcleo, a interação coerente entre neutrinos acopla suas evoluções e gera oscilações coletivas de sabor, um problema quântico de muitos corpos [Duan et al. 2010].
 
 ### Problema, lacuna e objetivo
 
@@ -191,15 +191,15 @@ A Tabela 2 resume a grade usada para H1. A associação entre frequência e sabo
 
 _Tabela 2 - Parâmetros da grade clássica._
 
-| Parâmetro             | Valores                                                                                     |
-| --------------------- | ------------------------------------------------------------------------------------------- |
-| Tamanho               | $N=4,6,8$ (principal) e $N=12,16$ (extensão)                                                |
-| Interação             | $\lambda=0{,}1;\ 0{,}3;\ 1;\ 3;\ 10$                                                        |
-| Frequências e mistura | $\widetilde{\omega}_i=0{,}7+0{,}6\,i/(N-1)$; $\theta=0{,}2$ rad                             |
-| Acoplamentos          | $g_{ij}=1$ para $i\neq j$                                                                   |
-| Estado inicial        | Primeira metade dos neutrinos em $\nu_e$ e a segunda em $\nu_x$                             |
-| Tempo                 | $0\leq\tau\leq10$, 201 instantes, 12 subpassos RK4 por intervalo                            |
-| PSA                   | 20 blocos de 4.096 trajetórias (81.920 no total), sementes 10.001 a 10.020                  |
+| Parâmetro             | Valores                                                                    |
+| --------------------- | -------------------------------------------------------------------------- |
+| Tamanho               | $N=4,6,8$ (principal) e $N=12,16$ (extensão)                               |
+| Interação             | $\lambda=0{,}1;\ 0{,}3;\ 1;\ 3;\ 10$                                       |
+| Frequências e mistura | $\widetilde{\omega}_i=0{,}7+0{,}6\,i/(N-1)$; $\theta=0{,}2$ rad            |
+| Acoplamentos          | $g_{ij}=1$ para $i\neq j$                                                  |
+| Estado inicial        | Primeira metade dos neutrinos em $\nu_e$ e a segunda em $\nu_x$            |
+| Tempo                 | $0\leq\tau\leq10$, 201 instantes, 12 subpassos RK4 por intervalo           |
+| PSA                   | 20 blocos de 4.096 trajetórias (81.920 no total), sementes 10.001 a 10.020 |
 
 A reprodução de Lacroix et al. (2024) usa a Figura 2(c) daquele estudo, com oito neutrinos e 10.000 trajetórias, em configuração distinta da Tabela 2. As coordenadas foram extraídas da figura publicada, o que acrescenta uma incerteza de leitura aos desvios.
 
@@ -211,28 +211,28 @@ A Tabela 3 apresenta a profundidade dos circuitos usados no simulador e o menor 
 
 _Tabela 3 - Circuitos do trio $(0,1,2)$ com $N=4$, compilados para portas `rz`, `sx`, `x` e `cx` em cadeia linear (Qiskit, otimização de nível 1). As três primeiras colunas numéricas referem-se à discretização usada no Aer e as duas últimas, ao menor número de passos com erro de Trotter em $C^{(3)}$ abaixo de $10^{-3}$._
 
-| $\lambda$ | $\tau$ | Passos | Profundidade | CNOTs  | Passos mín. | CNOTs (mín.) |
-| --------: | -----: | -----: | -----------: | -----: | ----------: | -----------: |
-|   0,1–0,3 |  1–4   |    112 | 11.989–15.909 |  6.048 |         1–2 |       54–108 |
-|         1 |      1 |    112 |       11.989 |  6.048 |           1 |           54 |
-|         1 |      2 |    112 |       11.989 |  6.048 |           3 |          162 |
-|         1 |      4 |    112 |       11.989 |  6.048 |           6 |          324 |
-|         3 |      1 |    112 |       11.989 |  6.048 |           5 |          270 |
-|     **3** |  **2** |**112** |   **11.989** |**6.048**|      **12** |      **648** |
-|         3 |      4 |    112 |       11.989 |  6.048 |          22 |        1.188 |
-|        10 |      1 |    112 |       11.989 |  6.048 |          20 |        1.080 |
-|        10 |      2 |    112 |       11.989 |  6.048 |          37 |        1.998 |
-|        10 |      4 |    448 |       47.941 | 24.192 |         224 |       12.096 |
+| $\lambda$ | $\tau$ |  Passos |  Profundidade |     CNOTs | Passos mín. | CNOTs (mín.) |
+| --------: | -----: | ------: | ------------: | --------: | ----------: | -----------: |
+|   0,1–0,3 |    1–4 |     112 | 11.989–15.909 |     6.048 |         1–2 |       54–108 |
+|         1 |      1 |     112 |        11.989 |     6.048 |           1 |           54 |
+|         1 |      2 |     112 |        11.989 |     6.048 |           3 |          162 |
+|         1 |      4 |     112 |        11.989 |     6.048 |           6 |          324 |
+|         3 |      1 |     112 |        11.989 |     6.048 |           5 |          270 |
+|     **3** |  **2** | **112** |    **11.989** | **6.048** |      **12** |      **648** |
+|         3 |      4 |     112 |        11.989 |     6.048 |          22 |        1.188 |
+|        10 |      1 |     112 |        11.989 |     6.048 |          20 |        1.080 |
+|        10 |      2 |     112 |        11.989 |     6.048 |          37 |        1.998 |
+|        10 |      4 |     448 |        47.941 |    24.192 |         224 |       12.096 |
 
 A Tabela 4 lista os modelos de ruído. Os perfis leve e moderado reproduzem as execuções originais com 112 passos. A varredura usa o circuito de 12 passos do caso principal e varia separadamente a despolarização das portas de dois qubits, $p$, e o erro de leitura, $\varepsilon$, para testar H2.
 
 _Tabela 4 - Modelos de ruído no Qiskit Aer. A despolarização de um qubit vale $p/10$ e atua em `sx` e `x`; a de dois qubits atua em `cx`._
 
-| Modelo     | Passos | Despolarização $p$                                  | Erro de leitura $\varepsilon$                  |
-| ---------- | -----: | --------------------------------------------------- | ---------------------------------------------- |
-| Leve       |    112 | $10^{-3}$                                           | 0,01                                           |
-| Moderado   |    112 | $10^{-2}$                                           | 0,03                                           |
-| Varredura  |     12 | $0;\ 10^{-5};\ 3\times10^{-5};\ 10^{-4};\ 3\times10^{-4};\ 10^{-3}$ | $0;\ 0{,}005;\ 0{,}01;\ 0{,}02;\ 0{,}03;\ 0{,}05$ |
+| Modelo    | Passos | Despolarização $p$                                                  | Erro de leitura $\varepsilon$                     |
+| --------- | -----: | ------------------------------------------------------------------- | ------------------------------------------------- |
+| Leve      |    112 | $10^{-3}$                                                           | 0,01                                              |
+| Moderado  |    112 | $10^{-2}$                                                           | 0,03                                              |
+| Varredura |     12 | $0;\ 10^{-5};\ 3\times10^{-5};\ 10^{-4};\ 3\times10^{-4};\ 10^{-3}$ | $0;\ 0{,}005;\ 0{,}01;\ 0{,}02;\ 0{,}03;\ 0{,}05$ |
 
 O orçamento por método é $M=20m$, com $m=16.384$. O método bruto usa todas as medições no circuito do sinal. O mitigado usa $3m/4$ medições no sinal e $m/8$ em cada calibração, de modo que a calibração consome parte do mesmo orçamento. Na varredura, o Aer calcula a distribuição de probabilidades com ruído de portas, o erro de leitura é aplicado como produto tensorial de matrizes de inversão de bit, e as contagens são sorteadas dessa distribuição. A primeira execução no `ibm_kingston` usou o caso principal com 14 passos, vinte blocos e o mesmo orçamento. Em seguida, o experimento em hardware foi refeito com um circuito mais curto. O instante $\tau=1{,}5$ foi escolhido depois da primeira execução, porque nele o cumulante exato do trio $(0,1,2)$ ainda vale $-0{,}159$, a PSA recupera apenas 34% dele, e o menor número de passos com erro de Trotter abaixo de $10^{-3}$ é 2, com erro de $8{,}2\times10^{-4}$. Compilado no processador, esse circuito tem 78 portas CZ e profundidade 294, com mapeamento $(142,143,144,136)$, cerca de nove vezes menos portas de dois qubits que o da primeira execução. Como a escolha do instante foi posterior aos primeiros resultados, uma triagem exploratória no processador precedeu a confirmação, feita com vinte trabalhos de 16.384 medições e sementes novas, com _twirling_ de portas e sem mitigação de leitura. Nesse caso, a PSA de referência é calculada com as 256 condições iniciais da amostragem bivaluada, o que elimina seu erro de Monte Carlo.
 
@@ -240,17 +240,17 @@ Dois pontos com seis e oito qubits foram executados no mesmo processador, em con
 
 _Tabela 5 - Controles numéricos. Valores máximos observados sobre todas as configurações de cada controle._
 
-| Controle                                  | Limite              | Máximo observado          |
-| :---------------------------------------- | ------------------: | ------------------------: |
-| Reprodução publicada: exato               | $2\times10^{-2}$    | $1{,}41\times10^{-3}$     |
-| Reprodução publicada: PSA                 | $6\times10^{-2}$    | $2{,}99\times10^{-2}$     |
-| Exato: Hamiltoniano denso independente    | $10^{-10}$          | $2{,}26\times10^{-16}$    |
-| Sem interação: $C^{(3)}$ exato            | $10^{-10}$          | $1{,}33\times10^{-15}$    |
-| Qiskit versus emulador                    | $10^{-10}$          | $2{,}80\times10^{-12}$    |
-| Refinamento RK4: $P_e$                    | $10^{-6}$           | $5{,}16\times10^{-8}$     |
-| Refinamento RK4: cumulantes               | $10^{-5}$           | $1{,}26\times10^{-7}$     |
-| Erro-padrão da PSA: $C^{(3)}$             | $10^{-2}$           | $5{,}11\times10^{-3}$     |
-| Trotter ideal: $C^{(3)}$                  | $10^{-3}$           | $8{,}91\times10^{-5}$     |
+| Controle                               |           Limite |       Máximo observado |
+| :------------------------------------- | ---------------: | ---------------------: |
+| Reprodução publicada: exato            | $2\times10^{-2}$ |  $1{,}41\times10^{-3}$ |
+| Reprodução publicada: PSA              | $6\times10^{-2}$ |  $2{,}99\times10^{-2}$ |
+| Exato: Hamiltoniano denso independente |       $10^{-10}$ | $2{,}26\times10^{-16}$ |
+| Sem interação: $C^{(3)}$ exato         |       $10^{-10}$ | $1{,}33\times10^{-15}$ |
+| Qiskit versus emulador                 |       $10^{-10}$ | $2{,}80\times10^{-12}$ |
+| Refinamento RK4: $P_e$                 |        $10^{-6}$ |  $5{,}16\times10^{-8}$ |
+| Refinamento RK4: cumulantes            |        $10^{-5}$ |  $1{,}26\times10^{-7}$ |
+| Erro-padrão da PSA: $C^{(3)}$          |        $10^{-2}$ |  $5{,}11\times10^{-3}$ |
+| Trotter ideal: $C^{(3)}$               |        $10^{-3}$ |  $8{,}91\times10^{-5}$ |
 
 ## Métricas de avaliação
 
@@ -297,13 +297,13 @@ A Tabela 6 apresenta $D$ para as 25 configurações, com o ruído amostral da PS
 
 _Tabela 6 - Diferença $D=R_3-R_2$ entre os erros normalizados de trios e pares da PSA, com intervalo de 95%. Valores positivos indicam erro maior nos trios. O asterisco marca as configurações em que o ruído amostral da PSA supera 1,5 vez o erro sistemático estimado._
 
-| $N$ | $\lambda=0{,}1$ | $\lambda=0{,}3$ | $\lambda=1$ | $\lambda=3$ | $\lambda=10$ |
-| ---: | :---: | :---: | :---: | :---: | :---: |
-| 4 | −0,180 [−0,326; −0,048] | 0,267 [0,237; 0,293] | 0,430 [0,417; 0,443] | 0,529 [0,524; 0,535] | 0,602 [0,599; 0,605] |
-| 6 | 0,109 [−0,052; 0,257] | 0,306 [0,270; 0,346] | 0,359 [0,347; 0,370] | 0,625 [0,617; 0,632] | 0,752 [0,747; 0,756] |
-| 8 | 0,264 [0,062; 0,430] | 0,358 [0,294; 0,405] | 0,362 [0,351; 0,373] | 0,505 [0,495; 0,513] | 0,936 [0,933; 0,939] |
-| 12 | 0,347 [−0,007; 0,664]$^{*}$ | 0,445 [0,376; 0,501] | 0,311 [0,297; 0,323] | 0,371 [0,361; 0,379] | 0,720 [0,710; 0,729] |
-| 16 | 0,695 [0,041; 1,282]$^{*}$ | 0,583 [0,476; 0,669] | 0,239 [0,228; 0,250] | 0,174 [0,163; 0,184] | 0,517 [0,508; 0,526] |
+| $N$ |       $\lambda=0{,}1$       |   $\lambda=0{,}3$    |     $\lambda=1$      |     $\lambda=3$      |     $\lambda=10$     |
+| --: | :-------------------------: | :------------------: | :------------------: | :------------------: | :------------------: |
+|   4 |   −0,180 [−0,326; −0,048]   | 0,267 [0,237; 0,293] | 0,430 [0,417; 0,443] | 0,529 [0,524; 0,535] | 0,602 [0,599; 0,605] |
+|   6 |    0,109 [−0,052; 0,257]    | 0,306 [0,270; 0,346] | 0,359 [0,347; 0,370] | 0,625 [0,617; 0,632] | 0,752 [0,747; 0,756] |
+|   8 |    0,264 [0,062; 0,430]     | 0,358 [0,294; 0,405] | 0,362 [0,351; 0,373] | 0,505 [0,495; 0,513] | 0,936 [0,933; 0,939] |
+|  12 | 0,347 [−0,007; 0,664]$^{*}$ | 0,445 [0,376; 0,501] | 0,311 [0,297; 0,323] | 0,371 [0,361; 0,379] | 0,720 [0,710; 0,729] |
+|  16 | 0,695 [0,041; 1,282]$^{*}$  | 0,583 [0,476; 0,669] | 0,239 [0,228; 0,250] | 0,174 [0,163; 0,184] | 0,517 [0,508; 0,526] |
 
 O intervalo nominal de 95% de $D$ ficou acima de zero em 22 das 25 configurações. As exceções ocorreram todas com a interação mais fraca, $\lambda=0{,}1$. Em $N=4$, o intervalo ficou abaixo de zero, com $D=-0{,}180$ $[-0{,}326;\ -0{,}048]$, de modo que nessa configuração a PSA errou mais nos pares do que nos trios. Em $N=6$ e $N=12$, o sinal ficou indefinido. Nessa interação, os cumulantes exatos são pequenos, com escala de $10^{-3}$ nos trios, e em $N=12$ e $N=16$ o ruído amostral da PSA superou o erro sistemático, o que torna esses dois valores pouco informativos com 81.920 trajetórias.
 
@@ -331,18 +331,18 @@ O ruído de porta produziu outro quadro. Sem erro de leitura, o maior nível de 
 
 ![Estimativas de C3 no caso principal sob erro de leitura e despolarização de dois qubits, com e sem mitigação.](figuras/figura-varredura-ruido.svg)
 
-_Figura 2 - Estimativas de $C^{(3)}_{012}$ no caso principal ($N=4$, $\lambda=3$, $\tau=2$) com o circuito de 12 passos e $M=327.680$ medições por método. (a) Sem ruído de porta, em função do erro de leitura. (b) Com erro de leitura de 0,03, em função da despolarização de dois qubits. As barras são intervalos de 95% ampliados pelo erro de Trotter, a linha contínua é o valor exato com a margem de $\pm0{,}01$ pontilhada, e a tracejada é a PSA._
+_Figura 2 - Estimativas de $C^{(3)}_{012}$ no caso principal ($N=4$, $\lambda=3$, $\tau=2$) com o circuito de 12 passos e $M=327.680$ medições por método. (a) Sem ruído de porta, em função do erro de leitura. (b) Com erro de leitura de 0,03, em função da despolarização de dois qubits. As barras são intervalos de 95% ampliados pelo erro de Trotter, a linha contínua é o valor exato com a margem de $\pm0{,}01$ pontilhada, e a tracejada é a PSA.\_
 
 A profundidade dos circuitos explica os resultados da Tabela 7, em que as quatro estimativas ficaram entre $-0{,}0003$ e $0{,}0064$, com ou sem mitigação. No Aer, os 112 passos somam 4.032 CNOTs, e uma auditoria das contagens mostrou que a matriz densidade antes da leitura ficou a menos de $8\times10^{-11}$ do estado maximamente misto, de modo que o ruído de portas apagou o sinal. No hardware, o circuito de 14 passos tem 672 portas CZ, mais do que as 648 CNOTs do circuito de 12 passos da Figura 2, cuja varredura já falha em $p=10^{-4}$ para resolver o cumulante em $\tau=2$. O parâmetro despolarizante sintético não é diretamente a infidelidade física de CNOT ou CZ. A execução no `ibm_kingston` completou vinte blocos e oitenta trabalhos, com 655.360 medições incluindo calibrações, em 72,87 minutos. Por isso, o experimento em hardware foi refeito com o circuito curto de $\tau=1{,}5$.
 
 _Tabela 7 - Estimativas de $C^{(3)}$ no caso principal ($\tau=2$) e intervalo de 95% da diferença circuito menos exato, ampliado pelo erro de Trotter. Cada método recebe $M=327.680$ medições, e a calibração integra o orçamento mitigado. As portas de dois qubits são CNOTs no Aer e CZ no processador. O valor exato é $-0{,}316$, e o da PSA, $-0{,}151$._
 
-| Ambiente | Passos | Portas de dois qubits | Método   | Estimativa  | IC95 da diferença        |
-| -------- | -----: | --------------------: | -------- | ----------: | ------------------------ |
-| Aer      |    112 |                 4.032 | Bruto    | $-0{,}0003$ | $[0{,}312;\ 0{,}319]$    |
-| Aer      |    112 |                 4.032 | Mitigado |  $0{,}0013$ | $[0{,}312;\ 0{,}322]$    |
-| IBM      |     14 |                   672 | Bruto    |  $0{,}0058$ | $[0{,}318;\ 0{,}326]$    |
-| IBM      |     14 |                   672 | Mitigado |  $0{,}0064$ | $[0{,}317;\ 0{,}327]$    |
+| Ambiente | Passos | Portas de dois qubits | Método   |  Estimativa | IC95 da diferença     |
+| -------- | -----: | --------------------: | -------- | ----------: | --------------------- |
+| Aer      |    112 |                 4.032 | Bruto    | $-0{,}0003$ | $[0{,}312;\ 0{,}319]$ |
+| Aer      |    112 |                 4.032 | Mitigado |  $0{,}0013$ | $[0{,}312;\ 0{,}322]$ |
+| IBM      |     14 |                   672 | Bruto    |  $0{,}0058$ | $[0{,}318;\ 0{,}326]$ |
+| IBM      |     14 |                   672 | Mitigado |  $0{,}0064$ | $[0{,}317;\ 0{,}327]$ |
 
 Com o circuito curto, o processador preservou um sinal mensurável. A estimativa da IBM foi $C^{(3)}=-0{,}097$, contra $-0{,}159$ do exato e $-0{,}054$ da PSA, de modo que o circuito recuperou 61% do cumulante e a aproximação, 34%. O erro absoluto do circuito foi 0,062, e o da PSA, 0,104, com $\Delta=-0{,}043$ $[-0{,}046;\ -0{,}039]$. O intervalo da diferença circuito menos PSA também excluiu zero. Uma simulação do mesmo circuito no Aer, com o modelo de ruído calibrado do processador e o mesmo número de medições, previu $C^{(3)}=-0{,}081$, próximo do valor medido. Já o intervalo da diferença circuito menos exato, $[0{,}058;\ 0{,}065]$, ficou fora da margem de $\pm0{,}01$, e o critério da Equação (9) não foi satisfeito. O hardware distinguiu, portanto, a previsão da PSA e ficou mais perto do exato do que ela, mas a atenuação total de cerca de 40% ainda impede recuperar o valor exato nessa execução. As simulações apontam a relevância do ruído de portas, sem atribuir toda a perda exclusivamente às CZ. Uma varredura de ruído no Aer sobre o próprio circuito executado, com 100 campanhas sintéticas de medição por condição, situou o limiar de despolarização de dois qubits entre $4{,}8\times10^{-4}$ e $5{,}6\times10^{-4}$ para os dois métodos, numericamente acima dos níveis aprovados no circuito de 648 CNOTs. A diferença não isola o efeito da profundidade, pois os pontos físicos, as portas e os critérios diferem. Nessa varredura, sem ruído de porta e com erro de leitura de 0,03, o método mitigado satisfez o critério em 97 de 100 campanhas e o bruto em nenhuma, o que reforça o benefício da mitigação de leitura nesse modelo, com o critério adicional descrito na seção de métricas.
 
@@ -350,13 +350,13 @@ Os pontos com seis e oito qubits também preservaram sinais mensuráveis (Tabela
 
 _Tabela 8 - Execuções no `ibm_kingston` com circuitos de dois passos de Trotter. $\Delta$ é a diferença entre os erros absolutos do hardware e da PSA, e valores negativos indicam o hardware mais perto do exato. Os intervalos são de 95% nos pilotos e no caso $N=4$, e simultâneos de 98,75% na confirmação com seis e oito qubits. A PSA usa todas as condições iniciais._
 
-| Execução         | $N$ | CZ  | Trabalhos × medições | Hardware    | Exato       | PSA         | $\Delta$                         |
-| ---------------- | --: | --: | -------------------: | ----------: | ----------: | ----------: | -------------------------------- |
-| Confirmação      |   4 |  78 |          20 × 16.384 | $-0{,}097$  | $-0{,}159$  | $-0{,}054$  | $-0{,}043$ $[-0{,}046;\ -0{,}039]$ |
-| Piloto           |   6 | 204 |           5 × 4.096 |  $0{,}195$  |  $0{,}415$  |  $0{,}137$  | $-0{,}058$ $[-0{,}074;\ -0{,}043]$ |
-| Piloto           |   8 | 429 |           5 × 4.096 | $-0{,}022$  | $-0{,}131$  |  $0{,}050$  | $-0{,}073$ $[-0{,}081;\ -0{,}065]$ |
-| Confirmação      |   6 | 204 |          20 × 4.096 |  $0{,}184$  |  $0{,}415$  |  $0{,}137$  | $-0{,}047$ $[-0{,}056;\ -0{,}037]$ |
-| Confirmação      |   8 | 429 |          20 × 4.096 | $-0{,}028$  | $-0{,}131$  |  $0{,}050$  | $-0{,}078$ $[-0{,}088;\ -0{,}068]$ |
+| Execução    | $N$ |  CZ | Trabalhos × medições |   Hardware |      Exato |        PSA | $\Delta$                           |
+| ----------- | --: | --: | -------------------: | ---------: | ---------: | ---------: | ---------------------------------- |
+| Confirmação |   4 |  78 |          20 × 16.384 | $-0{,}097$ | $-0{,}159$ | $-0{,}054$ | $-0{,}043$ $[-0{,}046;\ -0{,}039]$ |
+| Piloto      |   6 | 204 |            5 × 4.096 |  $0{,}195$ |  $0{,}415$ |  $0{,}137$ | $-0{,}058$ $[-0{,}074;\ -0{,}043]$ |
+| Piloto      |   8 | 429 |            5 × 4.096 | $-0{,}022$ | $-0{,}131$ |  $0{,}050$ | $-0{,}073$ $[-0{,}081;\ -0{,}065]$ |
+| Confirmação |   6 | 204 |           20 × 4.096 |  $0{,}184$ |  $0{,}415$ |  $0{,}137$ | $-0{,}047$ $[-0{,}056;\ -0{,}037]$ |
+| Confirmação |   8 | 429 |           20 × 4.096 | $-0{,}028$ | $-0{,}131$ |  $0{,}050$ | $-0{,}078$ $[-0{,}088;\ -0{,}068]$ |
 
 ## Discussão
 
@@ -366,15 +366,15 @@ A Tabela 9 compara os métodos, as grandezas e as condições de teste deste tra
 
 _Tabela 9 - Condições de teste deste trabalho e dos estudos mais próximos. Fonte: elaboração própria, com base nos trabalhos citados._
 
-| Aspecto           | Lacroix et al. (2024)          | Illa e Savage (2023)                     | Este trabalho                                       |
-| ----------------- | ------------------------------ | ---------------------------------------- | --------------------------------------------------- |
-| Métodos           | Exato, PSA                     | Exato, circuito                          | Exato, campo médio, PSA, circuito                   |
-| $N$               | 4, 8 e 12                      | Até 12                                   | 4 a 16 (clássico); 4 a 8 (hardware)                 |
-| Estado inicial    | Metade em cada sabor           | Metade em cada sabor                     | Metade em cada sabor                                |
-| Correlações       | $C_{ZZ}$ coletivo              | $C^{(2)}$ e $C^{(3)}$                    | $C^{(2)}$ por par e $C^{(3)}$ por trio              |
-| Aproximação       | PSA comparada ao exato         | Nenhuma                                  | PSA comparada ao exato e aos circuitos              |
-| Medições          | Não se aplica                  | 240 (processador) e 1.200 (emulador)     | 81.920 a 327.680 por circuito                       |
-| Plataforma        | Clássica                       | Íons aprisionados                        | Clássica, Aer e `ibm_kingston`                      |
+| Aspecto        | Lacroix et al. (2024)  | Illa e Savage (2023)                 | Este trabalho                          |
+| -------------- | ---------------------- | ------------------------------------ | -------------------------------------- |
+| Métodos        | Exato, PSA             | Exato, circuito                      | Exato, campo médio, PSA, circuito      |
+| $N$            | 4, 8 e 12              | Até 12                               | 4 a 16 (clássico); 4 a 8 (hardware)    |
+| Estado inicial | Metade em cada sabor   | Metade em cada sabor                 | Metade em cada sabor                   |
+| Correlações    | $C_{ZZ}$ coletivo      | $C^{(2)}$ e $C^{(3)}$                | $C^{(2)}$ por par e $C^{(3)}$ por trio |
+| Aproximação    | PSA comparada ao exato | Nenhuma                              | PSA comparada ao exato e aos circuitos |
+| Medições       | Não se aplica          | 240 (processador) e 1.200 (emulador) | 81.920 a 327.680 por circuito          |
+| Plataforma     | Clássica               | Íons aprisionados                    | Clássica, Aer e `ibm_kingston`         |
 
 No arranjo de Lacroix et al. (2024), a PSA reproduziu bem a correlação coletiva $C_{ZZ}$, enquanto os resultados deste trabalho indicam erros altos em pares e trios. As duas observações são compatíveis. A grandeza publicada $C_{ZZ}$ inclui termos locais $i=j$; aqui, a soma $K_{ZZ}=\sum_{i<j}C^{(2)}_{ij}$ considera apenas pares distintos. Calculada sobre os mesmos dados da Tabela 6, essa soma teve erro normalizado entre 0,06 e 0,37 e ficou abaixo do erro par a par $R_2$ em 21 das 25 configurações. No caso principal, esse erro foi 0,17, contra $R_2=0{,}42$ e $R_3=0{,}95$. Os desvios dos pares individuais compensam-se em parte na soma, de modo que uma grandeza coletiva pode ser bem reproduzida mesmo quando as correlações de cada par e de cada trio não são. O sobreamortecimento das médias de sabor relatado por esses autores também aparece aqui, como o aumento do erro de $P_e$ com a interação, que chega a $R_1$ entre 0,53 e 1,01 em $\lambda=10$. A principal diferença está na grandeza comparada. A validação anterior não examinou cumulantes de três corpos, em que a PSA mais se afasta da evolução exata, nem a dependência com $\lambda$.
 
@@ -460,7 +460,7 @@ Pehlivan, Y., Balantekin, A. B., Kajino, T., and Yoshida, T. (2011). Invariants 
 
 Preskill, J. (2018). Quantum Computing in the NISQ era and beyond. _Quantum_, 2:79. <https://doi.org/10.22331/q-2018-08-06-79>.
 
-Riccio, M. and Balantekin, A. B. (2026). Improved Approximations for Collective Neutrino Oscillations. Preprint arXiv:2607.28619, versão 2. <https://doi.org/10.48550/arXiv.2607.28619>.
+Riccio, M. and Balantekin, A. B. (2026). Improved approximations for collective neutrino oscillations. _Physical Review D_, 114(10):103054. <https://doi.org/10.1103/8zfj-q2qh>.
 
 Rrapaj, E. (2020). Exact solution of multiangle quantum many-body collective neutrino-flavor oscillations. _Physical Review C_, 101(6):065805. <https://doi.org/10.1103/PhysRevC.101.065805>.
 
@@ -470,6 +470,6 @@ Shalgar, S. and Tamborra, I. (2023). Do we have enough evidence to invalidate th
 
 Vatan, F. and Williams, C. (2004). Optimal quantum circuits for general two-qubit gates. _Physical Review A_, 69(3):032315. <https://doi.org/10.1103/PhysRevA.69.032315>.
 
-Vissani, F., Costantini, M. L., Fulgione, W., Ianni, A., and Pagliaroli, G. (2010). What is the issue with SN1987A neutrinos? Preprint arXiv:1008.4726. <https://arxiv.org/abs/1008.4726>.
+Vissani, F., Costantini, M. L., Fulgione, W., Ianni, A., and Pagliaroli, G. (2011). What is the issue with SN1987A neutrinos? In Giovannelli, F. and Mannocchi, G., editors, _Frontier Objects in Astrophysics and Particle Physics: Vulcano Workshop 2010_, volume 103 of _Italian Physical Society Conference Proceedings_, pages 611--619. Italian Physical Society, Bologna. <https://arxiv.org/abs/1008.4726>.
 
 Volpe, C., Väänänen, D., and Espinoza, C. (2013). Extended evolution equations for neutrino propagation in astrophysical and cosmological environments. _Physical Review D_, 87(11):113010. <https://doi.org/10.1103/PhysRevD.87.113010>.
